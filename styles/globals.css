@@ -1,27 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  padding: 0 2rem;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  min-height: 100vh;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  @apply font-sans container mx-auto text-gray-900 p-8 min-h-screen dark:text-white dark:bg-black;
 }
 
 * {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+  @apply box-border;
 }

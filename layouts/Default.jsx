@@ -31,14 +31,16 @@ export function DefaultLayout({ props, children }) {
           <meta property="article:published_time" content={meta.date} />
         )} */}
       </Head>
-      <nav>
-        <NavItem deneme={"deneme"} />
-        <NavItem deneme={"deneme"} />
-        <NavItem deneme={"deneme"} />
-        <NavItem deneme={"deneme"} />
-        <NavItem deneme={"deneme"} />
-      </nav>
-      <div>{children}</div>
+      <div className="">
+        <nav>
+          <NavItem deneme={"deneme"} />
+          <NavItem deneme={"deneme"} />
+          <NavItem deneme={"deneme"} />
+          <NavItem deneme={"deneme"} />
+          <NavItem deneme={"deneme"} />
+        </nav>
+        <div>{children}</div>
+      </div>
     </>
   );
 }
