@@ -3,7 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
   plugins: [
     [
-      "postcss-nested",
       {
         // Add any options here
       },
