@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply p-20 flex items-center font-sans antialiased dark:text-white text-gray-900 bg-white dark:bg-black;
+  @apply p-5 sm:p-20 flex items-center font-sans antialiased dark:text-white text-gray-900 bg-white dark:bg-black;
 }
 
 body {
