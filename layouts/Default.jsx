@@ -1,17 +1,19 @@
-import Head from "next/head";
-import NavItem from "../components/NavItem";
-import { useRouter } from "next/router";
-import Footer from "../components/Footer";
+import Head from 'next/head';
+import NavItem from '../components/NavItem';
+import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
+import { useDarkThemeDetector } from '../hooks';
 
 export default function DefaultLayout(props) {
   const router = useRouter();
+  const isDarkTheme = useDarkThemeDetector();
 
-  const { children, ...customMeta } = props;
+  const { children, title, ...customMeta } = props;
   const meta = {
-    title: "Gökhan Öztürk – Developer, crafter.",
+    title: 'Gökhan Öztürk – Developer, crafter.',
     description: `Front-end developer, JavaScript enthusiast.`,
     // image: "https://gokhanozturk.io/static/images/banner.png",
-    type: "website",
+    type: 'website',
     ...customMeta,
   };
   return (
@@ -43,21 +45,39 @@ export default function DefaultLayout(props) {
         )}
       </Head>
       <header>
-        <nav>
-          <NavItem href="/" text="Home" />
-          <NavItem href="/about" text="About" />
-          <NavItem href="/blog" text="Blog" />
-          <NavItem href="/projects" text="Projects" />
+        <div className="name-profile">
+          <div className="rounded-full mb-10 ">
+            <img
+              src={isDarkTheme ? 'profile-dark.svg' : 'profile.svg'}
+              className="rounded-full"
+              width={48}
+              height={48}
+            />
+          </div>
+          <div className="my-10">
+            <h1 className="text-3xl">{title}</h1>
+          </div>
+        </div>
+        <nav className="my-10">
+          <NavItem href="/" text="About" />
+          {/* <NavItem href="/blog" text="Blog" />
+          <NavItem href="/projects" text="Projects" /> */}
         </nav>
       </header>
-      <main
-        style={{ minHeight: "100vh", display: "grid", placeItems: "center" }}
-      >
-        {children}
-      </main>
-      <footer>
+      <div
+        style={{
+          backgroundColor: 'rgb(238, 238, 238)',
+          flex: '0 0 auto',
+          height: '1px',
+          overflow: 'visible',
+          position: 'relative',
+          width: '100%',
+        }}
+      ></div>
+      <main className="main mt-10">{children}</main>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 }

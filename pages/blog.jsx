@@ -1,5 +1,5 @@
-import DefaultLayout from "../layouts/Default";
+import DefaultLayout from '../layouts/Default';
 
 export default function Blog() {
-  return <DefaultLayout>Blog</DefaultLayout>;
+  return <DefaultLayout title="Blog">Blog</DefaultLayout>;
 }
