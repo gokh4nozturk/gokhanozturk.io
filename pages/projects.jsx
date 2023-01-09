@@ -1,5 +1,5 @@
-import DefaultLayout from "../layouts/Default";
+import DefaultLayout from '../layouts/Default';
 
 export default function Project() {
-  return <DefaultLayout>Project</DefaultLayout>;
+  return <DefaultLayout title="Projects">Project</DefaultLayout>;
 }
