@@ -1,14 +1,14 @@
-<svg width="256" height="269" viewBox="0 0 256 269" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="256" height="269" fill="#F5F5F5"/>
-<ellipse cx="128" cy="134.5" rx="128" ry="134.5" fill="black"/>
-<circle cx="128.5" cy="49.5" r="38" fill="black" stroke="white" stroke-width="3"/>
-<line x1="129.5" y1="86" x2="129.5" y2="236" stroke="white" stroke-width="3"/>
-<line x1="129.189" y1="208.085" x2="159.189" y2="247.085" stroke="white" stroke-width="3"/>
-<line x1="129.189" y1="209.915" x2="99.1889" y2="248.915" stroke="white" stroke-width="3"/>
-<line y1="-1.5" x2="39.0513" y2="-1.5" transform="matrix(0.768221 0.640184 -0.89689 0.442254 128 122)" stroke="white" stroke-width="3"/>
-<line y1="-1.5" x2="39.0513" y2="-1.5" transform="matrix(-0.768221 0.640184 -0.89689 -0.442254 128 122)" stroke="white" stroke-width="3"/>
-<circle cx="112.5" cy="41.5" r="3.5" fill="white"/>
-<circle cx="144.5" cy="41.5" r="3.5" fill="white"/>
-<path d="M113 69C126.091 72.6222 138.455 70.5092 143 69" stroke="white" stroke-width="3"/>
-<line x1="129.5" y1="45" x2="129.5" y2="60" stroke="white" stroke-width="3"/>
+<svg width="262" height="275" viewBox="0 0 262 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="262" height="275" fill="#F5F5F5"/>
+<path d="M131 273.5C202.59 273.5 260.5 212.54 260.5 137.5C260.5 62.4602 202.59 1.5 131 1.5C59.41 1.5 1.5 62.4602 1.5 137.5C1.5 212.54 59.41 273.5 131 273.5Z" fill="black" stroke="white" stroke-width="3"/>
+<circle cx="131.5" cy="52.5" r="38" fill="black" stroke="white" stroke-width="3"/>
+<line x1="132.5" y1="89" x2="132.5" y2="239" stroke="white" stroke-width="3"/>
+<line x1="132.189" y1="211.085" x2="162.189" y2="250.085" stroke="white" stroke-width="3"/>
+<line x1="132.189" y1="212.915" x2="102.189" y2="251.915" stroke="white" stroke-width="3"/>
+<line y1="-1.5" x2="39.0513" y2="-1.5" transform="matrix(0.768221 0.640184 -0.89689 0.442254 131 125)" stroke="white" stroke-width="3"/>
+<line y1="-1.5" x2="39.0513" y2="-1.5" transform="matrix(-0.768221 0.640184 -0.89689 -0.442254 131 125)" stroke="white" stroke-width="3"/>
+<circle cx="115.5" cy="44.5" r="3.5" fill="white"/>
+<circle cx="147.5" cy="44.5" r="3.5" fill="white"/>
+<path d="M116 72C129.091 75.6222 141.455 73.5092 146 72" stroke="white" stroke-width="3"/>
+<line x1="132.5" y1="48" x2="132.5" y2="63" stroke="white" stroke-width="3"/>
 </svg>
