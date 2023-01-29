@@ -45,7 +45,7 @@ export default function Home() {
         >
           Email.
         </a>{' '}
-        You can reach out to{' '}
+        {/* You can reach out to{' '}
         <a
           href="https://flowcv.com/resume/4t62w9o7n6"
           target="_blank"
@@ -61,7 +61,7 @@ export default function Home() {
         >
           CV Template
         </a>
-        .
+        . */}
       </div>
       <div className="mt-10">
         <img className="rounded-2xl aspect-video" src="index.jpg" />
