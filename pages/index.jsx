@@ -82,38 +82,21 @@ export default function Home() {
         >
           Twitter
         </a>
-        {/* , check out my projects on{' '}
+        {'  '}&{' '}
         <a
-          href="https://github.com/gokh4nozturk"
+          href="https://www.linkedin.com/in/gokhannozturk/"
           target="_blank"
           className="max-sm:underline md:hover:underline"
         >
-          GitHub
-        </a> */}
+          LinkedIn
+        </a>
         , or reach out via{' '}
         <a
-          href="mailto:gokhaanozturk@gmail.com?subject=Mail from your Website"
+          href="mailto:me@gokhanozturk.io?subject=Mail from your Website"
           className="max-sm:underline md:hover:underline"
         >
           Email.
         </a>{' '}
-        {/* You can reach out to{' '}
-        <a
-          href="https://flowcv.com/resume/4t62w9o7n6"
-          target="_blank"
-          className="max-sm:underline md:hover:underline"
-        >
-          my CV
-        </a>
-        , or you can check out my{' '}
-        <a
-          href="https://flowcv.com/resume-template/63d28d4ba1fd40d227224578"
-          target="_blank"
-          className="max-sm:underline md:hover:underline"
-        >
-          CV Template
-        </a>
-        . */}
       </div>
       <div className="mt-10">
         {transitions((springs, item) => (
