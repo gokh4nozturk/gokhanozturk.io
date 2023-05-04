@@ -71,9 +71,9 @@ export default function Home() {
           target="_blank"
           className="max-sm:underline md:hover:underline text-[#007CE1]"
         >
-          rockads.
+          rockads.com
         </a>{' '}
-        B2B projects & their open-source projects. I love open source
+        and B2B projects & their open-source projects. I love open source
         development and I build things on my{' '}
         <a
           href="https://github.com/gokh4nozturk"
