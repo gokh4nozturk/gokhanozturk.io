@@ -65,8 +65,16 @@ export default function Home() {
         >
           Teknasyon
         </a>
-        . I'm working on B2B projects & their open-source projects. I love open
-        source development and I build things on my{' '}
+        . I'm working on{' '}
+        <a
+          href="https://rockads.com/"
+          target="_blank"
+          className="max-sm:underline md:hover:underline text-[#007CE1]"
+        >
+          rockads.
+        </a>{' '}
+        B2B projects & their open-source projects. I love open source
+        development and I build things on my{' '}
         <a
           href="https://github.com/gokh4nozturk"
           target="_blank"
