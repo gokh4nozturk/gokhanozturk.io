@@ -92,18 +92,23 @@ const TECHNOLOGIES = [
     url: 'https://react-spring.io/',
     image: 'https://cdn.svgporn.com/logos/react-spring.svg',
   },
+  {
+    name: 'GitHub Actions',
+    url: 'https://docs.github.com/en/actions',
+    image: 'https://cdn.svgporn.com/logos/github-actions.svg',
+  },
 ];
 
 export default function Techs() {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-3 flex-wrap mt-4">
       {TECHNOLOGIES.map((technology) => (
         <animated.a href={technology.url}>
           <img
             title={technology.name}
             src={technology.image}
             alt={technology.name}
-            className="w-10 h-10 hover:scale-150 transition-all rounded-sm"
+            className="sm:w-8 w-6 sm:h-8 h-6 hover:scale-150 transition-all rounded-sm"
           />
         </animated.a>
       ))}

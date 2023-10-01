@@ -114,7 +114,7 @@ export default function Home() {
           Email.
         </a>{' '}
       </div>
-      <div>
+      <div className="w-full">
         technologies I use: <Techs />
       </div>
       <div className="mt-10">
