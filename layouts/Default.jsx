@@ -8,7 +8,7 @@ export default function DefaultLayout(props) {
   const router = useRouter();
   const isDarkTheme = useDarkThemeDetector();
 
-  const { children, title, ...customMeta } = props;
+  const { children, ...customMeta } = props;
   const meta = {
     title: 'Gökhan Öztürk – Developer, crafter.',
     description: `Front-end developer, JavaScript enthusiast.`,
@@ -118,8 +118,8 @@ export default function DefaultLayout(props) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <header>
-        <div className="name-profile">
-          <div className="rounded-full mb-10 ">
+        <div className="flex items-center gap-4">
+          <div className="rounded-full">
             <img
               src={isDarkTheme ? 'profile-dark.svg' : 'profile.svg'}
               className="rounded-full"
@@ -127,14 +127,14 @@ export default function DefaultLayout(props) {
               height={48}
             />
           </div>
-          <div className="my-10">
-            <h1 className="text-3xl">{title}</h1>
+          <div className="sm:my-10">
+            <h1 className="sm:text-3xl text-xl">Gökhan Öztürk</h1>
           </div>
         </div>
-        <nav className="my-10">
-          <NavItem href="/" text="About" />
-          {/* <NavItem href="/blog" text="Blog" />
-          <NavItem href="/projects" text="Projects" /> */}
+        <nav className="sm:my-10 my-8">
+          <NavItem href="/" text="home" />
+          {/* <NavItem href="/blog" text="Blog" /> */}
+          <NavItem href="/projects" text="projects" />
         </nav>
       </header>
       <div
