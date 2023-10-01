@@ -133,8 +133,9 @@ export default function DefaultLayout(props) {
         </div>
         <nav className="sm:my-10 my-8">
           <NavItem href="/" text="home" />
-          {/* <NavItem href="/blog" text="Blog" /> */}
+          <NavItem href="/blog" text="blog" />
           <NavItem href="/projects" text="projects" />
+          {/* <NavItem href="/bookmarks" text="bookmarks" /> */}
         </nav>
       </header>
       <div
