@@ -1,5 +1,4 @@
 import DefaultLayout from '../layouts/Default';
-const img = '@assets/index.jpg';
 import { useSpringRef, animated, useTransition, useSpring } from 'react-spring';
 import { useLayoutEffect, useState } from 'react';
 
@@ -61,7 +60,7 @@ export default function Home() {
         <a
           href="https://teknasyon.com/en/"
           target="_blank"
-          className="max-sm:underline md:hover:underline"
+          className="max-sm:underline md:hover:underline text-[#009cfb] decoration-[#009cfb] underline-offset-4"
         >
           Teknasyon
         </a>
@@ -69,7 +68,7 @@ export default function Home() {
         <a
           href="https://rockads.com/"
           target="_blank"
-          className="max-sm:underline md:hover:underline text-[#007CE1]"
+          className="max-sm:underline md:hover:underline text-[#007CE1] decoration-[#007CE1] underline-offset-4"
         >
           rockads.com
         </a>{' '}
@@ -78,15 +77,23 @@ export default function Home() {
         <a
           href="https://github.com/gokh4nozturk"
           target="_blank"
-          className="max-sm:underline md:hover:underline"
+          className="max-sm:underline md:hover:underline underline-offset-4"
         >
           GitHub profile.
         </a>{' '}
-        I love coding, reading and taking photos. You can follow me on{' '}
+        Example projects:{' '}
+        <a
+          href="https://github.com/Teknasyon/rocket-ui"
+          target="_blank"
+          className="max-sm:underline md:hover:underline text-[#4C5BE1] decoration-[#4C5BE1] underline-offset-4"
+        >
+          Rocket UI
+        </a>
+        , I love coding, reading and taking photos. You can follow me on{' '}
         <a
           href="https://twitter.com/gokh4nozturk"
           target="_blank"
-          className="max-sm:underline md:hover:underline"
+          className="max-sm:underline md:hover:underline underline-offset-4"
         >
           Twitter
         </a>
@@ -94,18 +101,19 @@ export default function Home() {
         <a
           href="https://www.linkedin.com/in/gokhannozturk/"
           target="_blank"
-          className="max-sm:underline md:hover:underline"
+          className="max-sm:underline md:hover:underline underline-offset-4"
         >
           LinkedIn
         </a>
         , or reach out via{' '}
         <a
           href="mailto:me@gokhanozturk.io?subject=Mail from your Website"
-          className="max-sm:underline md:hover:underline"
+          className="max-sm:underline md:hover:underline underline-offset-4"
         >
           Email.
         </a>{' '}
       </div>
+
       <div className="mt-10">
         {transitions((springs, item) => (
           <animated.div style={springs}>
