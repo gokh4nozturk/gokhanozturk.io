@@ -1,5 +1,6 @@
 import React from 'react';
 import { animated } from 'react-spring';
+import NextImage from 'next/image';
 
 const TECHNOLOGIES = [
   {
@@ -100,11 +101,14 @@ const TECHNOLOGIES = [
 ];
 
 export default function Techs() {
+
   return (
     <div className="flex gap-3 flex-wrap mt-4">
       {TECHNOLOGIES.map((technology) => (
-        <animated.a href={technology.url}>
-          <img
+        <animated.a href={technology.url} key={technology.name}>
+          <NextImage
+            width={32}
+            height={32}
             title={technology.name}
             src={technology.image}
             alt={technology.name}
