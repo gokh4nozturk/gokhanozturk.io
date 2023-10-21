@@ -101,7 +101,6 @@ const TECHNOLOGIES = [
 ];
 
 export default function Techs() {
-
   return (
     <div className="flex gap-3 flex-wrap mt-4">
       {TECHNOLOGIES.map((technology) => (

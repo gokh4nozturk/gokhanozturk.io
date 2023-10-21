@@ -2,7 +2,7 @@ import DefaultLayout from '../layouts/Default';
 import { useSpringRef, animated, useTransition, useSpring } from 'react-spring';
 import { useLayoutEffect, useState } from 'react';
 import Techs from '../components/Techs';
-import NextImage from 'next/image'
+import NextImage from 'next/image';
 
 const IMAGES = [
   'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/154443660/original/734570cec0de955789ff0acd80caad3d582b85e0/create-a-generative-art-piece-for-you.png',
@@ -122,12 +122,12 @@ export default function Home() {
         {transitions((springs, item) => (
           <animated.div style={springs}>
             <NextImage
-              className='rounded-sm'
+              className="rounded-sm"
               src={IMAGES[item]}
               priority
               width={800}
               height={600}
-              alt='Gökhan Öztürk'
+              alt="Gökhan Öztürk"
             />
           </animated.div>
         ))}
