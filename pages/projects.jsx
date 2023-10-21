@@ -18,7 +18,7 @@ export default function Project() {
       <div className="w-full sm:px-2">
         <div className="flex gap-2 flex-wrap">
           {PROJECTS.map((project) => (
-            <a href={project.url}>
+            <a href={project.url} key={project.title}>
               <Image
                 width={320}
                 height={192}
