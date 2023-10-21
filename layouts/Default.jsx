@@ -125,6 +125,7 @@ export default function DefaultLayout(props) {
               className="rounded-full"
               width={48}
               height={48}
+              alt="Gökhan Öztürk"
             />
           </div>
           <div className="sm:my-10">
