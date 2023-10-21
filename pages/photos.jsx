@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import unsplash from '../lib/unsplash';
 import NextImage from 'next/image';
 import DefaultLayout from '../layouts/Default';
+import NextLink from 'next/link';
 
 export default function Photos() {
   const [photos, setPhotos] = useState([]);
@@ -27,15 +28,17 @@ export default function Photos() {
 }
 
 const Photo = ({ data: photo }) => {
-  const { urls, description, alt_description, width, height } = photo;
+  const { urls, description, alt_description, width, height, links } = photo;
   return (
-    <NextImage
-      className="rounded-lg"
-      loading="lazy"
-      src={urls.raw}
-      width={width}
-      height={height}
-      alt={description || alt_description}
-    />
+    <NextLink href={links.html}>
+      <NextImage
+        className="rounded-lg"
+        loading="lazy"
+        src={urls.raw}
+        width={width}
+        height={height}
+        alt={description || alt_description}
+      />
+    </NextLink>
   );
 };
