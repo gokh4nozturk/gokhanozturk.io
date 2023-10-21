@@ -14,9 +14,9 @@ const nextConfig = {
       'fiverr-res.cloudinary.com',
       'images.squarespace-cdn.com',
       'cdn.pixabay.com',
-      'cdn.svgporn.com'
-    ]
-  }
+      'cdn.svgporn.com',
+    ],
+  },
 };
 
 module.exports = nextConfig;
