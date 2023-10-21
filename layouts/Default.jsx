@@ -136,6 +136,7 @@ export default function DefaultLayout(props) {
           <NavItem href="/" text="home" />
           <NavItem href="/blog" text="blog" />
           <NavItem href="/projects" text="projects" />
+          <NavItem href="/photos" text="photos" />
           {/* <NavItem href="/bookmarks" text="bookmarks" /> */}
         </nav>
       </header>
