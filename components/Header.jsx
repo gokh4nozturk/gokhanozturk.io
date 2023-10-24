@@ -1,15 +1,15 @@
 'use client'
+
 import NavItem from "./NavItem"
 
-
+const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 export const Header = () => {
   return (
     <header>
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           <img
-            // src={isDarkTheme ? 'profile-dark.svg' : 'profile.svg'}
-            src="profile.svg"
+            src={isDarkTheme ? 'icons/profile-dark.svg' : 'icons/profile.svg'}
             className="rounded-full"
             width={48}
             height={48}
