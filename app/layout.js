@@ -1,5 +1,6 @@
 import { Header } from "../components/Header";
 import { Analytics } from '@vercel/analytics/react';
+import '../styles/globals.css'
 
 export const metadata = {
 	metadataBase: new URL('https://gokhanozturk.io'),
