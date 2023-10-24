@@ -62,7 +62,7 @@ export default function Home() {
         <a
           href="https://teknasyon.com/en/"
           target="_blank"
-          className="max-sm:underline md:hover:underline text-[#009cfb] decoration-[#009cfb] underline-offset-4"
+          className="max-sm:underline md:hover:underline hover:text-[#009cfb] decoration-[#009cfb] underline-offset-4"
         >
           Teknasyon
         </a>
@@ -70,7 +70,7 @@ export default function Home() {
         <a
           href="https://rockads.com/"
           target="_blank"
-          className="max-sm:underline md:hover:underline text-[#007CE1] decoration-[#007CE1] underline-offset-4"
+          className="max-sm:underline md:hover:underline hover:text-[#007CE1] decoration-[#007CE1] underline-offset-4"
         >
           rockads.com
         </a>{' '}
@@ -87,7 +87,7 @@ export default function Home() {
         <a
           href="https://github.com/Teknasyon/rocket-ui"
           target="_blank"
-          className="max-sm:underline md:hover:underline text-[#4C5BE1] decoration-[#4C5BE1] underline-offset-4"
+          className="max-sm:underline md:hover:underline hover:text-[#4C5BE1] decoration-[#4C5BE1] underline-offset-4"
         >
           Rocket UI
         </a>
