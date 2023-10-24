@@ -1,4 +1,4 @@
-import unsplash from '../../lib/unsplash';
+import unsplash from '@lib/unsplash';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 
