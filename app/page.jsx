@@ -1,7 +1,7 @@
 'use client'
 import { useSpringRef, animated, useTransition, useSpring } from 'react-spring';
 import { useLayoutEffect, useState } from 'react';
-import Techs from '../components/Techs';
+import Techs from '@components/Techs';
 import NextImage from 'next/image';
 
 const IMAGES = [

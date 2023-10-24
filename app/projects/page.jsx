@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import cover from '../../public/images/cover.svg';
+import cover from '@public/images/cover.svg';
 
 const PROJECTS = [
   {
