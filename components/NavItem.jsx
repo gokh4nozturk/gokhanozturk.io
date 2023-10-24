@@ -1,14 +1,15 @@
+'use client'
 import React from 'react';
 import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import cn from 'classnames';
 import { animated, useTransition } from 'react-spring';
 
-function NavItem({ href, text }) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+function NavItem({ href, name }) {
+  const pathname = usePathname() || '/';
+  const isActive = pathname === href;
 
-  const transitions = useTransition(text, {
+  const transitions = useTransition(name, {
     from: {
       opacity: 0,
       transform: 'translate3d(0, 10px, 0)',
@@ -27,6 +28,7 @@ function NavItem({ href, text }) {
   });
   return (
     <NextLink
+      key={name}
       href={href}
       className={cn(
         isActive
@@ -38,11 +40,10 @@ function NavItem({ href, text }) {
       {transitions((style) => {
         return (
           <animated.span className="capsize" style={style}>
-            {text}
+            {name}
           </animated.span>
         );
       })}
-      {/* <span className="capsize">{text}</span> */}
     </NextLink>
   );
 }
