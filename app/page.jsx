@@ -1,4 +1,4 @@
-import DefaultLayout from '../layouts/Default';
+'use client'
 import { useSpringRef, animated, useTransition, useSpring } from 'react-spring';
 import { useLayoutEffect, useState } from 'react';
 import Techs from '../components/Techs';
@@ -56,7 +56,7 @@ export default function Home() {
   }, [activeIndex]);
 
   return (
-    <DefaultLayout title="Gökhan Öztürk">
+    <>
       <div className="mb-10">
         Hello! I’m Gökhan, a software engineer at{' '}
         <a
@@ -132,6 +132,6 @@ export default function Home() {
           </animated.div>
         ))}
       </div>
-    </DefaultLayout>
+    </>
   );
 }
