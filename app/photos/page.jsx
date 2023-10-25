@@ -1,8 +1,9 @@
-import unsplash from '@lib/unsplash'
+import { Unsplash } from '@lib/unsplash'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 
 export default async function Photos() {
+  const unsplash = new Unsplash()
   const images = await unsplash.getPhotos()
 
   return (
