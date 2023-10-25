@@ -1,5 +1,5 @@
-import { Header } from "../components/Header";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react'
+import { Header } from '../components/Header'
 import '../styles/globals.css'
 
 export const metadata = {
@@ -8,10 +8,10 @@ export const metadata = {
     default: 'Gökhan Öztürk – Developer, crafter.',
     template: '%s | Gökhan Öztürk – Developer, crafter.',
   },
-  description: `Front-end developer, JavaScript enthusiast.`,
+  description: 'Front-end developer, JavaScript enthusiast.',
   openGraph: {
     title: 'Gökhan Öztürk – Developer, crafter.',
-    description: `Front-end developer, JavaScript enthusiast.`,
+    description: 'Front-end developer, JavaScript enthusiast.',
     url: 'https://gokhanozturk.io',
     site_name: 'Gökhan Öztürk',
     locale: 'en_US',
@@ -21,8 +21,8 @@ export const metadata = {
     index: true,
     follow: true,
     googleBot: {
-      index: true,
-      follow: true,
+      'index': true,
+      'follow': true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -36,8 +36,8 @@ export const metadata = {
     favicon: 'icons/favicon.ico',
     appleTouchIcon: 'icons/apple-touch-icon.png',
     msTileImage: 'icons/mstile-150x150.png',
-  }
-};
+  },
+}
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -49,11 +49,9 @@ export default function RootLayout({
       <body>
         <Header />
 
-        <main className="main mt-10">
-          {children}
-        </main>
+        <main className="main mt-10">{children}</main>
         <Analytics />
       </body>
     </html>
-  );
+  )
 }

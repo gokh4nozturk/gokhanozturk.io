@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import cover from '@public/images/cover.svg';
+import Image from 'next/image'
+import cover from '@public/images/cover.svg'
 
 const PROJECTS = [
   {
@@ -9,13 +9,13 @@ const PROJECTS = [
     image: cover,
     url: 'https://teknasyon.github.io/rocket-ui/',
   },
-];
+]
 
 export default function Project() {
   return (
     <div className="w-full sm:px-2">
-      <div className="flex gap-2 flex-wrap">
-        {PROJECTS.map((project) => (
+      <div className="flex flex-wrap gap-2">
+        {PROJECTS.map(project => (
           <a href={project.url} key={project.title}>
             <Image
               width={320}
@@ -23,11 +23,11 @@ export default function Project() {
               title={project.title}
               src={project.image}
               alt={project.title}
-              className="hover:scale-105 transition-all duration-300 rounded-sm"
+              className="rounded-sm transition-all duration-300 hover:scale-105"
             />
           </a>
         ))}
       </div>
     </div>
-  );
+  )
 }

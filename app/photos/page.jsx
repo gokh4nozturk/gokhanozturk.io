@@ -1,21 +1,21 @@
-import unsplash from '@lib/unsplash';
-import NextImage from 'next/image';
-import NextLink from 'next/link';
+import unsplash from '@lib/unsplash'
+import NextImage from 'next/image'
+import NextLink from 'next/link'
 
 export default async function Photos() {
-  const images = await unsplash.getPhotos();
+  const images = await unsplash.getPhotos()
 
   return (
-    <div className="grid sm:grid-cols-2 gap-4">
-      {images.map((photo) => (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {images.map(photo => (
         <Photo key={photo.id} data={photo} />
       ))}
     </div>
-  );
+  )
 }
 
-const Photo = ({ data: photo }) => {
-  const { urls, description, alt_description, width, height, links } = photo;
+function Photo({ data: photo }) {
+  const { urls, description, alt_description, width, height, links } = photo
   return (
     <NextLink href={links.html}>
       <NextImage
@@ -27,5 +27,5 @@ const Photo = ({ data: photo }) => {
         alt={description || alt_description}
       />
     </NextLink>
-  );
-};
+  )
+}

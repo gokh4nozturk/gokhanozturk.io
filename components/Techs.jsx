@@ -1,6 +1,6 @@
-import React from 'react';
-import { animated } from 'react-spring';
-import NextImage from 'next/image';
+import React from 'react'
+import { animated } from 'react-spring'
+import NextImage from 'next/image'
 
 const TECHNOLOGIES = [
   {
@@ -98,12 +98,12 @@ const TECHNOLOGIES = [
     url: 'https://docs.github.com/en/actions',
     image: 'https://cdn.svgporn.com/logos/github-actions.svg',
   },
-];
+]
 
 export default function Techs() {
   return (
-    <div className="flex gap-3 flex-wrap mt-4">
-      {TECHNOLOGIES.map((technology) => (
+    <div className="mt-4 flex flex-wrap gap-3">
+      {TECHNOLOGIES.map(technology => (
         <animated.a href={technology.url} key={technology.name}>
           <NextImage
             width={32}
@@ -111,10 +111,10 @@ export default function Techs() {
             title={technology.name}
             src={technology.image}
             alt={technology.name}
-            className="sm:w-8 w-6 sm:h-8 h-6 hover:scale-150 transition-all rounded-sm"
+            className="h-6 w-6 rounded-sm transition-all hover:scale-150 sm:h-8 sm:w-8"
           />
         </animated.a>
       ))}
     </div>
-  );
+  )
 }
