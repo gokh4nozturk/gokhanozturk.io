@@ -8,20 +8,21 @@ export default async function Photos() {
 
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {images.map(photo => (
-        <Photo key={photo.id} data={photo} />
+      {images.map((photo, index) => (
+        <Photo key={photo.id} data={photo} index={index} />
       ))}
     </div>
   )
 }
 
-function Photo({ data: photo }) {
+function Photo({ data: photo, index }) {
   const { urls, description, alt_description, width, height, links } = photo
   return (
     <NextLink href={links.html}>
       <NextImage
+        priority={index < 2}
+        loading={index < 2 ? 'eager' : 'lazy'}
         className="rounded-lg"
-        loading="lazy"
         src={urls.raw}
         width={width}
         height={height}
