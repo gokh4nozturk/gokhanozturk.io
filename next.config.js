@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  plugins: [
-    [
-      {
-        // Add any options here
-      },
-    ],
-  ],
   images: {
     domains: [
       'images.unsplash.com',
