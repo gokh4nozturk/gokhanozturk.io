@@ -1,18 +1,18 @@
 'use client'
-import { useSpringRef, animated, useTransition, useSpring } from 'react-spring';
-import { useLayoutEffect, useState } from 'react';
-import Techs from '@components/Techs';
-import NextImage from 'next/image';
+import { animated, useSpringRef, useTransition } from 'react-spring'
+import { useLayoutEffect, useState } from 'react'
+import Techs from '@components/Techs'
+import NextImage from 'next/image'
 
 const IMAGES = [
   'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/154443660/original/734570cec0de955789ff0acd80caad3d582b85e0/create-a-generative-art-piece-for-you.png',
   'https://images.squarespace-cdn.com/content/v1/5c77350965a707ed1710a1bc/1592330659753-70M66LGEPXFTQ8S716MX/Generative+Art+by+Mark+Stock+-+Gyre+35700.jpg',
   'https://cdn.pixabay.com/photo/2018/09/04/09/12/generative-art-3653275_1280.jpg',
-];
+]
 
 export default function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const springApi = useSpringRef();
+  const [activeIndex, setActiveIndex] = useState(0)
+  const springApi = useSpringRef()
 
   const transitions = useTransition(activeIndex, {
     from: {
@@ -25,9 +25,8 @@ export default function Home() {
       clipPath: 'polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%)',
     },
     onRest: (_springs, _ctrl, item) => {
-      if (activeIndex === item) {
-        setActiveIndex(activeIndex === IMAGES.length - 1 ? 0 : activeIndex + 1);
-      }
+      if (activeIndex === item)
+        setActiveIndex(activeIndex === IMAGES.length - 1 ? 0 : activeIndex + 1)
     },
     exitBeforeEnter: true,
     config: {
@@ -35,25 +34,11 @@ export default function Home() {
     },
     delay: 1000,
     ref: springApi,
-  });
-
-  const springs = useSpring({
-    from: {
-      strokeDashoffset: 120,
-    },
-    to: {
-      strokeDashoffset: 0,
-    },
-    config: {
-      duration: 11000,
-    },
-    loop: true,
-    ref: springApi,
-  });
+  })
 
   useLayoutEffect(() => {
-    springApi.start();
-  }, [activeIndex]);
+    springApi.start()
+  }, [activeIndex, springApi])
 
   return (
     <>
@@ -62,15 +47,15 @@ export default function Home() {
         <a
           href="https://teknasyon.com/en/"
           target="_blank"
-          className="max-sm:underline md:hover:underline hover:text-[#009cfb] decoration-[#009cfb] underline-offset-4"
+          className="decoration-[#009cfb] underline-offset-4 hover:text-[#009cfb] max-sm:underline md:hover:underline"
         >
           Teknasyon
         </a>
-        . I'm working on{' '}
+        . I&rsquo;m working on{' '}
         <a
           href="https://rockads.com/"
           target="_blank"
-          className="max-sm:underline md:hover:underline hover:text-[#007CE1] decoration-[#007CE1] underline-offset-4"
+          className="decoration-[#007CE1] underline-offset-4 hover:text-[#007CE1] max-sm:underline md:hover:underline"
         >
           rockads.com
         </a>{' '}
@@ -79,7 +64,7 @@ export default function Home() {
         <a
           href="https://github.com/gokh4nozturk"
           target="_blank"
-          className="max-sm:underline md:hover:underline underline-offset-4"
+          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           GitHub profile.
         </a>{' '}
@@ -87,7 +72,7 @@ export default function Home() {
         <a
           href="https://github.com/Teknasyon/rocket-ui"
           target="_blank"
-          className="max-sm:underline md:hover:underline hover:text-[#4C5BE1] decoration-[#4C5BE1] underline-offset-4"
+          className="decoration-[#4C5BE1] underline-offset-4 hover:text-[#4C5BE1] max-sm:underline md:hover:underline"
         >
           Rocket UI
         </a>
@@ -95,7 +80,7 @@ export default function Home() {
         <a
           href="https://twitter.com/gokh4nozturk"
           target="_blank"
-          className="max-sm:underline md:hover:underline underline-offset-4"
+          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           Twitter
         </a>
@@ -103,14 +88,14 @@ export default function Home() {
         <a
           href="https://www.linkedin.com/in/gokhannozturk/"
           target="_blank"
-          className="max-sm:underline md:hover:underline underline-offset-4"
+          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           LinkedIn
         </a>
         , or reach out via{' '}
         <a
           href="mailto:me@gokhanozturk.io?subject=Mail from your Website"
-          className="max-sm:underline md:hover:underline underline-offset-4"
+          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           Email.
         </a>{' '}
@@ -133,5 +118,5 @@ export default function Home() {
         ))}
       </div>
     </>
-  );
+  )
 }

@@ -10,6 +10,6 @@ const nextConfig = {
       'cdn.svgporn.com',
     ],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

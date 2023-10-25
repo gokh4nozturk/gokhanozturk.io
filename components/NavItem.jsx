@@ -1,13 +1,13 @@
 'use client'
-import React from 'react';
-import NextLink from 'next/link';
-import { usePathname } from 'next/navigation';
-import cn from 'classnames';
-import { animated, useTransition } from 'react-spring';
+import React from 'react'
+import NextLink from 'next/link'
+import { usePathname } from 'next/navigation'
+import cn from 'classnames'
+import { animated, useTransition } from 'react-spring'
 
 function NavItem({ href, name }) {
-  const pathname = usePathname() || '/';
-  const isActive = pathname === href;
+  const pathname = usePathname() || '/'
+  const isActive = pathname === href
 
   const transitions = useTransition(name, {
     from: {
@@ -25,7 +25,7 @@ function NavItem({ href, name }) {
     config: {
       duration: 200,
     },
-  });
+  })
   return (
     <NextLink
       key={name}
@@ -39,13 +39,13 @@ function NavItem({ href, name }) {
     >
       {transitions((style) => {
         return (
-          <animated.span className="capsize" style={style}>
+          <animated.span style={style}>
             {name}
           </animated.span>
-        );
+        )
       })}
     </NextLink>
-  );
+  )
 }
 
-export default NavItem;
+export default NavItem
