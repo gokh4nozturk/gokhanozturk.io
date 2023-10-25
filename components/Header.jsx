@@ -1,9 +1,17 @@
 'use client'
-
+import React from "react"
 import NavItem from "./NavItem"
 
-const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 export const Header = () => {
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false)
+
+  React.useEffect(() => {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (isDark) {
+      setIsDarkTheme(true)
+    }
+  }, [])
+
   return (
     <header>
       <div className="flex items-center gap-4">
