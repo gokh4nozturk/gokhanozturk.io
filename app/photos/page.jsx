@@ -4,11 +4,11 @@ import NextLink from 'next/link'
 
 export default async function Photos() {
   const unsplash = new Unsplash()
-  const images = await unsplash.getPhotos()
+  const photos = await unsplash.getPhotos()
 
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {images.map((photo, index) => (
+      {photos.map((photo, index) => (
         <Photo key={photo.id} data={photo} index={index} />
       ))}
     </div>
