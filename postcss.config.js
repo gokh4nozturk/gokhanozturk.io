@@ -1,4 +1,5 @@
-/* eslint-disable n/prefer-global/process */
+import process from 'node:process'
+
 module.exports = {
   plugins: {
     'tailwindcss': {},
