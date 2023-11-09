@@ -7,7 +7,7 @@ export default async function Photos() {
   const photos = await unsplash.getPhotos()
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="sm:columns-2">
       {photos.map((photo, index) => (
         <Photo key={photo.id} data={photo} index={index} />
       ))}
@@ -22,7 +22,7 @@ function Photo({ data: photo, index }) {
       <NextImage
         priority={index < 2}
         loading={index < 2 ? 'eager' : 'lazy'}
-        className="rounded-lg"
+        className="mb-4 rounded-lg"
         src={urls.raw}
         width={width}
         height={height}
