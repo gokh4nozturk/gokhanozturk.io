@@ -21,7 +21,7 @@ function NavItem({ href, name }) {
     >
       <span className={`
       bg-gradient-to-r from-black to-black bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-all
-      duration-500 ease-out group-hover:bg-[length:100%_1px] dark:from-gray-200 dark:to-gray-200`
+      duration-500 ease-out dark:from-gray-200 dark:to-gray-200 sm:group-hover:bg-[length:100%_1px]`
       }>
         {name}
       </span>
