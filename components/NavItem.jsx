@@ -3,47 +3,28 @@ import React from 'react'
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 import cn from 'classnames'
-import { animated, useTransition } from 'react-spring'
 
 function NavItem({ href, name }) {
   const pathname = usePathname() || '/'
   const isActive = pathname === href
 
-  const transitions = useTransition(name, {
-    from: {
-      opacity: 0,
-      transform: 'translate3d(0, 10px, 0)',
-    },
-    enter: {
-      opacity: 1,
-      transform: 'translate3d(0, 0px, 0)',
-    },
-    leave: {
-      opacity: 0,
-      transform: 'translate3d(0, 10px, 0)',
-    },
-    config: {
-      duration: 200,
-    },
-  })
   return (
     <NextLink
       key={name}
       href={href}
       className={cn(
         isActive
-          ? 'font-normal text-gray-800 dark:text-gray-200 underline underline-offset-8 decoration-gray-200'
-          : 'font-normal text-gray-600 dark:text-gray-400',
-        'rounded-lg hover:underline hover:underline-offset-8 transition-all mr-4',
+          ? 'font-normal text-gray-900 dark:text-gray-200'
+          : 'font-normal text-gray-400 dark:text-gray-400 group',
+        'mr-4 transition-all duration-300 ease-in-out',
       )}
     >
-      {transitions((style) => {
-        return (
-          <animated.span style={style}>
-            {name}
-          </animated.span>
-        )
-      })}
+      <span className={`
+      bg-gradient-to-r from-black to-black bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-all
+      duration-500 ease-out group-hover:bg-[length:100%_1px] dark:from-gray-200 dark:to-gray-200`
+      }>
+        {name}
+      </span>
     </NextLink>
   )
 }
