@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import cover from '@public/images/cover.svg'
 
-const PROJECTS = [
+const WORKS = [
   {
     title: 'Rocket UI',
     description:
@@ -11,18 +11,18 @@ const PROJECTS = [
   },
 ]
 
-export default function Project() {
+export default function Works() {
   return (
     <div className="w-full sm:px-2">
       <div className="flex flex-wrap gap-2">
-        {PROJECTS.map(project => (
-          <a href={project.url} key={project.title}>
+        {WORKS.map(work => (
+          <a href={work.url} key={work.title}>
             <Image
               width={320}
               height={192}
-              title={project.title}
-              src={project.image}
-              alt={project.title}
+              title={work.title}
+              src={work.image}
+              alt={work.title}
               className="rounded-sm transition-all duration-300 hover:scale-105"
             />
           </a>

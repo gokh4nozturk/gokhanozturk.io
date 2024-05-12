@@ -32,7 +32,7 @@ export function Header() {
       <nav className="my-8 sm:my-10">
         <NavItem href="/" name="home" />
         <NavItem href="/blog" name="blog" />
-        <NavItem href="/projects" name="projects" />
+        <NavItem href="/work" name="work" />
         <NavItem href="/photos" name="photos" />
         {/* <NavItem href="/bookmarks" name="bookmarks" /> */}
       </nav>
