@@ -14,14 +14,14 @@ function NavItem({ href, name }) {
       href={href}
       className={cn(
         isActive
-          ? 'font-normal text-gray-900 dark:text-gray-200'
-          : 'font-normal text-gray-400 dark:text-gray-400 group',
+          ? 'font-normal text-gray-950 dark:text-gray-100'
+          : 'font-normal text-gray-500 dark:text-gray-400 group',
         'mr-4 transition-all duration-300 ease-in-out',
       )}
     >
       <span className={`
-      bg-gradient-to-r from-black to-black bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-all
-      duration-500 ease-out dark:from-gray-200 dark:to-gray-200 sm:group-hover:bg-[length:100%_1px]`
+      bg-gradient-to-r from-gray-950 to-gray-950 bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-all
+      duration-500 ease-out dark:from-gray-400 dark:to-gray-400 sm:group-hover:bg-[length:100%_1px]`
       }>
         {name}
       </span>
