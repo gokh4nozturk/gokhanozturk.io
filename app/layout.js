@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from '../components/Header'
 import '../styles/globals.css'
 
@@ -51,6 +52,7 @@ export default function RootLayout({
 
         <main className="main mt-10">{children}</main>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
