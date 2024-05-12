@@ -3,6 +3,7 @@ import { animated, useSpringRef, useTransition } from 'react-spring'
 import { useLayoutEffect, useState } from 'react'
 import Techs from '@components/Techs'
 import NextImage from 'next/image'
+import AnimatedLink from '@components/AnimatedLink'
 
 const IMAGES = [
   'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/154443660/original/734570cec0de955789ff0acd80caad3d582b85e0/create-a-generative-art-piece-for-you.png',
@@ -42,33 +43,29 @@ export default function Home() {
 
   return (
     <>
-      <div className="mb-10">
-        Hello! I’m Gökhan, a software engineer at{' '}
-        <a
+      <div className="mb-5">
+        Hi 👋 I’m Gökhan, a software engineer at{' '}
+        <AnimatedLink
           href="https://teknasyon.com/en/"
-          target="_blank"
-          className="decoration-[#009cfb] underline-offset-4 hover:text-[#009cfb] max-sm:underline md:hover:underline"
+          color='teknasyon'
         >
           Teknasyon
-        </a>
+        </AnimatedLink>
         . I&rsquo;m working on{' '}
-        <a
+        <AnimatedLink
           href="https://rockads.com/"
-          target="_blank"
-          className="decoration-[#007CE1] underline-offset-4 hover:text-[#007CE1] max-sm:underline md:hover:underline"
+          color="rockads"
         >
           rockads.com
-        </a>{' '}
+        </AnimatedLink>{' '}
         and B2B projects & their open-source projects. I love open source
         development and I build things on my{' '}
-        <a
+        <AnimatedLink
           href="https://github.com/gokh4nozturk"
-          target="_blank"
-          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           GitHub profile.
-        </a>{' '}
-        Example projects:{' '}
+        </AnimatedLink>{' '}
+        {/* Example projects:{' '}
         <a
           href="https://github.com/Teknasyon/rocket-ui"
           target="_blank"
@@ -76,29 +73,28 @@ export default function Home() {
         >
           Rocket UI
         </a>
-        , I love coding, reading and taking photos. You can follow me on{' '}
-        <a
+        , I love coding, reading and taking photos. */}
+        <br />
+        You can follow me on{' '}
+        <AnimatedLink
           href="https://twitter.com/gokh4nozturk"
-          target="_blank"
-          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           Twitter
-        </a>
+        </AnimatedLink>
         {'  '}&{' '}
-        <a
+        <AnimatedLink
           href="https://www.linkedin.com/in/gokhannozturk/"
           target="_blank"
-          className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           LinkedIn
-        </a>
-        , or reach out via{' '}
+        </AnimatedLink>
+        {/* , or reach out via{' '}
         <a
           href="mailto:me@gokhanozturk.io?subject=Mail from your Website"
           className="underline-offset-4 max-sm:underline md:hover:underline"
         >
           Email.
-        </a>{' '}
+        </a>{' '} */}
       </div>
       <div className="w-full">
         technologies I use: <Techs />
