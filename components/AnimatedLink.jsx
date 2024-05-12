@@ -7,12 +7,12 @@ export default function AnimatedLink({ children, color = 'black', href = '#' }) 
     teknasyon: 'sm:hover:text-[#009cfb]',
   }[color]
   const fromColor = {
-    black: 'from-gray-800',
+    black: 'from-gray-900 dark:from-gray-200',
     rockads: 'from-[#007CE1]',
     teknasyon: 'from-[#009cfb]',
   }[color]
   const toColor = {
-    black: 'to-gray-800',
+    black: 'to-gray-900 dark:to-gray-200',
     rockads: 'to-[#007CE1]',
     teknasyon: 'to-[#009cfb]',
   }[color]
