@@ -104,7 +104,7 @@ export default function Techs() {
   return (
     <div className="mt-4 flex flex-wrap gap-3">
       {TECHNOLOGIES.map(technology => (
-        <animated.a href={technology.url} key={technology.name}>
+        <animated.a href={technology.url} key={technology.name} target="_blank">
           <NextImage
             width={32}
             height={32}
