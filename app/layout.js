@@ -1,7 +1,9 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Header } from '../components/Header'
-import '../styles/globals.css'
+import Container from 'app/components/Container'
+import { Header } from 'app/components/Header'
+import { ThemeProvider } from 'app/components/ThemeProvider'
+import '@styles/globals.css'
 
 export const metadata = {
   metadataBase: new URL('https://gokhanozturk.io'),
@@ -40,17 +42,22 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Header />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Container>
+            <Header />
 
-        <main className="main mt-10">{children}</main>
+            <main className="main mt-10">{children}</main>
+          </Container>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>
