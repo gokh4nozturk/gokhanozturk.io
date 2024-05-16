@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes'
-
-import cn from 'classnames'
 import { animated, useSpring } from 'react-spring'
+import cn from 'classnames'
+import { ComputerDesktopIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 
 export function ThemeProvider({ children, ...props }) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>
@@ -67,10 +67,16 @@ export function DarkModeToggle() {
     })
   }
 
+  const themeIcon = {
+    light: <SunIcon className='pointer-events-none size-3 stroke-2 text-white' />,
+    dark: <MoonIcon className='pointer-events-none size-3 stroke-2 text-white' />,
+    system: <ComputerDesktopIcon className='pointer-events-none size-3 stroke-2 text-white' />,
+  }
+
   return (
     <animated.div
       aria-label="Toggle light/dark mode"
-      className='relative flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-gray-800'>
+      className='relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-gray-800'>
       {themes.map(t => (
         <animated.button
           key={t}
@@ -80,7 +86,7 @@ export function DarkModeToggle() {
           role='radio'
           type="button"
           className={cn(
-            'rounded-full p-2 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
+            'rounded-full p-0.5 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
             `${theme === t
               ? 'bg-blue-200 dark:bg-gray-900 '
               : 'bg-gray-200 dark:bg-gray-500'}`,
@@ -90,6 +96,7 @@ export function DarkModeToggle() {
           onPointerOut={() => handlePointerOut(t)}
         >
           <span className='sr-only'>{t}</span>
+          {themeIcon[t]}
         </animated.button>
       ))}
       <animated.span
