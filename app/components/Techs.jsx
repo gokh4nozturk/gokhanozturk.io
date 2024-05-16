@@ -102,19 +102,22 @@ const TECHNOLOGIES = [
 
 export default function Techs() {
   return (
-    <div className="mt-4 flex flex-wrap gap-3">
-      {TECHNOLOGIES.map(technology => (
-        <animated.a href={technology.url} key={technology.name} target="_blank">
-          <NextImage
-            width={32}
-            height={32}
-            title={technology.name}
-            src={technology.image}
-            alt={technology.name}
-            className="h-6 w-6 rounded-sm transition-all hover:scale-150 sm:h-8 sm:w-8"
-          />
-        </animated.a>
-      ))}
+    <div className="w-full">
+        technologies I use:
+      <div className="mt-4 flex flex-wrap gap-3">
+        {TECHNOLOGIES.map(technology => (
+          <animated.a href={technology.url} key={technology.name} target="_blank">
+            <NextImage
+              width={32}
+              height={32}
+              title={technology.name}
+              src={technology.image}
+              alt={technology.name}
+              className="h-6 w-6 rounded-sm transition-all hover:scale-150 sm:h-8 sm:w-8"
+            />
+          </animated.a>
+        ))}
+      </div>
     </div>
   )
 }
