@@ -1,9 +1,9 @@
 'use client'
 import { animated, useSpringRef, useTransition } from 'react-spring'
 import { useLayoutEffect, useState } from 'react'
-import Techs from '@components/Techs'
+import Techs from 'app/components/Techs'
 import NextImage from 'next/image'
-import AnimatedLink from '@components/AnimatedLink'
+import AnimatedLink from 'app/components/AnimatedLink'
 
 const IMAGES = [
   'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/154443660/original/734570cec0de955789ff0acd80caad3d582b85e0/create-a-generative-art-piece-for-you.png',
