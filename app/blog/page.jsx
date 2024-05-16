@@ -1,4 +1,4 @@
-import AnimatedLink from '@components/AnimatedLink'
+import AnimatedLink from 'app/components/AnimatedLink'
 
 export default function Blog() {
   return (
