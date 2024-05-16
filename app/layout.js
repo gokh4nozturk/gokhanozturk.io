@@ -1,8 +1,8 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Container from 'app/components/Container'
-import { Header } from 'app/components/Header'
-import { ThemeProvider } from 'app/components/ThemeProvider'
+import Container from '@components/Container'
+import { Header } from '@components/Header'
+import { ThemeProvider } from '@components/ThemeProvider'
 import '@styles/globals.css'
 
 export const metadata = {
@@ -40,6 +40,7 @@ export const metadata = {
     appleTouchIcon: 'icons/apple-touch-icon.png',
     msTileImage: 'icons/mstile-150x150.png',
   },
+  manifest: 'manifest.json',
 }
 
 export default function RootLayout({ children }) {
