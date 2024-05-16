@@ -2,31 +2,36 @@
 
 import React from 'react'
 import NextImage from 'next/image'
-import NavItem from '@components/NavItem'
+import NavItem from 'app/components/NavItem'
+import darkProfile from 'public/icons/profile-dark.svg'
+import profile from 'public/icons/profile.svg'
+import { DarkModeToggle, useDarkMode } from '@components/ThemeProvider'
 
 export function Header() {
-  const [isDarkTheme, setIsDarkTheme] = React.useState(false)
+  const [mounted, setMounted] = React.useState(false)
+  const isDarkTheme = useDarkMode()
 
   React.useEffect(() => {
-    const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)')
-      .matches
-    setIsDarkTheme(isDarkTheme)
+    setMounted(true)
   }, [])
 
   return (
     <header>
       <div className="flex items-center gap-4">
         <div className="rounded-full">
-          <NextImage
-            src={isDarkTheme ? 'icons/profile-dark.svg' : 'icons/profile.svg'}
+          {mounted && <NextImage
+            src={isDarkTheme ? darkProfile : profile}
             className="rounded-full"
             width={48}
             height={48}
             alt="Gökhan Öztürk"
-          />
+          />}
         </div>
         <div className="sm:my-10">
           <h1 className="text-xl sm:text-3xl">Gökhan Öztürk</h1>
+        </div>
+        <div className="ml-auto">
+          {mounted && <DarkModeToggle />}
         </div>
       </div>
       <nav className="my-8 sm:my-10">
