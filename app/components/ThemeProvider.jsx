@@ -88,7 +88,9 @@ export function DarkModeToggle() {
           onClick={() => handleThemeChange(t)}
           onPointerEnter={() => handlePointerEnter(t)}
           onPointerOut={() => handlePointerOut(t)}
-        />
+        >
+          <span className='sr-only'>{t}</span>
+        </animated.button>
       ))}
       <animated.span
         style={styles}
