@@ -22,7 +22,7 @@ export function DarkModeToggle() {
 
   React.useEffect(() => {
     api.start({
-      width: 16,
+      width: 24,
       left: theme === 'light' ? '4px' : 'unset',
       right: theme === 'system' ? '4px' : theme === 'dark' ? '24px' : 'unset',
       immediate: true,
@@ -37,14 +37,14 @@ export function DarkModeToggle() {
 
       api.start({
         to: async (animate) => {
-          await animate({ width: theme === 'dark' ? 16 : t === 'dark' ? 22 : 42 })
+          await animate({ width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64 })
 
           api.set({
-            left: t === 'light' ? '4px' : t === 'dark' && theme === 'system' ? '24px' : 'unset',
-            right: t === 'system' ? '4px' : t === 'dark' && theme === 'light' ? '24px' : 'unset',
+            left: t === 'light' ? '4px' : t === 'dark' && theme === 'system' ? '32px' : 'unset',
+            right: t === 'system' ? '4px' : t === 'dark' && theme === 'light' ? '32px' : 'unset',
           })
 
-          await animate({ width: 16 })
+          await animate({ width: 24 })
         },
       })
     }
@@ -55,7 +55,7 @@ export function DarkModeToggle() {
       return
 
     api.start({
-      width: theme === 'dark' ? 16 : t === 'dark' ? 22 : 42,
+      width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64,
     })
   }
   const handlePointerOut = (t) => {
@@ -63,14 +63,14 @@ export function DarkModeToggle() {
       return
 
     api.start({
-      width: 16,
+      width: 24,
     })
   }
 
   const themeIcon = {
-    light: <SunIcon className='pointer-events-none size-3 stroke-2 text-white' />,
-    dark: <MoonIcon className='pointer-events-none size-3 stroke-2 text-white' />,
-    system: <ComputerDesktopIcon className='pointer-events-none size-3 stroke-2 text-white' />,
+    light: <SunIcon className='pointer-events-none size-4 stroke-2 text-white' />,
+    dark: <MoonIcon className='pointer-events-none size-4 stroke-2 text-white' />,
+    system: <ComputerDesktopIcon className='pointer-events-none size-4 stroke-2 text-white' />,
   }
 
   return (
@@ -86,9 +86,9 @@ export function DarkModeToggle() {
           role='radio'
           type="button"
           className={cn(
-            'rounded-full p-0.5 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
+            'rounded-full p-1 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
             `${theme === t
-              ? 'bg-blue-200 dark:bg-gray-900 '
+              ? 'bg-blue-300 dark:bg-gray-900 '
               : 'bg-gray-200 dark:bg-gray-500'}`,
           )}
           onClick={() => handleThemeChange(t)}
@@ -102,7 +102,7 @@ export function DarkModeToggle() {
       <animated.span
         style={styles}
         className={cn(
-          'absolute top-1 h-4 bottom-0 rounded-full z-0 bg-blue-200 dark:bg-gray-900',
+          'absolute top-1 h-6 bottom-0 rounded-full z-0 bg-blue-200 dark:bg-gray-900',
         )}
       />
     </animated.div>
