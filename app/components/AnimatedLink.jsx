@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AnimatedLink({ children, color = 'black', href = '#' }) {
+export default function AnimatedLink({ children, color = 'black', href = '#', name = 'Link' }) {
   const textColor = {
     black: 'sm:hover:text-gray-900 sm:dark:hover:text-gray-200',
     rockads: 'sm:hover:text-[#007CE1]',
@@ -22,7 +22,8 @@ export default function AnimatedLink({ children, color = 'black', href = '#' }) 
       className={`group ${textColor} transition-all duration-300 ease-in-out`}
       href={href}
       target="_blank"
-      aria-label='Link to external website'
+      aria-label={`Link to external website of ${name}`}
+      name={name}
     >
       <span className={`
       bg-gradient-to-r ${fromColor} ${toColor} bg-[length:0%_1px] bg-left-bottom bg-no-repeat 
