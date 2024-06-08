@@ -22,6 +22,7 @@ export default function AnimatedLink({ children, color = 'black', href = '#' }) 
       className={`group ${textColor} transition-all duration-300 ease-in-out`}
       href={href}
       target="_blank"
+      aria-label='Link to external website'
     >
       <span className={`
       bg-gradient-to-r ${fromColor} ${toColor} bg-[length:0%_1px] bg-left-bottom bg-no-repeat 
