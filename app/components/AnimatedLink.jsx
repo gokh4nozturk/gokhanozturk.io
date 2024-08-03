@@ -27,7 +27,7 @@ export default function AnimatedLink({ children, color = 'black', href = '#', na
     >
       <span className={`
       bg-gradient-to-r ${fromColor} ${toColor} bg-[length:0%_1px] bg-left-bottom bg-no-repeat 
-      transition-all duration-500 ease-out group-hover:bg-[length:100%_1px]`
+      transition-all duration-500 ease-out group-hover:bg-[length:100%_1px] max-sm:bg-[length:100%_1px]`
       }>
         {children}
       </span>
