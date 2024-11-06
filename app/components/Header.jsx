@@ -3,13 +3,11 @@
 import React from 'react'
 import NextImage from 'next/image'
 import NavItem from 'app/components/NavItem'
-import darkProfile from 'public/icons/profile-dark.svg'
 import profile from 'public/icons/profile.svg'
-import { DarkModeToggle, useDarkMode } from '@components/ThemeProvider'
+import { DarkModeToggle } from '@components/ThemeProvider'
 
 export function Header() {
   const [mounted, setMounted] = React.useState(false)
-  const isDarkTheme = useDarkMode()
 
   React.useEffect(() => {
     setMounted(true)
@@ -20,7 +18,7 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted && <NextImage
-            src={isDarkTheme ? darkProfile : profile}
+            src={profile}
             className="rounded-full"
             width={48}
             height={48}
