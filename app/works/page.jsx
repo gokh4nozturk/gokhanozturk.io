@@ -99,3 +99,20 @@ export default async function Works() {
     </div>
   )
 }
+
+export async function generateMetadata() {
+  const siteUrl = '/works'
+
+  return {
+    title: 'Works',
+    description: 'A collection of works',
+    openGraph: {
+      title: 'Works',
+      description: 'A collection of works',
+      url: siteUrl,
+    },
+    alternates: {
+      canonical: siteUrl,
+    },
+  }
+}
