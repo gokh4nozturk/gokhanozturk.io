@@ -1,34 +1,22 @@
 // import Image from 'next/image'
 // import cover from '@public/images/cover.svg'
 // import cover2 from '@public/images/cover2.svg'
+import AnimatedLink from '@components/AnimatedLink'
 import { Github } from '@lib/github'
 
-// const WORKS = [
-//   {
-//     title: 'Rocket UI',
-//     description:
-//       'A set of customizable UI components for Vue 3, built with TypeScript',
-//     image: cover,
-//     url: 'https://teknasyon.github.io/rocket-ui/',
-//     id: 1,
-//     full_name: 'Teknasyon/rocket-ui',
-//     name: 'rocket-ui',
-//     html_url: '',
-//     description: 'A set of customizable UI components for Vue 3, built with TypeScript',
-//   },
-//   {
-//     title: 'LinguoLink',
-//     description: 'The best place to manage translations',
-//     image: cover2,
-//     url: 'https://linguolink.gokhanozturk.io/',
-//   },
-// ]
+const REPOS = [
+  'Teknasyon/rocket-ui',
+  'gokh4nozturk/gokhanozturk.io',
+  'magicuidesign/magicui',
+  'pqoqubbw/icons',
+  'RustDili/Rust-Ogrenmek',
+  'gokh4nozturk/linguolink',
+]
 
 export default async function Works() {
-  const repos = ['Teknasyon/rocket-ui', 'gokh4nozturk/gokhanozturk.io', 'magicuidesign/magicui', 'pqoqubbw/icons', 'RustDili/Rust-Ogrenmek', 'gokh4nozturk/linguolink']
   const github = new Github()
   const works = await Promise.all(
-    repos.map(async (repo) => {
+    REPOS.map(async (repo) => {
       const repoData = await github.getRepo(repo)
       return repoData
     }),
@@ -36,16 +24,16 @@ export default async function Works() {
 
   return (
     <div className="w-full sm:px-2">
-      <div className="grid gap-2 sm:grid-cols-2">
+      <div className="grid gap-2">
         {works.map(work => (
-          <div key={work.id} className='border px-2 py-1 rounded-md'>
-            <a href={work.html_url} target='_blank' className='text-sm'>
+          <div key={work.id} className='grid gap-1 rounded-sm border border-neutral-300 px-2 py-1'>
+            <AnimatedLink href={work.html_url}>
               {work.full_name}
-            </a>
-            <p className='h-16 text-xs mt-1'>
+            </AnimatedLink>
+            <p className='text-xs text-neutral-400'>
               {work.description}
             </p>
-            <div className='flex gap-3 text-xs'>
+            <div className='flex gap-3 text-xs text-neutral-400'>
               <span>
                 {work.language || 'Unknown'}
               </span>
