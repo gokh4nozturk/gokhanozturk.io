@@ -26,7 +26,7 @@ function Photo({ data: photo, index }) {
         src={urls.raw}
         width={width}
         height={height}
-        alt={description || alt_description}
+        alt={description || alt_description || 'Unsplash Photo'}
       />
     </NextLink>
   )
