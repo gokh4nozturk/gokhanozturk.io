@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  @apply p-4 sm:p-20 dark:bg-[#111010] flex items-center font-sans antialiased dark:text-gray-50 
+  @apply p-4 sm:p-20 dark:bg-[#111010] flex items-center font-sans antialiased tracking-tight dark:text-gray-50 
   text-gray-900 bg-slate-50 selection:bg-yellow-100 selection:text-gray-900;
 }
 
