@@ -15,6 +15,12 @@
 
 This project is my personal website. It is built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/). It is deployed on [Vercel](https://vercel.com/).
 
+## Integrations
+
+- [Unsplash API](https://unsplash.com/developers)
+- [Github REST API](https://docs.github.com/en/rest)
+- [Raindrop.io API](https://developer.raindrop.io/)
+
 ## Features
 
 This website has the following features:
