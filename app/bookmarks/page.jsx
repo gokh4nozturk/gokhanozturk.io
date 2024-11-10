@@ -38,3 +38,20 @@ function Bookmark({ data: bookmark }) {
     </div>
   )
 }
+
+export async function generateMetadata() {
+  const siteUrl = '/bookmarks'
+
+  return {
+    title: 'Bookmarks',
+    description: 'A collection of bookmarks',
+    openGraph: {
+      title: 'Bookmarks',
+      description: 'A collection of bookmarks',
+      url: siteUrl,
+    },
+    alternates: {
+      canonical: siteUrl,
+    },
+  }
+}
