@@ -75,12 +75,12 @@ export default async function Works() {
         {works.map(work => (
           <div key={work.id} className='grid gap-1 px-1 py-3'>
             <AnimatedLink href={work.html_url} name={work.name}>
-              {work.full_name}
+              <p className='font-medium'>{work.full_name}</p>
             </AnimatedLink>
-            <p className='text-xs text-neutral-400'>
+            <p className='my-1 text-xs text-neutral-400'>
               {work.description}
             </p>
-            <div className='flex gap-3 text-xs text-neutral-400'>
+            <div className='flex gap-3 text-xs font-medium text-neutral-400'>
               <span className={cn(LANG_COLORS[work.language])}>
                 {work.language || 'Unknown'}
               </span>
