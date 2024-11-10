@@ -5,6 +5,7 @@ import NextImage from 'next/image'
 import NavItem from 'app/components/NavItem'
 import profile from 'public/icons/profile.svg'
 import { DarkModeToggle } from '@components/ThemeProvider'
+import { NameTransition } from '@components/Name'
 
 export function Header() {
   const [mounted, setMounted] = React.useState(false)
@@ -17,17 +18,19 @@ export function Header() {
     <header>
       <div className="flex items-center gap-4">
         <div className="rounded-full">
-          {mounted && <div className="grid size-16 place-items-center rounded-full border dark:bg-slate-50 md:size-20">
+          {mounted
+          && <div className="grid size-16 place-items-center rounded-full border dark:bg-slate-50 md:size-20">
             <NextImage
               src={profile}
               className="-mt-2 rounded-full"
               width={120}
               height={120}
               alt="Gökhan Öztürk"
-            /></div>}
+            />
+          </div>}
         </div>
         <div className="sm:my-10">
-          <h1 className="text-xl font-medium sm:text-3xl">Gökhan Öztürk</h1>
+          <NameTransition />
         </div>
         <div className="ml-auto">
           {mounted && <DarkModeToggle />}
