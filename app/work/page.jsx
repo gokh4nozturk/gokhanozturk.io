@@ -1,6 +1,3 @@
-// import Image from 'next/image'
-// import cover from '@public/images/cover.svg'
-// import cover2 from '@public/images/cover2.svg'
 import AnimatedLink from '@components/AnimatedLink'
 import { Github } from '@lib/github'
 
