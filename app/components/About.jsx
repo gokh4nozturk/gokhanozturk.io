@@ -22,7 +22,7 @@ export default function About() {
         </AnimatedLink>{' '}
         and in-house solutions.
       </p>
-      <p>An enthusiast for well-designed products, free & open source software contributor & maintainer, and automator of anything that I can.</p>
+      <p>I am an enthusiast for well-designed products, free & open source software contributor & maintainer, and automator of anything that I can.</p>
       <br />
       <AnimatedLink href='https://cal.com/gokhan-ozturk-bpgyxv/15min' name='Cal.com'>
         <span className='inline-flex items-center gap-2'> meet me:
