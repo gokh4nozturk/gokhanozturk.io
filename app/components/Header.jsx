@@ -27,7 +27,7 @@ export function Header() {
             /></div>}
         </div>
         <div className="sm:my-10">
-          <h1 className="text-xl sm:text-3xl">Gökhan Öztürk</h1>
+          <h1 className="text-xl font-medium sm:text-3xl">Gökhan Öztürk</h1>
         </div>
         <div className="ml-auto">
           {mounted && <DarkModeToggle />}
@@ -35,7 +35,7 @@ export function Header() {
       </div>
       <nav className="my-8 sm:my-10">
         <NavItem href="/" name="home" />
-        <NavItem href="/blog" name="blog" />
+        {/* <NavItem href="/blog" name="blog" /> */}
         <NavItem href="/work" name="work" />
         <NavItem href="/photos" name="photos" />
         {/* <NavItem href="/bookmarks" name="bookmarks" /> */}
