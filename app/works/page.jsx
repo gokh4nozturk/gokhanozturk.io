@@ -4,10 +4,10 @@ import { GitFork, Star } from 'lucide-react'
 import cn from 'classnames'
 
 const REPOS = [
-  'Teknasyon/rocket-ui',
-  'gokh4nozturk/gokhanozturk.io',
   'magicuidesign/magicui',
   'pqoqubbw/icons',
+  'Teknasyon/rocket-ui',
+  'gokh4nozturk/gokhanozturk.io',
   'RustDili/Rust-Ogrenmek',
   'gokh4nozturk/linguolink',
 ]
@@ -74,7 +74,7 @@ export default async function Works() {
       <div className="grid divide-y">
         {works.map(work => (
           <div key={work.id} className='grid gap-1 px-1 py-3'>
-            <AnimatedLink href={work.html_url}>
+            <AnimatedLink href={work.html_url} name={work.name}>
               {work.full_name}
             </AnimatedLink>
             <p className='text-xs text-neutral-400'>
