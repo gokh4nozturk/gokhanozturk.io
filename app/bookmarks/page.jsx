@@ -1,38 +1,40 @@
-import { Raindrop } from '@lib/raindrop'
+import AnimatedLink from '@components/AnimatedLink'
+import Raindrop from '@lib/raindrop'
 
 export default async function Bookmarks() {
   const raindrop = new Raindrop()
-  const { items: bookmarks } = await raindrop.getRaindrops()
+  const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0 })
 
   return (
-    <div className="flex w-full flex-col items-start">
-      <div className="flex flex-col gap-4">
-        {bookmarks?.map((bookmark, index) => (
-          <Bookmark key={bookmark.id} data={bookmark} index={index} />
-        ))}
-      </div>
+    <div className="grid w-full divide-y">
+      {bookmarks?.map(bookmark => (
+        <Bookmark key={bookmark._id} data={bookmark} />
+      ))}
     </div>
   )
 }
 
-function Bookmark({ data: bookmark, _index }) {
+function Bookmark({ data: bookmark }) {
   const { title, link, tags, created } = bookmark
   const date = new Date(created)
   return (
-    <div className="flex w-full flex-col items-start gap-2">
-      <div className="flex gap-4">
-        <span className="dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
+    <div className="flex justify-between gap-10 px-1 py-2">
+      <div className='flex flex-col items-start gap-1 text-sm'>
+        <span className="text-xs dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
+        <AnimatedLink href={link} className="dark:text-gray-400">{title}</AnimatedLink>
+        <div className="flex gap-2">
+          {
+            tags.map((tag, index) => (
+              <span key={index} className="text-xs dark:text-gray-400">#{tag}</span>
+            ))
+          }
+        </div>
       </div>
-      <div className="flex gap-4">
-        <a className="underline-offset-4 hover:underline dark:text-gray-100" href={link}>{title}</a>
-      </div>
-      <div className="flex gap-2 text-sm">
-        {
-          tags.map((tag, index) => (
-            <span key={index} className="dark:text-gray-400">#{tag}</span>
-          ))
-        }
-      </div>
+      <img
+        className="order-1 hidden aspect-[960/576] w-32 shrink-0 rounded-sm object-cover text-xs sm:block"
+        src={bookmark.cover}
+        alt={bookmark.title}
+      />
     </div>
   )
 }
