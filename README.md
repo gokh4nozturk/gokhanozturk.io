@@ -23,6 +23,7 @@ This website has the following features:
 - Dark mode
 - SEO friendly
 - Vercel Analytics
+- Vercel Speed Insights score 98/100
 - Google Lighthouse score 98/100
 - Unsplash API integration
 
