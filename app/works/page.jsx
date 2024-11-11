@@ -60,6 +60,8 @@ const LANG_COLORS = {
   'Angular.js': 'text',
 }
 
+export const revalidate = 3600 // 60 * 60 seconds
+
 export default async function Works() {
   const github = new Github()
   const works = await Promise.all(
