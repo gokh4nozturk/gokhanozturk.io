@@ -76,7 +76,7 @@ export function DarkModeToggle() {
   return (
     <animated.div
       aria-label="Toggle light/dark mode"
-      className='relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-gray-800'>
+      className='relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-slate-50'>
       {themes.map(t => (
         <animated.button
           key={t}
