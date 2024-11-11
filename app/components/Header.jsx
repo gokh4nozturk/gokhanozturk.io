@@ -19,7 +19,7 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted
-          && <div className="grid size-16 place-items-center rounded-full border dark:bg-slate-50 md:size-20">
+          && <div className="grid size-16 place-items-center rounded-full border bg-yellow-50/70 dark:bg-slate-50 md:size-20">
             <NextImage
               src={profile}
               className="-mt-2 rounded-full"
