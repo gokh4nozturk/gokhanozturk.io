@@ -2,6 +2,8 @@ import { Unsplash } from '@lib/unsplash'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 
+export const revalidate = 3600 // 60 * 60 seconds
+
 export default async function Photos() {
   const unsplash = new Unsplash()
   const photos = await unsplash.getPhotos()

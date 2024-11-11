@@ -1,6 +1,8 @@
 import AnimatedLink from '@components/AnimatedLink'
 import Raindrop from '@lib/raindrop'
 
+export const revalidate = 3600 // 60 * 60 seconds
+
 export default async function Bookmarks() {
   const raindrop = new Raindrop()
   const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0 })
