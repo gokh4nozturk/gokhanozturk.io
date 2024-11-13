@@ -14,7 +14,7 @@ function NavItem({ href, name }) {
       href={href}
       className={cn(
         isActive
-          ? 'font-normal text-gray-950 dark:text-gray-100'
+          ? 'font-medium text-gray-950 dark:text-gray-100'
           : 'font-normal text-gray-500 dark:text-gray-400 group',
         'mr-4 transition-all duration-300 ease-in-out',
       )}
