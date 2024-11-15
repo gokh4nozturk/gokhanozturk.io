@@ -1,6 +1,6 @@
 export default function Footer() {
   const links = [
-    { name: '@gokh4nozturk', url: 'https://x.com/gokh4nozturk' },
+    { name: '@gokh4nozturk', url: 'https://x.com/intent/follow?screen_name=gokh4nozturk' },
     { name: 'linkedin', url: 'https://www.linkedin.com/in/gokhannozturk' },
     { name: 'github', url: 'https://github.com/gokh4nozturk' },
   ]
