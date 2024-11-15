@@ -1,6 +1,6 @@
 export default function Container({ children }) {
   return (
-    <div className='container mx-auto max-w-2xl'>
+    <div className='container grid sm:mx-auto sm:max-w-2xl'>
       {children}
     </div>
   )
