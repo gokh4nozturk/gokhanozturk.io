@@ -72,10 +72,10 @@ export default async function Works() {
   )
 
   return (
-    <div className="w-full sm:px-2">
+    <div className="w-full">
       <div className="grid divide-y">
         {works.map(work => (
-          <div key={work.id} className='grid gap-1 px-1 py-3'>
+          <div key={work.id} className='grid gap-1 py-3'>
             <AnimatedLink href={work.html_url} name={work.name}>
               <p className='font-medium'>{work.full_name}</p>
             </AnimatedLink>
