@@ -23,7 +23,7 @@ function Bookmark({ data: bookmark }) {
     <div className="flex justify-between gap-10 py-2">
       <div className='flex flex-col items-start gap-1 text-sm'>
         <span className="text-xs dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
-        <AnimatedLink href={link} className="dark:text-gray-400">{title}</AnimatedLink>
+        <AnimatedLink href={link} className="dark:text-gray-400 font-medium">{title}</AnimatedLink>
         <div className="flex gap-2">
           {
             tags.map((tag, index) => (
