@@ -9,7 +9,7 @@ export default async function Photos() {
   const photos = await unsplash.getPhotos()
 
   return (
-    <div className="sm:columns-2">
+    <div className="gap-1 sm:columns-3">
       {photos.map((photo, index) => (
         <Photo key={photo.id} data={photo} index={index} />
       ))}
@@ -24,11 +24,12 @@ function Photo({ data: photo, index }) {
       <NextImage
         priority={index < 2}
         loading={index < 2 ? 'eager' : 'lazy'}
-        className="mb-4 rounded-lg"
+        className="mb-1 rounded-sm transition-all hover:scale-[1.01]"
         src={urls.raw}
         width={width}
         height={height}
         alt={description || alt_description || 'Unsplash Photo'}
+        title={description}
       />
     </NextLink>
   )

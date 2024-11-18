@@ -76,8 +76,8 @@ export default async function Works() {
       <div className="grid divide-y">
         {works.map(work => (
           <div key={work.id} className='grid gap-1 py-3'>
-            <AnimatedLink href={work.html_url} name={work.name}>
-              <p className='font-medium'>{work.full_name}</p>
+            <AnimatedLink href={work.html_url} name={work.name} className='font-medium'>
+              {work.full_name}
             </AnimatedLink>
             <p className='my-1 text-xs text-neutral-400'>
               {work.description}
