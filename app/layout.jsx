@@ -1,6 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Container from '@components/Container'
 import { Header } from '@components/Header'
 import { ThemeProvider } from '@components/ThemeProvider'
 import '@styles/globals.css'
@@ -46,22 +45,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning title='Gökhan Öztürk'>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <body className='grid h-dvh grid-rows-[220px_1fr] items-center bg-slate-50 px-4 font-sans tracking-tight
+            text-gray-900 antialiased selection:bg-yellow-100 selection:text-gray-900
+            dark:bg-[#111010] dark:text-gray-50 sm:px-20'
         >
-          <Container>
-            <Header />
+          <Header />
+          <main className='flex h-full flex-col justify-between'>{children}</main>
 
-            <main className="main mt-10">{children}</main>
-          </Container>
-        </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
-      </body>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
