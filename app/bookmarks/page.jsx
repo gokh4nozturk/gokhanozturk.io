@@ -20,7 +20,7 @@ function Bookmark({ data: bookmark }) {
   const { title, link, tags, created } = bookmark
   const date = new Date(created)
   return (
-    <div className="flex justify-between gap-10 px-1 py-2">
+    <div className="flex justify-between gap-10 py-2">
       <div className='flex flex-col items-start gap-1 text-sm'>
         <span className="text-xs dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
         <AnimatedLink href={link} className="dark:text-gray-400">{title}</AnimatedLink>

@@ -45,23 +45,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning title='Gökhan Öztürk'>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
+      <body className='mx-auto grid h-dvh grid-rows-[220px_1fr] items-center bg-slate-50 px-4 font-sans tracking-tight text-gray-900
+            antialiased selection:bg-yellow-100 selection:text-gray-900 dark:bg-[#111010]
+            dark:text-gray-50 sm:max-w-3xl sm:px-20'
       >
-        <body className='grid h-dvh grid-rows-[220px_1fr] items-center bg-slate-50 px-4 font-sans tracking-tight
-            text-gray-900 antialiased selection:bg-yellow-100 selection:text-gray-900
-            dark:bg-[#111010] dark:text-gray-50 sm:px-20'
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
           <Header />
           <main className='flex h-full flex-col justify-between'>{children}</main>
 
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
