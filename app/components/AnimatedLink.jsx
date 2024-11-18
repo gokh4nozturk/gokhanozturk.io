@@ -1,4 +1,6 @@
-export default function AnimatedLink({ children, color = 'black', href = '#', name = 'Link' }) {
+import cn from 'classnames'
+
+export default function AnimatedLink({ children, color = 'black', href = '#', name = 'Link', className }) {
   const textColor = {
     black: 'sm:hover:text-gray-900 sm:dark:hover:text-gray-200',
     rockads: 'sm:hover:text-[#007CE1]',
@@ -17,7 +19,7 @@ export default function AnimatedLink({ children, color = 'black', href = '#', na
 
   return (
     <a
-      className={`group ${textColor} transition-all duration-300 ease-in-out`}
+      className={cn('group transition-all duration-300 ease-in-out', textColor, className)}
       href={href}
       target="_blank"
       aria-label={`Link to external website of ${name}`}
