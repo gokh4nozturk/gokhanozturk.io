@@ -2,7 +2,7 @@ import AnimatedLink from '@components/AnimatedLink'
 
 export default function About() {
   return (
-    <div className="mb-5">
+    <div>
       <p>
           Hi 👋 my name is Gökhan, a software engineer at{' '}
         <AnimatedLink
