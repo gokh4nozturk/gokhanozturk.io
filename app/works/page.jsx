@@ -3,6 +3,7 @@ import { Github } from '@lib/github'
 import { GitFork, Star } from 'lucide-react'
 import cn from 'classnames'
 import TitleDescription from '@components/TitleDescription'
+import { ScrollArea } from '../components/ui/scroll-area'
 
 const REPOS = [
   'magicuidesign/magicui',
@@ -75,11 +76,13 @@ export default async function Works() {
   return (
     <div className="w-full">
       <TitleDescription title='Works' description='A collection of works that I have contributed to.' />
-      <div className="grid divide-y">
-        {works.map(work => (
-          <Work key={work.id} data={work} />
-        ))}
-      </div>
+      <ScrollArea className='h-[480px]'>
+        <div className="grid divide-y">
+          {works.map(work => (
+            <Work key={work.id} data={work} />
+          ))}
+        </div>
+      </ScrollArea>
     </div>
   )
 }
