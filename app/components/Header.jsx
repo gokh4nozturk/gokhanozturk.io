@@ -36,7 +36,7 @@ export function Header() {
           {mounted && <DarkModeToggle />}
         </div>
       </div>
-      <nav className="my-8 sm:my-10">
+      <nav className="my-6">
         <NavItem href="/" name="home" />
         {/* <NavItem href="/blog" name="blog" /> */}
         <NavItem href="/photos" name="photos" />
