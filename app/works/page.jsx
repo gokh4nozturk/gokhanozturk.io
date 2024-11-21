@@ -2,6 +2,7 @@ import AnimatedLink from '@components/AnimatedLink'
 import { Github } from '@lib/github'
 import { GitFork, Star } from 'lucide-react'
 import cn from 'classnames'
+import TitleDescription from '@components/TitleDescription'
 
 const REPOS = [
   'magicuidesign/magicui',
@@ -73,30 +74,37 @@ export default async function Works() {
 
   return (
     <div className="w-full">
+      <TitleDescription title='Works' description='A collection of works that I have contributed to.' />
       <div className="grid divide-y">
         {works.map(work => (
-          <div key={work.id} className='grid gap-1 py-3'>
-            <AnimatedLink href={work.html_url} name={work.name} className='font-medium'>
-              {work.full_name}
-            </AnimatedLink>
-            <p className='my-1 text-xs text-neutral-400'>
-              {work.description}
-            </p>
-            <div className='flex gap-3 text-xs font-medium text-neutral-400'>
-              <span className={cn(LANG_COLORS[work.language])}>
-                {work.language || 'Unknown'}
-              </span>
-              <span className='flex items-center gap-1'>
-                <Star size={12} />
-                {work.stargazers_count}
-              </span>
-              <span className='flex items-center gap-1'>
-                <GitFork size={12} />
-                {work.forks_count}
-              </span>
-            </div>
-          </div>
+          <Work key={work.id} data={work} />
         ))}
+      </div>
+    </div>
+  )
+}
+
+function Work({ data: work }) {
+  return (
+    <div key={work.id} className='grid gap-1 py-3'>
+      <AnimatedLink href={work.html_url} name={work.name} className='font-medium'>
+        {work.full_name}
+      </AnimatedLink>
+      <p className='my-1 text-xs text-neutral-400'>
+        {work.description}
+      </p>
+      <div className='flex gap-3 text-xs font-medium text-neutral-400'>
+        <span className={cn(LANG_COLORS[work.language])}>
+          {work.language || 'Unknown'}
+        </span>
+        <span className='flex items-center gap-1'>
+          <Star size={12} />
+          {work.stargazers_count}
+        </span>
+        <span className='flex items-center gap-1'>
+          <GitFork size={12} />
+          {work.forks_count}
+        </span>
       </div>
     </div>
   )
