@@ -1,4 +1,5 @@
 import AnimatedLink from '@components/AnimatedLink'
+import TitleDescription from '@components/TitleDescription'
 import Raindrop from '@lib/raindrop'
 
 export const revalidate = 3600 // 60 * 60 seconds
@@ -8,11 +9,15 @@ export default async function Bookmarks() {
   const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0 })
 
   return (
-    <div className="grid w-full divide-y">
-      {bookmarks?.map(bookmark => (
-        <Bookmark key={bookmark._id} data={bookmark} />
-      ))}
+    <div className='w-full'>
+      <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
+      <div className="grid divide-y">
+        {bookmarks?.map(bookmark => (
+          <Bookmark key={bookmark._id} data={bookmark} />
+        ))}
+      </div>
     </div>
+
   )
 }
 
@@ -23,7 +28,7 @@ function Bookmark({ data: bookmark }) {
     <div className="flex justify-between gap-10 py-2">
       <div className='flex flex-col items-start gap-1 text-sm'>
         <span className="text-xs dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
-        <AnimatedLink href={link} className="dark:text-gray-400 font-medium">{title}</AnimatedLink>
+        <AnimatedLink href={link} className="font-medium dark:text-gray-400">{title}</AnimatedLink>
         <div className="flex gap-2">
           {
             tags.map((tag, index) => (
