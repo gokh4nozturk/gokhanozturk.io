@@ -2,6 +2,7 @@ import TitleDescription from '@components/TitleDescription'
 import { Unsplash } from '@lib/unsplash'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
+import { ScrollArea } from '../components/ui/scroll-area'
 
 export const revalidate = 3600 // 60 * 60 seconds
 
@@ -12,11 +13,13 @@ export default async function Photos() {
   return (
     <div className='w-full'>
       <TitleDescription title='Photos' description='A collection of photos that I have taken.' />
-      <div className="gap-1 pt-2 sm:columns-3">
-        {photos.map((photo, index) => (
-          <Photo key={photo.id} data={photo} index={index} />
-        ))}
-      </div>
+      <ScrollArea className='h-[480px]'>
+        <div className="gap-1 pt-2 sm:columns-3">
+          {photos.map((photo, index) => (
+            <Photo key={photo.id} data={photo} index={index} />
+          ))}
+        </div>
+      </ScrollArea>
     </div>
   )
 }
