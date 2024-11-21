@@ -1,6 +1,7 @@
 import AnimatedLink from '@components/AnimatedLink'
 import TitleDescription from '@components/TitleDescription'
 import Raindrop from '@lib/raindrop'
+import { ScrollArea } from '../components/ui/scroll-area'
 
 export const revalidate = 3600 // 60 * 60 seconds
 
@@ -11,11 +12,13 @@ export default async function Bookmarks() {
   return (
     <div className='w-full'>
       <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
-      <div className="grid divide-y">
-        {bookmarks?.map(bookmark => (
-          <Bookmark key={bookmark._id} data={bookmark} />
-        ))}
-      </div>
+      <ScrollArea className='h-[480px]'>
+        <div className="grid divide-y">
+          {bookmarks?.map(bookmark => (
+            <Bookmark key={bookmark._id} data={bookmark} />
+          ))}
+        </div>
+      </ScrollArea>
     </div>
 
   )
