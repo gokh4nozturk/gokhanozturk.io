@@ -12,9 +12,9 @@ export default async function Photos() {
 
   return (
     <div className='w-full'>
-      <TitleDescription title='Photos' description='A collection of photos that I have taken.' />
-      <ScrollArea className='h-[480px]'>
-        <div className="gap-1 pt-2 sm:columns-3">
+      <ScrollArea className='h-[500px]'>
+        <TitleDescription title='Photos' description='A collection of photos that I have taken.' />
+        <div className="gap-1 pb-10 pt-2 sm:columns-3">
           {photos.map((photo, index) => (
             <Photo key={photo.id} data={photo} index={index} />
           ))}
@@ -31,7 +31,7 @@ function Photo({ data: photo, index }) {
       <NextImage
         priority={index < 2}
         loading={index < 2 ? 'eager' : 'lazy'}
-        className="mb-1 rounded-sm transition-all hover:scale-[1.01]"
+        className="mb-2 rounded-sm transition-all hover:scale-[1.01] md:mb-1"
         src={urls.raw}
         width={width}
         height={height}
