@@ -11,9 +11,9 @@ export default async function Bookmarks() {
 
   return (
     <div className='w-full'>
-      <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
-      <ScrollArea className='h-[480px]'>
-        <div className="grid divide-y">
+      <ScrollArea className='h-[500px]'>
+        <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
+        <div className="grid divide-y pb-10">
           {bookmarks?.map(bookmark => (
             <Bookmark key={bookmark._id} data={bookmark} />
           ))}
