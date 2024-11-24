@@ -12,7 +12,7 @@ export default async function Photos() {
 
   return (
     <div className='w-full'>
-      <ScrollArea className='h-[500px]'>
+      <ScrollArea className='h-[512px]'>
         <TitleDescription title='Photos' description='A collection of photos that I have taken.' />
         <div className="gap-1 pb-10 pt-2 sm:columns-3">
           {photos.map((photo, index) => (
