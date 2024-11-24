@@ -15,7 +15,7 @@ export function Header() {
   }, [])
 
   return (
-    <header>
+    <header className='transition-all'>
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted
@@ -36,7 +36,7 @@ export function Header() {
           {mounted && <DarkModeToggle />}
         </div>
       </div>
-      <nav className="my-6">
+      <nav className="my-3 sm:my-6">
         <NavItem href="/" name="home" />
         {/* <NavItem href="/blog" name="blog" /> */}
         <NavItem href="/photos" name="photos" />
