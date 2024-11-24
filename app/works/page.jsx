@@ -76,7 +76,7 @@ export default async function Works() {
   return (
     <div className="w-full">
       <TitleDescription title='Works' description='A collection of works that I have contributed to.' />
-      <ScrollArea className='h-[430px] sm:h-[480px]'>
+      <ScrollArea className='h-[430px]'>
         <div className="grid divide-y pb-10">
           {works.map(work => (
             <Work key={work.id} data={work} />

@@ -12,7 +12,7 @@ export default async function Bookmarks() {
   return (
     <div className='w-full'>
       <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
-      <ScrollArea className='h-[430px] sm:h-[480px]'>
+      <ScrollArea className='h-[430px]'>
         <div className="grid divide-y pb-10">
           {bookmarks?.map(bookmark => (
             <Bookmark key={bookmark._id} data={bookmark} />
