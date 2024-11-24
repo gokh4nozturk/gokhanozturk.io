@@ -19,9 +19,10 @@ function NavItem({ href, name }) {
         'mr-4 transition-all duration-300 ease-in-out',
       )}
     >
-      <span className={`
-      bg-gradient-to-r from-gray-950 to-gray-950 bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-all
-      duration-500 ease-out dark:from-gray-400 dark:to-gray-400 sm:group-hover:bg-[length:100%_1px]`
+      <span className={cn(isActive && 'bg-[length:100%_1px]',
+        `bg-gradient-to-r from-gray-950 to-gray-950 bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-all
+      duration-500 ease-out dark:from-gray-400 dark:to-gray-400 sm:group-hover:bg-[length:100%_1px]`,
+      )
       }>
         {name}
       </span>
