@@ -10,10 +10,10 @@ export const metadata = {
     default: 'Gökhan Öztürk – Developer, crafter.',
     template: '%s | Gökhan Öztürk – Developer, crafter.',
   },
-  description: 'Front-end developer, JavaScript enthusiast.',
+  description: 'Front-end developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
   openGraph: {
     title: 'Gökhan Öztürk – Developer, crafter.',
-    description: 'Front-end developer, JavaScript enthusiast.',
+    description: 'Front-end developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
     url: 'https://gokhanozturk.io',
     site_name: 'Gökhan Öztürk',
     locale: 'en_US',
@@ -31,7 +31,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Gökhan Öztürk',
+    title: 'Gökhan Öztürk – Developer, crafter.',
     card: 'summary_large_image',
   },
   icons: {
