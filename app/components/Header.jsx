@@ -22,6 +22,9 @@ export function Header() {
           && <div className="grid size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
             <NextImage
               src={profile}
+              priority
+              loading='eager'
+              quality={100}
               className="-mt-2 rounded-full"
               width={120}
               height={120}
