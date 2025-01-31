@@ -6,6 +6,7 @@ import TitleDescription from '@components/TitleDescription'
 import { ScrollArea } from '../components/ui/scroll-area'
 
 const REPOS = [
+  'gokh4nozturk/fancy-hn',
   'magicuidesign/magicui',
   'pqoqubbw/icons',
   'Teknasyon/rocket-ui',
