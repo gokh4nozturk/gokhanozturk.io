@@ -16,7 +16,7 @@ function NavItem({ href, name }) {
         isActive
           ? 'font-medium text-gray-950 dark:text-gray-100'
           : 'font-normal text-gray-500 dark:text-gray-400 group',
-        'mr-4 transition-all duration-300 ease-in-out',
+        'mr-4 transition-all duration-300 ease-in-out text-sm sm:text-base',
       )}
     >
       <span className={cn(isActive && 'bg-[length:100%_1px] dark:from-gray-100 dark:to-gray-100',

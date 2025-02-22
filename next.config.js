@@ -8,6 +8,7 @@ const nextConfig = {
       'images.squarespace-cdn.com',
       'cdn.pixabay.com',
       'cdn.svgporn.com',
+      '*',
     ],
   },
 }

@@ -6,7 +6,7 @@ import { Corner, Root, ScrollAreaScrollbar, ScrollAreaThumb, Viewport } from '@r
 
 export function ScrollArea({ children, className }) {
   return (
-    <Root className={cn('relative overflow-hidden', className)}>
+    <Root className={cn('relative overflow-hidden h-full max-h-[calc(100dvh-21rem)] min-h-[430px]', className)}>
       <Viewport className="size-full rounded-[inherit]">
         {children}
       </Viewport>

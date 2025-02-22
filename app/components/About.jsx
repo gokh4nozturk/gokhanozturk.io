@@ -2,7 +2,7 @@ import AnimatedLink from '@components/AnimatedLink'
 
 export default function About() {
   return (
-    <div>
+    <div className='-mt-20 text-sm sm:-mt-0 sm:text-base'>
       <p>
           Hi 👋 my name is Gökhan, a software engineer at{' '}
         <AnimatedLink
@@ -23,6 +23,7 @@ export default function About() {
         and in-house solutions.
       </p>
       <p>I am an enthusiast for well-designed products, free & open source software contributor & maintainer, and automator of anything that I can.</p>
+      <br />
       <br />
       <AnimatedLink href='https://cal.com/gokhan-ozturk-bpgyxv/15min' name='Cal.com'>
         <span className='inline-flex items-center gap-2'> meet me:
