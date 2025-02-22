@@ -19,24 +19,27 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted
-          && <div className="grid size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
-            <NextImage
-              src={profile}
-              priority
-              loading='eager'
-              quality={100}
-              className="-mt-2 rounded-full"
-              width={120}
-              height={120}
-              alt="Gökhan Öztürk"
-            />
-          </div>}
+            ? (<div className="grid size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
+              <NextImage
+                src={profile}
+                priority
+                loading='eager'
+                quality={100}
+                className="-mt-2 rounded-full"
+                width={120}
+                height={120}
+                alt="Gökhan Öztürk"
+              />
+            </div>)
+            : (<div className="size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
+              <div className="size-full animate-pulse rounded-full bg-gray-200 dark:bg-slate-50" />
+            </div>)}
         </div>
         <div className="sm:my-10">
           <NameTransition />
         </div>
         <div className="ml-auto">
-          {mounted && <DarkModeToggle />}
+          {mounted ? <DarkModeToggle /> : <div className="h-8 w-[88px] animate-pulse rounded-md bg-gray-200 dark:bg-slate-50" />}
         </div>
       </div>
       <nav className="my-3 sm:my-6">

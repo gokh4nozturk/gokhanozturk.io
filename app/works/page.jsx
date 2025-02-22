@@ -78,7 +78,7 @@ export default async function Works() {
   return (
     <div className="w-full">
       <TitleDescription title='Works' description='A collection of works that I have contributed to.' />
-      <ScrollArea className='h-[430px]'>
+      <ScrollArea>
         <div className="grid divide-y pb-10">
           {works.map(work => (
             <Work key={work.id} data={work} />
@@ -92,10 +92,10 @@ export default async function Works() {
 function Work({ data: work }) {
   return (
     <div key={work.id} className='grid gap-1 py-3'>
-      <AnimatedLink href={work.html_url} name={work.name} className='font-medium'>
+      <AnimatedLink href={work.html_url} name={work.name} className='text-sm font-medium sm:text-base'>
         {work.full_name}
       </AnimatedLink>
-      <p className='my-1 text-xs text-neutral-400'>
+      <p className='my-1 truncate text-xs text-neutral-400'>
         {work.description}
       </p>
       <div className='flex gap-3 text-xs font-medium text-neutral-400'>

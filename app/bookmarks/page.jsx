@@ -1,18 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 import AnimatedLink from '@components/AnimatedLink'
 import TitleDescription from '@components/TitleDescription'
 import Raindrop from '@lib/raindrop'
-import { ScrollArea } from '../components/ui/scroll-area'
+import YearFilter from '@components/YearFilter'
+import { ScrollArea } from '@components/ui/scroll-area'
 
 export const revalidate = 3600 // 60 * 60 seconds
 
-export default async function Bookmarks() {
+export default async function Bookmarks({ searchParams }) {
   const raindrop = new Raindrop()
-  const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0 })
+  const year = searchParams.year || 'all'
+  const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0, year })
 
   return (
     <div className='w-full'>
-      <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
-      <ScrollArea className='h-[430px]'>
+      <div className='flex items-start justify-between'>
+        <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
+        <YearFilter year={year} />
+      </div>
+      <ScrollArea>
         <div className="grid divide-y pb-10">
           {bookmarks?.map(bookmark => (
             <Bookmark key={bookmark._id} data={bookmark} />
@@ -20,7 +26,6 @@ export default async function Bookmarks() {
         </div>
       </ScrollArea>
     </div>
-
   )
 }
 
@@ -31,7 +36,7 @@ function Bookmark({ data: bookmark }) {
     <div className="flex justify-between gap-10 py-2">
       <div className='flex flex-col items-start gap-1 text-sm'>
         <span className="text-xs dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
-        <AnimatedLink href={link} className="font-medium dark:text-gray-400">{title}</AnimatedLink>
+        <AnimatedLink href={link} className="text-sm font-medium dark:text-gray-400 sm:text-base">{title}</AnimatedLink>
         <div className="flex gap-2">
           {
             tags.map((tag, index) => (
