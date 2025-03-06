@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function ResumeLayout({ children }) {
   return (
-    <article className="prose prose-neutral dark:prose-invert max-w-2xl mx-auto py-8">
+    <article className="prose prose-neutral dark:prose-invert max-w-2xl mx-auto">
       {children}
     </article>
   )
