@@ -47,8 +47,8 @@ export function Header() {
         {/* <NavItem href="/blog" name="blog" /> */}
         <NavItem href="/photos" name="photos" />
         <NavItem href="/works" name="works" />
-        <NavItem href="/career" name="career" />
         <NavItem href="/bookmarks" name="bookmarks" />
+        <NavItem href="/resume" name="resume" />
       </nav>
     </header>
   )
