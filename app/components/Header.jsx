@@ -42,13 +42,13 @@ export function Header() {
           {mounted ? <DarkModeToggle /> : <div className="h-8 w-[88px] animate-pulse rounded-md bg-gray-200 dark:bg-slate-50" />}
         </div>
       </div>
-      <nav className="my-3 sm:my-6">
+      <nav className="my-3 sm:my-6 flex items-center">
         <NavItem href="/" name="home" />
         {/* <NavItem href="/blog" name="blog" /> */}
         <NavItem href="/photos" name="photos" />
         <NavItem href="/works" name="works" />
         <NavItem href="/bookmarks" name="bookmarks" />
-        <NavItem href="/resume" name="resume" />
+        <NavItem href="/resume" name="cv" />
       </nav>
     </header>
   )
