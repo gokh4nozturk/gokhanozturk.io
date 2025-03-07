@@ -123,7 +123,7 @@ export default function ResumePage() {
           </li>
         </ul>
 
-        <h3 className="mb-1 mt-6 border-b text-lg font-medium text-gray-900 dark:text-white">
+        <h3 className="mb-1 mt-6 border-b border-gray-200 text-lg font-medium text-gray-900 dark:text-white">
           Open Source Contributions
         </h3>
 
