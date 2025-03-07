@@ -32,7 +32,7 @@ export function DarkModeToggle() {
     });
 
     setTheme(theme);
-  }, [api, theme, setTheme]);
+  }, []);
 
   const handleThemeChange = (t) => {
     if (t && t !== theme) {
@@ -80,12 +80,12 @@ export function DarkModeToggle() {
       className="relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-slate-50"
     >
       {themes.map((t) => (
-        <animated.input
+        <animated.button
           key={t}
-          type="radio"
-          checked={theme === t}
+          aria-checked={theme === t}
           aria-label={t}
           title={t}
+          type="button"
           className={cn(
             'rounded-full p-1 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
             `${theme === t ? 'bg-blue-300 dark:bg-gray-900 ' : 'bg-gray-200 dark:bg-gray-500'}`
@@ -96,7 +96,7 @@ export function DarkModeToggle() {
         >
           <span className="sr-only">{t}</span>
           {themeIcon[t]}
-        </animated.input>
+        </animated.button>
       ))}
       <animated.span
         style={styles}
