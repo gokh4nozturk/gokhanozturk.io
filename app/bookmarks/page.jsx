@@ -1,48 +1,55 @@
 /* eslint-disable @next/next/no-img-element */
-import AnimatedLink from '@components/AnimatedLink'
-import TitleDescription from '@components/TitleDescription'
-import Raindrop from '@lib/raindrop'
-import YearFilter from '@components/YearFilter'
-import { ScrollArea } from '@components/ui/scroll-area'
+import AnimatedLink from '@components/AnimatedLink';
+import TitleDescription from '@components/TitleDescription';
+import YearFilter from '@components/YearFilter';
+import { ScrollArea } from '@components/ui/scroll-area';
+import Raindrop from '@lib/raindrop';
 
-export const revalidate = 3600 // 60 * 60 seconds
+export const revalidate = 3600; // 60 * 60 seconds
 
 export default async function Bookmarks({ searchParams }) {
-  const raindrop = new Raindrop()
-  const year = searchParams.year || 'all'
-  const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0, year })
+  const raindrop = new Raindrop();
+  const year = searchParams.year || 'all';
+  const bookmarks = await raindrop.getBookmark({ perPage: 100, sort: '-created', page: 0, year });
 
   return (
-    <div className='w-full'>
-      <div className='flex items-start justify-between'>
-        <TitleDescription title='Bookmarks' description='A collection of bookmarks that I have saved.' />
+    <div className="w-full">
+      <div className="flex items-start justify-between">
+        <TitleDescription
+          title="Bookmarks"
+          description="A collection of bookmarks that I have saved."
+        />
         <YearFilter year={year} />
       </div>
       <ScrollArea>
         <div className="grid divide-y pb-10">
-          {bookmarks?.map(bookmark => (
+          {bookmarks?.map((bookmark) => (
             <Bookmark key={bookmark._id} data={bookmark} />
           ))}
         </div>
       </ScrollArea>
     </div>
-  )
+  );
 }
 
 function Bookmark({ data: bookmark }) {
-  const { title, link, tags, created } = bookmark
-  const date = new Date(created)
+  const { title, link, tags, created } = bookmark;
+  const date = new Date(created);
   return (
     <div className="flex justify-between gap-10 py-2">
-      <div className='flex flex-col items-start gap-1 text-sm'>
-        <span className="text-xs dark:text-gray-300">{date.toLocaleDateString().replaceAll('/', '.')}</span>
-        <AnimatedLink href={link} className="text-sm font-medium dark:text-gray-400 sm:text-base">{title}</AnimatedLink>
+      <div className="flex flex-col items-start gap-1 text-sm">
+        <span className="text-xs dark:text-gray-300">
+          {date.toLocaleDateString().replaceAll('/', '.')}
+        </span>
+        <AnimatedLink href={link} className="text-sm font-medium dark:text-gray-400 sm:text-base">
+          {title}
+        </AnimatedLink>
         <div className="flex gap-2">
-          {
-            tags.map((tag, index) => (
-              <span key={index} className="text-xs dark:text-gray-400">#{tag}</span>
-            ))
-          }
+          {tags.map((tag) => (
+            <span key={tag} className="text-xs dark:text-gray-400">
+              #{tag}
+            </span>
+          ))}
         </div>
       </div>
       <img
@@ -51,11 +58,11 @@ function Bookmark({ data: bookmark }) {
         alt={bookmark.title}
       />
     </div>
-  )
+  );
 }
 
 export async function generateMetadata() {
-  const siteUrl = '/bookmarks'
+  const siteUrl = '/bookmarks';
 
   return {
     title: 'Bookmarks',
@@ -68,5 +75,5 @@ export async function generateMetadata() {
     alternates: {
       canonical: siteUrl,
     },
-  }
+  };
 }

@@ -1,45 +1,51 @@
-'use client'
+'use client';
 
-import React from 'react'
-import NextImage from 'next/image'
-import NavItem from 'app/components/NavItem'
-import profile from 'public/icons/profile.svg'
-import { DarkModeToggle } from '@components/ThemeProvider'
-import { NameTransition } from '@components/Name'
+import { NameTransition } from '@components/Name';
+import { DarkModeToggle } from '@components/ThemeProvider';
+import NavItem from 'app/components/NavItem';
+import NextImage from 'next/image';
+import profile from 'public/icons/profile.svg';
+import React from 'react';
 
 export function Header() {
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   return (
-    <header className='transition-all'>
+    <header className="transition-all">
       <div className="flex items-center gap-4">
         <div className="rounded-full">
-          {mounted
-            ? (<div className="grid size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
+          {mounted ? (
+            <div className="grid size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
               <NextImage
                 src={profile}
                 priority
-                loading='eager'
+                loading="eager"
                 quality={100}
                 className="-mt-2 rounded-full"
                 width={120}
                 height={120}
                 alt="Gökhan Öztürk"
               />
-            </div>)
-            : (<div className="size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
+            </div>
+          ) : (
+            <div className="size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
               <div className="size-full animate-pulse rounded-full bg-gray-200 dark:bg-slate-50" />
-            </div>)}
+            </div>
+          )}
         </div>
         <div className="sm:my-10">
           <NameTransition />
         </div>
         <div className="ml-auto">
-          {mounted ? <DarkModeToggle /> : <div className="h-8 w-[88px] animate-pulse rounded-md bg-gray-200 dark:bg-slate-50" />}
+          {mounted ? (
+            <DarkModeToggle />
+          ) : (
+            <div className="h-8 w-[88px] animate-pulse rounded-md bg-gray-200 dark:bg-slate-50" />
+          )}
         </div>
       </div>
       <nav className="my-3 sm:my-6 flex items-center">
@@ -51,5 +57,5 @@ export function Header() {
         <NavItem href="/resume" name="cv" />
       </nav>
     </header>
-  )
+  );
 }
