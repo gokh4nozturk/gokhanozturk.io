@@ -211,7 +211,7 @@ export default function ResumePage() {
 
         <hr className="my-8 border-gray-200 dark:border-gray-800" />
 
-        <p className="text-sm text-gray-600 dark:text-gray-400">Last Updated: March 2024</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">Last Updated: March 2025</p>
       </article>
     </div>
   );
