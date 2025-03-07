@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint .",
+    "check": "biome check .",
     "format": "biome format . --write",
-    "check": "biome check --write ."
+    "lint": "biome lint ."
   },
   "dependencies": {
     "@heroicons/react": "^2.1.3",
