@@ -110,7 +110,7 @@ export default function ResumePage() {
           rel="noopener noreferrer"
           className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >
-          github.com/gokh4nozturk/chop-url
+          <i>github.com/gokh4nozturk/chop-url</i>
         </a>
         <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
           <li>Developed a modern URL shortening service with serverless architecture</li>
@@ -123,7 +123,7 @@ export default function ResumePage() {
           </li>
         </ul>
 
-        <h3 className="mb-1 mt-6 text-lg font-medium text-gray-900 dark:text-white">
+        <h3 className="mb-1 mt-6 border-b text-lg font-medium text-gray-900 dark:text-white">
           Open Source Contributions
         </h3>
 
@@ -136,7 +136,7 @@ export default function ResumePage() {
           rel="noopener noreferrer"
           className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >
-          github.com/magicuidesign/magicui
+          <i>github.com/magicuidesign/magicui</i>
         </a>
         <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
           <li>Contributed to a popular UI library (15k+ stars) for Design Engineers</li>
@@ -154,7 +154,7 @@ export default function ResumePage() {
           rel="noopener noreferrer"
           className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         >
-          github.com/pqoqubbw/icons
+          <i>github.com/pqoqubbw/icons</i>
         </a>
         <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
           <li>Contributed to a widely-used animated icons library (3.8k+ stars)</li>
