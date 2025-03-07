@@ -3,12 +3,12 @@ export default function Footer() {
     { name: '@gokh4nozturk', url: 'https://x.com/intent/follow?screen_name=gokh4nozturk' },
     { name: 'linkedin', url: 'https://www.linkedin.com/in/gokhannozturk' },
     { name: 'github', url: 'https://github.com/gokh4nozturk' },
-  ]
+  ];
 
   return (
     <footer className="h-20 text-center">
       <div className="flex justify-center space-x-4 tracking-tight">
-        {links.map(link => (
+        {links.map((link) => (
           <a
             key={link.name}
             href={link.url}
@@ -21,5 +21,5 @@ export default function Footer() {
         ))}
       </div>
     </footer>
-  )
+  );
 }

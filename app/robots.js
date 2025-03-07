@@ -7,5 +7,5 @@ export default function robots() {
     },
     sitemap: 'https://gokhanozturk.io/sitemap.xml',
     host: 'https://gokhanozturk.io',
-  }
+  };
 }

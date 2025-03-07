@@ -24,5 +24,5 @@ export default function sitemap() {
       changeFrequency: 'daily',
       priority: 0.7,
     },
-  ]
+  ];
 }

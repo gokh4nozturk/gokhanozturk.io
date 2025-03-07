@@ -1,4 +1,4 @@
-import AnimatedLink from 'app/components/AnimatedLink'
+import AnimatedLink from 'app/components/AnimatedLink';
 
 export default function Blog() {
   return (
@@ -7,11 +7,11 @@ export default function Blog() {
         <span className="text-gray-500">1.10.2023</span>
         <AnimatedLink
           href="https://medium.com/@gokhaanozturk/vue-js-ile-özelleştirilebilir-breadcrumb-bileşeni-oluşturma-92a8e94a199e"
-          className='text-sm sm:text-base'
+          className="text-sm sm:text-base"
         >
           breadcrumbs
         </AnimatedLink>
       </div>
     </div>
-  )
+  );
 }

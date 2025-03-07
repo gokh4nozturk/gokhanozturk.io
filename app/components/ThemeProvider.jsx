@@ -1,24 +1,27 @@
-'use client'
+'use client';
 
-import * as React from 'react'
-import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes'
-import { animated, useSpring } from 'react-spring'
-import cn from 'classnames'
-import { ComputerDesktopIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
+import { ComputerDesktopIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import cn from 'classnames';
+import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
+import * as React from 'react';
+import { animated, useSpring } from 'react-spring';
 
 export function ThemeProvider({ children, ...props }) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
 
 export function DarkModeToggle() {
-  const { setTheme, theme, themes } = useTheme()
+  const { setTheme, theme, themes } = useTheme();
 
-  const [styles, api] = useSpring(() => ({
-    width: 0,
-    left: theme === 'light' ? '4px' : 'unset',
-    right: theme === 'system' ? '4px' : theme === 'dark' ? '24px' : 'unset',
-    transition: 'left 400ms ease-out, right 400ms ease-out',
-  }), [])
+  const [styles, api] = useSpring(
+    () => ({
+      width: 0,
+      left: theme === 'light' ? '4px' : 'unset',
+      right: theme === 'system' ? '4px' : theme === 'dark' ? '24px' : 'unset',
+      transition: 'left 400ms ease-out, right 400ms ease-out',
+    }),
+    []
+  );
 
   React.useEffect(() => {
     api.start({
@@ -26,90 +29,84 @@ export function DarkModeToggle() {
       left: theme === 'light' ? '4px' : 'unset',
       right: theme === 'system' ? '4px' : theme === 'dark' ? '24px' : 'unset',
       immediate: true,
-    })
+    });
 
-    setTheme(theme)
-  }, [])
+    setTheme(theme);
+  }, [api, theme, setTheme]);
 
   const handleThemeChange = (t) => {
     if (t && t !== theme) {
-      setTheme(t)
+      setTheme(t);
 
       api.start({
         to: async (animate) => {
-          await animate({ width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64 })
+          await animate({ width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64 });
 
           api.set({
             left: t === 'light' ? '4px' : t === 'dark' && theme === 'system' ? '32px' : 'unset',
             right: t === 'system' ? '4px' : t === 'dark' && theme === 'light' ? '32px' : 'unset',
-          })
+          });
 
-          await animate({ width: 24 })
+          await animate({ width: 24 });
         },
-      })
+      });
     }
-  }
+  };
 
   const handlePointerEnter = (t) => {
-    if (theme === t)
-      return
+    if (theme === t) return;
 
     api.start({
       width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64,
-    })
-  }
+    });
+  };
   const handlePointerOut = (t) => {
-    if (theme === t)
-      return
+    if (theme === t) return;
 
     api.start({
       width: 24,
-    })
-  }
+    });
+  };
 
   const themeIcon = {
-    light: <SunIcon className='pointer-events-none size-4 stroke-2 text-white' />,
-    dark: <MoonIcon className='pointer-events-none size-4 stroke-2 text-white' />,
-    system: <ComputerDesktopIcon className='pointer-events-none size-4 stroke-2 text-white' />,
-  }
+    light: <SunIcon className="pointer-events-none size-4 stroke-2 text-white" />,
+    dark: <MoonIcon className="pointer-events-none size-4 stroke-2 text-white" />,
+    system: <ComputerDesktopIcon className="pointer-events-none size-4 stroke-2 text-white" />,
+  };
 
   return (
     <animated.div
       aria-label="Toggle light/dark mode"
-      className='relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-slate-50'>
-      {themes.map(t => (
-        <animated.button
+      className="relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-slate-50"
+    >
+      {themes.map((t) => (
+        <animated.input
           key={t}
-          aria-checked={theme === t}
+          type="radio"
+          checked={theme === t}
           aria-label={t}
           title={t}
-          role='radio'
-          type="button"
           className={cn(
             'rounded-full p-1 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
-            `${theme === t
-              ? 'bg-blue-300 dark:bg-gray-900 '
-              : 'bg-gray-200 dark:bg-gray-500'}`,
+            `${theme === t ? 'bg-blue-300 dark:bg-gray-900 ' : 'bg-gray-200 dark:bg-gray-500'}`
           )}
           onClick={() => handleThemeChange(t)}
           onPointerEnter={() => handlePointerEnter(t)}
           onPointerOut={() => handlePointerOut(t)}
         >
-          <span className='sr-only'>{t}</span>
+          <span className="sr-only">{t}</span>
           {themeIcon[t]}
-        </animated.button>
+        </animated.input>
       ))}
       <animated.span
         style={styles}
-        className={cn(
-          'absolute top-1 h-6 bottom-0 rounded-full z-0 bg-blue-200 dark:bg-gray-900',
-        )}
+        className={cn('absolute top-1 h-6 bottom-0 rounded-full z-0 bg-blue-200 dark:bg-gray-900')}
       />
     </animated.div>
-  )
+  );
 }
 
 export function useDarkMode() {
-  const { resolvedTheme } = useTheme()
-  return resolvedTheme === 'dark'
+  const { resolvedTheme } = useTheme();
+  return resolvedTheme === 'dark';
 }
