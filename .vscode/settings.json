@@ -1,29 +1,10 @@
 {
   "prettier.enable": false,
-  "editor.formatOnSave": false,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports.biome": "explicit",
+    "quickfix.biome": "explicit"
   },
-  // The following is optional.
-  // It's better to put under project setting `.vscode/settings.json`
-  // to avoid conflicts with working with different eslint configs
-  // that does not support all formats.
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "markdown",
-    "json",
-    "yaml"
-  ],
-  "eslint.format.enable": true,
-  "cSpell.words": [
-    "amexp",
-    "composables",
-    "discov"
-  ],
+  "cSpell.words": ["amexp", "composables", "discov"]
 }
