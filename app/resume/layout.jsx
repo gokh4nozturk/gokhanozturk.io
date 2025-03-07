@@ -1,12 +1,20 @@
 export const metadata = {
-  title: 'Resume | Gökhan Öztürk',
+  title: 'Resume | %s',
   description: 'Professional journey and resume highlights',
+  openGraph: {
+    title: 'Resume | %s',
+    description: 'Professional journey and resume highlights',
+    url: '/resume',
+  },
+  alternates: {
+    canonical: '/resume',
+  },
 }
 
 export default function ResumeLayout({ children }) {
   return (
-    <article className="prose prose-neutral dark:prose-invert max-w-2xl mx-auto">
+    <article className="prose prose-neutral mx-auto max-w-2xl dark:prose-invert">
       {children}
     </article>
   )
-} 
+}

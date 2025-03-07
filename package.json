@@ -17,8 +17,6 @@
     "classnames": "^2.3.2",
     "clsx": "^2.1.1",
     "cssnano": "^5.1.14",
-    "html2canvas": "^1.4.1",
-    "jspdf": "^3.0.0",
     "lucide-react": "^0.477.0",
     "motion": "^12.4.10",
     "next": "^13.5.6",
