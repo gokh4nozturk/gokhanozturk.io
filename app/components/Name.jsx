@@ -5,22 +5,22 @@ export function NameTransition() {
       <span aria-hidden="true" className="group relative block overflow-hidden">
         <span className="inline-block transition-all duration-300 ease-in-out group-hover:-translate-y-full">
           {/* these '123' suffix for second word, because they are not same length */}
-          {'Gökhan Öztürk123'.split('').map((letter, index) => (
+          {'Gökhan Öztürk123'.split('').map((letter) => (
             <span
-              key={index}
+              key={`name-${Math.random().toString(36).substr(2, 9)}`}
               className="inline-block"
-              style={{ transitionDelay: `${index * 25}ms` }}
+              style={{ transitionDelay: `${letter.charCodeAt(0) * 25}ms` }}
             >
               {letter === ' ' || ['1', '2', '3'].includes(letter) ? '\u00A0' : letter}
             </span>
           ))}
         </span>
         <span className="absolute left-0 top-0 inline-block translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0">
-          {Array.from('👻 Witchcraft 🕸️').map((letter, index) => (
+          {Array.from('👻 Witchcraft 🕸️').map((letter) => (
             <span
-              key={index}
+              key={`witch-${Math.random().toString(36).substr(2, 9)}`}
               className="inline-block"
-              style={{ transitionDelay: `${index * 25}ms` }}
+              style={{ transitionDelay: `${letter.charCodeAt(0) * 25}ms` }}
             >
               {letter === ' ' ? '\u00A0' : letter}
             </span>
@@ -28,5 +28,5 @@ export function NameTransition() {
         </span>
       </span>
     </h1>
-  )
+  );
 }

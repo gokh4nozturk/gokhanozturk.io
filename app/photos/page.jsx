@@ -1,19 +1,19 @@
-import TitleDescription from '@components/TitleDescription'
-import { Unsplash } from '@lib/unsplash'
-import NextImage from 'next/image'
-import NextLink from 'next/link'
-import { ScrollArea } from '../components/ui/scroll-area'
+import TitleDescription from '@components/TitleDescription';
+import { Unsplash } from '@lib/unsplash';
+import NextImage from 'next/image';
+import NextLink from 'next/link';
+import { ScrollArea } from '../components/ui/scroll-area';
 
-export const revalidate = 3600 // 60 * 60 seconds
+export const revalidate = 3600; // 60 * 60 seconds
 
 export default async function Photos() {
-  const unsplash = new Unsplash()
-  const photos = await unsplash.getPhotos()
+  const unsplash = new Unsplash();
+  const photos = await unsplash.getPhotos();
 
   return (
-    <div className='w-full'>
-      <ScrollArea className='max-h-[calc(100dvh-16rem)]'>
-        <TitleDescription title='Photos' description='A collection of photos that I have taken.' />
+    <div className="w-full">
+      <ScrollArea className="max-h-[calc(100dvh-16rem)]">
+        <TitleDescription title="Photos" description="A collection of photos that I have taken." />
         <div className="gap-1 pb-10 pt-2 sm:columns-3">
           {photos.map((photo, index) => (
             <Photo key={photo.id} data={photo} index={index} />
@@ -21,11 +21,11 @@ export default async function Photos() {
         </div>
       </ScrollArea>
     </div>
-  )
+  );
 }
 
 function Photo({ data: photo, index }) {
-  const { urls, description, alt_description, width, height, links } = photo
+  const { urls, description, alt_description, width, height, links } = photo;
   return (
     <NextLink href={links.html}>
       <NextImage
@@ -39,11 +39,11 @@ function Photo({ data: photo, index }) {
         title={description}
       />
     </NextLink>
-  )
+  );
 }
 
 export async function generateMetadata() {
-  const siteUrl = '/photos'
+  const siteUrl = '/photos';
 
   return {
     title: 'Photos',
@@ -56,5 +56,5 @@ export async function generateMetadata() {
     alternates: {
       canonical: siteUrl,
     },
-  }
+  };
 }

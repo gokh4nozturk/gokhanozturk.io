@@ -1,8 +1,8 @@
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Header } from '@components/Header'
-import { ThemeProvider } from '@components/ThemeProvider'
-import '@styles/globals.css'
+import { Header } from '@components/Header';
+import { ThemeProvider } from '@components/ThemeProvider';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import '@styles/globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://gokhanozturk.io'),
@@ -23,8 +23,8 @@ export const metadata = {
     index: true,
     follow: true,
     googleBot: {
-      'index': true,
-      'follow': true,
+      index: true,
+      follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -40,14 +40,15 @@ export const metadata = {
     msTileImage: 'icons/mstile-150x150.png',
   },
   manifest: 'manifest.json',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className='mx-auto grid h-dvh grid-rows-[auto_auto] items-center bg-slate-50 px-4 pt-4 font-sans tracking-tight text-gray-900 antialiased
+      <body
+        className="mx-auto grid h-dvh grid-rows-[auto_auto] items-center bg-slate-50 px-4 pt-4 font-sans tracking-tight text-gray-900 antialiased
             selection:bg-yellow-100 selection:text-gray-900 dark:bg-[#111010] dark:text-gray-50
-            sm:max-w-3xl sm:grid-rows-[auto_1fr] sm:px-10 sm:pt-10 [&_*]:transition-all'
+            sm:max-w-3xl sm:grid-rows-[auto_1fr] sm:px-10 sm:pt-10 [&_*]:transition-all"
       >
         <ThemeProvider
           attribute="class"
@@ -56,12 +57,11 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Header />
-          <main className='flex h-full flex-col justify-between'>{children}</main>
-
+          <main className="flex h-full flex-col justify-between">{children}</main>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }

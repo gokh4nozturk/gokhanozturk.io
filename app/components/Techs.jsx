@@ -1,6 +1,6 @@
-import React from 'react'
-import { animated } from 'react-spring'
-import NextImage from 'next/image'
+import NextImage from 'next/image';
+import React from 'react';
+import { animated } from 'react-spring';
 
 const TECHNOLOGIES = [
   {
@@ -98,15 +98,15 @@ const TECHNOLOGIES = [
     url: 'https://docs.github.com/en/actions',
     image: 'https://cdn.svgporn.com/logos/github-actions.svg',
   },
-]
+];
 
 export default function Techs() {
   return (
     <div className="w-full">
-        technologies I use:
+      technologies I use:
       <div className="mt-4 flex flex-wrap gap-3">
-        {TECHNOLOGIES.map(technology => (
-          <animated.a href={technology.url} key={technology.name} target="_blank">
+        {TECHNOLOGIES.map((technology) => (
+          <animated.a href={technology.url} key={technology.name} target="_blank" rel="noreferrer">
             <NextImage
               width={32}
               height={32}
@@ -119,5 +119,5 @@ export default function Techs() {
         ))}
       </div>
     </div>
-  )
+  );
 }
