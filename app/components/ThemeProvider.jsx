@@ -32,7 +32,7 @@ export function DarkModeToggle() {
     });
 
     setTheme(theme);
-  }, []);
+  }, [api, setTheme, theme]);
 
   const handleThemeChange = (t) => {
     if (t && t !== theme) {
