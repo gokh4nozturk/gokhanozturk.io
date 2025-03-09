@@ -1,15 +1,52 @@
 'use client';
 
-import { useRef } from 'react';
-
-import { GitFork, Star } from 'lucide-react';
+import FeedbackPopover from '@components/FeedbackPopover';
+import { useCallback, useRef, useState } from 'react';
 
 export default function ResumePage() {
   const contentRef = useRef(null);
+  const [selectedText, setSelectedText] = useState('');
+  const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
+  const handleTextSelection = useCallback((e) => {
+    e.preventDefault();
+    const selection = window.getSelection();
+    const text = selection.toString().trim();
+
+    if (text) {
+      const range = selection.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      const scrollX = window.scrollX || window.pageXOffset;
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      // Seçilen metnin orta noktasını hesapla
+      const centerX = rect.left + rect.width / 2 + scrollX;
+
+      setSelectedText(text);
+      setPopoverPosition({
+        x: centerX,
+        y: rect.bottom + scrollY,
+      });
+      setIsPopoverOpen(true);
+    } else {
+      setIsPopoverOpen(false);
+    }
+  }, []);
+
+  const handleFeedbackSubmit = async (feedbackData) => {
+    // Burada feedback'i backend'e gönderebilirsiniz
+    console.log('Feedback:', feedbackData);
+    setIsPopoverOpen(false);
+  };
 
   return (
     <div className="relative mx-auto max-w-2xl">
-      <article ref={contentRef} className="prose prose-slate max-w-none dark:prose-invert">
+      <article
+        ref={contentRef}
+        className="prose prose-slate max-w-none dark:prose-invert"
+        onMouseUp={handleTextSelection}
+      >
         <h1 className="mb-3 mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
           Gökhan Öztürk
         </h1>
@@ -213,6 +250,14 @@ export default function ResumePage() {
 
         <p className="text-sm text-gray-600 dark:text-gray-400">Last Updated: March 2025</p>
       </article>
+
+      <FeedbackPopover
+        selectedText={selectedText}
+        position={popoverPosition}
+        isOpen={isPopoverOpen}
+        onOpenChange={setIsPopoverOpen}
+        onSubmit={handleFeedbackSubmit}
+      />
     </div>
   );
 }
