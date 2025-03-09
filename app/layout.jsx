@@ -3,6 +3,7 @@ import { ThemeProvider } from '@components/ThemeProvider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@styles/globals.css';
+import { Toaster } from 'sonner';
 
 export const metadata = {
   metadataBase: new URL('https://gokhanozturk.io'),
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <Toaster offset={64} />
       </body>
     </html>
   );
