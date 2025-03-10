@@ -16,6 +16,8 @@ export default function FeedbackPopover({
   const [anonymous, setAnonymous] = useState(true);
   const [email, setEmail] = useState('');
   const [feedbackCount, setFeedbackCount] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (isOpen && position) {
@@ -48,8 +50,40 @@ export default function FeedbackPopover({
   const handleSubmit = async () => {
     if (!feedback.trim()) return;
 
-    onSubmit({ selectedText, feedback });
-    setFeedback('');
+    try {
+      setIsSubmitting(true);
+      setError('');
+
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          selectedText,
+          feedback,
+          anonymous,
+          email: anonymous ? null : email,
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Feedback could not be sent');
+      }
+
+      onSubmit({ selectedText, feedback });
+      setFeedback('');
+      setEmail('');
+      setFeedbackCount((prev) => prev + 1);
+      onOpenChange(false);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,7 +115,10 @@ export default function FeedbackPopover({
               placeholder="Write your feedback here..."
               className="w-full p-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               rows={3}
+              disabled={isSubmitting}
             />
+
+            {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
 
             <div className="flex text-sm justify-center-center flex-col gap-2">
               <div className="flex items-center gap-2">
@@ -114,10 +151,11 @@ export default function FeedbackPopover({
           <button
             type="button"
             onClick={handleSubmit}
-            className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700"
+            disabled={isSubmitting || !feedback.trim()}
+            className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed"
           >
             <Send size={16} />
-            Send
+            {isSubmitting ? 'Sending...' : 'Send'}
           </button>
         </div>
       </Content>
