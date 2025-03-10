@@ -122,7 +122,7 @@ export default function FeedbackPopover({
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               placeholder="Write your feedback here..."
-              className="w-full p-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="w-full resize-none p-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               rows={3}
               disabled={isSubmitting}
             />

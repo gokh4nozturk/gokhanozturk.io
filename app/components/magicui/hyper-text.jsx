@@ -2,7 +2,7 @@
 
 import { cn } from '@lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 
 const DEFAULT_CHARACTER_SET = Object.freeze('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
 
@@ -19,10 +19,14 @@ export function HyperText({
   characterSet = DEFAULT_CHARACTER_SET,
   ...props
 }) {
-  const elementRef = useRef(null);
-  const iterationCount = useRef(0);
+  const MotionComponent = motion.create(Component, {
+    forwardMotionProps: true,
+  });
+
   const [displayText, setDisplayText] = useState(() => children.split(''));
   const [isAnimating, setIsAnimating] = useState(false);
+  const iterationCount = useRef(0);
+  const elementRef = useRef(null);
 
   const handleAnimationTrigger = () => {
     if (animateOnHover && !isAnimating) {
@@ -87,8 +91,6 @@ export function HyperText({
     return () => clearInterval(interval);
   }, [children, duration, isAnimating, characterSet]);
 
-  const MotionComponent = motion[Component] || motion.div;
-
   return (
     <MotionComponent
       ref={elementRef}
@@ -98,10 +100,7 @@ export function HyperText({
     >
       <AnimatePresence>
         {displayText.map((letter) => (
-          <motion.span
-            key={`${letter}-${Math.random().toString(36).substr(2, 9)}`}
-            className={cn('font-mono', letter === ' ' ? 'w-3' : '')}
-          >
+          <motion.span key={useId()} className={cn('font-mono', letter === ' ' ? 'w-3' : '')}>
             {letter.toUpperCase()}
           </motion.span>
         ))}
