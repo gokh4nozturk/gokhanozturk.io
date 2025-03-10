@@ -10,12 +10,26 @@ if (!supabaseUrl || !supabaseKey) {
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+async function checkRateLimit(email) {
+  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+  const { data, error, count } = await supabase
+    .from('feedback')
+    .select('*', { count: 'exact' })
+    .eq('email', email)
+    .gte('created_at', oneHourAgo);
+
+  if (error) {
+    console.error('Rate limit check error:', error);
+    return false;
+  }
+
+  return count < 10;
+}
+
 export async function POST(request) {
   try {
     const body = await request.json();
     const { selectedText, feedback, is_anonymous, email } = body;
-
-    console.log('Received request body:', body);
 
     // Input validation
     if (!selectedText || !feedback) {
@@ -27,6 +41,17 @@ export async function POST(request) {
 
     if (!is_anonymous && !email) {
       return NextResponse.json({ error: 'Email is required when not anonymous' }, { status: 400 });
+    }
+
+    // Check rate limit for non-anonymous feedback
+    if (!is_anonymous) {
+      const isWithinLimit = await checkRateLimit(email);
+      if (!isWithinLimit) {
+        return NextResponse.json(
+          { error: 'Rate limit exceeded. Please try again later.' },
+          { status: 429 }
+        );
+      }
     }
 
     // Insert feedback into Supabase
