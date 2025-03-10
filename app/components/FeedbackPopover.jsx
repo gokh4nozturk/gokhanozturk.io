@@ -3,6 +3,7 @@
 import { Anchor, Content, Root } from '@radix-ui/react-popover';
 import { Send } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 
 export default function FeedbackPopover({
   selectedText,
@@ -17,7 +18,6 @@ export default function FeedbackPopover({
   const [email, setEmail] = useState('');
   const [feedbackCount, setFeedbackCount] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     if (isOpen && position) {
@@ -50,9 +50,13 @@ export default function FeedbackPopover({
   const handleSubmit = async () => {
     if (!feedback.trim()) return;
 
+    if (!anonymous && !email.trim()) {
+      toast.error('Email is required');
+      return;
+    }
+
     try {
       setIsSubmitting(true);
-      setError('');
 
       const response = await fetch('/api/feedback', {
         method: 'POST',
@@ -62,25 +66,30 @@ export default function FeedbackPopover({
         body: JSON.stringify({
           selectedText,
           feedback,
-          anonymous,
+          is_anonymous: anonymous,
           email: anonymous ? null : email,
         }),
       });
 
       const data = await response.json();
-      console.log(data);
 
       if (!response.ok) {
-        throw new Error(data.error || 'Feedback could not be sent');
+        if (response.status === 429) {
+          toast.error('Too many requests. Please try again later.');
+        } else {
+          toast.error(data.error || 'Feedback could not be sent');
+        }
+        return;
       }
 
+      toast.success('Thank you for your feedback!');
       onSubmit({ selectedText, feedback });
       setFeedback('');
       setEmail('');
       setFeedbackCount((prev) => prev + 1);
       onOpenChange(false);
     } catch (err) {
-      setError(err.message);
+      toast.error('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -118,8 +127,6 @@ export default function FeedbackPopover({
               disabled={isSubmitting}
             />
 
-            {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-
             <div className="flex text-sm justify-center-center flex-col gap-2">
               <div className="flex items-center gap-2">
                 <input
@@ -127,25 +134,30 @@ export default function FeedbackPopover({
                   name="anonymous"
                   id="anonymous"
                   checked={anonymous}
-                  onChange={(e) => setAnonymous(e.target.checked)}
+                  onChange={(e) => {
+                    setAnonymous(e.target.checked);
+                    if (e.target.checked) {
+                      setEmail('');
+                    }
+                  }}
                 />
                 <label htmlFor="anonymous">Anonymous</label>
               </div>
 
-              <div className="flex items-center gap-2">
-                <label htmlFor="email">Email</label>
-
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  disabled={anonymous}
-                  value={email}
-                  placeholder="Your email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-1 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                />
-              </div>
+              {!anonymous && (
+                <div className="flex items-center gap-2">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={email}
+                    placeholder="Your email address"
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full p-1 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  />
+                </div>
+              )}
             </div>
           </div>
           <button
