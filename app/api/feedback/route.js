@@ -4,12 +4,18 @@ import { NextResponse } from 'next/server';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('Missing Supabase environment variables');
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(request) {
   try {
     const body = await request.json();
     const { selectedText, feedback, anonymous, email } = body;
+
+    console.log('Received request body:', body);
 
     // Input validation
     if (!selectedText || !feedback) {
@@ -38,13 +44,26 @@ export async function POST(request) {
       .select();
 
     if (error) {
-      console.error('Supabase error:', error);
-      return NextResponse.json({ error: 'Failed to submit feedback' }, { status: 500 });
+      console.error('Detailed Supabase error:', error);
+      return NextResponse.json(
+        {
+          error: 'Failed to submit feedback',
+          details: error.message,
+          code: error.code,
+        },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ message: 'Feedback submitted successfully', data }, { status: 201 });
   } catch (error) {
-    console.error('Error submitting feedback:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    console.error('Detailed error:', error);
+    return NextResponse.json(
+      {
+        error: 'Internal server error',
+        details: error.message,
+      },
+      { status: 500 }
+    );
   }
 }
