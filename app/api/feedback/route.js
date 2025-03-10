@@ -13,7 +13,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { selectedText, feedback, anonymous, email } = body;
+    const { selectedText, feedback, is_anonymous, email } = body;
 
     console.log('Received request body:', body);
 
@@ -25,7 +25,7 @@ export async function POST(request) {
       );
     }
 
-    if (!anonymous && !email) {
+    if (!is_anonymous && !email) {
       return NextResponse.json({ error: 'Email is required when not anonymous' }, { status: 400 });
     }
 
@@ -36,7 +36,7 @@ export async function POST(request) {
         {
           selected_text: selectedText,
           feedback: feedback,
-          is_anonymous: anonymous,
+          is_anonymous: is_anonymous,
           email: email || null,
           created_at: new Date().toISOString(),
         },
