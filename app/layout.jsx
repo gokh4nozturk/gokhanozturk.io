@@ -40,7 +40,7 @@ export const metadata = {
     title: 'Gökhan Öztürk – Developer, crafter.',
     description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
     url: 'https://gokhanozturk.io',
-    site_name: 'Gökhan Öztürk',
+    siteName: 'Gökhan Öztürk',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -71,16 +71,21 @@ export const metadata = {
     site: '@gokhanozturk',
     creator: '@gokhanozturk',
     description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
-    images: ['https://gokhanozturk.io/og.png'],
+    images: [
+      {
+        url: 'https://gokhanozturk.io/api/og',
+        width: 1200,
+        height: 630,
+        alt: 'Gökhan Öztürk - Developer Portfolio',
+        type: 'image/png',
+      },
+    ],
   },
-  linkedin: {
-    title: 'Gökhan Öztürk – Developer, crafter.',
-    card: 'summary_large_image',
-    site: '@gokhanozturk',
-    creator: '@gokhanozturk',
+  other: {
+    'facebook-domain-verification': 'your-facebook-domain-verification-code',
   },
   verification: {
-    google: 'your-google-verification-code', // Google Search Console doğrulama kodu eklenebilir
+    google: 'your-google-verification-code',
   },
   icons: {
     favicon: 'icons/favicon.ico',
