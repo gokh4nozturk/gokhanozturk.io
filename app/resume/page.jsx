@@ -1,6 +1,5 @@
 'use client';
 
-import FeedbackPopover from '@components/FeedbackPopover';
 import { useCallback, useRef, useState } from 'react';
 
 export default function ResumePage() {
@@ -251,13 +250,13 @@ export default function ResumePage() {
         <p className="text-sm text-gray-600 dark:text-gray-400">Last Updated: March 2025</p>
       </article>
 
-      <FeedbackPopover
+      {/* <FeedbackPopover
         selectedText={selectedText}
         position={popoverPosition}
         isOpen={isPopoverOpen}
         onOpenChange={setIsPopoverOpen}
         onSubmit={handleFeedbackSubmit}
-      />
+      /> */}
     </div>
   );
 }
