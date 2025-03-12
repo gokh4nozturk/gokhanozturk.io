@@ -1,7 +1,7 @@
 'use client';
 
-import Buymeacoffee from '@components/icons/buymeacoffee';
 import { cn } from '@lib/utils';
+import Buymeacoffee from 'components/icons/buymeacoffee';
 import React from 'react';
 
 export default function ThankYou({ className }) {

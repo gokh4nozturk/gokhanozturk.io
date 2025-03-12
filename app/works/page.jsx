@@ -1,9 +1,9 @@
-import AnimatedLink from '@components/AnimatedLink';
-import TitleDescription from '@components/TitleDescription';
 import { Github } from '@lib/github';
 import cn from 'classnames';
+import AnimatedLink from 'components/AnimatedLink';
+import TitleDescription from 'components/TitleDescription';
 import { GitFork, Star } from 'lucide-react';
-import { ScrollArea } from '../components/ui/scroll-area';
+import { ScrollArea } from '../../components/ui/scroll-area';
 
 const REPOS = [
   'gokh4nozturk/chop-url',

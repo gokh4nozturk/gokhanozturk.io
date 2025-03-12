@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "jsx": "react",
     "paths": {
-      "@components/*": ["app/components/*"],
+      "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
