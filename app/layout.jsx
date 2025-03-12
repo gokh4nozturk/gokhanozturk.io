@@ -45,7 +45,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://gokhanozturk.io/og.png',
+        url: 'https://gokhanozturk.io/api/og',
         width: 1200,
         height: 630,
         alt: 'Gökhan Öztürk - Developer Portfolio',
@@ -73,7 +73,7 @@ export const metadata = {
     description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
     images: [
       {
-        url: 'https://gokhanozturk.io/og.png',
+        url: 'https://gokhanozturk.io/api/og',
         width: 1200,
         height: 630,
         alt: 'Gökhan Öztürk - Developer Portfolio',
