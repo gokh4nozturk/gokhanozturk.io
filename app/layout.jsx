@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Header />
-          <main className="flex h-full flex-col justify-between">{children}</main>
+          <main className="flex h-full flex-col justify-between relative">{children}</main>
           <Navigation />
         </ThemeProvider>
         <Analytics />
