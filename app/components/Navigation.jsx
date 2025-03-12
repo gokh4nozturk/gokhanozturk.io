@@ -52,8 +52,8 @@ export default function Navigation() {
               )}
             >
               <div className="relative z-20 flex items-center gap-2">
-                <Icon className="w-4 h-4" />
-                {name}
+                <Icon className="sm:size-4 size-5" />
+                <span className="hidden sm:block">{name}</span>
               </div>
               {isActive && (
                 <motion.div
