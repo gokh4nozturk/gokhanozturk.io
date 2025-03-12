@@ -1,0 +1,11 @@
+---
+description: All rules
+globs: 
+alwaysApply: true
+---
+- This project is custom personal website.
+
+- Use motion for animations.
+- Use Next.js 13 and jsx
+- Follow the js best practises
+- Only use English language in project even though in comments
