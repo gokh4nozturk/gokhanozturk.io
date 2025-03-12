@@ -54,7 +54,7 @@ export function Header() {
         <NavItem href="/photos" name="photos" />
         <NavItem href="/works" name="works" />
         <NavItem href="/bookmarks" name="bookmarks" />
-        <NavItem href="/resume" name="cv" />
+        {/* <NavItem href="/resume" name="cv" /> */}
       </nav>
     </header>
   );
