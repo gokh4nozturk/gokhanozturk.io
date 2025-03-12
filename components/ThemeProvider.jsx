@@ -1,14 +1,10 @@
 'use client';
 
 import { ComputerDesktopIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
-import cn from 'classnames';
+import { cn } from '@lib/utils';
 import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
 import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
-
-export function ThemeProvider({ children, ...props }) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
-}
 
 export function DarkModeToggle() {
   const { setTheme, theme, themes } = useTheme();
@@ -109,4 +105,8 @@ export function DarkModeToggle() {
 export function useDarkMode() {
   const { resolvedTheme } = useTheme();
   return resolvedTheme === 'dark';
+}
+
+export function ThemeProvider({ children, ...props }) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
