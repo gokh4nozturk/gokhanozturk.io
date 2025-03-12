@@ -2,7 +2,7 @@
 
 import { NameTransition } from '@components/Name';
 import { DarkModeToggle } from '@components/ThemeProvider';
-import NavItem from 'app/components/NavItem';
+// import NavItem from 'app/components/NavItem';
 import NextImage from 'next/image';
 import profile from 'public/icons/profile.svg';
 import React from 'react';
@@ -15,7 +15,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="transition-all">
+    <header className="transition-all border-b border-gray-200 dark:border-neutral-800 mb-4">
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
@@ -48,14 +48,14 @@ export function Header() {
           )}
         </div>
       </div>
-      <nav className="my-3 sm:my-6 flex items-center">
+      {/* <nav className="my-3 sm:my-6 flex items-center">
         <NavItem href="/" name="home" />
-        {/* <NavItem href="/blog" name="blog" /> */}
+        <NavItem href="/blog" name="blog" />
         <NavItem href="/photos" name="photos" />
         <NavItem href="/works" name="works" />
         <NavItem href="/bookmarks" name="bookmarks" />
-        {/* <NavItem href="/resume" name="cv" /> */}
-      </nav>
+        <NavItem href="/resume" name="cv" />
+      </nav> */}
     </header>
   );
 }
