@@ -1,3 +1,5 @@
+import { FeedbackRating } from '@components/hextaui/feedback';
+
 export const metadata = {
   title: {
     default: 'Resume | Gökhan Öztürk – Developer, crafter.',
@@ -49,8 +51,9 @@ export const metadata = {
 
 export default function ResumeLayout({ children }) {
   return (
-    <article className="prose prose-neutral mx-auto max-w-2xl pb-28 dark:prose-invert">
+    <article className="prose prose-neutral flex flex-col gap-4 items-center mx-auto max-w-2xl pb-56 dark:prose-invert">
       {children}
+      {/* <FeedbackRating /> */}
     </article>
   );
 }

@@ -1,15 +1,13 @@
 'use client';
 
-import { FaRegSadCry, FaRegSadTear, FaRegSmile, FaRegSmileBeam } from 'react-icons/fa';
+import { Annoyed, Frown, Laugh, Smile } from 'lucide-react';
 
 import { useEffect, useRef, useState } from 'react';
 
-import { Button } from '@/components/ui/button';
-
 export const FeedbackRating = () => {
-  const [rating, setRating] = (useState < number) | (null > 0);
+  const [rating, setRating] = useState(0);
   const [feedbackActive, setFeedbackActive] = useState(false);
-  const node = useRef < HTMLDivElement > null;
+  const node = useRef(null);
 
   useEffect(() => {
     if (feedbackActive === true) {
@@ -24,7 +22,7 @@ export const FeedbackRating = () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }
-  }, [feedbackActive, node.current, setRating]);
+  }, [feedbackActive]);
 
   return (
     <>
@@ -65,7 +63,7 @@ export const FeedbackRating = () => {
               }}
               className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
             >
-              <FaRegSadCry
+              <Frown
                 size={25}
                 className={`${rating === 1 ? 'opacity-100' : 'opacity-50'}`}
                 fill={`${rating === 1 ? 'red' : 'currentColor'}`}
@@ -79,7 +77,7 @@ export const FeedbackRating = () => {
               }}
               className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
             >
-              <FaRegSadTear
+              <Annoyed
                 size={25}
                 className={`${rating === 2 ? 'opacity-100' : 'opacity-50'}`}
                 fill={`${rating === 2 ? 'orange' : 'currentColor'}`}
@@ -93,10 +91,10 @@ export const FeedbackRating = () => {
               }}
               className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
             >
-              <FaRegSmile
+              <Smile
                 size={25}
                 className={`${rating === 3 ? 'opacity-100' : 'opacity-50'}`}
-                fill={`${rating === 3 ? 'white' : 'currentColor'}`}
+                fill={`${rating === 3 ? 'blue' : 'currentColor'}`}
               />
             </button>
             <button
@@ -107,7 +105,7 @@ export const FeedbackRating = () => {
               }}
               className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
             >
-              <FaRegSmileBeam
+              <Laugh
                 size={25}
                 className={`${rating === 4 ? 'opacity-100' : 'opacity-50'}`}
                 fill={`${rating === 4 ? 'lightgreen' : 'currentColor'}`}
@@ -115,9 +113,12 @@ export const FeedbackRating = () => {
             </button>
           </div>
           <div>
-            <Button className="text-sm px-2 py-1 max-[374px]:w-full max-[374px]:py-2 flex items-center justify-center">
+            <button
+              type="button"
+              className="text-sm px-2 py-1 max-[374px]:w-full max-[374px]:py-2 flex items-center justify-center"
+            >
               Send
-            </Button>
+            </button>
           </div>
         </div>
       </div>
