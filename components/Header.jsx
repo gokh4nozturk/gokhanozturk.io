@@ -1,7 +1,7 @@
 'use client';
 
-import { NameTransition } from '@components/Name';
-import { DarkModeToggle } from '@components/ThemeProvider';
+import { NameTransition } from 'components/Name';
+import { DarkModeToggle } from 'components/ThemeProvider';
 // import NavItem from 'app/components/NavItem';
 import NextImage from 'next/image';
 import profile from 'public/icons/profile.svg';

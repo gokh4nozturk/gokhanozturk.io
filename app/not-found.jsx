@@ -1,4 +1,4 @@
-import { HyperText } from '@components/magicui/hyper-text';
+import { HyperText } from 'components/magicui/hyper-text';
 import Image from 'next/image';
 
 export default function NotFound() {
