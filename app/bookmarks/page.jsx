@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import AnimatedLink from '@components/AnimatedLink';
-import TitleDescription from '@components/TitleDescription';
-import YearFilter from '@components/YearFilter';
-import { ScrollArea } from '@components/ui/scroll-area';
 import Raindrop from '@lib/raindrop';
+import AnimatedLink from 'components/AnimatedLink';
+import TitleDescription from 'components/TitleDescription';
+import YearFilter from 'components/YearFilter';
+import { ScrollArea } from 'components/ui/scroll-area';
 
 export const revalidate = 3600; // 60 * 60 seconds
 

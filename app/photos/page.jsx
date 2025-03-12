@@ -1,8 +1,8 @@
-import TitleDescription from '@components/TitleDescription';
 import { Unsplash } from '@lib/unsplash';
+import TitleDescription from 'components/TitleDescription';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
-import { ScrollArea } from '../components/ui/scroll-area';
+import { ScrollArea } from '../../components/ui/scroll-area';
 
 export const revalidate = 3600; // 60 * 60 seconds
 
