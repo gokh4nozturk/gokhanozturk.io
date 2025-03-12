@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import ThankYou from './ThankYou';
 
 const navItems = [
   {
@@ -68,6 +69,8 @@ export default function Navigation() {
             </Link>
           );
         })}
+        |
+        <ThankYou />
       </nav>
     </div>
   );
