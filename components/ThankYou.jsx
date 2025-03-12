@@ -16,10 +16,16 @@ export default function ThankYou({ className }) {
         'dark:bg-amber-300/10 dark:text-amber-200',
         'dark:hover:text-amber-50',
         className,
-        'hover:animate-tada'
+        'hover:animate-tada',
+        'cursor-progress opacity-60'
       )}
+      aria-disabled="true"
+      onClick={(e) => e.preventDefault()}
     >
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/10">
+      <span
+        title="Coming soon!!!"
+        className="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/10"
+      >
         <Buymeacoffee />
       </span>
     </a>
