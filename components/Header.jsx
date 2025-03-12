@@ -15,7 +15,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="transition-all border-b border-gray-200 dark:border-neutral-800 mb-4">
+    <header className="transition-all border-b pb-6 sm:pb-0 border-gray-200 dark:border-neutral-800 mb-4">
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
