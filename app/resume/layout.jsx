@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function ResumeLayout({ children }) {
   return (
-    <article className="prose prose-neutral mx-auto max-w-2xl pb-20 dark:prose-invert">
+    <article className="prose prose-neutral mx-auto max-w-2xl pb-28 dark:prose-invert">
       {children}
     </article>
   );
