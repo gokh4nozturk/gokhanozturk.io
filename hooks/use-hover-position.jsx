@@ -14,8 +14,8 @@ const useHoverPosition = (items, containerRef) => {
         const parentRect = containerRef.current.getBoundingClientRect();
         setHoverPosition({
           x: rect.left - parentRect.left - 15,
-          y: rect.top - parentRect.top - 10,
-          width: rect.width,
+          y: rect.top - parentRect.top - 8,
+          width: rect.width - 4,
           height: rect.height,
         });
       }

@@ -44,7 +44,7 @@ export default function Navigation() {
 
   return (
     <>
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {hoveredId && hoveredId !== pathname && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -53,8 +53,8 @@ export default function Navigation() {
             className="fixed inset-0 z-30 bg-white/60 backdrop-blur-0 dark:bg-neutral-900/60"
           />
         )}
-      </AnimatePresence>
-      <div className="fixed sm:bottom-10 bottom-6 w-full px-4 z-50 left-1/2 -translate-x-1/2">
+      </AnimatePresence> */}
+      <div className="fixed sm:bottom-8 bottom-6 w-full px-4 z-50 left-1/2 -translate-x-1/2">
         <nav
           ref={navRef}
           className="relative mx-auto flex h-[52px] max-w-fit items-center gap-1 rounded-full border border-[#eaeaea] px-4 py-2 backdrop-blur-md dark:border-neutral-800"
@@ -70,8 +70,8 @@ export default function Navigation() {
             }}
             transition={{
               type: 'spring',
-              stiffness: 1000,
-              damping: 30,
+              stiffness: 400,
+              damping: 40,
             }}
           />
           {navItems.map(({ path, name, icon }, index) => {
@@ -96,8 +96,8 @@ export default function Navigation() {
                 )}
               >
                 <div className="relative z-20 flex items-center gap-2">
-                  <Icon className="sm:size-4 size-5" />
-                  <span className="hidden sm:block">{name}</span>
+                  <Icon className="sm:size-6 size-5" />
+                  {/* <span className="hidden sm:block">{name}</span> */}
                 </div>
                 {isActive && (
                   <motion.div

@@ -6,7 +6,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="h-20 text-center">
+    <footer className="h-20 text-center pb-32 z-30">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <a
