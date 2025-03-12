@@ -20,6 +20,13 @@ export const metadata = {
     site_name: 'Gökhan Öztürk',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://gokhanozturk.io/og.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -35,6 +42,14 @@ export const metadata = {
   twitter: {
     title: 'Gökhan Öztürk – Developer, crafter.',
     card: 'summary_large_image',
+    site: '@gokhanozturk',
+    creator: '@gokhanozturk',
+  },
+  linkedin: {
+    title: 'Gökhan Öztürk – Developer, crafter.',
+    card: 'summary_large_image',
+    site: '@gokhanozturk',
+    creator: '@gokhanozturk',
   },
   icons: {
     favicon: 'icons/favicon.ico',
