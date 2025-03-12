@@ -15,7 +15,8 @@ export default function ThankYou({ className }) {
         'hover:text-amber-950',
         'dark:bg-amber-300/10 dark:text-amber-200',
         'dark:hover:text-amber-50',
-        className
+        className,
+        'hover:animate-tada'
       )}
     >
       <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/10">
