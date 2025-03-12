@@ -1,11 +1,12 @@
 'use client';
 
+import useHoverPosition from '@hooks/use-hover-position';
 import { cn } from '@lib/utils';
 import { Bookmark, File, Home, Image, Workflow } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import ThankYou from './ThankYou';
 
 const navItems = [
@@ -38,12 +39,13 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
-  const [hoveredPath, setHoveredPath] = useState(null);
+  const navRef = useRef(null);
+  const { hoveredId, setHoveredId, hoverPosition, itemsRef } = useHoverPosition(navItems, navRef);
 
   return (
     <>
       <AnimatePresence>
-        {hoveredPath && hoveredPath !== pathname && (
+        {hoveredId && hoveredId !== pathname && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -53,21 +55,44 @@ export default function Navigation() {
         )}
       </AnimatePresence>
       <div className="fixed sm:bottom-10 bottom-6 w-full px-4 z-50 left-1/2 -translate-x-1/2">
-        <nav className="mx-auto flex h-[52px] max-w-fit items-center gap-1 rounded-full border border-[#eaeaea]  px-4 py-2 backdrop-blur-md dark:border-neutral-800 ">
-          {navItems.map(({ path, name, icon }) => {
+        <nav
+          ref={navRef}
+          className="relative mx-auto flex h-[52px] max-w-fit items-center gap-1 rounded-full border border-[#eaeaea] px-4 py-2 backdrop-blur-md dark:border-neutral-800"
+        >
+          <motion.div
+            className="absolute bg-neutral-100 dark:bg-neutral-800 rounded-full"
+            animate={{
+              x: hoverPosition.x,
+              y: hoverPosition.y,
+              width: hoverPosition.width,
+              height: hoverPosition.height,
+              opacity: hoveredId ? 1 : 0,
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 1000,
+              damping: 30,
+            }}
+          />
+          {navItems.map(({ path, name, icon }, index) => {
             const isActive = path === pathname;
             const Icon = icon;
             return (
               <Link
                 key={path}
                 href={path}
-                onMouseEnter={() => setHoveredPath(path)}
-                onMouseLeave={() => setHoveredPath(null)}
+                ref={(el) => {
+                  if (itemsRef.current) {
+                    itemsRef.current[index] = el;
+                  }
+                }}
+                onMouseEnter={() => setHoveredId(path)}
+                onMouseLeave={() => setHoveredId(null)}
                 className={cn(
                   'relative flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-medium transition-colors gap-2',
                   isActive
                     ? 'text-neutral-900 dark:text-neutral-100'
-                    : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:-translate-y-1'
+                    : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
                 )}
               >
                 <div className="relative z-20 flex items-center gap-2">
@@ -80,8 +105,6 @@ export default function Navigation() {
                     className="absolute inset-0 z-10 rounded-full bg-neutral-100 dark:bg-neutral-800"
                     transition={{
                       type: 'spring',
-                      stiffness: 500,
-                      damping: 32,
                     }}
                   />
                 )}
