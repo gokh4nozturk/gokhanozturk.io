@@ -1,8 +1,9 @@
 import { Header } from '@components/Header';
+import Navigation from '@components/Navigation';
 import { ThemeProvider } from '@components/ThemeProvider';
+import '@styles/globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import '@styles/globals.css';
 import { Toaster } from 'sonner';
 
 export const metadata = {
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           <main className="flex h-full flex-col justify-between">{children}</main>
+          <Navigation />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
