@@ -12,25 +12,51 @@ export const metadata = {
     default: 'Gökhan Öztürk – Developer, crafter.',
     template: '%s | Gökhan Öztürk – Developer, crafter.',
   },
-  description: 'Front-end developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
+  description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
+  keywords: [
+    'Gökhan Öztürk',
+    'Frontend Developer',
+    'JavaScript Developer',
+    'Web Development',
+    'React Developer',
+    'Next.js Developer',
+    'Software Engineer',
+    'Web Engineer',
+    'Frontend Engineer',
+  ],
+  authors: [{ name: 'Gökhan Öztürk', url: 'https://gokhanozturk.io' }],
+  creator: 'Gökhan Öztürk',
+  publisher: 'Gökhan Öztürk',
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
+  alternates: {
+    canonical: 'https://gokhanozturk.io',
+  },
   openGraph: {
     title: 'Gökhan Öztürk – Developer, crafter.',
-    description: 'Front-end developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
+    description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
     url: 'https://gokhanozturk.io',
     site_name: 'Gökhan Öztürk',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://gokhanozturk.io/og.png',
+        url: 'https://gokhanozturk.io/api/og',
         width: 1200,
         height: 630,
+        alt: 'Gökhan Öztürk - Developer Portfolio',
+        type: 'image/png',
       },
     ],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -44,6 +70,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@gokhanozturk',
     creator: '@gokhanozturk',
+    description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
+    images: ['https://gokhanozturk.io/og.png'],
   },
   linkedin: {
     title: 'Gökhan Öztürk – Developer, crafter.',
@@ -51,12 +79,20 @@ export const metadata = {
     site: '@gokhanozturk',
     creator: '@gokhanozturk',
   },
+  verification: {
+    google: 'your-google-verification-code', // Google Search Console doğrulama kodu eklenebilir
+  },
   icons: {
     favicon: 'icons/favicon.ico',
+    icon: [
+      { url: 'icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: 'icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
     appleTouchIcon: 'icons/apple-touch-icon.png',
     msTileImage: 'icons/mstile-150x150.png',
   },
   manifest: 'manifest.json',
+  category: 'technology',
 };
 
 export default function RootLayout({ children }) {
