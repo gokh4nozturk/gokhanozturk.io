@@ -1,10 +1,8 @@
 'use client';
 
-import { NameTransition } from 'components/Name';
-import { DarkModeToggle } from 'components/ThemeProvider';
-// import NavItem from 'app/components/NavItem';
-import NextImage from 'next/image';
-import profile from 'public/icons/profile.svg';
+import Profile from '@components/icons/profile';
+import { NameTransition } from '@components/Name';
+import { DarkModeToggle } from '@components/ThemeProvider';
 import React from 'react';
 
 export function Header() {
@@ -19,17 +17,8 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
-            <div className="grid size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
-              <NextImage
-                src={profile}
-                priority
-                loading="eager"
-                quality={100}
-                className="-mt-2 rounded-full"
-                width={120}
-                height={120}
-                alt="Gökhan Öztürk"
-              />
+            <div className="grid relative size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
+              <Profile className="absolute size-full -top-1.5" />
             </div>
           ) : (
             <div className="size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
