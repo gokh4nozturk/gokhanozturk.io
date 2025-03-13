@@ -12,7 +12,6 @@ import {
   JWT,
   Motion,
   Nextjs,
-  Nodejs,
   Nuxt,
   Pnpm,
   RadixUI,
@@ -24,7 +23,6 @@ import {
   Tailwind,
   Threejs,
   Vercel,
-  Vite,
   Vitest,
   Vue,
   Vuetify,
@@ -80,10 +78,6 @@ const TECHS = [
     icon: Nextjs,
   },
   {
-    name: 'Nodejs',
-    icon: Nodejs,
-  },
-  {
     name: 'Nuxt',
     icon: Nuxt,
   },
@@ -126,10 +120,6 @@ const TECHS = [
   {
     name: 'Vercel',
     icon: Vercel,
-  },
-  {
-    name: 'Vite',
-    icon: Vite,
   },
   {
     name: 'Vitest',
@@ -175,7 +165,7 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
       >
         <div
           className={cn(
-            'flex shrink-0 animate-marquee flex-row space-x-3',
+            'flex shrink-0 animate-marquee flex-row space-x-4',
             pauseOnHover && 'group-hover:[animation-play-state:paused]'
           )}
         >
@@ -191,7 +181,7 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
         </div>
         <div
           className={cn(
-            'flex shrink-0 animate-marquee flex-row space-x-3',
+            'flex shrink-0 animate-marquee flex-row space-x-4',
             pauseOnHover && 'group-hover:[animation-play-state:paused]'
           )}
         >
