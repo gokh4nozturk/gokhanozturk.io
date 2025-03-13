@@ -1,5 +1,6 @@
 'use client';
 
+import AnimatedLink from '@components/AnimatedLink';
 import { useCallback, useRef, useState } from 'react';
 
 export default function ResumePage() {
@@ -93,13 +94,26 @@ export default function ResumePage() {
           05/2021 – Present | İstanbul
         </p>
         <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
+          <li>Worked in the Growth Squad, alongside five web engineers, a PM, and a designer.</li>
           <li>
-            Led development of Rockads platform using Vue 3 & TypeScript, improving performance by
-            40%
+            Redeveloped and maintained Rockads, transitioning it to TypeScript and Vue 3 to enhance
+            performance, scalability, and maintainability.
           </li>
-          <li>Created and maintained Rocket UI component library used across multiple projects</li>
-          <li>Implemented automated testing workflows reducing bug reports by 30%</li>
-          <li>Tech stack: Vue 3, TypeScript, Nuxt, Tailwind CSS, Storybook, GitHub Actions</li>
+          <li>
+            Built and contributed to several components, including writing tests and setting up CI
+            pipelines.
+          </li>
+          <li>
+            Developed and maintained{' '}
+            <AnimatedLink href="https://rocket-ui.vercel.app/" className="no-underline">
+              Rocket UI
+            </AnimatedLink>
+            , a modern UI component library.
+          </li>
+          <li>
+            <strong>Tech stack:</strong> Vue 3, TypeScript, Nuxt, Tailwind CSS, Storybook, GitHub
+            Actions
+          </li>
         </ul>
 
         <h3 className="mb-1 mt-6 text-lg font-medium text-gray-900 dark:text-white">
@@ -111,7 +125,9 @@ export default function ResumePage() {
         <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
           <li>Developed responsive web applications using Vue.js and Nuxt.js</li>
           <li>Built reusable component library improving development efficiency</li>
-          <li>Tech stack: Vue 2, Vuex, SASS, Bootstrap</li>
+          <li>
+            <strong>Tech stack:</strong> Vue 2, Vuex, SASS, Bootstrap
+          </li>
         </ul>
 
         <h2 className="mb-4 mt-8 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">
@@ -134,7 +150,10 @@ export default function ResumePage() {
           <li>Built 30+ reusable components using TypeScript and Tailwind CSS</li>
           <li>Implemented comprehensive documentation with Storybook and automated testing</li>
           <li>Established CI/CD pipeline with GitHub Actions for automated releases</li>
-          <li>Tech stack: Vue 3, TypeScript, Tailwind CSS, Storybook, Vitest, GitHub Actions</li>
+          <li>
+            <strong>Tech stack:</strong> Vue 3, TypeScript, Tailwind CSS, Storybook, Vitest, GitHub
+            Actions
+          </li>
         </ul>
 
         <h3 className="mb-1 mt-6 text-lg font-medium text-gray-900 dark:text-white">
@@ -154,8 +173,8 @@ export default function ResumePage() {
           <li>Built responsive frontend with Next.js and deployed on Vercel</li>
           <li>Added features like analytics tracking, rate limiting, and API documentation</li>
           <li>
-            Tech stack: TypeScript, Next.js, Cloudflare Workers, Cloudflare D1, Cloudflare R2, Hono,
-            GitHub Actions, Tailwind CSS, Shadcn UI
+            <strong>Tech stack:</strong> TypeScript, Next.js, Cloudflare Workers, Cloudflare D1,
+            Cloudflare R2, Hono, GitHub Actions, Tailwind CSS, Shadcn UI
           </li>
         </ul>
 
@@ -178,7 +197,9 @@ export default function ResumePage() {
           <li>Contributed to a popular UI library (15k+ stars) for Design Engineers</li>
           <li>Developed reusable animated components and effects</li>
           <li>Collaborated on documentation and accessibility improvements</li>
-          <li>Tech stack: React, TypeScript, Tailwind CSS, Framer Motion, Shadcn UI</li>
+          <li>
+            <strong>Tech stack:</strong> React, TypeScript, Tailwind CSS, Framer Motion, Shadcn UI
+          </li>
         </ul>
 
         <h4 className="mb-1 mt-4 text-base font-medium text-gray-900 dark:text-white">
@@ -196,7 +217,10 @@ export default function ResumePage() {
           <li>Contributed to a widely-used animated icons library (3.8k+ stars)</li>
           <li>Enhanced icon animations and optimized SVG performance</li>
           <li>Improved documentation and component examples</li>
-          <li>Tech stack: TypeScript, SVG, Next.js, Framer Motion, Tailwind CSS, Shadcn UI</li>
+          <li>
+            <strong>Tech stack:</strong> TypeScript, SVG, Next.js, Framer Motion, Tailwind CSS,
+            Shadcn UI
+          </li>
         </ul>
 
         <h2 className="mb-4 mt-8 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">

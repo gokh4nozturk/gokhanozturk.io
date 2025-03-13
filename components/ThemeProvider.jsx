@@ -1,7 +1,7 @@
 'use client';
 
-import { ComputerDesktopIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { cn } from '@lib/utils';
+import { ComputerIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
 import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
@@ -14,7 +14,7 @@ export function DarkModeToggle() {
       width: 0,
       left: theme === 'light' ? '4px' : 'unset',
       right: theme === 'system' ? '4px' : theme === 'dark' ? '32px' : 'unset',
-      transition: 'left 400ms ease-out, right 400ms ease-out',
+      transition: 'left 300ms ease-out, right 300ms ease-out',
     }),
     []
   );
@@ -67,7 +67,7 @@ export function DarkModeToggle() {
   const themeIcon = {
     light: <SunIcon className="pointer-events-none size-4 stroke-2 text-white" />,
     dark: <MoonIcon className="pointer-events-none size-4 stroke-2 text-white" />,
-    system: <ComputerDesktopIcon className="pointer-events-none size-4 stroke-2 text-white" />,
+    system: <ComputerIcon className="pointer-events-none size-4 stroke-2 text-white" />,
   };
 
   return (
