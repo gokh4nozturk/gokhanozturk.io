@@ -1,5 +1,6 @@
 'use client'; // @NOTE: Add in case you are using Next.js
 
+import { cn } from '@lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -34,7 +35,9 @@ export function AnimatedTabs({ tabs }) {
     <div className="relative mx-auto flex w-fit flex-col items-center rounded-full">
       <div
         ref={containerRef}
-        className="absolute z-10 w-full overflow-hidden [clip-path:inset(0px_100%_0px_0%_round_17px)] [transition:clip-path_0.4s_ease-in-out]"
+        className={cn(
+          'absolute z-10 w-full overflow-hidden [clip-path:inset(0px_100%_0px_0%_round_17px)] [transition:clip-path_0.4s_ease-in-out]'
+        )}
       >
         <div className="relative flex w-full justify-center bg-black dark:bg-yellow-50">
           {tabs.map(({ name, path, icon }, index) => {
@@ -44,7 +47,10 @@ export function AnimatedTabs({ tabs }) {
               <Link
                 href={path}
                 key={name}
-                className="flex h-8 items-center px-4 text-sm font-medium text-white dark:text-black"
+                className={cn(
+                  'flex h-8 items-center px-4 text-sm font-medium text-white dark:text-black',
+                  activeTab !== path && 'hover:-translate-y-1'
+                )}
                 tabIndex={-1}
               >
                 {Icon && <Icon />}
@@ -63,7 +69,10 @@ export function AnimatedTabs({ tabs }) {
               href={path}
               key={name}
               ref={isActive ? activeTabRef : null}
-              className="flex h-8 items-center px-4 text-sm font-medium text-neutral-500 dark:text-neutral-300"
+              className={cn(
+                'flex h-8 items-center px-4 text-sm font-medium text-neutral-500 dark:text-neutral-300',
+                activeTab !== path && 'hover:-translate-y-1'
+              )}
             >
               {Icon && <Icon />}
             </Link>
