@@ -6,6 +6,32 @@ import Navigation from 'components/Navigation';
 import { ThemeProvider } from 'components/ThemeProvider';
 import { Toaster } from 'sonner';
 
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className="mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-slate-50 px-4 pt-4 font-sans tracking-tight text-gray-900 antialiased
+            selection:bg-yellow-100 selection:text-gray-900 dark:bg-[#111010] dark:text-gray-50
+            sm:max-w-3xl sm:px-10 sm:pt-10 [&_*]:transition-all"
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="flex h-full flex-col justify-between">{children}</main>
+          <Navigation />
+        </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
+        <Toaster offset={64} />
+      </body>
+    </html>
+  );
+}
+
 export const metadata = {
   metadataBase: new URL('https://gokhanozturk.io'),
   title: {
@@ -99,29 +125,3 @@ export const metadata = {
   manifest: 'manifest.json',
   category: 'technology',
 };
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className="mx-auto grid h-dvh grid-rows-[auto_auto] items-center bg-slate-50 px-4 pt-4 font-sans tracking-tight text-gray-900 antialiased
-            selection:bg-yellow-100 selection:text-gray-900 dark:bg-[#111010] dark:text-gray-50
-            sm:max-w-3xl sm:grid-rows-[auto_1fr] sm:px-10 sm:pt-10 [&_*]:transition-all"
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className="flex h-full flex-col justify-between">{children}</main>
-          <Navigation />
-        </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
-        <Toaster offset={64} />
-      </body>
-    </html>
-  );
-}
