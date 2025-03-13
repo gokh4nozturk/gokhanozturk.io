@@ -157,40 +157,55 @@ const TECHS = [
   },
 ];
 
-export const BrandScroller = ({ className }) => {
+const MARQUEE_DURATION = '120s';
+
+export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
     <div
       className={cn(
-        'backdrop-blur-sm border-y border-dashed h-12 relative bg-black/10 dark:bg-white/5',
+        'group backdrop-blur-sm border-y border-dashed h-12 relative bg-black/10 dark:bg-white/5',
         className
       )}
     >
       <div
         className={cn(
-          'group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm [--duration:120s]',
+          ` flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm [--duration:${MARQUEE_DURATION}]`,
           '[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]'
         )}
       >
-        <div className="flex shrink-0 animate-marquee flex-row">
+        <div
+          className={cn(
+            'flex shrink-0 animate-marquee flex-row space-x-3',
+            pauseOnHover && 'group-hover:[animation-play-state:paused]'
+          )}
+        >
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
-              <div className="flex items-center justify-center w-32 gap-2 mx-2" key={name}>
-                <Icon className="w-8 h-8 opacity-80" />
+              <div className={cn('flex items-center justify-center w-32 space-x-2')} key={name}>
+                <Icon className="w-8 h-8" />
                 <p className="text-base font-bold truncate">{name}</p>
               </div>
             );
           })}
         </div>
-        <div className="flex shrink-0 animate-marquee flex-row">
+        <div
+          className={cn(
+            'flex shrink-0 animate-marquee flex-row space-x-3',
+            pauseOnHover && 'group-hover:[animation-play-state:paused]'
+          )}
+        >
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
               <div
-                className="flex items-center justify-center w-32 gap-2 mx-2"
+                className={cn(
+                  'flex items-center justify-center w-32 space-x-2',
+                  pauseOnHover && 'group-hover:[animation-play-state:paused]'
+                )}
                 key={`${name}-duplicate`}
               >
-                <Icon className="w-8 h-8 opacity-80" />
+                <Icon className="w-8 h-8" />
                 <p className="text-base font-bold truncate">{name}</p>
               </div>
             );
