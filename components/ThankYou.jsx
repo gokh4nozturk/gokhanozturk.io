@@ -17,7 +17,7 @@ export default function ThankYou({ className }) {
         'dark:hover:text-amber-50',
         className,
         'hover:animate-tada',
-        'cursor-progress opacity-60'
+        'cursor-none opacity-60'
       )}
       aria-disabled="true"
       onClick={(e) => e.preventDefault()}
