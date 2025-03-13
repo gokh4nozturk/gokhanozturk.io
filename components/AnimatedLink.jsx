@@ -11,16 +11,19 @@ export default function AnimatedLink({
     black: 'sm:hover:text-gray-900 sm:dark:hover:text-gray-200',
     rockads: 'sm:hover:text-[#007CE1]',
     teknasyon: 'sm:hover:text-[#009cfb]',
+    blue: 'hover:text-blue-600 dark:hover:text-blue-400',
   }[color];
   const fromColor = {
     black: 'from-gray-900 dark:from-gray-200',
     rockads: 'from-[#007CE1]',
     teknasyon: 'from-[#009cfb]',
+    blue: 'from-blue-600 dark:from-blue-400',
   }[color];
   const toColor = {
     black: 'to-gray-900 dark:to-gray-200',
     rockads: 'to-[#007CE1]',
     teknasyon: 'to-[#009cfb]',
+    blue: 'to-blue-600 dark:to-blue-400',
   }[color];
 
   return (

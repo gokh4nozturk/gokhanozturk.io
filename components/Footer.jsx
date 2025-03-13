@@ -1,3 +1,5 @@
+import AnimatedLink from './AnimatedLink';
+
 export default function Footer() {
   const links = [
     { name: '@gokh4nozturk', url: 'https://x.com/intent/follow?screen_name=gokh4nozturk' },
@@ -9,15 +11,16 @@ export default function Footer() {
     <footer className="h-20 text-center sm:pb-32  z-30">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
-          <a
+          <AnimatedLink
+            color="blue"
             key={link.name}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 transition-colors duration-200 hover:text-blue-600"
+            className="transition-colors duration-200 "
           >
             {link.name}
-          </a>
+          </AnimatedLink>
         ))}
       </div>
     </footer>

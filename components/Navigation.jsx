@@ -2,7 +2,7 @@
 
 import useHoverPosition from '@hooks/use-hover-position';
 import { cn } from '@lib/utils';
-import { Bookmark, File, Home, Image, Workflow } from 'lucide-react';
+import { Bookmark, Briefcase, FileUser, Home, Image } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -23,7 +23,7 @@ const navItems = [
   {
     path: '/works',
     name: 'Works',
-    icon: Workflow,
+    icon: Briefcase,
   },
   {
     path: '/bookmarks',
@@ -33,7 +33,7 @@ const navItems = [
   {
     path: '/resume',
     name: 'Resume',
-    icon: File,
+    icon: FileUser,
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Navigation() {
           className="relative mx-auto flex h-[52px] max-w-fit items-center gap-1 rounded-full border border-[#eaeaea] px-4 py-2 backdrop-blur-md dark:border-neutral-800"
         >
           <motion.div
-            className="absolute bg-neutral-100 dark:bg-neutral-800 rounded-full"
+            className="absolute bg-neutral-200 dark:bg-neutral-800 rounded-full"
             animate={{
               x: hoverPosition.x,
               y: hoverPosition.y,
@@ -70,8 +70,6 @@ export default function Navigation() {
             }}
             transition={{
               type: 'spring',
-              stiffness: 400,
-              damping: 40,
             }}
           />
           {navItems.map(({ path, name, icon }, index) => {
@@ -102,7 +100,7 @@ export default function Navigation() {
                 {isActive && (
                   <motion.div
                     layoutId="navigation-pill"
-                    className="absolute inset-0 z-10 rounded-full bg-neutral-100 dark:bg-neutral-800"
+                    className="absolute inset-0 z-10 rounded-full bg-neutral-200 dark:bg-neutral-800"
                     transition={{
                       type: 'spring',
                     }}

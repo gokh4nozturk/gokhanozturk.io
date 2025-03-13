@@ -8,12 +8,12 @@ import Footer from '@components/Footer';
 
 export default function Home() {
   return (
-    <div className="h-full sm:relative">
+    <div className="h-full flex flex-col justify-between sm:relative">
       <About />
       {/* <Techs /> */}
       {/* <DemoAnimation /> */}
-      <ASCIIText />
-      {/* <Footer /> */}
+      <ASCIIText className="" />
+      <Footer />
     </div>
   );
 }
