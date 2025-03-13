@@ -1,10 +1,11 @@
 'use client';
 
+import ThankYou from '@components/ThankYou';
+import { CircularMenu } from '@components/ground/menu';
+import { AnimatedTabs } from '@components/luxe/animated-tabs';
 import { cn } from '@lib/utils';
 import { Bookmark, Briefcase, FileUser, Home, Image } from 'lucide-react';
 import React from 'react';
-import ThankYou from './ThankYou';
-import { AnimatedTabs } from './luxe/animated-tabs';
 
 const navItems = [
   {
@@ -42,9 +43,11 @@ export default function Navigation() {
         'px-4 py-2 backdrop-blur-sm dark:border-neutral-800 max-w-fit rounded-full'
       )}
     >
-      <AnimatedTabs tabs={navItems} />
-      |
-      <ThankYou />
+      <AnimatedTabs tabs={navItems} />|
+      <div className="flex items-center gap-10 mr-3">
+        <ThankYou />
+        <CircularMenu />
+      </div>
     </div>
   );
 }

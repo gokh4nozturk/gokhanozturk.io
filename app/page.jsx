@@ -13,7 +13,6 @@ export default function Home() {
       {/* <Techs /> */}
       {/* <DemoAnimation /> */}
       <ASCIIText className="-z-10" />
-      <Footer />
     </div>
   );
 }
