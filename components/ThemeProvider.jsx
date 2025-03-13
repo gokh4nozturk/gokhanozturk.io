@@ -13,7 +13,7 @@ export function DarkModeToggle() {
     () => ({
       width: 0,
       left: theme === 'light' ? '4px' : 'unset',
-      right: theme === 'system' ? '4px' : theme === 'dark' ? '24px' : 'unset',
+      right: theme === 'system' ? '4px' : theme === 'dark' ? '32px' : 'unset',
       transition: 'left 400ms ease-out, right 400ms ease-out',
     }),
     []
@@ -23,7 +23,7 @@ export function DarkModeToggle() {
     api.start({
       width: 24,
       left: theme === 'light' ? '4px' : 'unset',
-      right: theme === 'system' ? '4px' : theme === 'dark' ? '24px' : 'unset',
+      right: theme === 'system' ? '4px' : theme === 'dark' ? '32px' : 'unset',
       immediate: true,
     });
 
