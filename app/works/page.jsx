@@ -82,7 +82,7 @@ export default async function Works() {
         title="Works"
         description="A collection of works that I have contributed to."
       />
-      <BrandScroller classNames="absolute inset-0 z-30 top-20" />
+      <BrandScroller className="absolute inset-0 z-30 top-20" />
       <ScrollArea>
         <div className="grid divide-y py-10">
           {works.map((work) => (

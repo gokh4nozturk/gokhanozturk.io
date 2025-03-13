@@ -14,7 +14,7 @@ export function ScrollArea({ children, className }) {
   return (
     <Root
       className={cn(
-        'relative overflow-hidden h-full max-h-[calc(100dvh-21rem)] min-h-[430px]',
+        'relative overflow-hidden h-full max-h-[calc(100dvh-19.5rem)] min-h-[430px]',
         className
       )}
     >
