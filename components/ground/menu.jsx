@@ -3,9 +3,10 @@
 import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import React, { useState } from 'react';
-
+import { useMediaQuery } from 'usehooks-ts';
 export function CircularMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -34,7 +35,7 @@ export function CircularMenu() {
       scale: 0,
     },
     visible: (index) => {
-      const startAngle = -10; // Starting angle in degrees
+      const startAngle = isMobile ? -90 : -10; // Starting angle in degrees
       const endAngle = -210; // Ending angle in degrees
       const angleRange = endAngle - startAngle;
       const angleStep = angleRange / (6 - 1); // Divide by (n-1) for even distribution
@@ -110,7 +111,7 @@ export function CircularMenu() {
                 rotate: isOpen ? rotateAngle : 0,
                 y: isOpen ? changeY : 0,
               }}
-              className="w-5 !h-[3px] bg-white dark:bg-black"
+              className="sm:w-5 w-4 !h-[3px] bg-white dark:bg-black shrink-0"
             />
           );
         })}
@@ -123,7 +124,7 @@ export function CircularMenu() {
             <motion.a
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               key={index}
-              className="absolute size-12 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors"
+              className="absolute sm:size-12 size-10 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors"
               custom={index}
               variants={menuItemVariants}
               initial="hidden"

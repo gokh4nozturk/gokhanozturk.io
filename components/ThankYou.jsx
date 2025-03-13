@@ -24,7 +24,7 @@ export default function ThankYou({ className }) {
     >
       <span
         title="Coming soon!!!"
-        className="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/10"
+        className="flex sm:size-10 size-10 shrink-0 items-center justify-center rounded-full bg-black/10"
       >
         <Buymeacoffee />
       </span>

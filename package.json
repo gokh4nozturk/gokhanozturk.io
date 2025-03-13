@@ -35,7 +35,8 @@
     "tailwind-merge": "^3.0.2",
     "three": "^0.174.0",
     "tw-merge": "^0.0.1-alpha.3",
-    "unsplash-js": "^7.0.18"
+    "unsplash-js": "^7.0.18",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
