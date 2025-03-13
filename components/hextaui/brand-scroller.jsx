@@ -157,9 +157,9 @@ const TECHS = [
   },
 ];
 
-export const BrandScroller = () => {
+export const BrandScroller = ({ classNames }) => {
   return (
-    <div className="backdrop-blur-sm border-y border-dashed">
+    <div className={cn('backdrop-blur-md border-y border-dashed h-12', classNames)}>
       <div
         className={cn(
           'group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm [--duration:120s]',

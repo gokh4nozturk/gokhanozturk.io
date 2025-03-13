@@ -77,14 +77,14 @@ export default async function Works() {
   );
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       <TitleDescription
         title="Works"
         description="A collection of works that I have contributed to."
       />
-      <BrandScroller />
+      <BrandScroller classNames="absolute inset-0 z-30 top-20" />
       <ScrollArea>
-        <div className="grid divide-y pb-10">
+        <div className="grid divide-y py-10">
           {works.map((work) => (
             <Work key={work.id} data={work} />
           ))}
