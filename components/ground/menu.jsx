@@ -37,15 +37,15 @@ export function CircularMenu() {
       scale: 0.3,
     },
     visible: (index) => {
-      const startAngle = isMobile ? -90 : -10; // Starting angle in degrees
-      const endAngle = -210; // Ending angle in degrees
+      const startAngle = isMobile ? -90 : 6.8; // Starting angle in degrees
+      const endAngle = -191.5; // Ending angle in degrees
       const angleRange = endAngle - startAngle;
       const angleStep = angleRange / (6 - 1); // Divide by (n-1) for even distribution
       const currentAngle = (startAngle + index * angleStep) * (Math.PI / 180); // Convert to radians
 
       return {
-        x: Math.cos(currentAngle) * 120,
-        y: Math.sin(currentAngle) * 120,
+        x: Math.cos(currentAngle) * 100,
+        y: Math.sin(currentAngle) * 100,
         opacity: 1,
         scale: 1,
         transition: {
@@ -119,8 +119,8 @@ export function CircularMenu() {
                 y: isOpen ? changeY : 0,
                 rotate: isOpen ? rotateAngle : 0,
                 transition: {
-                  duration: 0.2,
-                  ease: 'easeIn',
+                  duration: 0.15,
+                  ease: 'easeInOut',
                 },
               }}
               className="sm:w-5 w-4 !h-[3px] bg-white dark:bg-black shrink-0"
@@ -135,7 +135,7 @@ export function CircularMenu() {
           menuItems.map((item, index) => (
             <motion.a
               key={item.url}
-              className="absolute sm:size-12 size-10 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors will-change-transform"
+              className="absolute size-10 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors will-change-transform"
               custom={index}
               variants={menuItemVariants}
               initial="hidden"
