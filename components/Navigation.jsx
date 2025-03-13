@@ -1,12 +1,8 @@
 'use client';
 
-import useHoverPosition from '@hooks/use-hover-position';
 import { cn } from '@lib/utils';
 import { Bookmark, Briefcase, FileUser, Home, Image } from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React, { useRef } from 'react';
+import React from 'react';
 import ThankYou from './ThankYou';
 import { AnimatedTabs } from './luxe/animated-tabs';
 
@@ -40,7 +36,12 @@ const navItems = [
 
 export default function Navigation() {
   return (
-    <div className="fixed flex items-center gap-1 h-[52px] sm:bottom-10 bottom-6 w-full z-50 left-1/2 -translate-x-1/2 border border-[#eaeaea] px-4 py-2 backdrop-blur-sm dark:border-neutral-800 max-w-fit rounded-full">
+    <div
+      className={cn(
+        'fixed flex items-center gap-1 h-[52px] sm:bottom-10 bottom-6 w-full z-50 left-1/2 -translate-x-1/2 border border-[#eaeaea]',
+        'px-4 py-2 backdrop-blur-sm dark:border-neutral-800 max-w-fit rounded-full'
+      )}
+    >
       <AnimatedTabs tabs={navItems} />
       |
       <ThankYou />
