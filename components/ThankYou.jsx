@@ -13,7 +13,7 @@ export default function ThankYou({ className }) {
         'rounded-full no-underline transition',
         'bg-amber-100 text-amber-900 transition-all',
         'hover:text-amber-950',
-        'dark:bg-amber-300/10 dark:text-amber-200',
+        'dark:bg-amber-300/40 dark:text-amber-200',
         'dark:hover:text-amber-50',
         className,
         'hover:animate-tada',
