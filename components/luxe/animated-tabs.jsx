@@ -44,7 +44,7 @@ export function AnimatedTabs({ tabs }) {
               <Link
                 href={path}
                 key={name}
-                className="flex h-8 items-center px-3 text-sm font-medium text-white dark:text-black"
+                className="flex h-8 items-center px-4 text-sm font-medium text-white dark:text-black"
                 tabIndex={-1}
               >
                 {Icon && <Icon />}
@@ -63,7 +63,7 @@ export function AnimatedTabs({ tabs }) {
               href={path}
               key={name}
               ref={isActive ? activeTabRef : null}
-              className="flex h-8 items-center px-3 text-sm font-medium text-neutral-500 dark:text-neutral-300"
+              className="flex h-8 items-center px-4 text-sm font-medium text-neutral-500 dark:text-neutral-300"
             >
               {Icon && <Icon />}
             </Link>
