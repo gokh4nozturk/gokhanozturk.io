@@ -5,6 +5,7 @@ import About from '@components/About';
 import ASCIIText from '@components/reactbits/ASCIIText';
 // import DemoAnimation from '@components/DemoAnimation'
 import Footer from '@components/Footer';
+import { cn } from '@lib/utils';
 
 export default function Home() {
   return (
@@ -12,7 +13,13 @@ export default function Home() {
       <About />
       {/* <Techs /> */}
       {/* <DemoAnimation /> */}
-      <ASCIIText className="-z-10" />
+      <ASCIIText
+        className={cn(
+          '-z-10',
+          'fixed bottom-0 left-0 w-full h-96',
+          'sm:top-32 sm:left-16 sm:h-full'
+        )}
+      />
     </div>
   );
 }

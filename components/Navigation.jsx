@@ -39,7 +39,7 @@ export default function Navigation() {
   return (
     <div
       className={cn(
-        'fixed flex items-center gap-1 h-[52px] sm:bottom-10 bottom-6 w-full z-50 left-1/2 -translate-x-1/2 border border-[#eaeaea]',
+        'fixed flex items-center gap-1 h-[52px] sm:bottom-12 bottom-6 w-full z-50 left-1/2 -translate-x-1/2 border border-[#eaeaea]',
         'px-4 py-2 backdrop-blur-sm dark:border-neutral-800 max-w-fit rounded-full'
       )}
     >

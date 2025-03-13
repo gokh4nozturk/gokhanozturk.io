@@ -1,6 +1,5 @@
 'use client';
 
-import { cn } from '@lib/utils';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import './ASCIIText.css';
@@ -436,14 +435,5 @@ export default function ASCIIText({
     };
   }, [text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves]);
 
-  return (
-    <div
-      ref={containerRef}
-      className={cn(
-        'absolute bottom-0 left-0 w-full h-80',
-        'sm:top-0 sm:left-0 sm:w-full sm:h-full',
-        className
-      )}
-    />
-  );
+  return <div ref={containerRef} className={className} />;
 }
