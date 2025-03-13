@@ -13,132 +13,85 @@ export async function GET() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #1E293B 100%)',
+          justifyContent: 'flex-end',
+          background: 'rgba(17, 16, 16, 1)',
           padding: '80px',
           position: 'relative',
           overflow: 'hidden',
+          color: 'rgba(249, 250, 251, 1)',
+          fontFamily:
+            'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
         }}
       >
-        {/* Subtle dot pattern overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage:
-              'radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.1) 2%, transparent 0%)',
-            backgroundSize: '50px 50px',
-            opacity: 0.3,
-          }}
-        />
-
-        {/* Enhanced gradient overlays */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              'radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.3) 0%, transparent 50%)',
-            opacity: 0.9,
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              'radial-gradient(circle at 100% 100%, rgba(244, 63, 94, 0.3) 0%, transparent 50%)',
-            opacity: 0.9,
-          }}
-        />
-
-        {/* Content */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '32px',
-            zIndex: 2,
-            maxWidth: '85%',
-          }}
-        >
-          <div
-            style={{
-              fontSize: 86,
-              fontWeight: 800,
-              background: 'linear-gradient(to right, #FFFFFF 20%, #94A3B8)',
-              backgroundClip: 'text',
-              color: 'transparent',
-              letterSpacing: '-0.03em',
-              lineHeight: 1,
-              filter: 'drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))',
-            }}
-          >
-            Gökhan Öztürk
-          </div>
-
-          <div
-            style={{
-              fontSize: 28,
-              color: '#CBD5E1',
-              letterSpacing: '-0.02em',
-              fontWeight: 500,
-              marginTop: '-8px',
-              lineHeight: 1.3,
-              filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2))',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-            }}
-          >
-            Frontend developer, JavaScript enthusiast and{' '}
-            <span style={{ fontSize: '36px' }}>👻</span> Witchcraft{' '}
-            <span style={{ fontSize: '36px' }}>🕸️</span>
-          </div>
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '10px' }}>
+          <img
+            src="https://pub-e80ae7bbbfd0439e86c73b572dc9e5b0.r2.dev/profile.svg"
+            alt="logo"
+            height={220}
+            width={220}
+          />
+          <span style={{ display: 'flex', flexDirection: 'column' }}>
+            <p
+              style={{
+                fontSize: '50px',
+                paddingBottom: '10px',
+                fontWeight: 'bold',
+                lineHeight: '0.01',
+              }}
+            >
+              Gökhan Öztürk
+            </p>
+            <p
+              style={{
+                fontSize: '28px',
+                fontWeight: 'normal',
+              }}
+            >
+              Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.
+            </p>
+          </span>
         </div>
-
-        {/* Enhanced branding element */}
         <div
           style={{
-            position: 'absolute',
-            right: 80,
-            bottom: 80,
             display: 'flex',
-            gap: '12px',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px',
+            width: '100%',
+            marginTop: '60px',
           }}
         >
-          <div
+          <p
             style={{
-              width: '40px',
-              height: '6px',
-              background: '#6366F1',
-              borderRadius: '3px',
-              boxShadow: '0 0 30px rgba(99, 102, 241, 0.7)',
+              fontSize: '18px',
+              fontWeight: 'normal',
+              textAlign: 'center',
+              color: 'rgba(96, 165, 250, 1)',
+              textDecoration: 'underline',
             }}
-          />
-          <div
+          >
+            gh/gokh4nozturk
+          </p>
+          <p
             style={{
-              width: '15px',
-              height: '6px',
-              background: '#F43F5E',
-              borderRadius: '3px',
-              boxShadow: '0 0 30px rgba(244, 63, 94, 0.7)',
+              fontSize: '18px',
+              fontWeight: 'normal',
+              textAlign: 'center',
+              color: 'rgba(96, 165, 250, 1)',
+              textDecoration: 'underline',
             }}
-          />
+          >
+            in/gokhannozturk
+          </p>
         </div>
       </div>,
       {
         width: 1200,
         height: 630,
+        emoji: 'fluent',
+        debug: false,
       }
     );
   } catch (e) {

@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@lib/utils';
-import { ComputerIcon, MoonIcon, SunIcon } from 'lucide-react';
+import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { ThemeProvider as NextThemesProvider, useTheme } from 'next-themes';
 import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
@@ -67,7 +67,7 @@ export function DarkModeToggle() {
   const themeIcon = {
     light: <SunIcon className="pointer-events-none size-4 stroke-2 text-white" />,
     dark: <MoonIcon className="pointer-events-none size-4 stroke-2 text-white" />,
-    system: <ComputerIcon className="pointer-events-none size-4 stroke-2 text-white" />,
+    system: <MonitorIcon className="pointer-events-none size-4 stroke-2 text-white" />,
   };
 
   return (
