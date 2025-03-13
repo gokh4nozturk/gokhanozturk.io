@@ -159,7 +159,7 @@ const TECHS = [
 
 export const BrandScroller = () => {
   return (
-    <div className="backdrop-blur-sm bg-black/10 dark:bg-white/10 border-y border-dashed">
+    <div className="backdrop-blur-sm border-y border-dashed">
       <div
         className={cn(
           'group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm [--duration:120s]',
@@ -172,7 +172,7 @@ export const BrandScroller = () => {
             return (
               <div className="flex items-center justify-center w-32 gap-2 mx-2" key={name}>
                 <Icon className="w-8 h-8" />
-                <p className="text-sm font-medium truncate">{name}</p>
+                <p className="text-base font-bold truncate">{name}</p>
               </div>
             );
           })}
@@ -186,7 +186,7 @@ export const BrandScroller = () => {
                 key={`${name}-duplicate`}
               >
                 <Icon className="w-8 h-8" />
-                <p className="text-sm font-medium truncate">{name}</p>
+                <p className="text-base font-bold truncate">{name}</p>
               </div>
             );
           })}
