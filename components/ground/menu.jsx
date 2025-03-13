@@ -4,6 +4,7 @@ import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import React, { useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
+
 export function CircularMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -15,13 +16,14 @@ export function CircularMenu() {
   const menuContainerVariants = {
     open: {
       transition: {
-        staggerChildren: 0.1, // Stagger for opening
+        staggerChildren: 0.07,
+        delayChildren: 0.1,
       },
     },
     closed: {
       transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1, // Reverse stagger for closing
+        staggerChildren: 0.05,
+        staggerDirection: -1,
       },
     },
   };
@@ -32,7 +34,7 @@ export function CircularMenu() {
       x: 0,
       y: 0,
       opacity: 0,
-      scale: 0,
+      scale: 0.3,
     },
     visible: (index) => {
       const startAngle = isMobile ? -90 : -10; // Starting angle in degrees
@@ -46,16 +48,21 @@ export function CircularMenu() {
         y: Math.sin(currentAngle) * 120,
         opacity: 1,
         scale: 1,
-        delay: index * 0.25,
-        transition: { type: 'spring', stiffness: 300, damping: 20 },
+        transition: {
+          duration: 0.15,
+          ease: 'easeOut',
+        },
       };
     },
     exit: {
       x: 0,
       y: 0,
       opacity: 0,
-      scale: 0,
-      transition: { type: 'spring', stiffness: 300, damping: 20 },
+      scale: 0.3,
+      transition: {
+        duration: 0.15,
+        ease: 'easeOut',
+      },
     },
   };
 
@@ -122,9 +129,8 @@ export function CircularMenu() {
         {isOpen &&
           menuItems.map((item, index) => (
             <motion.a
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              key={index}
-              className="absolute sm:size-12 size-10 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors"
+              key={item.url}
+              className="absolute sm:size-12 size-10 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors will-change-transform"
               custom={index}
               variants={menuItemVariants}
               initial="hidden"
