@@ -110,7 +110,7 @@ export function CircularMenu() {
                 rotate: isOpen ? rotateAngle : 0,
                 y: isOpen ? changeY : 0,
               }}
-              className="w-6 !h-[3px] bg-white dark:bg-black"
+              className="w-5 !h-[3px] bg-white dark:bg-black"
             />
           );
         })}
