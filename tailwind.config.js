@@ -19,6 +19,19 @@ module.exports = {
       borderColor: {
         DEFAULT: colors.neutral[400],
       },
+      keyframes: {
+        marquee: {
+          '0%': {
+            transform: 'translateX(0%)',
+          },
+          '100%': {
+            transform: 'translateX(calc(-100% - var(--gap)))',
+          },
+        },
+      },
+      animation: {
+        marquee: 'marquee var(--duration) linear infinite',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), animations],

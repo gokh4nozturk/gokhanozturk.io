@@ -1,3 +1,4 @@
+import { BrandScroller } from '@components/hextaui/brand-scroller';
 import { Github } from '@lib/github';
 import cn from 'classnames';
 import AnimatedLink from 'components/AnimatedLink';
@@ -81,6 +82,7 @@ export default async function Works() {
         title="Works"
         description="A collection of works that I have contributed to."
       />
+      <BrandScroller />
       <ScrollArea>
         <div className="grid divide-y pb-10">
           {works.map((work) => (

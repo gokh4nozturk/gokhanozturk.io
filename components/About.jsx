@@ -1,5 +1,5 @@
 import AnimatedLink from '@components/AnimatedLink';
-import { Calcom } from '@components/icons/calcom';
+import { Calcom } from '@components/icons';
 
 export default function About() {
   return (
