@@ -51,6 +51,7 @@ export function CircularMenu() {
         transition: {
           duration: 0.15,
           ease: 'easeOut',
+          type: 'spring',
         },
       };
     },
@@ -115,8 +116,12 @@ export function CircularMenu() {
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               key={index}
               animate={{
-                rotate: isOpen ? rotateAngle : 0,
                 y: isOpen ? changeY : 0,
+                rotate: isOpen ? rotateAngle : 0,
+                transition: {
+                  duration: 0.2,
+                  ease: 'easeIn',
+                },
               }}
               className="sm:w-5 w-4 !h-[3px] bg-white dark:bg-black shrink-0"
             />
