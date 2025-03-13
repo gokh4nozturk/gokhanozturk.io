@@ -25,7 +25,7 @@ module.exports = {
             transform: 'translateX(0%)',
           },
           '100%': {
-            transform: 'translateX(calc(-100% - var(--gap)))',
+            transform: 'translateX(-100%)',
           },
         },
       },

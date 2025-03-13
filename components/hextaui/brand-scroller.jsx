@@ -32,6 +32,7 @@ import {
   Zed,
   Zod,
 } from '@components/icons';
+import { cn } from '@lib/utils';
 
 const TECHS = [
   {
@@ -47,7 +48,7 @@ const TECHS = [
     icon: Cloudflare,
   },
   {
-    name: 'CloudflareWorkers',
+    name: 'CFWorkers',
     icon: CloudflareWorkers,
   },
   {
@@ -158,22 +159,39 @@ const TECHS = [
 
 export const BrandScroller = () => {
   return (
-    <div className="group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-full [--duration:40s] [mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]">
-      {TECHS.map(({ name, icon }) => {
-        const Icon = icon;
-
-        return (
-          <div
-            className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row"
-            key={name}
-          >
-            <div className="flex items-center w-28 gap-3">
-              <Icon size={24} />
-              <p className="text-lg font-bold">{name}</p>
-            </div>
-          </div>
-        );
-      })}
+    <div className="backdrop-blur-sm bg-black/10 dark:bg-white/10 border-y border-dashed">
+      <div
+        className={cn(
+          'group flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm [--duration:120s]',
+          '[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]'
+        )}
+      >
+        <div className="flex shrink-0 animate-marquee flex-row">
+          {TECHS.map(({ name, icon }) => {
+            const Icon = icon;
+            return (
+              <div className="flex items-center justify-center w-32 gap-2 mx-2" key={name}>
+                <Icon className="w-8 h-8" />
+                <p className="text-sm font-medium truncate">{name}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex shrink-0 animate-marquee flex-row">
+          {TECHS.map(({ name, icon }) => {
+            const Icon = icon;
+            return (
+              <div
+                className="flex items-center justify-center w-32 gap-2 mx-2"
+                key={`${name}-duplicate`}
+              >
+                <Icon className="w-8 h-8" />
+                <p className="text-sm font-medium truncate">{name}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
