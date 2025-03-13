@@ -2,7 +2,7 @@ import AnimatedLink from 'components/AnimatedLink';
 
 export default function About() {
   return (
-    <div className="-mt-20 text-sm sm:-mt-0 sm:text-base">
+    <div className="text-sm sm:text-base">
       <p>
         Hi 👋 my name is Gökhan, a software engineer at{' '}
         <AnimatedLink href="https://teknasyon.com/en/" color="teknasyon" name="Teknasyon">

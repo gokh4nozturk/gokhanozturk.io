@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@lib/utils';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import './ASCIIText.css';
@@ -394,12 +395,13 @@ class CanvAscii {
 
 // =========== React component ===========
 export default function ASCIIText({
-  text = 'hey',
+  text = 'hey!',
   asciiFontSize = 8,
   textFontSize = 50,
   textColor = '#fdf9f3',
   planeBaseHeight = 8,
   enableWaves = true,
+  className,
 }) {
   const containerRef = useRef(null);
   const asciiRef = useRef(null);
@@ -437,11 +439,11 @@ export default function ASCIIText({
   return (
     <div
       ref={containerRef}
-      style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-      }}
+      className={cn(
+        'absolute bottom-0 left-0 w-full h-80',
+        'sm:top-0 sm:left-0 sm:w-full sm:h-full',
+        className
+      )}
     />
   );
 }
