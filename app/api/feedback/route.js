@@ -29,14 +29,11 @@ async function checkRateLimit(email) {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { selectedText, feedback, is_anonymous, email } = body;
+    const { rating, feedback, isAnonymous: is_anonymous, email } = body;
 
     // Input validation
-    if (!selectedText || !feedback) {
-      return NextResponse.json(
-        { error: 'Selected text and feedback are required' },
-        { status: 400 }
-      );
+    if (!rating) {
+      return NextResponse.json({ error: 'Rating is required' }, { status: 400 });
     }
 
     if (!is_anonymous && !email) {
@@ -59,7 +56,7 @@ export async function POST(request) {
       .from('feedback')
       .insert([
         {
-          selected_text: selectedText,
+          rating: rating,
           feedback: feedback,
           is_anonymous: is_anonymous,
           email: email || null,
