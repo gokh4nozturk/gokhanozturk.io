@@ -1,11 +1,12 @@
 'use client';
 
+import { cn } from '@lib/utils';
 import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import React, { useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 
-export function CircularMenu() {
+export function CircularMenu({ className }) {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
@@ -104,7 +105,11 @@ export function CircularMenu() {
       {/* Hamburger Menu Button */}
       <button
         type="button"
-        className="absolute z-50 size-10 p-2 flex items-center justify-center gap-2 cursor-pointer bg-black text-white dark:bg-yellow-50 dark:text-black rounded-full flex-col"
+        className={cn(
+          'absolute z-50 size-10 p-2 flex items-center justify-center gap-2 cursor-pointer bg-black text-white dark:bg-yellow-50 dark:text-black rounded-full flex-col',
+          'hover:animate-tilt',
+          className
+        )}
         onClick={toggleMenu}
       >
         {Array.from({ length: 2 }).map((_, index) => {
