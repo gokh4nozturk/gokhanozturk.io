@@ -153,17 +153,23 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
     <div
       className={cn(
-        'group backdrop-blur-sm border-y border-dashed h-12 relative bg-black/10 dark:bg-white/5',
+        'group backdrop-blur-sm border-y border-dashed h-12 relative bg-black/10 dark:bg-white/5 overflow-hidden',
         className
       )}
     >
       <div
         className={cn(
-          ` flex overflow-hidden py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm [--duration:${MARQUEE_DURATION}]`,
+          'flex py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm',
           '[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]'
         )}
       >
-        <div className={cn('flex shrink-0 animate-marquee flex-row space-x-4')}>
+        <div
+          className={cn(
+            'flex shrink-0 animate-marquee flex-row space-x-4',
+            pauseOnHover && 'group-hover:[animation-play-state:paused]'
+          )}
+          style={{ '--duration': MARQUEE_DURATION }}
+        >
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
@@ -174,7 +180,13 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
             );
           })}
         </div>
-        <div className={cn('flex shrink-0 animate-marquee flex-row space-x-4')}>
+        <div
+          className={cn(
+            'flex shrink-0 animate-marquee flex-row space-x-4',
+            pauseOnHover && 'group-hover:[animation-play-state:paused]'
+          )}
+          style={{ '--duration': MARQUEE_DURATION }}
+        >
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
