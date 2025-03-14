@@ -28,6 +28,7 @@ import Raindropio from './raindrop';
 import ReactJS from './react';
 import Reddit from './reddit';
 import ShadcnUI from './shadcn';
+import Storybook from './storybook';
 import Supabase from './supabase';
 import SVG from './svg';
 import Swagger from './swagger';
@@ -43,7 +44,6 @@ import VueUse from './vueuse';
 import Yarn from './yarn';
 import Zed from './zed';
 import Zod from './zod';
-
 export {
   Arc,
   AWS,
@@ -73,6 +73,7 @@ export {
   ReactJS,
   Reddit,
   ShadcnUI,
+  Storybook,
   Supabase,
   SVG,
   Swagger,

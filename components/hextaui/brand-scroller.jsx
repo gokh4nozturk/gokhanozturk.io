@@ -20,6 +20,7 @@ import {
   RadixUI,
   ReactJS,
   ShadcnUI,
+  Storybook,
   Supabase,
   SVG,
   Swagger,
@@ -112,6 +113,10 @@ const TECHS = [
   {
     name: 'ShadcnUI',
     icon: ShadcnUI,
+  },
+  {
+    name: 'Storybook',
+    icon: Storybook,
   },
   {
     name: 'Supabase',
