@@ -32,20 +32,40 @@ export function DarkModeToggle() {
 
   const handleThemeChange = (t) => {
     if (t && t !== theme) {
-      setTheme(t);
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          setTheme(t);
 
-      api.start({
-        to: async (animate) => {
-          await animate({ width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64 });
+          api.start({
+            to: async (animate) => {
+              await animate({ width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64 });
 
-          api.set({
-            left: t === 'light' ? '4px' : t === 'dark' && theme === 'system' ? '32px' : 'unset',
-            right: t === 'system' ? '4px' : t === 'dark' && theme === 'light' ? '32px' : 'unset',
+              api.set({
+                left: t === 'light' ? '4px' : t === 'dark' && theme === 'system' ? '32px' : 'unset',
+                right:
+                  t === 'system' ? '4px' : t === 'dark' && theme === 'light' ? '32px' : 'unset',
+              });
+
+              await animate({ width: 24 });
+            },
           });
+        });
+      } else {
+        setTheme(t);
 
-          await animate({ width: 24 });
-        },
-      });
+        api.start({
+          to: async (animate) => {
+            await animate({ width: theme === 'dark' ? 24 : t === 'dark' ? 32 : 64 });
+
+            api.set({
+              left: t === 'light' ? '4px' : t === 'dark' && theme === 'system' ? '32px' : 'unset',
+              right: t === 'system' ? '4px' : t === 'dark' && theme === 'light' ? '32px' : 'unset',
+            });
+
+            await animate({ width: 24 });
+          },
+        });
+      }
     }
   };
 
