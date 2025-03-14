@@ -3,6 +3,7 @@
 import {
   Arc,
   AWS,
+  Biomejs,
   ClaudeAI,
   Cloudflare,
   CloudflareWorkers,
@@ -43,6 +44,10 @@ const TECHS = [
   {
     name: 'AWS',
     icon: AWS,
+  },
+  {
+    name: 'Biomejs',
+    icon: Biomejs,
   },
   {
     name: 'ClaudeAI',

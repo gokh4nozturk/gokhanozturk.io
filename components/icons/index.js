@@ -6,6 +6,7 @@ import Profile from './profile';
 // import Rockads from './rockads';
 // import Teknasyon from './teknasyon';
 import AWS from './aws';
+import Biomejs from './biome';
 import Bluesky from './bluesky';
 import Cloudflare from './cf';
 import CloudflareWorkers from './cf-workers';
@@ -46,6 +47,7 @@ import Zod from './zod';
 export {
   Arc,
   AWS,
+  Biomejs,
   Bluesky,
   Buymeacoffee,
   Calcom,
