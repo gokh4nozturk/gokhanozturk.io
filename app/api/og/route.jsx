@@ -55,7 +55,6 @@ export async function GET() {
                 paddingBottom: '10px',
                 fontWeight: '700',
                 lineHeight: '0.01',
-                fontFamily: 'Inter',
               }}
             >
               Gökhan Öztürk
@@ -64,7 +63,6 @@ export async function GET() {
               style={{
                 fontSize: '28px',
                 fontWeight: '500',
-                fontFamily: 'Inter',
               }}
             >
               Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.
@@ -76,7 +74,7 @@ export async function GET() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '10px',
+            gap: '4px',
             width: '100%',
             marginTop: '60px',
           }}
@@ -87,23 +85,31 @@ export async function GET() {
               textAlign: 'center',
               color: 'rgba(96, 165, 250, 1)',
               textDecoration: 'underline',
-              fontFamily: 'Inter',
               fontWeight: '500',
             }}
           >
-            gh/gokh4nozturk
+            github.com/gokh4nozturk
           </p>
+          <span
+            style={{
+              fontSize: '40px',
+              lineHeight: '0.01',
+              fontWeight: '500',
+              color: 'rgba(75, 85, 99, 1)',
+            }}
+          >
+            ·
+          </span>
           <p
             style={{
               fontSize: '18px',
               textAlign: 'center',
               color: 'rgba(96, 165, 250, 1)',
               textDecoration: 'underline',
-              fontFamily: 'Inter',
               fontWeight: '500',
             }}
           >
-            in/gokhannozturk
+            linkedin.com/in/gokhannozturk
           </p>
         </div>
       </div>,
