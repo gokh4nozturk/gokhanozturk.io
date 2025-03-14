@@ -3,7 +3,23 @@ import React from 'react';
 
 export const runtime = 'edge';
 
+const loadGoogleFont = async (font, text, weights) => {
+  const url = `https://fonts.googleapis.com/css2?family=${font}:wght@${weights}&text=${encodeURIComponent(text)}`;
+  const css = await (await fetch(url)).text();
+  const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
+
+  if (resource) {
+    const response = await fetch(resource[1]);
+    if (response.status === 200) {
+      return await response.arrayBuffer();
+    }
+  }
+
+  throw new Error('failed to load font data');
+};
+
 export async function GET() {
+  const text = 'Gökhan Öztürk - JavaScript enthusiast and 👻 Witchcraft 🕸️.';
   try {
     return new ImageResponse(
       <div
@@ -20,7 +36,7 @@ export async function GET() {
           overflow: 'hidden',
           color: 'rgba(249, 250, 251, 1)',
           fontFamily:
-            'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif',
+            'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif',
           WebkitFontSmoothing: 'antialiased',
           MozOsxFontSmoothing: 'grayscale',
         }}
@@ -29,16 +45,17 @@ export async function GET() {
           <img
             src="https://pub-e80ae7bbbfd0439e86c73b572dc9e5b0.r2.dev/profile.svg"
             alt="logo"
-            height={220}
-            width={220}
+            height={240}
+            width={240}
           />
           <span style={{ display: 'flex', flexDirection: 'column' }}>
             <p
               style={{
-                fontSize: '50px',
+                fontSize: '60px',
                 paddingBottom: '10px',
-                fontWeight: 'bold',
+                fontWeight: '700',
                 lineHeight: '0.01',
+                fontFamily: 'Inter',
               }}
             >
               Gökhan Öztürk
@@ -46,7 +63,8 @@ export async function GET() {
             <p
               style={{
                 fontSize: '28px',
-                fontWeight: 'normal',
+                fontWeight: '500',
+                fontFamily: 'Inter',
               }}
             >
               Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.
@@ -66,10 +84,11 @@ export async function GET() {
           <p
             style={{
               fontSize: '18px',
-              fontWeight: 'normal',
               textAlign: 'center',
               color: 'rgba(96, 165, 250, 1)',
               textDecoration: 'underline',
+              fontFamily: 'Inter',
+              fontWeight: '500',
             }}
           >
             gh/gokh4nozturk
@@ -77,10 +96,11 @@ export async function GET() {
           <p
             style={{
               fontSize: '18px',
-              fontWeight: 'normal',
               textAlign: 'center',
               color: 'rgba(96, 165, 250, 1)',
               textDecoration: 'underline',
+              fontFamily: 'Inter',
+              fontWeight: '500',
             }}
           >
             in/gokhannozturk
@@ -92,6 +112,28 @@ export async function GET() {
         height: 630,
         emoji: 'fluent',
         debug: false,
+        fonts: [
+          {
+            name: 'Inter',
+            data: await loadGoogleFont('Inter', text, '400'),
+            weight: 400,
+          },
+          {
+            name: 'Inter',
+            data: await loadGoogleFont('Inter', text, '500'),
+            weight: 500,
+          },
+          {
+            name: 'Inter',
+            data: await loadGoogleFont('Inter', text, '600'),
+            weight: 600,
+          },
+          {
+            name: 'Inter',
+            data: await loadGoogleFont('Inter', text, '700'),
+            weight: 700,
+          },
+        ],
       }
     );
   } catch (e) {
