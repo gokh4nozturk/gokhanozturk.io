@@ -163,12 +163,7 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
           '[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]'
         )}
       >
-        <div
-          className={cn(
-            'flex shrink-0 animate-marquee flex-row space-x-4',
-            pauseOnHover && 'group-hover:[animation-play-state:paused]'
-          )}
-        >
+        <div className={cn('flex shrink-0 animate-marquee flex-row space-x-4')}>
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
@@ -179,20 +174,12 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
             );
           })}
         </div>
-        <div
-          className={cn(
-            'flex shrink-0 animate-marquee flex-row space-x-4',
-            pauseOnHover && 'group-hover:[animation-play-state:paused]'
-          )}
-        >
+        <div className={cn('flex shrink-0 animate-marquee flex-row space-x-4')}>
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
               <div
-                className={cn(
-                  'flex items-center justify-center w-32 space-x-2',
-                  pauseOnHover && 'group-hover:[animation-play-state:paused]'
-                )}
+                className={cn('flex items-center justify-center w-32 space-x-2')}
                 key={`${name}-duplicate`}
               >
                 <Icon className="w-8 h-8" />

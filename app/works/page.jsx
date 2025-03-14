@@ -1,10 +1,10 @@
+import AnimatedLink from '@components/AnimatedLink';
 import { BrandScroller } from '@components/hextaui/brand-scroller';
+import TitleDescription from '@components/TitleDescription';
+import { ScrollArea } from '@components/ui/scroll-area';
 import { Github } from '@lib/github';
-import cn from 'classnames';
-import AnimatedLink from 'components/AnimatedLink';
-import TitleDescription from 'components/TitleDescription';
+import { cn } from '@lib/utils';
 import { GitFork, Star } from 'lucide-react';
-import { ScrollArea } from '../../components/ui/scroll-area';
 
 const REPOS = [
   'gokh4nozturk/chop-url',
@@ -20,49 +20,18 @@ const REPOS = [
 const LANG_COLORS = {
   TypeScript: 'text-blue-500',
   JavaScript: 'text-yellow-500',
-  Python: 'text-green-500',
   HTML: 'text-red-500',
   CSS: 'text-blue-500',
   SCSS: 'text-pink-500',
   Shell: 'text-gray-500',
   Dockerfile: 'text-blue-500',
-  Ruby: 'text-red-500',
   Rust: 'text-orange-500',
-  C: 'text-blue-500',
-  'C++': 'text-blue-500',
   'C#': 'text-blue-500',
-  Java: 'text-red-500',
-  Kotlin: 'text-blue-500',
-  Swift: 'text-red-500',
-  'Objective-C': 'text-blue-500',
-  PHP: 'text-blue-500',
   Go: 'text-blue-500',
-  R: 'text-blue-500',
-  'Vim script': 'text-green-500',
   Makefile: 'text-blue-500',
+  MDX: 'text-amber-500',
   PowerShell: 'text-blue-500',
   Vue: 'text-green-500',
-  'Vue.js': 'text-green-500',
-  VueJS: 'text-green-500',
-  'Vue.js 2': 'text-green-500',
-  'Vue.js 3': 'text-green-500',
-  'Vue 2': 'text-green-500',
-  'Vue 3': 'text-green-500',
-  React: 'text-blue-500',
-  'React.js': 'text-blue-500',
-  ReactJS: 'text-blue-500',
-  'React.js 2': 'text-blue-500',
-  'React.js 3': 'text-blue-500',
-  'React 2': 'text-blue-500',
-  'React 3': 'text-blue-500',
-  'React Native': 'text-blue-500',
-  ReactNative: 'text-blue-500',
-  'React Native 2': 'text-blue-500',
-  'React Native 3': 'text-blue-500',
-  'ReactNative 2': 'text-blue-500',
-  'ReactNative 3': 'text-blue-500',
-  Angular: 'text-red-500',
-  'Angular.js': 'text',
 };
 
 export const revalidate = 3600; // 60 * 60 seconds
@@ -118,21 +87,4 @@ function Work({ data: work }) {
       </div>
     </div>
   );
-}
-
-export async function generateMetadata() {
-  const siteUrl = '/works';
-
-  return {
-    title: 'Works',
-    description: 'A collection of works',
-    openGraph: {
-      title: 'Works',
-      description: 'A collection of works',
-      url: siteUrl,
-    },
-    alternates: {
-      canonical: siteUrl,
-    },
-  };
 }
