@@ -162,7 +162,7 @@ const TECHS = [
   },
 ];
 
-const MARQUEE_DURATION = '120s';
+const MARQUEE_DURATION = '300s';
 
 export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
