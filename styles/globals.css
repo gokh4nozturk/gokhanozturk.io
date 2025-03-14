@@ -55,7 +55,8 @@ body {
 
 .dark::view-transition-new(root) {
   z-index: 999;
-  animation: reveal-dark var(--transition-duration) var(--transition-timing-function);
+  clip-path: inset(0 0 100% 0);
+  animation: revealClipPath var(--transition-duration) var(--transition-timing-function);
 }
 
 /* Light theme transitions */
@@ -65,7 +66,8 @@ body {
 
 .light::view-transition-new(root) {
   z-index: 999;
-  animation: reveal-light var(--transition-duration) var(--transition-timing-function);
+  clip-path: inset(0 0 100% 0);
+  animation: revealClipPath var(--transition-duration) var(--transition-timing-function);
 }
 
 @keyframes reveal-dark {
@@ -83,5 +85,19 @@ body {
   }
   to {
     clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
+  }
+}
+
+.clipPathReveal {
+  clip-path: inset(0 0 100% 0);
+  animation: revealClipPath 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+ 
+@keyframes revealClipPath {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
