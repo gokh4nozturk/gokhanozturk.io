@@ -1,10 +1,12 @@
 'use client';
 
 import {
+  Arc,
   AWS,
   ClaudeAI,
   Cloudflare,
   CloudflareWorkers,
+  Cursor,
   DrizzleORM,
   Github,
   Homebrew,
@@ -27,12 +29,17 @@ import {
   Vue,
   Vuetify,
   VueUse,
+  Yarn,
   Zed,
   Zod,
 } from '@components/icons';
 import { cn } from '@lib/utils';
 
 const TECHS = [
+  {
+    name: 'Arc',
+    icon: Arc,
+  },
   {
     name: 'AWS',
     icon: AWS,
@@ -48,6 +55,10 @@ const TECHS = [
   {
     name: 'CFWorkers',
     icon: CloudflareWorkers,
+  },
+  {
+    name: 'Cursor',
+    icon: Cursor,
   },
   {
     name: 'DrizzleORM',
@@ -136,6 +147,10 @@ const TECHS = [
   {
     name: 'VueUse',
     icon: VueUse,
+  },
+  {
+    name: 'Yarn',
+    icon: Yarn,
   },
   {
     name: 'Zed',

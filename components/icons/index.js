@@ -1,3 +1,4 @@
+import Arc from './arc';
 import Buymeacoffee from './buymeacoffee';
 import Calcom from './calcom';
 import Nextjs from './nextjs';
@@ -9,6 +10,7 @@ import Bluesky from './bluesky';
 import Cloudflare from './cf';
 import CloudflareWorkers from './cf-workers';
 import ClaudeAI from './claude';
+import Cursor from './cursor';
 import DrizzleORM from './drizzle';
 import Github from './gh';
 import Homebrew from './homebrew';
@@ -37,10 +39,12 @@ import Vitest from './vitest';
 import Vue from './vue';
 import Vuetify from './vuetify';
 import VueUse from './vueuse';
+import Yarn from './yarn';
 import Zed from './zed';
 import Zod from './zod';
 
 export {
+  Arc,
   AWS,
   Bluesky,
   Buymeacoffee,
@@ -48,6 +52,7 @@ export {
   ClaudeAI,
   Cloudflare,
   CloudflareWorkers,
+  Cursor,
   DrizzleORM,
   Github,
   Homebrew,
@@ -78,6 +83,7 @@ export {
   Vuetify,
   VueUse,
   XformerlyTwitter,
+  Yarn,
   Zed,
   Zod,
 };
