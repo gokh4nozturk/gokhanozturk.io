@@ -162,7 +162,7 @@ const TECHS = [
   },
 ];
 
-const MARQUEE_DURATION = '300s';
+const MARQUEE_DURATION = '110s'; // 110 seconds - 1.83 minutes - update this if you add more techs
 
 export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
@@ -188,7 +188,12 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
-              <div className={cn('flex items-center justify-center w-32 space-x-2')} key={name}>
+              <div
+                className={cn(
+                  'flex-shrink-0 object-contain flex items-center justify-center w-32 space-x-2'
+                )}
+                key={name}
+              >
                 <Icon className="w-8 h-8" />
                 <p className="text-base font-bold truncate">{name}</p>
               </div>
@@ -206,7 +211,9 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
             const Icon = icon;
             return (
               <div
-                className={cn('flex items-center justify-center w-32 space-x-2')}
+                className={cn(
+                  'flex-shrink-0 object-contain flex items-center justify-center w-32 space-x-2'
+                )}
                 key={`${name}-duplicate`}
               >
                 <Icon className="w-8 h-8" />
