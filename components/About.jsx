@@ -21,7 +21,7 @@ export default function About() {
       </p>
       <br />
       <br />
-      <AnimatedLink href="https://cal.com/gokhan-ozturk-bpgyxv/15min" name="Cal.com">
+      <AnimatedLink href="https://cal.com/gokhanozturk/15min" name="Cal.com">
         <span className="inline-flex items-center gap-2">
           {' '}
           meet me at:
