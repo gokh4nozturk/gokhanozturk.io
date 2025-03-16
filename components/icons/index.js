@@ -14,11 +14,13 @@ import ClaudeAI from './claude';
 import Cursor from './cursor';
 import DrizzleORM from './drizzle';
 import Github from './gh';
+import Google from './google';
 import Homebrew from './homebrew';
 import Hono from './hono';
 import Instagram from './instagram';
 import JWT from './jwt';
 import LinkedIn from './linkedin';
+import Meta from './meta';
 import Motion from './motion';
 import Nodejs from './node';
 import Nuxt from './nuxt';
@@ -34,6 +36,7 @@ import SVG from './svg';
 import Swagger from './swagger';
 import Tailwind from './tailwind';
 import Threejs from './three';
+import Twitch from './twitch';
 import XformerlyTwitter from './twitter';
 import Vercel from './vercel';
 import Vite from './vite';
@@ -57,11 +60,13 @@ export {
   Cursor,
   DrizzleORM,
   Github,
+  Google,
   Homebrew,
   Hono,
   Instagram,
   JWT,
   LinkedIn,
+  Meta,
   Motion,
   Nextjs,
   Nodejs,
@@ -79,6 +84,7 @@ export {
   Swagger,
   Tailwind,
   Threejs,
+  Twitch,
   Vercel,
   Vite,
   Vitest,
