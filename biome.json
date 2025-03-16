@@ -8,7 +8,7 @@
     "rules": {
       "recommended": true,
       "a11y": {
-        "noSvgWithoutTitle": "info"
+        "noSvgWithoutTitle": "off"
       },
       "nursery": {
         "useSortedClasses": {
