@@ -24,7 +24,7 @@ export default function YearFilter({ year = 'all' }) {
         id="year"
         defaultValue={year.split('-')[0] || 'all'}
         onChange={handleChange}
-        className="mt-2 block w-full min-w-20 rounded-md border border-gray-200 bg-white px-2 py-0.5 text-sm outline-none transition-colors hover:border-gray-300 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-950 dark:hover:border-gray-700 dark:focus:border-gray-600"
+        className="mt-2 block w-full min-w-20 rounded-md border border-p3-border bg-p3-background-light px-2 py-0.5 text-sm outline-none transition-colors hover:border-p3-border focus:border-p3-border dark:border-p3-border-dark dark:bg-p3-background-dark dark:hover:border-p3-border-dark dark:focus:border-p3-border-dark"
       >
         <option value="all">All</option>
         {years.map((y) => (

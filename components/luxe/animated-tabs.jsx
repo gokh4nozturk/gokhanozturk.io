@@ -39,7 +39,7 @@ export function AnimatedTabs({ tabs }) {
           'absolute z-10 w-full overflow-hidden [clip-path:inset(0px_100%_0px_0%_round_17px)] [transition:clip-path_0.4s_ease-in-out]'
         )}
       >
-        <div className="relative flex w-full justify-center bg-black dark:bg-yellow-50">
+        <div className="relative flex w-full justify-center bg-p3-background dark:bg-p3-background-light">
           {tabs.map(({ name, path, icon }, index) => {
             const Icon = icon;
 
@@ -48,7 +48,7 @@ export function AnimatedTabs({ tabs }) {
                 href={path}
                 key={name}
                 className={cn(
-                  'flex h-8 items-center sm:px-4 px-2 text-sm font-medium text-white dark:text-black',
+                  'flex h-8 items-center sm:px-4 px-2 text-sm font-medium text-p3-text-dark dark:text-p3-text',
                   activeTab !== path && 'hover:animate-tilt'
                 )}
                 tabIndex={-1}
@@ -70,7 +70,7 @@ export function AnimatedTabs({ tabs }) {
               key={name}
               ref={isActive ? activeTabRef : null}
               className={cn(
-                'flex h-8 items-center sm:px-4 px-2 text-sm font-medium text-neutral-500 dark:text-neutral-300',
+                'flex h-8 items-center sm:px-4 px-2 text-sm font-medium text-p3-text-light dark:text-p3-text-light',
                 activeTab !== path && 'hover:animate-tilt'
               )}
             >

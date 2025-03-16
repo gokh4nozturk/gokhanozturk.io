@@ -8,22 +8,22 @@ export default function AnimatedLink({
   className,
 }) {
   const textColor = {
-    black: 'sm:hover:text-gray-900 sm:dark:hover:text-gray-200',
-    rockads: 'sm:hover:text-[#007CE1]',
-    teknasyon: 'sm:hover:text-[#009cfb]',
-    blue: 'hover:text-blue-600 dark:hover:text-blue-400',
+    black: 'sm:hover:text-p3-text dark:sm:hover:text-p3-text-dark',
+    rockads: 'sm:hover:text-p3-primary',
+    teknasyon: 'sm:hover:text-p3-secondary',
+    blue: 'hover:text-p3-accent dark:hover:text-p3-accent-light',
   }[color];
   const fromColor = {
-    black: 'from-gray-900 dark:from-gray-200',
-    rockads: 'from-[#007CE1]',
-    teknasyon: 'from-[#009cfb]',
-    blue: 'from-blue-600 dark:from-blue-400',
+    black: 'from-p3-text dark:from-p3-text-dark',
+    rockads: 'from-p3-primary',
+    teknasyon: 'from-p3-secondary',
+    blue: 'from-p3-accent dark:from-p3-accent-light',
   }[color];
   const toColor = {
-    black: 'to-gray-900 dark:to-gray-200',
-    rockads: 'to-[#007CE1]',
-    teknasyon: 'to-[#009cfb]',
-    blue: 'to-blue-600 dark:to-blue-400',
+    black: 'to-p3-text dark:to-p3-text-dark',
+    rockads: 'to-p3-primary',
+    teknasyon: 'to-p3-secondary',
+    blue: 'to-p3-accent dark:to-p3-accent-light',
   }[color];
 
   return (

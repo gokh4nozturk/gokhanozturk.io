@@ -10,8 +10,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className="mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-slate-50 px-4 pt-4 font-sans tracking-tight text-gray-900 antialiased
-            selection:bg-yellow-100 selection:text-gray-900 dark:bg-[#111010] dark:text-gray-50
+        className="mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-p3-background-light px-4 pt-4 font-sans tracking-tight text-p3-text dark:bg-p3-background dark:text-p3-text-dark
+            selection:bg-p3-accent-light selection:text-p3-text dark:selection:bg-p3-accent-dark dark:selection:text-p3-text-dark
             sm:max-w-3xl sm:px-10 sm:pt-10 [&_*]:transition-all"
       >
         <ThemeProvider
@@ -31,97 +31,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-export const metadata = {
-  metadataBase: new URL('https://gokhanozturk.io'),
-  title: {
-    default: 'Gökhan Öztürk – Developer, crafter.',
-    template: '%s | Gökhan Öztürk – Developer, crafter.',
-  },
-  description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
-  keywords: [
-    'Gökhan Öztürk',
-    'Frontend Developer',
-    'JavaScript Developer',
-    'Web Development',
-    'React Developer',
-    'Next.js Developer',
-    'Software Engineer',
-    'Web Engineer',
-    'Frontend Engineer',
-  ],
-  authors: [{ name: 'Gökhan Öztürk', url: 'https://gokhanozturk.io' }],
-  creator: 'Gökhan Öztürk',
-  publisher: 'Gökhan Öztürk',
-  formatDetection: {
-    telephone: false,
-    date: false,
-    address: false,
-    email: false,
-  },
-  alternates: {
-    canonical: 'https://gokhanozturk.io',
-  },
-  openGraph: {
-    title: 'Gökhan Öztürk – Developer, crafter.',
-    description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
-    url: 'https://gokhanozturk.io',
-    siteName: 'Gökhan Öztürk',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: 'https://gokhanozturk.io/api/og',
-        width: 1200,
-        height: 630,
-        alt: 'Gökhan Öztürk - Developer Portfolio',
-        type: 'image/png',
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  twitter: {
-    title: 'Gökhan Öztürk – Developer, crafter.',
-    card: 'summary_large_image',
-    site: '@gokhanozturk',
-    creator: '@gokhanozturk',
-    description: 'Frontend developer, JavaScript enthusiast and 👻 Witchcraft 🕸️.',
-    images: [
-      {
-        url: 'https://gokhanozturk.io/api/og',
-        width: 1200,
-        height: 630,
-        alt: 'Gökhan Öztürk - Developer Portfolio',
-        type: 'image/png',
-      },
-    ],
-  },
-  other: {
-    'facebook-domain-verification': 'your-facebook-domain-verification-code',
-  },
-  verification: {
-    google: 'your-google-verification-code',
-  },
-  icons: {
-    favicon: 'icons/favicon.ico',
-    icon: [
-      { url: 'icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: 'icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    appleTouchIcon: 'icons/apple-touch-icon.png',
-    msTileImage: 'icons/mstile-150x150.png',
-  },
-  manifest: 'manifest.json',
-  category: 'technology',
-};
