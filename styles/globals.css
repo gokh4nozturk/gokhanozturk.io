@@ -26,6 +26,100 @@
 
   --transition-duration: 0.7s;
   --transition-timing-function: var(--expo-out);
+
+  /* Theme Colors with Fallbacks */
+  --p3-light: oklch(98% 0.003 95);
+  --p3-light: color(display-p3 0.976 0.980 0.984);
+  
+  --p3-dark: oklch(10% 0.003 95);
+  --p3-dark: color(display-p3 0.067 0.063 0.063);
+
+  /* Primary Colors with Fallbacks */
+  --p3-primary: oklch(63% 0.25 25);
+  --p3-primary: color(display-p3 1 0.25 0);
+  
+  --p3-primary-light: oklch(70% 0.25 25);
+  --p3-primary-light: color(display-p3 1 0.4 0.2);
+  
+  --p3-primary-dark: oklch(55% 0.25 25);
+  --p3-primary-dark: color(display-p3 0.8 0.2 0);
+
+  /* Secondary Colors with Fallbacks */
+  --p3-secondary: oklch(60% 0.2 350);
+  --p3-secondary: color(display-p3 0.8 0.2 0.5);
+  
+  --p3-secondary-light: oklch(70% 0.2 350);
+  --p3-secondary-light: color(display-p3 0.9 0.3 0.6);
+  
+  --p3-secondary-dark: oklch(50% 0.2 350);
+  --p3-secondary-dark: color(display-p3 0.7 0.1 0.4);
+
+  /* Accent Colors with Fallbacks */
+  --p3-accent: oklch(75% 0.18 85);
+  --p3-accent: color(display-p3 0.97 0.68 0.15);
+  
+  --p3-accent-light: oklch(85% 0.18 85);
+  --p3-accent-light: color(display-p3 1 0.78 0.25);
+  
+  --p3-accent-dark: oklch(65% 0.18 85);
+  --p3-accent-dark: color(display-p3 0.87 0.58 0.05);
+
+  /* Text Colors with Fallbacks */
+  --p3-text: oklch(10% 0.003 95);
+  --p3-text: color(display-p3 0.067 0.063 0.063);
+  
+  --p3-text-light: oklch(50% 0.003 95);
+  --p3-text-light: color(display-p3 0.4 0.4 0.4);
+  
+  --p3-text-dark: oklch(90% 0.003 95);
+  --p3-text-dark: color(display-p3 0.9 0.9 0.9);
+
+  /* Background Colors with Fallbacks */
+  --p3-background: oklch(12% 0.003 95);
+  --p3-background: color(display-p3 0.07 0.07 0.07);
+  
+  --p3-background-light: oklch(95% 0.003 95);
+  --p3-background-light: color(display-p3 0.95 0.95 0.95);
+  
+  --p3-background-dark: oklch(8% 0.003 95);
+  --p3-background-dark: color(display-p3 0.05 0.05 0.05);
+
+  /* Border Colors with Fallbacks */
+  --p3-border: oklch(80% 0.003 95);
+  --p3-border: color(display-p3 0.8 0.8 0.8);
+  
+  --p3-border-dark: oklch(20% 0.003 95);
+  --p3-border-dark: color(display-p3 0.2 0.2 0.2);
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    --p3-light: color(display-p3 0.976 0.980 0.984);
+    --p3-dark: color(display-p3 0.067 0.063 0.063);
+    
+    --p3-primary: color(display-p3 1 0.25 0);
+    --p3-primary-light: color(display-p3 1 0.4 0.2);
+    --p3-primary-dark: color(display-p3 0.8 0.2 0);
+    
+    --p3-secondary: color(display-p3 0.8 0.2 0.5);
+    --p3-secondary-light: color(display-p3 0.9 0.3 0.6);
+    --p3-secondary-dark: color(display-p3 0.7 0.1 0.4);
+    
+    --p3-accent: color(display-p3 0.97 0.68 0.15);
+    --p3-accent-light: color(display-p3 1 0.78 0.25);
+    --p3-accent-dark: color(display-p3 0.87 0.58 0.05);
+    
+    --p3-text: color(display-p3 0.067 0.063 0.063);
+    --p3-text-light: color(display-p3 0.4 0.4 0.4);
+    --p3-text-dark: color(display-p3 0.9 0.9 0.9);
+    
+    --p3-background: color(display-p3 0.07 0.07 0.07);
+    --p3-background-light: color(display-p3 0.95 0.95 0.95);
+    --p3-background-dark: color(display-p3 0.05 0.05 0.05);
+    
+    --p3-border: color(display-p3 0.8 0.8 0.8);
+    --p3-border-dark: color(display-p3 0.2 0.2 0.2);
+  }
 }
 
 html,
