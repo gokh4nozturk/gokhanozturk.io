@@ -21,37 +21,37 @@ module.exports = {
       },
       colors: {
         // Theme Colors
-        'p3-light': 'color(display-p3 0.976 0.980 0.984)', // Slate-50 equivalent
-        'p3-dark': 'color(display-p3 0.067 0.063 0.063)', // Dark background
+        'p3-light': 'var(--p3-light)',
+        'p3-dark': 'var(--p3-dark)',
 
         // Primary Colors
-        'p3-primary': 'color(display-p3 1 0.25 0)',
-        'p3-primary-light': 'color(display-p3 1 0.4 0.2)',
-        'p3-primary-dark': 'color(display-p3 0.8 0.2 0)',
+        'p3-primary': 'var(--p3-primary)',
+        'p3-primary-light': 'var(--p3-primary-light)',
+        'p3-primary-dark': 'var(--p3-primary-dark)',
 
         // Secondary Colors
-        'p3-secondary': 'color(display-p3 0.8 0.2 0.5)',
-        'p3-secondary-light': 'color(display-p3 0.9 0.3 0.6)',
-        'p3-secondary-dark': 'color(display-p3 0.7 0.1 0.4)',
+        'p3-secondary': 'var(--p3-secondary)',
+        'p3-secondary-light': 'var(--p3-secondary-light)',
+        'p3-secondary-dark': 'var(--p3-secondary-dark)',
 
         // Accent Colors
-        'p3-accent': 'color(display-p3 0.4 0.8 0.9)',
-        'p3-accent-light': 'color(display-p3 0.5 0.9 1)',
-        'p3-accent-dark': 'color(display-p3 0.3 0.7 0.8)',
+        'p3-accent': 'var(--p3-accent)',
+        'p3-accent-light': 'var(--p3-accent-light)',
+        'p3-accent-dark': 'var(--p3-accent-dark)',
 
         // Text Colors
-        'p3-text': 'color(display-p3 0.067 0.063 0.063)',
-        'p3-text-light': 'color(display-p3 0.4 0.4 0.4)',
-        'p3-text-dark': 'color(display-p3 0.9 0.9 0.9)',
+        'p3-text': 'var(--p3-text)',
+        'p3-text-light': 'var(--p3-text-light)',
+        'p3-text-dark': 'var(--p3-text-dark)',
 
         // Background Colors
-        'p3-background': 'color(display-p3 0.07 0.07 0.07)',
-        'p3-background-light': 'color(display-p3 0.95 0.95 0.95)',
-        'p3-background-dark': 'color(display-p3 0.05 0.05 0.05)',
+        'p3-background': 'var(--p3-background)',
+        'p3-background-light': 'var(--p3-background-light)',
+        'p3-background-dark': 'var(--p3-background-dark)',
 
         // Border Colors
-        'p3-border': 'color(display-p3 0.8 0.8 0.8)',
-        'p3-border-dark': 'color(display-p3 0.2 0.2 0.2)',
+        'p3-border': 'var(--p3-border)',
+        'p3-border-dark': 'var(--p3-border-dark)',
       },
       keyframes: {
         marquee: {

@@ -11,11 +11,11 @@ export function CheckboxExample() {
       <div className="grid gap-1.5">
         <label
           htmlFor="terms"
-          className="text-sm font-medium leading-none text-black peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-white"
+          className="text-sm font-medium leading-none text-p3-text peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-p3-text-dark"
         >
           Accept terms and conditions
         </label>
-        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+        <span className="text-sm text-p3-text-light dark:text-p3-text-light">
           You agree to our Terms of Service and Privacy Policy.
         </span>
       </div>
@@ -26,14 +26,14 @@ export function CheckboxExample() {
 export function Checkbox({ id = 'terms', checked = false, onCheckedChange }) {
   return (
     <RadixCheckbox.Root
-      className="flex h-5 w-5 flex-shrink-0 appearance-none items-center justify-center rounded border border-neutral-300 bg-neutral-100 outline-none dark:border-neutral-800 dark:bg-neutral-900"
+      className="flex h-5 w-5 flex-shrink-0 appearance-none items-center justify-center rounded border border-p3-border bg-p3-background-light outline-none dark:border-p3-border-dark dark:bg-p3-background"
       id={id}
       checked={checked}
       onCheckedChange={onCheckedChange}
     >
       <RadixCheckbox.Indicator>
         <motion.div
-          className="h-[inherit] w-[inherit] rounded bg-black dark:bg-white"
+          className="h-[inherit] w-[inherit] rounded bg-p3-text dark:bg-p3-text-dark"
           initial={{ scale: 0, opacity: 0 }}
           animate={{
             scale: 1,
@@ -56,7 +56,7 @@ function CheckIcon() {
     <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
       <motion.path
         d="M5 7.5L7 9.5L7.40859 8.81902C8.13346 7.6109 9.00376 6.49624 10 5.5V5.5"
-        className="stroke-white dark:stroke-black"
+        className="stroke-p3-text-dark dark:stroke-p3-text"
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

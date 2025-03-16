@@ -13,16 +13,16 @@ export function Header() {
   }, []);
 
   return (
-    <header className="transition-all border-b pb-6 sm:pb-0 border-gray-200 dark:border-neutral-800 mb-4">
+    <header className="transition-all border-b pb-6 sm:pb-0 border-p3-border dark:border-p3-border-dark mb-4">
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
-            <div className="grid relative size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
+            <div className="grid relative size-16 place-items-center rounded-full border bg-p3-background-light dark:bg-p3-background-light md:size-20">
               <Profile className="absolute size-full -top-1.5" />
             </div>
           ) : (
-            <div className="size-16 place-items-center rounded-full border bg-white dark:bg-slate-50 md:size-20">
-              <div className="size-full animate-pulse rounded-full bg-gray-200 dark:bg-slate-50" />
+            <div className="size-16 place-items-center rounded-full border bg-p3-background-light dark:bg-p3-background-light md:size-20">
+              <div className="size-full animate-pulse rounded-full bg-p3-background dark:bg-p3-background-light" />
             </div>
           )}
         </div>
@@ -33,7 +33,7 @@ export function Header() {
           {mounted ? (
             <DarkModeToggle />
           ) : (
-            <div className="h-8 w-[88px] animate-pulse rounded-md bg-gray-200 dark:bg-slate-50" />
+            <div className="h-8 w-[88px] animate-pulse rounded-md bg-p3-background dark:bg-p3-background-light" />
           )}
         </div>
       </div>

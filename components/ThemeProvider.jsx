@@ -85,15 +85,15 @@ export function DarkModeToggle() {
   };
 
   const themeIcon = {
-    light: <SunIcon className="pointer-events-none size-4 stroke-2 text-white" />,
-    dark: <MoonIcon className="pointer-events-none size-4 stroke-2 text-white" />,
-    system: <MonitorIcon className="pointer-events-none size-4 stroke-2 text-white" />,
+    light: <SunIcon className="pointer-events-none size-4 stroke-2 text-p3-text-dark" />,
+    dark: <MoonIcon className="pointer-events-none size-4 stroke-2 text-p3-text-dark" />,
+    system: <MonitorIcon className="pointer-events-none size-4 stroke-2 text-p3-text-dark" />,
   };
 
   return (
     <animated.div
       aria-label="Toggle light/dark mode"
-      className="relative z-0 flex gap-1 rounded-md bg-yellow-50 p-1 dark:bg-slate-50"
+      className="relative z-0 flex gap-1 rounded-md bg-p3-background-light p-1 dark:bg-p3-background-light"
     >
       {themes.map((t) => (
         <animated.button
@@ -104,7 +104,7 @@ export function DarkModeToggle() {
           type="button"
           className={cn(
             'rounded-full p-1 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
-            `${theme === t ? 'bg-blue-300 dark:bg-gray-900 ' : 'bg-gray-200 dark:bg-gray-500'}`
+            `${theme === t ? 'bg-p3-accent dark:bg-p3-accent-dark' : 'bg-p3-background dark:bg-p3-background-dark'}`
           )}
           onClick={() => handleThemeChange(t)}
           onPointerEnter={() => handlePointerEnter(t)}
@@ -116,7 +116,9 @@ export function DarkModeToggle() {
       ))}
       <animated.span
         style={styles}
-        className={cn('absolute top-1 h-6 bottom-0 rounded-full z-0 bg-blue-200 dark:bg-gray-900')}
+        className={cn(
+          'absolute top-1 h-6 bottom-0 rounded-full z-0 bg-p3-accent-light dark:bg-p3-accent'
+        )}
       />
     </animated.div>
   );

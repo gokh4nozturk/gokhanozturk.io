@@ -55,14 +55,14 @@
   --p3-secondary-dark: color(display-p3 0.7 0.1 0.4);
 
   /* Accent Colors with Fallbacks */
-  --p3-accent: oklch(75% 0.18 85);
-  --p3-accent: color(display-p3 0.97 0.68 0.15);
+  --p3-accent: oklch(95% 0.06 85);
+  --p3-accent: color(display-p3 1 0.96 0.85);
   
-  --p3-accent-light: oklch(85% 0.18 85);
-  --p3-accent-light: color(display-p3 1 0.78 0.25);
+  --p3-accent-light: oklch(97% 0.04 85);
+  --p3-accent-light: color(display-p3 1 0.98 0.90);
   
-  --p3-accent-dark: oklch(65% 0.18 85);
-  --p3-accent-dark: color(display-p3 0.87 0.58 0.05);
+  --p3-accent-dark: oklch(93% 0.07 85);
+  --p3-accent-dark: color(display-p3 0.98 0.93 0.80);
 
   /* Text Colors with Fallbacks */
   --p3-text: oklch(10% 0.003 95);
@@ -105,9 +105,9 @@
     --p3-secondary-light: color(display-p3 0.9 0.3 0.6);
     --p3-secondary-dark: color(display-p3 0.7 0.1 0.4);
     
-    --p3-accent: color(display-p3 0.97 0.68 0.15);
-    --p3-accent-light: color(display-p3 1 0.78 0.25);
-    --p3-accent-dark: color(display-p3 0.87 0.58 0.05);
+    --p3-accent: color(display-p3 1 0.96 0.85);
+    --p3-accent-light: color(display-p3 1 0.98 0.90);
+    --p3-accent-dark: color(display-p3 0.98 0.93 0.80);
     
     --p3-text: color(display-p3 0.067 0.063 0.063);
     --p3-text-light: color(display-p3 0.4 0.4 0.4);
