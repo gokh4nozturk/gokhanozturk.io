@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@ozturkgokhan/biome-config": "^1.0.2",
     "@types/node": "22.13.9",
     "@types/react": "19.0.10",
     "autoprefixer": "^10.4.13",
