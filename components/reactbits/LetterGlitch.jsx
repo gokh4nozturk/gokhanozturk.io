@@ -91,7 +91,7 @@ const hexToRgb = (hex) => {
 };
 
 const LetterGlitch = ({
-  glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
+  glitchColors = ['var(--p3-primary)', 'var(--p3-secondary)', 'var(--p3-accent)'],
   glitchSpeed = 50,
   centerVignette = false,
   outerVignette = true,

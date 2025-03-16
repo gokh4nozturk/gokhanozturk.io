@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <AnimatedLink
-            color="blue"
+            color="p3-primary"
             key={link.name}
             href={link.url}
             target="_blank"

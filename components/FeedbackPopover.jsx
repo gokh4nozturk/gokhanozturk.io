@@ -105,15 +105,15 @@ export default function FeedbackPopover({
         }}
       />
       <Content
-        className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-[300px] animate-in fade-in-0 zoom-in-95"
+        className="bg-p3-background-light dark:bg-p3-background rounded-lg shadow-lg p-4 w-[300px] animate-in fade-in-0 zoom-in-95"
         sideOffset={5}
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <div className="space-y-4">
-          <div className="text-sm text-gray-600 dark:text-gray-300">
+          <div className="text-sm text-p3-text-light dark:text-p3-text-light">
             <div className="flex justify-between">
               <p className="font-medium">Selected Text:</p>
-              <p className="text-xs text-gray-500">{feedbackCount} / 5</p>
+              <p className="text-xs text-p3-text-light">{feedbackCount} / 5</p>
             </div>
             <p className="italic line-clamp-3">{selectedText}</p>
           </div>
@@ -122,7 +122,7 @@ export default function FeedbackPopover({
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               placeholder="Write your feedback here..."
-              className="w-full resize-none p-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="w-full resize-none p-2 text-sm border rounded-md dark:bg-p3-background dark:border-p3-border-dark dark:text-p3-text-dark"
               rows={3}
               disabled={isSubmitting}
             />
@@ -154,7 +154,7 @@ export default function FeedbackPopover({
                     value={email}
                     placeholder="Your email address"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-1 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                    className="w-full p-1 border rounded-md dark:bg-p3-background dark:border-p3-border-dark dark:text-p3-text-dark"
                   />
                 </div>
               )}
@@ -164,7 +164,7 @@ export default function FeedbackPopover({
             type="button"
             onClick={handleSubmit}
             disabled={isSubmitting || !feedback.trim()}
-            className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed"
+            className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm text-p3-text-dark bg-p3-primary rounded-md hover:bg-p3-primary-dark disabled:bg-p3-primary-light disabled:cursor-not-allowed"
           >
             <Send size={16} />
             {isSubmitting ? 'Sending...' : 'Send'}

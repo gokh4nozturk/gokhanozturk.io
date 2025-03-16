@@ -5,25 +5,25 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export const DivOrigamiExample = () => {
   return (
-    <section className="flex h-72 flex-col items-center justify-center gap-12 bg-neutral-950 px-4 py-24 md:flex-row">
+    <section className="flex h-72 flex-col items-center justify-center gap-12 bg-p3-background px-4 py-24 md:flex-row">
       <LogoRolodex
         items={[
-          <LogoItem key={1} className="bg-orange-300 text-neutral-900">
+          <LogoItem key={1} className="bg-p3-primary text-p3-text">
             <AWS />
           </LogoItem>,
-          <LogoItem key={2} className="bg-green-300 text-neutral-900">
+          <LogoItem key={2} className="bg-p3-secondary text-p3-text">
             <Calcom />
           </LogoItem>,
-          <LogoItem key={3} className="bg-blue-300 text-neutral-900">
+          <LogoItem key={3} className="bg-p3-accent text-p3-text">
             <Meta />
           </LogoItem>,
-          <LogoItem key={4} className="bg-white text-black">
+          <LogoItem key={4} className="bg-p3-background-light text-p3-text">
             <Github />
           </LogoItem>,
-          <LogoItem key={5} className="bg-purple-300 text-neutral-900">
+          <LogoItem key={5} className="bg-p3-primary-light text-p3-text">
             <Twitch />
           </LogoItem>,
-          <LogoItem key={6} className="bg-white text-black">
+          <LogoItem key={6} className="bg-p3-background-light text-p3-text">
             <Google />
           </LogoItem>,
         ]}
@@ -55,7 +55,7 @@ const LogoRolodex = ({ items }) => {
         transform: 'rotateY(-20deg)',
         transformStyle: 'preserve-3d',
       }}
-      className="relative z-0 h-44 w-60 shrink-0 rounded-xl border border-neutral-700 bg-neutral-800"
+      className="relative z-0 h-44 w-60 shrink-0 rounded-xl border border-p3-border bg-p3-background"
     >
       <AnimatePresence mode="sync">
         <motion.div
@@ -104,7 +104,7 @@ const LogoRolodex = ({ items }) => {
         style={{
           transform: 'translateZ(1px)',
         }}
-        className="absolute left-0 right-0 top-1/2 z-[999999999] -translate-y-1/2 border-t-2 border-neutral-800"
+        className="absolute left-0 right-0 top-1/2 z-[999999999] -translate-y-1/2 border-t-2 border-p3-border"
       />
     </div>
   );
@@ -114,7 +114,7 @@ const LogoItem = ({ children, className }) => {
   return (
     <div
       className={cn(
-        'grid h-36 w-52 place-content-center rounded-lg bg-neutral-700 text-6xl text-neutral-50',
+        'grid h-36 w-52 place-content-center rounded-lg bg-p3-background text-6xl text-p3-text',
         className
       )}
     >

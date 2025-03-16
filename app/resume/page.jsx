@@ -69,7 +69,7 @@ function Article() {
         </li>
         <li>
           Developed and maintained{' '}
-          <AnimatedLink href="https://rocket-ui.vercel.app/" className="no-underline">
+          <AnimatedLink href="https://github.com/Teknasyon/rocket-ui" className="no-underline">
             Rocket UI
           </AnimatedLink>
           , a modern UI component library.

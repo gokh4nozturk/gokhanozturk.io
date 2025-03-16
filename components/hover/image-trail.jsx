@@ -26,8 +26,8 @@ export const Example = () => {
         '/imgs/active/16.jpg',
       ]}
     >
-      <section className="grid h-screen w-full place-content-center bg-white">
-        <p className="flex items-center gap-2 text-3xl font-bold uppercase text-black">
+      <section className="grid h-screen w-full place-content-center bg-p3-background-light">
+        <p className="flex items-center gap-2 text-3xl font-bold uppercase text-p3-text">
           <FiMousePointer />
           <span>Hover me</span>
         </p>
@@ -124,7 +124,7 @@ const MouseImageTrail = ({
 
       {images.map((img, index) => (
         <img
-          className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-black bg-neutral-900 object-cover opacity-0"
+          className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-p3-border bg-p3-background object-cover opacity-0"
           src={img}
           alt={`Mouse move ${index}`}
           key={img}

@@ -178,7 +178,7 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
     <div
       className={cn(
-        'group backdrop-blur-sm border-y border-dashed h-12 relative bg-black/10 dark:bg-white/5 overflow-hidden',
+        'group backdrop-blur-sm border-y border-dashed h-12 relative bg-p3-background/10 dark:bg-p3-background-light/5 overflow-hidden',
         className
       )}
     >
