@@ -85,15 +85,21 @@ export function DarkModeToggle() {
   };
 
   const themeIcon = {
-    light: <SunIcon className="pointer-events-none size-4 stroke-2 text-p3-text-dark" />,
-    dark: <MoonIcon className="pointer-events-none size-4 stroke-2 text-p3-text-dark" />,
-    system: <MonitorIcon className="pointer-events-none size-4 stroke-2 text-p3-text-dark" />,
+    light: (
+      <SunIcon className="pointer-events-none size-4 stroke-2 text-p3-text-light dark:text-p3-text-dark" />
+    ),
+    dark: (
+      <MoonIcon className="pointer-events-none size-4 stroke-2 text-p3-text-light dark:text-p3-text-dark" />
+    ),
+    system: (
+      <MonitorIcon className="pointer-events-none size-4 stroke-2 text-p3-text-light dark:text-p3-text-dark" />
+    ),
   };
 
   return (
     <animated.div
       aria-label="Toggle light/dark mode"
-      className="relative z-0 flex gap-1 rounded-md bg-p3-background-light p-1 dark:bg-p3-background-light"
+      className="relative z-0 flex gap-1 rounded-md border border-p3-accent-dark p-1 backdrop-blur-sm dark:border-p3-accent"
     >
       {themes.map((t) => (
         <animated.button
@@ -103,8 +109,8 @@ export function DarkModeToggle() {
           title={t}
           type="button"
           className={cn(
-            'rounded-full p-1 focus:outline-none transition-all duration-300 ease-in-out z-[1]',
-            `${theme === t ? 'bg-p3-accent dark:bg-p3-accent-dark' : 'bg-p3-background dark:bg-p3-background-dark'}`
+            'z-[1] rounded-full p-1 transition-all duration-300 ease-in-out focus:outline-none',
+            `${theme === t ? 'bg-blue-300' : 'bg-gray-200 dark:bg-gray-500'}`
           )}
           onClick={() => handleThemeChange(t)}
           onPointerEnter={() => handlePointerEnter(t)}
@@ -116,9 +122,7 @@ export function DarkModeToggle() {
       ))}
       <animated.span
         style={styles}
-        className={cn(
-          'absolute top-1 h-6 bottom-0 rounded-full z-0 bg-p3-accent-light dark:bg-p3-accent'
-        )}
+        className={cn('absolute top-1 bottom-0 z-0 h-6 rounded-full bg-blue-200')}
       />
     </animated.div>
   );

@@ -5,15 +5,15 @@ export default function ResumePage() {
   return (
     <div className="relative mx-auto max-w-2xl">
       <Article />
-      <FeedbackRating className="fixed bottom-32 left-1/2 -translate-x-1/2 backdrop-blur-sm" />
+      <FeedbackRating className="-translate-x-1/2 fixed bottom-[5.5rem] left-1/2 backdrop-blur-sm sm:bottom-32" />
     </div>
   );
 }
 
 function Article() {
   return (
-    <article className="prose prose-slate max-w-none dark:prose-invert">
-      <h1 className="mb-3 mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <article className="prose prose-slate dark:prose-invert max-w-none">
+      <h1 className="mt-2 mb-3 font-bold text-3xl text-gray-900 tracking-tight dark:text-white">
         Gökhan Öztürk
       </h1>
 
@@ -40,7 +40,7 @@ function Article() {
         </a>
       </div>
 
-      <h2 className="mb-4 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">
+      <h2 className="mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white">
         Summary
       </h2>
       <p className="text-gray-600 dark:text-gray-300">
@@ -49,14 +49,14 @@ function Article() {
         Strong expertise in modern JavaScript frameworks and performance optimization.
       </p>
 
-      <h2 className="mb-4 mt-8 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">
+      <h2 className="mt-8 mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white">
         Professional Experience
       </h2>
 
-      <h3 className="mb-1 text-lg font-medium text-gray-900 dark:text-white">
+      <h3 className="mb-1 font-medium text-gray-900 text-lg dark:text-white">
         Frontend Developer | Teknasyon Tech
       </h3>
-      <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">05/2021 – Present | İstanbul</p>
+      <p className="mb-2 text-gray-600 text-sm dark:text-gray-400">05/2021 – Present | İstanbul</p>
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
         <li>Worked in the Growth Squad, alongside five web engineers, a PM, and a designer.</li>
         <li>
@@ -80,10 +80,10 @@ function Article() {
         </li>
       </ul>
 
-      <h3 className="mb-1 mt-6 text-lg font-medium text-gray-900 dark:text-white">
+      <h3 className="mt-6 mb-1 font-medium text-gray-900 text-lg dark:text-white">
         Frontend Developer | Phanka Group
       </h3>
-      <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">12/2020 – 05/2021 | İstanbul</p>
+      <p className="mb-2 text-gray-600 text-sm dark:text-gray-400">12/2020 – 05/2021 | İstanbul</p>
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
         <li>Developed responsive web applications using Vue.js and Nuxt.js</li>
         <li>Built reusable component library improving development efficiency</li>
@@ -92,11 +92,11 @@ function Article() {
         </li>
       </ul>
 
-      <h2 className="mb-4 mt-8 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">
+      <h2 className="mt-8 mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white">
         Open Source & Projects
       </h2>
 
-      <h3 className="mb-1 text-lg font-medium text-gray-900 dark:text-white">
+      <h3 className="mb-1 font-medium text-gray-900 text-lg dark:text-white">
         Rocket UI | Core Maintainer
       </h3>
       <a
@@ -118,7 +118,7 @@ function Article() {
         </li>
       </ul>
 
-      <h3 className="mb-1 mt-6 text-lg font-medium text-gray-900 dark:text-white">
+      <h3 className="mt-6 mb-1 font-medium text-gray-900 text-lg dark:text-white">
         Chop-URL | Creator & Maintainer
       </h3>
       <a
@@ -140,11 +140,11 @@ function Article() {
         </li>
       </ul>
 
-      <h3 className="mb-1 mt-6 border-b border-gray-200 text-lg font-medium text-gray-900 dark:text-white">
+      <h3 className="mt-6 mb-1 border-gray-200 border-b font-medium text-gray-900 text-lg dark:text-white">
         Open Source Contributions
       </h3>
 
-      <h4 className="mb-1 text-base font-medium text-gray-900 dark:text-white">
+      <h4 className="mb-1 font-medium text-base text-gray-900 dark:text-white">
         Magic UI | Contributor
       </h4>
       <a
@@ -164,7 +164,7 @@ function Article() {
         </li>
       </ul>
 
-      <h4 className="mb-1 mt-4 text-base font-medium text-gray-900 dark:text-white">
+      <h4 className="mt-4 mb-1 font-medium text-base text-gray-900 dark:text-white">
         Animated Icons | Contributor
       </h4>
       <a
@@ -185,7 +185,7 @@ function Article() {
         </li>
       </ul>
 
-      <h2 className="mb-4 mt-8 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">
+      <h2 className="mt-8 mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white">
         Education
       </h2>
 
@@ -198,7 +198,7 @@ function Article() {
         Nevşehir University | <span className="text-gray-600 dark:text-gray-400">2015 – 2017</span>
       </div>
 
-      <h2 className="mb-4 mt-8 border-b border-gray-200 pb-1 text-xl font-semibold text-gray-900 dark:border-gray-800 dark:text-white">
+      <h2 className="mt-8 mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white">
         Technical Skills
       </h2>
 
@@ -231,7 +231,7 @@ function Article() {
 
       <hr className="my-8 border-gray-200 dark:border-gray-800" />
 
-      <p className="text-sm text-gray-600 dark:text-gray-400">Last Updated: March 2025</p>
+      <p className="text-gray-600 text-sm dark:text-gray-400">Last Updated: March 2025</p>
     </article>
   );
 }

@@ -49,10 +49,10 @@ export const FeedbackRating = ({ className }) => {
       <form
         ref={node}
         className={cn(
-          'flex gap-4 px-6 py-3 bg-secondary/50 shadow-sm border items-start transition-all ease-in-out overflow-hidden flex-col max-[315px]:scale-95',
-          feedbackActive ? 'max-[374px]:h-[16rem] min-h-[14rem]' : 'h-[3.5rem]',
+          'flex flex-col items-start gap-4 overflow-hidden border bg-secondary/50 px-6 py-3 shadow-sm transition-all ease-in-out max-[315px]:scale-95',
+          feedbackActive ? 'min-h-[14rem] max-[374px]:h-[16rem]' : 'h-[3.5rem]',
           feedbackActive ? 'rounded-md' : 'rounded-full',
-          feedbackActive ? 'w-[19rem] max-[374px]:w-[15rem]' : 'w-[14rem]',
+          feedbackActive ? 'w-[19rem] max-[374px]:w-[15rem]' : 'w-[12rem] sm:w-[14rem]',
           feedbackActive ? 'max-[374px]:justify-center' : 'justify-end',
           className
         )}
@@ -66,9 +66,9 @@ export const FeedbackRating = ({ className }) => {
           handleSubmit();
         }}
       >
-        <div className="w-full gap-2 flex flex-col">
+        <div className="flex w-full flex-col gap-2">
           <textarea
-            className="w-full h-[6rem] px-2 py-1 rounded-md border resize-none -mb-1 text-primary outline-none text-sm transition-all duration-500"
+            className="-mb-1 h-[6rem] w-full resize-none rounded-md border px-2 py-1 text-primary text-sm outline-none transition-all duration-500"
             style={{
               filter: feedbackActive ? 'blur(0px)' : 'blur(100px)',
             }}
@@ -77,7 +77,7 @@ export const FeedbackRating = ({ className }) => {
             value={feedback}
           />
           <input
-            className="w-full px-2 py-1 rounded-md border resize-none -mb-1 text-primary outline-none text-sm transition-all duration-500 disabled:opacity-50"
+            className="-mb-1 w-full resize-none rounded-md border px-2 py-1 text-primary text-sm outline-none transition-all duration-500 disabled:opacity-50"
             style={{
               filter: feedbackActive ? 'blur(0px)' : 'blur(100px)',
             }}
@@ -87,12 +87,12 @@ export const FeedbackRating = ({ className }) => {
             required={!isAnonymous}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <div className="flex gap-3 items-center">
+          <div className="flex items-center gap-3">
             <Checkbox id="isAnonymous" checked={isAnonymous} onCheckedChange={setIsAnonymous} />
             <div className="grid gap-1.5">
               <label
                 htmlFor="isAnonymous"
-                className="text-xs font-medium leading-none text-neutral-500 peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-white"
+                className="font-medium text-neutral-500 text-xs leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-white"
               >
                 <TextGenerateEffect
                   duration={0.2}
@@ -104,7 +104,7 @@ export const FeedbackRating = ({ className }) => {
         </div>
         <div
           className={cn(
-            'flex justify-between w-full',
+            'flex w-full justify-between',
             feedbackActive && 'max-[374px]:flex-col',
             feedbackActive ? 'gap-4' : 'gap-8'
           )}
@@ -122,11 +122,13 @@ export const FeedbackRating = ({ className }) => {
                 setRating(1);
                 setFeedbackActive(true);
               }}
-              className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
+              className="text-primary transition-all duration-400 hover:scale-105 active:scale-[.95]"
             >
               <Frown
-                size={32}
-                className={`${rating === 1 ? 'opacity-100 fill-red-500' : 'fill-transparent'}`}
+                className={cn(
+                  `${rating === 1 ? 'fill-red-500 opacity-100' : 'fill-transparent'}`,
+                  'size-6 sm:size-8'
+                )}
               />
             </button>
             <button
@@ -135,11 +137,13 @@ export const FeedbackRating = ({ className }) => {
                 setRating(2);
                 setFeedbackActive(true);
               }}
-              className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
+              className="text-primary transition-all duration-400 hover:scale-105 active:scale-[.95]"
             >
               <Annoyed
-                size={32}
-                className={`${rating === 2 ? 'opacity-100 fill-orange-500' : 'fill-transparent'}`}
+                className={cn(
+                  `${rating === 2 ? 'fill-orange-500 opacity-100' : 'fill-transparent'}`,
+                  'size-6 sm:size-8'
+                )}
               />
             </button>
             <button
@@ -148,11 +152,13 @@ export const FeedbackRating = ({ className }) => {
                 setRating(3);
                 setFeedbackActive(true);
               }}
-              className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
+              className="text-primary transition-all duration-400 hover:scale-105 active:scale-[.95]"
             >
               <Smile
-                size={32}
-                className={`${rating === 3 ? 'opacity-100 fill-blue-500' : 'fill-transparent'}`}
+                className={cn(
+                  `${rating === 3 ? 'fill-blue-500 opacity-100' : 'fill-transparent'}`,
+                  'size-6 sm:size-8'
+                )}
               />
             </button>
             <button
@@ -161,11 +167,13 @@ export const FeedbackRating = ({ className }) => {
                 setRating(4);
                 setFeedbackActive(true);
               }}
-              className="active:scale-[.95] hover:scale-105 transition-all duration-400 text-primary"
+              className="text-primary transition-all duration-400 hover:scale-105 active:scale-[.95]"
             >
               <Laugh
-                size={32}
-                className={`${rating === 4 ? 'opacity-100 fill-green-500' : 'fill-transparent'}`}
+                className={cn(
+                  `${rating === 4 ? 'fill-green-500 opacity-100' : 'fill-transparent'}`,
+                  'size-6 sm:size-8'
+                )}
               />
             </button>
           </div>
@@ -173,8 +181,8 @@ export const FeedbackRating = ({ className }) => {
             <button
               type="submit"
               className={cn(
-                'text-sm font-bold px-3 py-2 border rounded-md max-[374px]:w-full max-[374px]:py-2 flex items-center justify-center',
-                'bg-neutral-900 text-neutral-50 hover:bg-neutral-800 active:scale-[.95] transition-all duration-400'
+                'flex items-center justify-center rounded-md border px-3 py-2 font-bold text-sm max-[374px]:w-full max-[374px]:py-2',
+                'bg-neutral-900 text-neutral-50 transition-all duration-400 hover:bg-neutral-800 active:scale-[.95]'
               )}
             >
               Send

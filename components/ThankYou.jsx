@@ -12,9 +12,7 @@ export default function ThankYou({ className }) {
         'flex items-center ml-1 -mr-2.5',
         'rounded-full no-underline transition',
         'bg-p3-accent text-p3-text transition-all',
-        'hover:text-p3-text-dark',
         'dark:bg-p3-accent/40 dark:text-p3-text-light',
-        'dark:hover:text-p3-text-dark',
         className,
         'hover:animate-tada',
         'cursor-none opacity-60'

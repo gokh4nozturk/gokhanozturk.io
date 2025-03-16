@@ -9,6 +9,16 @@
       "recommended": true,
       "a11y": {
         "noSvgWithoutTitle": "info"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "error",
+          "fix": "safe",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["cn"]
+          }
+        }
       }
     }
   },
