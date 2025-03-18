@@ -25,6 +25,7 @@ import Motion from './motion';
 import Nodejs from './node';
 import Nuxt from './nuxt';
 import Pnpm from './pnpm';
+import PostCSS from './postcss';
 import RadixUI from './radix';
 import Raindropio from './raindrop';
 import ReactJS from './react';
@@ -71,8 +72,7 @@ export {
   Nextjs,
   Nodejs,
   Nuxt,
-  Pnpm,
-  Profile,
+  Pnpm, PostCSS, Profile,
   RadixUI,
   Raindropio,
   ReactJS,
@@ -94,5 +94,6 @@ export {
   XformerlyTwitter,
   Yarn,
   Zed,
-  Zod,
+  Zod
 };
+

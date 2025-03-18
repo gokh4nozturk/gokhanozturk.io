@@ -17,6 +17,7 @@ import {
   Nextjs,
   Nuxt,
   Pnpm,
+  PostCSS,
   RadixUI,
   ReactJS,
   ShadcnUI,
@@ -101,6 +102,10 @@ const TECHS = [
   {
     name: 'Pnpm',
     icon: Pnpm,
+  },
+  {
+    name: 'PostCSS',
+    icon: PostCSS,
   },
   {
     name: 'RadixUI',
