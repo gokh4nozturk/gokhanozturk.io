@@ -113,6 +113,15 @@ function Article() {
         <li>Implemented comprehensive documentation with Storybook and automated testing</li>
         <li>Established CI/CD pipeline with GitHub Actions for automated releases</li>
         <li>
+          <strong>
+            Rocket UI is actively used across all{' '}
+            <AnimatedLink href="https://rockads.com" color="rockads" name="Rockads">
+              Rockads
+            </AnimatedLink>{' '}
+            projects to ensure consistent UI and improve development efficiency
+          </strong>
+        </li>
+        <li>
           <strong>Tech stack:</strong> Vue 3, TypeScript, Tailwind CSS, Storybook, Vitest, GitHub
           Actions
         </li>
