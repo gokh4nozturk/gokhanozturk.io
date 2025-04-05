@@ -1,5 +1,6 @@
 'use client';
 
+import { Bluesky } from '@components/icons';
 import { cn } from '@lib/utils';
 import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
@@ -38,8 +39,8 @@ export function CircularMenu({ className }) {
       scale: 0.3,
     },
     visible: (index) => {
-      const startAngle = isMobile ? -90 : 6.8; // Starting angle in degrees
-      const endAngle = -191.5; // Ending angle in degrees
+      const startAngle = isMobile ? -60 : 6.8; // Starting angle in degrees
+      const endAngle = isMobile ? -180 : -191.5; // Ending angle in degrees
       const angleRange = endAngle - startAngle;
       const angleStep = angleRange / (6 - 1); // Divide by (n-1) for even distribution
       const currentAngle = (startAngle + index * angleStep) * (Math.PI / 180); // Convert to radians
@@ -93,6 +94,12 @@ export function CircularMenu({ className }) {
       rotation: 180,
       url: 'https://www.instagram.com/gokh4nozturk',
     },
+    {
+      name: 'Bluesky',
+      icon: <Bluesky className="size-5" />,
+      rotation: 240,
+      url: 'https://bsky.app/profile/gokhanozturk.io',
+    },
   ];
 
   return (
@@ -106,7 +113,7 @@ export function CircularMenu({ className }) {
       <button
         type="button"
         className={cn(
-          'absolute z-50 size-10 p-2 flex items-center justify-center gap-2 cursor-pointer bg-black text-white dark:bg-yellow-50 dark:text-black rounded-full flex-col',
+          'absolute z-50 flex size-10 cursor-pointer flex-col items-center justify-center gap-2 rounded-full bg-black p-2 text-white dark:bg-yellow-50 dark:text-black',
           'hover:animate-tilt',
           className
         )}
@@ -128,7 +135,7 @@ export function CircularMenu({ className }) {
                   ease: 'easeInOut',
                 },
               }}
-              className="sm:w-5 w-4 !h-[3px] bg-white dark:bg-black shrink-0"
+              className="!h-[3px] w-4 shrink-0 bg-white sm:w-5 dark:bg-black"
             />
           );
         })}
@@ -140,7 +147,7 @@ export function CircularMenu({ className }) {
           menuItems.map((item, index) => (
             <motion.a
               key={item.url}
-              className="absolute size-10 bg-black text-white dark:bg-yellow-50 dark:text-black flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-800 transition-colors will-change-transform"
+              className="absolute flex size-10 cursor-pointer items-center justify-center rounded-full bg-black text-white transition-colors will-change-transform hover:bg-gray-800 dark:bg-yellow-50 dark:text-black"
               custom={index}
               variants={menuItemVariants}
               initial="hidden"
