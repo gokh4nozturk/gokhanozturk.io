@@ -53,7 +53,7 @@ function Article() {
         Professional Experience
       </h2>
 
-      <h3 className="mb-1 font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mb-0 mb-1 font-medium text-gray-900 text-lg dark:text-white">
         Frontend Developer | Teknasyon Tech
       </h3>
       <p className="mb-2 text-gray-600 text-sm dark:text-gray-400">05/2021 – Present | İstanbul</p>
@@ -80,7 +80,7 @@ function Article() {
         </li>
       </ul>
 
-      <h3 className="mt-6 mb-1 font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white">
         Frontend Developer | Phanka Group
       </h3>
       <p className="mb-2 text-gray-600 text-sm dark:text-gray-400">12/2020 – 05/2021 | İstanbul</p>
@@ -96,14 +96,14 @@ function Article() {
         Open Source & Projects
       </h2>
 
-      <h3 className="mb-1 font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mb-0 font-medium text-gray-900 text-lg dark:text-white">
         Rocket UI | Core Maintainer
       </h3>
       <a
         href="https://github.com/Teknasyon/rocket-ui"
         target="_blank"
         rel="noopener noreferrer"
-        className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
       >
         <i>github.com/Teknasyon/rocket-ui</i>
       </a>
@@ -127,14 +127,38 @@ function Article() {
         </li>
       </ul>
 
-      <h3 className="mt-6 mb-1 font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white">
+        Linguolink | Creator & Maintainer
+      </h3>
+      <a
+        href="https://linguol.ink"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+      >
+        <i>linguol.ink</i>
+      </a>
+      <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
+        <li>
+          Built a developer-first translation management SaaS with self-service onboarding and
+          usage-based pricing
+        </li>
+        <li>Designed and implemented a scalable, automation-friendly backend architecture</li>
+        <li>Launched product with a custom landing page and integrated early user feedback</li>
+        <li>
+          <strong>Tech stack:</strong> TypeScript, Next.js, Neon (PostgreSQL), Clerk, AWS S3,
+          Drizzle ORM, GitHub Actions, Tailwind CSS, Shadcn UI
+        </li>
+      </ul>
+
+      <h3 className="mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white">
         Chop-URL | Creator & Maintainer
       </h3>
       <a
         href="https://github.com/gokh4nozturk/chop-url"
         target="_blank"
         rel="noopener noreferrer"
-        className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
       >
         <i>github.com/gokh4nozturk/chop-url</i>
       </a>
@@ -145,22 +169,22 @@ function Article() {
         <li>Added features like analytics tracking, rate limiting, and API documentation</li>
         <li>
           <strong>Tech stack:</strong> TypeScript, Next.js, Cloudflare Workers, Cloudflare D1,
-          Cloudflare R2, Hono, GitHub Actions, Tailwind CSS, Shadcn UI
+          Drizzle ORM, Cloudflare R2, Hono, GitHub Actions, Tailwind CSS, Shadcn UI
         </li>
       </ul>
 
-      <h3 className="mt-6 mb-1 border-gray-200 border-b font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mt-6 mb-0 border-gray-200 border-b font-medium text-gray-900 text-lg dark:text-white">
         Open Source Contributions
       </h3>
 
-      <h4 className="mb-1 font-medium text-base text-gray-900 dark:text-white">
+      <h4 className="my-1 font-medium text-base text-gray-900 dark:text-white">
         Magic UI | Contributor
       </h4>
       <a
         href="https://github.com/magicuidesign/magicui"
         target="_blank"
         rel="noopener noreferrer"
-        className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
       >
         <i>github.com/magicuidesign/magicui</i>
       </a>
@@ -173,14 +197,14 @@ function Article() {
         </li>
       </ul>
 
-      <h4 className="mt-4 mb-1 font-medium text-base text-gray-900 dark:text-white">
+      <h4 className="my-1 mb-1 font-medium text-base text-gray-900 dark:text-white">
         Animated Icons | Contributor
       </h4>
       <a
         href="https://github.com/pqoqubbw/icons"
         target="_blank"
         rel="noopener noreferrer"
-        className="mb-2 inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
       >
         <i>github.com/pqoqubbw/icons</i>
       </a>
