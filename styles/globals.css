@@ -131,67 +131,35 @@ body {
   @apply box-border;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
+/* View transitions */
 ::view-transition-group(root) {
-  animation-duration: var(--transition-duration);
-  animation-timing-function: var(--transition-timing-function);
+  animation-duration: 0.7s;
+  animation-timing-function: var(--expo-out);
 }
-
-/* Dark theme transitions */
+::view-transition-new(root) {
+  animation-name: reveal-light;
+}
+::view-transition-old(root),
 .dark::view-transition-old(root) {
-  z-index: 1;
+  animation: none;
+  z-index: -1;
 }
-
 .dark::view-transition-new(root) {
-  z-index: 999;
-  clip-path: inset(0 0 100% 0);
-  animation: revealClipPath var(--transition-duration) var(--transition-timing-function);
+  animation-name: reveal-dark;
 }
-
-/* Light theme transitions */
-.light::view-transition-old(root) {
-  z-index: 1;
-}
-
-.light::view-transition-new(root) {
-  z-index: 999;
-  clip-path: inset(0 0 100% 0);
-  animation: revealClipPath var(--transition-duration) var(--transition-timing-function);
-}
-
 @keyframes reveal-dark {
   from {
-    clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
   }
   to {
-    clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
-
 @keyframes reveal-light {
   from {
-    clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
   }
   to {
-    clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
-  }
-}
-
-.clipPathReveal {
-  clip-path: inset(0 0 100% 0);
-  animation: revealClipPath 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
- 
-@keyframes revealClipPath {
-  from {
-    clip-path: inset(0 0 100% 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
   }
 }
