@@ -13,15 +13,15 @@ export function Header() {
   }, []);
 
   return (
-    <header className="transition-all border-b pb-6 sm:pb-0 border-p3-border dark:border-p3-border-dark mb-4">
+    <header className="mb-4 border-p3-border border-b pb-6 transition-all sm:pb-0 dark:border-p3-border-dark">
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
-            <div className="grid relative size-16 place-items-center rounded-full border bg-p3-background-light dark:bg-p3-background-light md:size-20">
-              <Profile className="absolute size-full -top-1.5" />
+            <div className="relative grid size-16 place-items-center rounded-full border bg-p3-background-light md:size-20 dark:bg-p3-background-light">
+              <Profile className="-top-1.5 absolute size-full" />
             </div>
           ) : (
-            <div className="size-16 place-items-center rounded-full border bg-p3-background-light dark:bg-p3-background-light md:size-20">
+            <div className="size-16 place-items-center rounded-full border bg-p3-background-light md:size-20 dark:bg-p3-background-light">
               <div className="size-full animate-pulse rounded-full bg-p3-background dark:bg-p3-background-light" />
             </div>
           )}

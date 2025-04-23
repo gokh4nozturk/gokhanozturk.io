@@ -48,7 +48,7 @@ export function AnimatedTabs({ tabs }) {
                 href={path}
                 key={name}
                 className={cn(
-                  'flex h-8 items-center sm:px-4 px-2 text-sm font-medium text-p3-text-dark dark:text-p3-text',
+                  'flex h-8 items-center px-2 font-medium text-p3-text-dark text-sm sm:px-4 dark:text-p3-text',
                   activeTab !== path && 'hover:animate-tilt'
                 )}
                 tabIndex={-1}
@@ -70,7 +70,7 @@ export function AnimatedTabs({ tabs }) {
               key={name}
               ref={isActive ? activeTabRef : null}
               className={cn(
-                'flex h-8 items-center sm:px-4 px-2 text-sm font-medium text-p3-text-light dark:text-p3-text-light',
+                'flex h-8 items-center px-2 font-medium text-p3-text-light text-sm sm:px-4 dark:text-p3-text-light',
                 activeTab !== path && 'hover:animate-tilt'
               )}
             >

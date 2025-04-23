@@ -11,11 +11,11 @@ export function CheckboxExample() {
       <div className="grid gap-1.5">
         <label
           htmlFor="terms"
-          className="text-sm font-medium leading-none text-p3-text peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-p3-text-dark"
+          className="font-medium text-p3-text text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-p3-text-dark"
         >
           Accept terms and conditions
         </label>
-        <span className="text-sm text-p3-text-light dark:text-p3-text-light">
+        <span className="text-p3-text-light text-sm dark:text-p3-text-light">
           You agree to our Terms of Service and Privacy Policy.
         </span>
       </div>

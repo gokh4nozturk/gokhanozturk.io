@@ -8,7 +8,7 @@ export default function AnimatedLink({
   className,
 }) {
   const textColor = {
-      black: 'sm:hover:text-gray-900 sm:dark:hover:text-gray-200',
+    black: 'sm:hover:text-gray-900 sm:dark:hover:text-gray-200',
     rockads: 'sm:hover:text-[#007CE1]',
     teknasyon: 'sm:hover:text-[#009cfb]',
     blue: 'hover:text-blue-600 dark:hover:text-blue-400',
@@ -28,7 +28,11 @@ export default function AnimatedLink({
 
   return (
     <a
-      className={cn('group transition-all duration-300 ease-in-out no-underline', textColor, className)}
+      className={cn(
+        'group no-underline transition-all duration-300 ease-in-out',
+        textColor,
+        className
+      )}
       href={href}
       target="_blank"
       aria-label={`Link to external website of ${name}`}

@@ -183,13 +183,13 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
     <div
       className={cn(
-        'group backdrop-blur-sm border-y border-dashed h-12 relative bg-p3-background/10 dark:bg-p3-background-light/5 overflow-hidden',
+        'group relative h-12 overflow-hidden border-y border-dashed bg-p3-background/10 backdrop-blur-sm dark:bg-p3-background-light/5',
         className
       )}
     >
       <div
         className={cn(
-          'flex py-2 [--gap:2rem] [gap:var(--gap)] flex-row max-w-screen-sm',
+          'flex max-w-screen-sm flex-row py-2 [--gap:2rem] [gap:var(--gap)]',
           '[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]'
         )}
       >
@@ -205,12 +205,12 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
             return (
               <div
                 className={cn(
-                  'flex-shrink-0 object-contain flex items-center justify-center w-32 space-x-2'
+                  'flex w-32 flex-shrink-0 items-center justify-center space-x-2 object-contain'
                 )}
                 key={name}
               >
-                <Icon className="w-8 h-8" />
-                <p className="text-base font-bold truncate">{name}</p>
+                <Icon className="h-8 w-8" />
+                <p className="truncate font-bold text-base">{name}</p>
               </div>
             );
           })}
@@ -227,12 +227,12 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
             return (
               <div
                 className={cn(
-                  'flex-shrink-0 object-contain flex items-center justify-center w-32 space-x-2'
+                  'flex w-32 flex-shrink-0 items-center justify-center space-x-2 object-contain'
                 )}
                 key={`${name}-duplicate`}
               >
-                <Icon className="w-8 h-8" />
-                <p className="text-base font-bold truncate">{name}</p>
+                <Icon className="h-8 w-8" />
+                <p className="truncate font-bold text-base">{name}</p>
               </div>
             );
           })}

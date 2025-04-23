@@ -39,12 +39,12 @@ export default function Navigation() {
   return (
     <div
       className={cn(
-        'fixed flex items-center gap-1 h-[52px] sm:bottom-12 bottom-6 w-full z-50 left-1/2 -translate-x-1/2 border border-p3-border',
-        'px-4 py-2 backdrop-blur-sm dark:border-p3-border-dark max-w-fit rounded-full'
+        '-translate-x-1/2 fixed bottom-6 left-1/2 z-50 flex h-[52px] w-full items-center gap-1 border border-p3-border sm:bottom-12',
+        'max-w-fit rounded-full px-4 py-2 backdrop-blur-sm dark:border-p3-border-dark'
       )}
     >
       <AnimatedTabs tabs={navItems} />|
-      <div className="flex items-center gap-10 mr-3">
+      <div className="mr-3 flex items-center gap-10">
         <ThankYou />
         <CircularMenu />
       </div>

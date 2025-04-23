@@ -41,7 +41,7 @@ function Bookmark({ data: bookmark }) {
         <span className="text-xs dark:text-gray-300">
           {date.toLocaleDateString().replaceAll('/', '.')}
         </span>
-        <AnimatedLink href={link} className="text-sm font-medium dark:text-gray-400 sm:text-base">
+        <AnimatedLink href={link} className="font-medium text-sm sm:text-base dark:text-gray-400">
           {title}
         </AnimatedLink>
         <div className="flex gap-2">

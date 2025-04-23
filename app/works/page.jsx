@@ -46,12 +46,12 @@ export default async function Works() {
   );
 
   return (
-    <div className="w-full relative">
+    <div className="relative w-full">
       <TitleDescription
         title="Works"
         description="A collection of works that I have contributed to."
       />
-      <BrandScroller className="absolute inset-0 z-30 top-[72px] md:top-20" />
+      <BrandScroller className="absolute inset-0 top-[72px] z-30 md:top-20" />
       <ScrollArea>
         <div className="grid divide-y py-10">
           {works.map((work) => (
@@ -69,12 +69,12 @@ function Work({ data: work }) {
       <AnimatedLink
         href={work.html_url}
         name={work.name}
-        className="text-sm font-medium sm:text-base"
+        className="font-medium text-sm sm:text-base"
       >
         {work.full_name}
       </AnimatedLink>
-      <p className="my-1 truncate text-xs text-neutral-400">{work.description}</p>
-      <div className="flex gap-3 text-xs font-medium text-neutral-400">
+      <p className="my-1 truncate text-neutral-400 text-xs">{work.description}</p>
+      <div className="flex gap-3 font-medium text-neutral-400 text-xs">
         <span className={cn(LANG_COLORS[work.language])}>{work.language || 'Unknown'}</span>
         <span className="flex items-center gap-1">
           <Star size={12} />

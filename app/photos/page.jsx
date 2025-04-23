@@ -15,7 +15,7 @@ export default async function Photos() {
       <SplashCursor />
       <ScrollArea className="max-h-[calc(100dvh-16rem)]">
         <TitleDescription title="Photos" description="A collection of photos that I have taken." />
-        <div className="gap-1 pb-10 pt-2 sm:columns-3">
+        <div className="gap-1 pt-2 pb-10 sm:columns-3">
           {photos.map((photo, index) => (
             <Photo key={photo.id} data={photo} index={index} />
           ))}

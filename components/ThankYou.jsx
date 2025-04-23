@@ -9,7 +9,7 @@ export default function ThankYou({ className }) {
     <a
       href="https://www.buymeacoffee.com/gokhanozturk"
       className={cn(
-        'flex items-center ml-1 -mr-2.5',
+        '-mr-2.5 ml-1 flex items-center',
         'rounded-full no-underline transition',
         'bg-p3-accent text-p3-text transition-all',
         'dark:bg-p3-accent/40 dark:text-p3-text-light',
@@ -22,7 +22,7 @@ export default function ThankYou({ className }) {
     >
       <span
         title="Coming soon!!!"
-        className="flex sm:size-10 size-10 shrink-0 items-center justify-center rounded-full bg-black/10"
+        className="flex size-10 shrink-0 items-center justify-center rounded-full bg-black/10 sm:size-10"
       >
         <Buymeacoffee />
       </span>

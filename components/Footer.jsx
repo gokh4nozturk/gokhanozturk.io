@@ -8,7 +8,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="h-20 text-center sm:pb-32 pb-28 z-30">
+    <footer className="z-30 h-20 pb-28 text-center sm:pb-32">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <AnimatedLink

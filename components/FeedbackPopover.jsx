@@ -105,29 +105,29 @@ export default function FeedbackPopover({
         }}
       />
       <Content
-        className="bg-p3-background-light dark:bg-p3-background rounded-lg shadow-lg p-4 w-[300px] animate-in fade-in-0 zoom-in-95"
+        className="fade-in-0 zoom-in-95 w-[300px] animate-in rounded-lg bg-p3-background-light p-4 shadow-lg dark:bg-p3-background"
         sideOffset={5}
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <div className="space-y-4">
-          <div className="text-sm text-p3-text-light dark:text-p3-text-light">
+          <div className="text-p3-text-light text-sm dark:text-p3-text-light">
             <div className="flex justify-between">
               <p className="font-medium">Selected Text:</p>
-              <p className="text-xs text-p3-text-light">{feedbackCount} / 5</p>
+              <p className="text-p3-text-light text-xs">{feedbackCount} / 5</p>
             </div>
-            <p className="italic line-clamp-3">{selectedText}</p>
+            <p className="line-clamp-3 italic">{selectedText}</p>
           </div>
           <div>
             <textarea
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               placeholder="Write your feedback here..."
-              className="w-full resize-none p-2 text-sm border rounded-md dark:bg-p3-background dark:border-p3-border-dark dark:text-p3-text-dark"
+              className="w-full resize-none rounded-md border p-2 text-sm dark:border-p3-border-dark dark:bg-p3-background dark:text-p3-text-dark"
               rows={3}
               disabled={isSubmitting}
             />
 
-            <div className="flex text-sm justify-center-center flex-col gap-2">
+            <div className="justify-center-center flex flex-col gap-2 text-sm">
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"
@@ -154,7 +154,7 @@ export default function FeedbackPopover({
                     value={email}
                     placeholder="Your email address"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-1 border rounded-md dark:bg-p3-background dark:border-p3-border-dark dark:text-p3-text-dark"
+                    className="w-full rounded-md border p-1 dark:border-p3-border-dark dark:bg-p3-background dark:text-p3-text-dark"
                   />
                 </div>
               )}
@@ -164,7 +164,7 @@ export default function FeedbackPopover({
             type="button"
             onClick={handleSubmit}
             disabled={isSubmitting || !feedback.trim()}
-            className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm text-p3-text-dark bg-p3-primary rounded-md hover:bg-p3-primary-dark disabled:bg-p3-primary-light disabled:cursor-not-allowed"
+            className="flex w-full items-center justify-center gap-2 rounded-md bg-p3-primary px-4 py-2 text-p3-text-dark text-sm hover:bg-p3-primary-dark disabled:cursor-not-allowed disabled:bg-p3-primary-light"
           >
             <Send size={16} />
             {isSubmitting ? 'Sending...' : 'Send'}

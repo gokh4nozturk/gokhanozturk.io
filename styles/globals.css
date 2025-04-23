@@ -6,22 +6,40 @@
 
 :root {
   --expo-in: linear(
-    0 0%, 0.0085 31.26%, 0.0167 40.94%,
-    0.0289 48.86%, 0.0471 55.92%,
-    0.0717 61.99%, 0.1038 67.32%,
-    0.1443 72.07%, 0.1989 76.7%,
-    0.2659 80.89%, 0.3465 84.71%,
-    0.4419 88.22%, 0.554 91.48%,
-    0.6835 94.51%, 0.8316 97.34%, 1 100%
+    0 0%,
+    0.0085 31.26%,
+    0.0167 40.94%,
+    0.0289 48.86%,
+    0.0471 55.92%,
+    0.0717 61.99%,
+    0.1038 67.32%,
+    0.1443 72.07%,
+    0.1989 76.7%,
+    0.2659 80.89%,
+    0.3465 84.71%,
+    0.4419 88.22%,
+    0.554 91.48%,
+    0.6835 94.51%,
+    0.8316 97.34%,
+    1 100%
   );
   --expo-out: linear(
-    0 0%, 0.1684 2.66%, 0.3165 5.49%,
-    0.446 8.52%, 0.5581 11.78%,
-    0.6535 15.29%, 0.7341 19.11%,
-    0.8011 23.3%, 0.8557 27.93%,
-    0.8962 32.68%, 0.9283 38.01%,
-    0.9529 44.08%, 0.9711 51.14%,
-    0.9833 59.06%, 0.9915 68.74%, 1 100%
+    0 0%,
+    0.1684 2.66%,
+    0.3165 5.49%,
+    0.446 8.52%,
+    0.5581 11.78%,
+    0.6535 15.29%,
+    0.7341 19.11%,
+    0.8011 23.3%,
+    0.8557 27.93%,
+    0.8962 32.68%,
+    0.9283 38.01%,
+    0.9529 44.08%,
+    0.9711 51.14%,
+    0.9833 59.06%,
+    0.9915 68.74%,
+    1 100%
   );
 
   --transition-duration: 0.7s;
@@ -29,94 +47,94 @@
 
   /* Theme Colors with Fallbacks */
   --p3-light: oklch(98% 0.003 95);
-  --p3-light: color(display-p3 0.976 0.980 0.984);
-  
+  --p3-light: color(display-p3 0.976 0.98 0.984);
+
   --p3-dark: oklch(10% 0.003 95);
   --p3-dark: color(display-p3 0.067 0.063 0.063);
 
   /* Primary Colors with Fallbacks */
   --p3-primary: oklch(63% 0.25 25);
   --p3-primary: color(display-p3 1 0.25 0);
-  
+
   --p3-primary-light: oklch(70% 0.25 25);
   --p3-primary-light: color(display-p3 1 0.4 0.2);
-  
+
   --p3-primary-dark: oklch(55% 0.25 25);
   --p3-primary-dark: color(display-p3 0.8 0.2 0);
 
   /* Secondary Colors with Fallbacks */
   --p3-secondary: oklch(60% 0.2 350);
   --p3-secondary: color(display-p3 0.8 0.2 0.5);
-  
+
   --p3-secondary-light: oklch(70% 0.2 350);
   --p3-secondary-light: color(display-p3 0.9 0.3 0.6);
-  
+
   --p3-secondary-dark: oklch(50% 0.2 350);
   --p3-secondary-dark: color(display-p3 0.7 0.1 0.4);
 
   /* Accent Colors with Fallbacks */
   --p3-accent: oklch(95% 0.06 85);
   --p3-accent: color(display-p3 1 0.96 0.85);
-  
+
   --p3-accent-light: oklch(97% 0.04 85);
-  --p3-accent-light: color(display-p3 1 0.98 0.90);
-  
+  --p3-accent-light: color(display-p3 1 0.98 0.9);
+
   --p3-accent-dark: oklch(93% 0.07 85);
   --p3-accent-dark: color(display-p3 0.71 0.33 0.04);
 
   /* Text Colors with Fallbacks */
   --p3-text: oklch(10% 0.003 95);
   --p3-text: color(display-p3 0.067 0.063 0.063);
-  
+
   --p3-text-light: oklch(50% 0.003 95);
   --p3-text-light: color(display-p3 0.4 0.4 0.4);
-  
+
   --p3-text-dark: oklch(90% 0.003 95);
   --p3-text-dark: color(display-p3 0.9 0.9 0.9);
 
   /* Background Colors with Fallbacks */
   --p3-background: oklch(12% 0.003 95);
   --p3-background: color(display-p3 0.07 0.07 0.07);
-  
+
   --p3-background-light: oklch(95% 0.003 95);
   --p3-background-light: color(display-p3 0.95 0.95 0.95);
-  
+
   --p3-background-dark: oklch(8% 0.003 95);
   --p3-background-dark: color(display-p3 0.05 0.05 0.05);
 
   /* Border Colors with Fallbacks */
   --p3-border: oklch(80% 0.003 95);
   --p3-border: color(display-p3 0.8 0.8 0.8);
-  
+
   --p3-border-dark: oklch(20% 0.003 95);
   --p3-border-dark: color(display-p3 0.2 0.2 0.2);
 }
 
 @supports (color: color(display-p3 1 1 1)) {
   :root {
-    --p3-light: color(display-p3 0.976 0.980 0.984);
+    --p3-light: color(display-p3 0.976 0.98 0.984);
     --p3-dark: color(display-p3 0.067 0.063 0.063);
-    
+
     --p3-primary: color(display-p3 1 0.25 0);
     --p3-primary-light: color(display-p3 1 0.4 0.2);
     --p3-primary-dark: color(display-p3 0.8 0.2 0);
-    
+
     --p3-secondary: color(display-p3 0.8 0.2 0.5);
     --p3-secondary-light: color(display-p3 0.9 0.3 0.6);
     --p3-secondary-dark: color(display-p3 0.7 0.1 0.4);
-    
+
     --p3-accent: color(display-p3 1 0.96 0.85);
-    --p3-accent-light: color(display-p3 1 0.98 0.90);
+    --p3-accent-light: color(display-p3 1 0.98 0.9);
     --p3-accent-dark: color(display-p3 0.71 0.33 0.04);
-    
+
     --p3-text: color(display-p3 0.067 0.063 0.063);
     --p3-text-light: color(display-p3 0.4 0.4 0.4);
     --p3-text-dark: color(display-p3 0.9 0.9 0.9);
-    
+
     --p3-background: color(display-p3 0.07 0.07 0.07);
     --p3-background-light: color(display-p3 0.95 0.95 0.95);
     --p3-background-dark: color(display-p3 0.05 0.05 0.05);
-    
+
     --p3-border: color(display-p3 0.8 0.8 0.8);
     --p3-border-dark: color(display-p3 0.2 0.2 0.2);
   }

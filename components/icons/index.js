@@ -72,7 +72,9 @@ export {
   Nextjs,
   Nodejs,
   Nuxt,
-  Pnpm, PostCSS, Profile,
+  Pnpm,
+  PostCSS,
+  Profile,
   RadixUI,
   Raindropio,
   ReactJS,
@@ -94,6 +96,5 @@ export {
   XformerlyTwitter,
   Yarn,
   Zed,
-  Zod
+  Zod,
 };
-

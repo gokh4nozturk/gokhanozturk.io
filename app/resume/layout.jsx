@@ -51,7 +51,7 @@ export const metadata = {
 
 export default function ResumeLayout({ children }) {
   return (
-    <article className="prose prose-p3 flex flex-col gap-4 items-center mx-auto max-w-2xl pb-56 dark:prose-p3-dark">
+    <article className="prose prose-p3 dark:prose-p3-dark mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">
       {children}
       {/* <FeedbackRating /> */}
     </article>

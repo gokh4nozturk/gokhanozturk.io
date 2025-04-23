@@ -6,12 +6,12 @@ export function NameTransition() {
   const isResume = pathname === '/resume';
 
   return (
-    <h1 className="transition-element text-xl font-medium sm:text-3xl">
+    <h1 className="font-medium text-xl transition-element sm:text-3xl">
       <span className="sr-only">Gökhan Öztürk</span>
       <span aria-hidden="true" className="group relative block overflow-hidden">
         <span
           className={cn(
-            'inline-block transition-all duration-300 ease-in-out group-hover:-translate-y-full',
+            'group-hover:-translate-y-full inline-block transition-all duration-300 ease-in-out',
             isResume && '-translate-y-full'
           )}
         >
@@ -28,7 +28,7 @@ export function NameTransition() {
         </span>
         <span
           className={cn(
-            'absolute left-0 top-0 inline-block translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0',
+            'absolute top-0 left-0 inline-block translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0',
             isResume && 'translate-y-0'
           )}
         >
