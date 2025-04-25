@@ -6,11 +6,19 @@ export default function About() {
     <div className="text-sm sm:text-base">
       <p>
         Hi 👋 my name is Gökhan, a software engineer at{' '}
-        <AnimatedLink href="https://teknasyon.com/en/" color="teknasyon" name="Teknasyon">
+        <AnimatedLink
+          href="https://teknasyon.com/en/?ref=gokhanozturk.io"
+          color="teknasyon"
+          name="Teknasyon"
+        >
           Teknasyon
         </AnimatedLink>
         . I am working on{' '}
-        <AnimatedLink href="https://rockads.com/" color="rockads" name="rockads.com">
+        <AnimatedLink
+          href="https://rockads.com/?ref=gokhanozturk.io"
+          color="rockads"
+          name="rockads.com"
+        >
           rockads.com
         </AnimatedLink>{' '}
         and in-house solutions.

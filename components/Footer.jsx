@@ -2,9 +2,12 @@ import AnimatedLink from './AnimatedLink';
 
 export default function Footer() {
   const links = [
-    { name: '@gokh4nozturk', url: 'https://x.com/intent/follow?screen_name=gokh4nozturk' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/gokhannozturk' },
-    { name: 'github', url: 'https://github.com/gokh4nozturk' },
+    {
+      name: '@gokh4nozturk',
+      url: 'https://x.com/intent/follow?screen_name=gokh4nozturk?ref=gokhanozturk.io',
+    },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/gokhannozturk?ref=gokhanozturk.io' },
+    { name: 'github', url: 'https://github.com/gokh4nozturk?ref=gokhanozturk.io' },
   ];
 
   return (

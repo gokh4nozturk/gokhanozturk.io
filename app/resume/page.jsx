@@ -22,7 +22,7 @@ function Article() {
         <br />
         İstanbul, Turkey ·{' '}
         <a
-          href="https://github.com/gokh4nozturk"
+          href="https://github.com/gokh4nozturk?ref=gokhanozturk.io"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -31,7 +31,7 @@ function Article() {
         </a>{' '}
         ·{' '}
         <a
-          href="https://linkedin.com/in/gokhannozturk"
+          href="https://linkedin.com/in/gokhannozturk?ref=gokhanozturk.io"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -69,7 +69,10 @@ function Article() {
         </li>
         <li>
           Developed and maintained{' '}
-          <AnimatedLink href="https://github.com/Teknasyon/rocket-ui" className="no-underline">
+          <AnimatedLink
+            href="https://github.com/Teknasyon/rocket-ui?ref=gokhanozturk.io"
+            className="no-underline"
+          >
             Rocket UI
           </AnimatedLink>
           , a modern UI component library.
@@ -100,7 +103,7 @@ function Article() {
         Rocket UI | Core Maintainer
       </h3>
       <a
-        href="https://github.com/Teknasyon/rocket-ui"
+        href="https://github.com/Teknasyon/rocket-ui?ref=gokhanozturk.io"
         target="_blank"
         rel="noopener noreferrer"
         className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -115,7 +118,11 @@ function Article() {
         <li>
           <strong>
             Rocket UI is actively used across all{' '}
-            <AnimatedLink href="https://rockads.com" color="rockads" name="Rockads">
+            <AnimatedLink
+              href="https://rockads.com?ref=gokhanozturk.io"
+              color="rockads"
+              name="Rockads"
+            >
               Rockads
             </AnimatedLink>{' '}
             projects to ensure consistent UI and improve development efficiency
@@ -131,7 +138,7 @@ function Article() {
         Linguolink | Creator & Maintainer
       </h3>
       <a
-        href="https://linguol.ink"
+        href="https://linguol.ink?ref=gokhanozturk.io"
         target="_blank"
         rel="noopener noreferrer"
         className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -155,7 +162,7 @@ function Article() {
         Chop-URL | Creator & Maintainer
       </h3>
       <a
-        href="https://github.com/gokh4nozturk/chop-url"
+        href="https://github.com/gokh4nozturk/chop-url?ref=gokhanozturk.io"
         target="_blank"
         rel="noopener noreferrer"
         className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -181,7 +188,7 @@ function Article() {
         Magic UI | Contributor
       </h4>
       <a
-        href="https://github.com/magicuidesign/magicui"
+        href="https://github.com/magicuidesign/magicui?ref=gokhanozturk.io"
         target="_blank"
         rel="noopener noreferrer"
         className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
@@ -201,7 +208,7 @@ function Article() {
         Animated Icons | Contributor
       </h4>
       <a
-        href="https://github.com/pqoqubbw/icons"
+        href="https://github.com/pqoqubbw/icons?ref=gokhanozturk.io"
         target="_blank"
         rel="noopener noreferrer"
         className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
