@@ -196,7 +196,7 @@ function Article() {
         <i>github.com/magicuidesign/magicui</i>
       </a>
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
-        <li>Contributed to a popular UI library (15k+ stars) for Design Engineers</li>
+        <li>Contributed to a popular UI library (16k+ stars) for Design Engineers</li>
         <li>Developed reusable animated components and effects</li>
         <li>Collaborated on documentation and accessibility improvements</li>
         <li>
@@ -216,7 +216,7 @@ function Article() {
         <i>github.com/pqoqubbw/icons</i>
       </a>
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
-        <li>Contributed to a widely-used animated icons library (3.8k+ stars)</li>
+        <li>Contributed to a widely-used animated icons library (4k+ stars)</li>
         <li>Enhanced icon animations and optimized SVG performance</li>
         <li>Improved documentation and component examples</li>
         <li>
@@ -231,7 +231,7 @@ function Article() {
 
       <div className="mb-2">
         <strong className="text-gray-900 dark:text-gray-200">Computer Engineering</strong> | Erciyes
-        University | <span className="text-gray-600 dark:text-gray-400">2018 – Present</span>
+        University | <span className="text-gray-600 dark:text-gray-400">2018 – Paused</span>
       </div>
       <div className="mb-6">
         <strong className="text-gray-900 dark:text-gray-200">Computer Programming</strong> |
@@ -244,34 +244,42 @@ function Article() {
 
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Frontend:</strong> Vue.js, React.js,
-          TypeScript, JavaScript (ES6+), HTML5, CSS3
+          <strong className="text-gray-900 dark:text-gray-200">Languages:</strong> TypeScript,
+          JavaScript (ES6+), HTML5, CSS3
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Frameworks:</strong> Nuxt.js,
-          Next.js, Tailwind CSS, Vuex, Vue Router, Shadcn UI
+          <strong className="text-gray-900 dark:text-gray-200">Frontend Libraries:</strong> Vue.js,
+          React.js, Vuex, Vue Router
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Testing & Quality:</strong> Vitest,
-          Vue Testing Library, Jest, ESLint, Prettier
+          <strong className="text-gray-900 dark:text-gray-200">Frameworks:</strong> Nuxt.js, Next.js
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Cloud & DevOps:</strong> Cloudflare
-          Workers, Cloudflare D1, Vercel, GitHub Actions
+          <strong className="text-gray-900 dark:text-gray-200">UI & Styling | Animations:</strong>{' '}
+          Tailwind CSS, Shadcn UI, Storybook, Framer Motion
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Tools:</strong> Git, Storybook,
-          Figma, Framer Motion
+          <strong className="text-gray-900 dark:text-gray-200">Testing:</strong> Vitest, Vue Testing
+          Library, Jest
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Other:</strong> REST APIs, GraphQL,
-          Node.js, Hono
+          <strong className="text-gray-900 dark:text-gray-200">DevOps & Cloud:</strong> GitHub
+          Actions, Vercel, Cloudflare Workers, Cloudflare D1, Cloudflare R2, Postgres, Neon,
+          Supabase
+        </li>
+        <li>
+          <strong className="text-gray-900 dark:text-gray-200">Tools:</strong> Git, Figma, ESLint,
+          Prettier, Biome
+        </li>
+        <li>
+          <strong className="text-gray-900 dark:text-gray-200">Backend & API:</strong> Node.js, REST
+          APIs, Hono, Drizzle ORM
         </li>
       </ul>
 
       <hr className="my-8 border-gray-200 dark:border-gray-800" />
 
-      <p className="text-gray-600 text-sm dark:text-gray-400">Last Updated: March 2025</p>
+      <p className="text-gray-600 text-sm dark:text-gray-400">Last Updated: May 2025</p>
     </article>
   );
 }
