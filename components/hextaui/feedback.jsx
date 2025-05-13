@@ -49,10 +49,10 @@ export const FeedbackRating = ({ className }) => {
       <form
         ref={node}
         className={cn(
-          'flex flex-col items-start gap-4 overflow-hidden border bg-secondary/50 px-6 py-3 shadow-sm transition-all ease-in-out max-[315px]:scale-95',
-          feedbackActive ? 'min-h-[14rem] max-[374px]:h-[16rem]' : 'h-[3.5rem]',
+          'flex flex-col items-start gap-4 overflow-hidden border bg-secondary/50 px-6 py-1.5 shadow-sm transition-all ease-in-out max-[315px]:scale-95',
+          feedbackActive ? 'min-h-[14rem] max-[374px]:h-[16rem]' : 'h-[3rem]',
           feedbackActive ? 'rounded-md' : 'rounded-full',
-          feedbackActive ? 'w-[19rem] max-[374px]:w-[15rem]' : 'w-[12rem] sm:w-[14rem]',
+          feedbackActive ? 'w-[19rem] max-[374px]:w-[15rem]' : 'w-[12rem] sm:w-[13rem]',
           feedbackActive ? 'max-[374px]:justify-center' : 'justify-end',
           className
         )}
@@ -106,7 +106,7 @@ export const FeedbackRating = ({ className }) => {
           className={cn(
             'flex w-full justify-between',
             feedbackActive && 'max-[374px]:flex-col',
-            feedbackActive ? 'gap-4' : 'gap-8'
+            feedbackActive ? 'gap-4' : 'gap-6'
           )}
         >
           <div
@@ -127,7 +127,7 @@ export const FeedbackRating = ({ className }) => {
               <Frown
                 className={cn(
                   `${rating === 1 ? 'fill-red-500 opacity-100' : 'fill-transparent'}`,
-                  'size-6 sm:size-8'
+                  'size-6 sm:size-7'
                 )}
               />
             </button>
@@ -142,7 +142,7 @@ export const FeedbackRating = ({ className }) => {
               <Annoyed
                 className={cn(
                   `${rating === 2 ? 'fill-orange-500 opacity-100' : 'fill-transparent'}`,
-                  'size-6 sm:size-8'
+                  'size-6 sm:size-7'
                 )}
               />
             </button>
@@ -157,7 +157,7 @@ export const FeedbackRating = ({ className }) => {
               <Smile
                 className={cn(
                   `${rating === 3 ? 'fill-blue-500 opacity-100' : 'fill-transparent'}`,
-                  'size-6 sm:size-8'
+                  'size-6 sm:size-7'
                 )}
               />
             </button>
@@ -172,7 +172,7 @@ export const FeedbackRating = ({ className }) => {
               <Laugh
                 className={cn(
                   `${rating === 4 ? 'fill-green-500 opacity-100' : 'fill-transparent'}`,
-                  'size-6 sm:size-8'
+                  'size-6 sm:size-7'
                 )}
               />
             </button>
