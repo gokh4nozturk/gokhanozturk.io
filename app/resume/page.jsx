@@ -244,36 +244,21 @@ function Article() {
 
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Languages:</strong> TypeScript,
-          JavaScript (ES6+), HTML5, CSS3
+          <strong className="text-gray-900 dark:text-gray-200">Core:</strong> TypeScript, JavaScript
+          (ES6+), HTML5, CSS3
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Frontend Libraries:</strong> Vue.js,
-          React.js, Vuex, Vue Router
+          <strong className="text-gray-900 dark:text-gray-200">Frontend:</strong> Vue.js, React.js,
+          Nuxt.js, Next.js, Tailwind CSS, Shadcn UI, Framer Motion
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Frameworks:</strong> Nuxt.js, Next.js
+          <strong className="text-gray-900 dark:text-gray-200">Development:</strong> Git, Storybook,
+          ESLint, Prettier, Biome, Vitest, Jest, Vue Testing Library
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">UI & Styling | Animations:</strong>{' '}
-          Tailwind CSS, Shadcn UI, Storybook, Framer Motion
-        </li>
-        <li>
-          <strong className="text-gray-900 dark:text-gray-200">Testing:</strong> Vitest, Vue Testing
-          Library, Jest
-        </li>
-        <li>
-          <strong className="text-gray-900 dark:text-gray-200">DevOps & Cloud:</strong> GitHub
-          Actions, Vercel, Cloudflare Workers, Cloudflare D1, Cloudflare R2, Postgres, Neon,
-          Supabase
-        </li>
-        <li>
-          <strong className="text-gray-900 dark:text-gray-200">Tools:</strong> Git, Figma, ESLint,
-          Prettier, Biome
-        </li>
-        <li>
-          <strong className="text-gray-900 dark:text-gray-200">Backend & API:</strong> Node.js, REST
-          APIs, Hono, Drizzle ORM
+          <strong className="text-gray-900 dark:text-gray-200">Infrastructure:</strong> GitHub
+          Actions, Vercel, Cloudflare Workers/D1/R2, Node.js, REST APIs, Hono, Drizzle ORM,
+          Postgres, Neon, Supabase
         </li>
       </ul>
 
