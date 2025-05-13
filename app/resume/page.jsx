@@ -220,8 +220,8 @@ function Article() {
         <li>Enhanced icon animations and optimized SVG performance</li>
         <li>Improved documentation and component examples</li>
         <li>
-          <strong>Tech stack:</strong> TypeScript, SVG, Next.js, Framer Motion, Tailwind CSS, Shadcn
-          UI
+          <strong>Tech stack:</strong> TypeScript, SVG Animations, Next.js, Framer Motion, Tailwind
+          CSS, Shadcn UI
         </li>
       </ul>
 
@@ -248,17 +248,18 @@ function Article() {
           (ES6+), HTML5, CSS3
         </li>
         <li>
-          <strong className="text-gray-900 dark:text-gray-200">Frontend:</strong> Vue.js, React.js,
-          Nuxt.js, Next.js, Tailwind CSS, Shadcn UI, Framer Motion
+          <strong className="text-gray-900 dark:text-gray-200">Frontend:</strong> Vue.js (2/3),
+          React.js, Nuxt.js, Next.js, Vuex, Vue Router, Tailwind CSS, Shadcn UI, SASS, Bootstrap,
+          Framer Motion, SVG Animations
         </li>
         <li>
           <strong className="text-gray-900 dark:text-gray-200">Development:</strong> Git, Storybook,
-          ESLint, Prettier, Biome, Vitest, Jest, Vue Testing Library
+          ESLint, Prettier, Biome, Vitest, Jest, Vue Testing Library, Figma
         </li>
         <li>
           <strong className="text-gray-900 dark:text-gray-200">Infrastructure:</strong> GitHub
-          Actions, Vercel, Cloudflare Workers/D1/R2, Node.js, REST APIs, Hono, Drizzle ORM,
-          Postgres, Neon, Supabase
+          Actions, Vercel, Cloudflare (Workers/D1/R2), Node.js, AWS S3, Clerk, REST APIs, Hono,
+          Drizzle ORM, Postgres, Neon, Supabase
         </li>
       </ul>
 
