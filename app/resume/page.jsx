@@ -53,7 +53,7 @@ function Article() {
         Professional Experience
       </h2>
 
-      <h3 className="mb-0 mb-1 font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mb-0 font-medium text-gray-900 text-lg dark:text-white">
         Frontend Developer | Teknasyon Tech
       </h3>
       <p className="mb-2 text-gray-600 text-sm dark:text-gray-400">05/2021 – Present | İstanbul</p>
