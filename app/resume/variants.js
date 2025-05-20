@@ -1,31 +1,31 @@
 import { cn } from '../../lib/utils';
 
 export const resumeVariants = {
-  container: 'relative mx-auto max-w-2xl',
-  article: 'prose prose-slate dark:prose-invert max-w-none',
+  container: 'relative mx-auto max-w-2xl print:max-w-full print:text-xs',
+  article: 'prose prose-slate dark:prose-invert max-w-none print:text-xs',
 
   heading: {
-    h1: 'mt-2 mb-3 font-bold text-3xl text-gray-900 tracking-tight dark:text-white',
-    h2: 'mt-8 mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white',
-    h3: 'mb-0 font-medium text-gray-900 text-lg dark:text-white',
+    h1: 'mt-2 mb-3 font-bold text-3xl text-gray-900 tracking-tight dark:text-white print:text-lg',
+    h2: 'mt-8 mb-4 border-gray-200 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white print:text-xs',
+    h3: 'mb-0 font-medium text-gray-900 text-lg dark:text-white print:text-xs',
     h3WithBorder:
-      'mt-6 mb-0 border-gray-200 border-b font-medium text-gray-900 text-lg dark:text-white',
-    h4: 'my-1 font-medium text-base text-gray-900 dark:text-white',
-    h4WithMargin: 'my-1 mb-1 font-medium text-base text-gray-900 dark:text-white',
+      'mt-6 mb-0 border-gray-200 border-b font-medium text-gray-900 text-lg dark:text-white print:text-xs',
+    h4: 'my-1 font-medium text-base text-gray-900 dark:text-white print:text-xs',
+    h4WithMargin: 'my-1 mb-1 font-medium text-base text-gray-900 dark:text-white print:text-xs',
   },
 
   text: {
-    meta: 'mb-8 text-gray-600 dark:text-gray-400',
-    paragraph: 'text-gray-600 dark:text-gray-300',
-    date: 'mb-2 text-gray-600 text-sm dark:text-gray-400',
-    link: 'text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300',
+    meta: 'mb-8 text-gray-600 dark:text-gray-400 print:text-xs',
+    paragraph: 'text-gray-600 dark:text-gray-300 print:text-xs',
+    date: 'mb-2 text-gray-600 text-sm dark:text-gray-400 print:text-xs',
+    link: 'text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 print:text-xs',
     repoLink:
-      'mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300',
-    lastUpdated: 'text-gray-600 text-sm dark:text-gray-400',
+      'mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 print:text-xs',
+    lastUpdated: 'text-gray-600 text-sm dark:text-gray-400 print:text-xs',
   },
 
   lists: {
-    unordered: 'list-disc pl-4 text-gray-600 dark:text-gray-300',
+    unordered: 'list-disc pl-4 text-gray-600 dark:text-gray-300 print:text-xs',
   },
 
   dividers: {
@@ -33,7 +33,7 @@ export const resumeVariants = {
   },
 
   education: {
-    label: 'text-gray-900 dark:text-gray-200',
+    label: 'text-gray-900 dark:text-gray-200 print:text-xs',
   },
 };
 

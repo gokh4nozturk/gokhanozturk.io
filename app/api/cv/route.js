@@ -1,8 +1,6 @@
 import puppeteer from 'puppeteer';
 
 export async function GET(req) {
-  console.log('req', req.headers.get('host'));
-
   const browser = await puppeteer.launch({
     headless: 'new', // puppeteer@20+ için
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -19,7 +17,7 @@ export async function GET(req) {
   const pdfBuffer = await page.pdf({
     format: 'A4',
     printBackground: false,
-    margin: { top: '20mm', bottom: '20mm', left: '15mm', right: '15mm' },
+    margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
 
   await browser.close();
