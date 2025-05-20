@@ -31,51 +31,53 @@ export function Print() {
   }
 
   return (
-    <div className="flex items-center gap-2">
-      <PrintIcon className="size-6" />
-      <button
-        disabled={isPrinting}
-        type="button"
-        className="rounded-md bg-blue-500 px-4 py-2 text-white"
-        onClick={handlePrintMD}
-      >
-        MD
-      </button>
-      <button
-        disabled={isPrinting}
-        type="button"
-        className="rounded-md bg-blue-500 px-4 py-2 text-white"
-        onClick={handlePrintJSX}
-      >
-        JSX
-      </button>
+    <div className="flex items-center gap-2 print:hidden">
+      <PrintButton size={24} disabled={isPrinting} onClick={handlePrintMD}>
+        md
+      </PrintButton>
+
+      <PrintButton size={24} disabled={isPrinting} onClick={handlePrintJSX}>
+        jsx
+      </PrintButton>
     </div>
   );
 }
 
 const pathVariants = {
-  normal: { d: 'm19 12-7 7-7-7', translateY: 0 },
+  normal: { d: 'M12 17V3', translateY: 0 },
   animate: {
-    d: 'm19 12-7 7-7-7',
-    translateY: [0, -3, 0],
+    d: 'M12 17V3',
+    translateY: [0, -4, 0],
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 };
 
 const secondPathVariants = {
-  normal: { d: 'M12 5v14' },
+  normal: { d: 'm6 11 6 6 6-6' },
   animate: {
-    d: ['M12 5v14', 'M12 5v9', 'M12 5v14'],
+    d: ['m6 11 6 6 6-6', 'm6 6 6 6 6-6', 'm6 11 6 6 6-6'],
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 };
 
-const PrintIcon = forwardRef(
-  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+const PrintButton = forwardRef(
+  (
+    {
+      onMouseEnter,
+      onMouseLeave,
+      className,
+      size = 28,
+      disabled = false,
+      onClick,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -111,12 +113,20 @@ const PrintIcon = forwardRef(
     );
 
     return (
-      <div
-        className={cn(className)}
+      <button
+        disabled={disabled}
+        type="button"
+        className={cn(
+          className,
+          disabled && 'opacity-50',
+          'flex items-center gap-2 rounded-md border border-gray-300 px-2 py-1'
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={onClick}
         {...props}
       >
+        {children}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
@@ -128,10 +138,11 @@ const PrintIcon = forwardRef(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path d="m19 12-7 7-7-7" variants={pathVariants} animate={controls} />
-          <motion.path d="M12 5v14" variants={secondPathVariants} animate={controls} />
+          <path d="M19 21H5" />
+          <motion.path d="M12 17V3" variants={pathVariants} animate={controls} />
+          <motion.path d="m6 11 6 6 6-6" variants={secondPathVariants} animate={controls} />
         </svg>
-      </div>
+      </button>
     );
   }
 );
