@@ -111,6 +111,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.13
         version: 10.4.21(postcss@8.5.3)
+      ignore-loader:
+        specifier: ^0.1.2
+        version: 0.1.2
       postcss:
         specifier: ^8.4.19
         version: 8.5.3
@@ -2353,6 +2356,9 @@ packages:
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+
+  ignore-loader@0.1.2:
+    resolution: {integrity: sha512-yOJQEKrNwoYqrWLS4DcnzM7SEQhRKis5mB+LdKKh4cPmGYlLPR0ozRzHV5jmEk2IxptqJNQA5Cc0gw8Fj12bXA==}
 
   image-size@1.2.0:
     resolution: {integrity: sha512-4S8fwbO6w3GeCVN6OPtA9I5IGKkcDMPcKndtUlpJuCwu7JLjtj7JZpwqLuyY2nrmQT3AWsCJLSKPsc2mPBSl3w==}
@@ -6440,6 +6446,8 @@ snapshots:
       - supports-color
 
   ieee754@1.2.1: {}
+
+  ignore-loader@0.1.2: {}
 
   image-size@1.2.0:
     dependencies:
