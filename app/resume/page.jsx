@@ -1,7 +1,7 @@
 import AnimatedLink from '@components/AnimatedLink';
 import { FeedbackRating } from '@components/hextaui/feedback';
+import { Print } from './print';
 import { getHeadingVariant, getLinkVariant, resumeVariants } from './variants';
-
 export default function ResumePage() {
   return (
     <div className={resumeVariants.container}>
@@ -257,7 +257,10 @@ function Article() {
 
       <hr className={resumeVariants.dividers.hr} />
 
-      <p className={resumeVariants.text.lastUpdated}>Last Updated: May 2025</p>
+      <div className="flex items-center justify-between gap-2">
+        <p className={resumeVariants.text.lastUpdated}>Last Updated: May 2025</p>
+        <Print />
+      </div>
     </article>
   );
 }
