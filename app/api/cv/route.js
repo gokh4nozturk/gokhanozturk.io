@@ -1,10 +1,31 @@
-import puppeteer from 'puppeteer';
+import chromium from 'chrome-aws-lambda';
+import puppeteerCore from 'puppeteer-core';
 
 export async function GET(req) {
-  const browser = await puppeteer.launch({
-    headless: 'new', // puppeteer@20+ için
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  // For local development vs. Vercel deployment
+  const isDev = process.env.NODE_ENV === 'development';
+
+  let browser;
+  if (isDev) {
+    // Local development - use local Chrome
+    browser = await puppeteerCore.launch({
+      headless: true,
+      executablePath:
+        process.platform === 'win32'
+          ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+          : process.platform === 'linux'
+            ? '/usr/bin/google-chrome'
+            : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    });
+  } else {
+    // Vercel - use chrome-aws-lambda
+    browser = await puppeteerCore.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+    });
+  }
+
   const page = await browser.newPage();
 
   const host = req.headers.get('host');
