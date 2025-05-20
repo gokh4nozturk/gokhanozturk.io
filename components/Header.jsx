@@ -13,7 +13,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="mb-4 border-p3-border border-b pb-6 transition-all sm:pb-0 dark:border-p3-border-dark">
+    <header className="mb-4 border-p3-border border-b pb-6 transition-all sm:pb-0 dark:border-p3-border-dark print:hidden">
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
