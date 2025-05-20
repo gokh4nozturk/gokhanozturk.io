@@ -8,6 +8,7 @@ import { GitFork, Star } from 'lucide-react';
 
 const REPOS = [
   'gokh4nozturk/chop-url',
+  'gokh4nozturk/gauge',
   'gokh4nozturk/fancy-hn',
   'magicuidesign/magicui',
   'pqoqubbw/icons',

@@ -185,6 +185,27 @@ function Article() {
       </h3>
 
       <h4 className="my-1 font-medium text-base text-gray-900 dark:text-white">
+        Vue Circular Gauge | Creator & Maintainer
+      </h4>
+      <a
+        href="https://gauge.gokhanozturk.io?ref=gokhanozturk.io"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+      >
+        <i>gauge.gokhanozturk.io</i>
+      </a>
+      <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
+        <li>Developed a simple and customizable circular gauge component for Vue 3</li>
+        <li>Created comprehensive documentation and interactive playground</li>
+        <li>Implemented responsive design with mobile-first approach</li>
+        <li>Optimized for performance with TypeScript and modern UI patterns</li>
+        <li>
+          <strong>Tech stack:</strong> Vue 3, TypeScript, Tailwind CSS, Vite, Vitest, GitHub Actions
+        </li>
+      </ul>
+
+      <h4 className="my-1 font-medium text-base text-gray-900 dark:text-white">
         Magic UI | Contributor
       </h4>
       <a
