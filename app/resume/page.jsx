@@ -82,7 +82,7 @@ function Article() {
         <li>Developed responsive web applications using Vue.js and Nuxt.js</li>
         <li>Built reusable component library improving development efficiency</li>
         <li>
-          <strong>Tech stack:</strong> Vue 2, Vuex, SASS, Bootstrap
+          <strong>Tech stack:</strong> Vue 2, Vuex, SASS, Bootstrap, Quasar
         </li>
       </ul>
 
