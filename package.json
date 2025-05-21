@@ -10,7 +10,8 @@
     "format": "biome format . --write",
     "lint": "biome lint .",
     "lint:fix": "biome lint . --write",
-    "rimraf": "rm -rf .next"
+    "rimraf": "rm -rf .next",
+    "build:jsx:pdf": "npm run dev & sleep 3 && node ./scripts/generate-resume.pdf.js && kill $(lsof -t -i:3000)"
   },
   "dependencies": {
     "@midudev/tailwind-animations": "^0.2.0",

@@ -22,7 +22,7 @@ export function Print() {
   async function handlePrintJSX() {
     try {
       setIsPrinting(true);
-      window.open('/api/cv', '_blank');
+      window.open('/resume.pdf', '_blank');
       setIsPrinting(false);
     } catch (error) {
       console.error(error);
@@ -32,13 +32,11 @@ export function Print() {
 
   return (
     <div className="flex items-center gap-2 print:hidden">
-      <PrintButton size={24} disabled={isPrinting} onClick={handlePrintMD}>
+      {/* <PrintButton size={24} disabled={isPrinting} onClick={handlePrintMD}>
         md
-      </PrintButton>
+      </PrintButton> */}
 
-      <PrintButton size={24} disabled={isPrinting} onClick={handlePrintJSX}>
-        jsx
-      </PrintButton>
+      <PrintButton size={24} disabled={isPrinting} onClick={handlePrintJSX} />
     </div>
   );
 }
@@ -119,7 +117,7 @@ const PrintButton = forwardRef(
         className={cn(
           className,
           disabled && 'opacity-50',
-          'flex items-center gap-2 rounded-md border border-gray-300 px-2 py-1'
+          'flex items-center gap-2 rounded-full border border-gray-300 p-2'
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
