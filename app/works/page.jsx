@@ -1,38 +1,38 @@
-import AnimatedLink from '@components/AnimatedLink';
-import { BrandScroller } from '@components/hextaui/brand-scroller';
-import TitleDescription from '@components/TitleDescription';
-import { ScrollArea } from '@components/ui/scroll-area';
-import { Github } from '@lib/github';
-import { cn } from '@lib/utils';
-import { GitFork, Star } from 'lucide-react';
+import AnimatedLink from "@components/AnimatedLink";
+import { BrandScroller } from "@components/hextaui/brand-scroller";
+import TitleDescription from "@components/TitleDescription";
+import { ScrollArea } from "@components/ui/scroll-area";
+import { Github } from "@lib/github";
+import { cn } from "@lib/utils";
+import { GitFork, Star } from "lucide-react";
 
 const REPOS = [
-  'gokh4nozturk/chop-url',
-  'gokh4nozturk/gauge',
-  'gokh4nozturk/fancy-hn',
-  'magicuidesign/magicui',
-  'pqoqubbw/icons',
-  'Teknasyon/rocket-ui',
-  'gokh4nozturk/gokhanozturk.io',
-  'RustDili/Rust-Ogrenmek',
-  'gokh4nozturk/linguolink',
+  "gokh4nozturk/chop-url",
+  "gokh4nozturk/gauge",
+  "gokh4nozturk/fancy-hn",
+  "magicuidesign/magicui",
+  "pqoqubbw/icons",
+  "Teknasyon/rocket-ui",
+  "gokh4nozturk/gokhanozturk.io",
+  "RustDili/Rust-Ogrenmek",
+  "gokh4nozturk/linguolink",
 ];
 
 const LANG_COLORS = {
-  TypeScript: 'text-blue-500',
-  JavaScript: 'text-yellow-500',
-  HTML: 'text-red-500',
-  CSS: 'text-blue-500',
-  SCSS: 'text-pink-500',
-  Shell: 'text-gray-500',
-  Dockerfile: 'text-blue-500',
-  Rust: 'text-orange-500',
-  'C#': 'text-blue-500',
-  Go: 'text-blue-500',
-  Makefile: 'text-blue-500',
-  MDX: 'text-amber-500',
-  PowerShell: 'text-blue-500',
-  Vue: 'text-green-500',
+  TypeScript: "text-blue-500",
+  JavaScript: "text-yellow-500",
+  HTML: "text-red-500",
+  CSS: "text-blue-500",
+  SCSS: "text-pink-500",
+  Shell: "text-gray-500",
+  Dockerfile: "text-blue-500",
+  Rust: "text-orange-500",
+  "C#": "text-blue-500",
+  Go: "text-blue-500",
+  Makefile: "text-blue-500",
+  MDX: "text-amber-500",
+  PowerShell: "text-blue-500",
+  Vue: "text-green-500",
 };
 
 export const revalidate = 3600; // 60 * 60 seconds
@@ -43,7 +43,7 @@ export default async function Works() {
     REPOS.map(async (repo) => {
       const repoData = await github.getRepo(repo);
       return repoData;
-    })
+    }),
   );
 
   return (
@@ -74,9 +74,13 @@ function Work({ data: work }) {
       >
         {work.full_name}
       </AnimatedLink>
-      <p className="my-1 truncate text-neutral-400 text-xs">{work.description}</p>
+      <p className="my-1 truncate text-neutral-400 text-xs">
+        {work.description}
+      </p>
       <div className="flex gap-3 font-medium text-neutral-400 text-xs">
-        <span className={cn(LANG_COLORS[work.language])}>{work.language || 'Unknown'}</span>
+        <span className={cn(LANG_COLORS[work.language])}>
+          {work.language || "Unknown"}
+        </span>
         <span className="flex items-center gap-1">
           <Star size={12} />
           {work.stargazers_count}
@@ -88,4 +92,21 @@ function Work({ data: work }) {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const siteUrl = "/photos";
+
+  return {
+    title: "Photos",
+    description: "A collection of photos",
+    openGraph: {
+      title: "Photos",
+      description: "A collection of photos",
+      url: siteUrl,
+    },
+    alternates: {
+      canonical: siteUrl,
+    },
+  };
 }
