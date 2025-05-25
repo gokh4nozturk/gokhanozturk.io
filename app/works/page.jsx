@@ -32,7 +32,7 @@ const LANG_COLORS = {
   Makefile: "text-blue-500",
   MDX: "text-amber-500",
   PowerShell: "text-blue-500",
-  Vue: "text-green-500",
+  Vue: "text-emerald-500",
 };
 
 export const revalidate = 3600; // 60 * 60 seconds
