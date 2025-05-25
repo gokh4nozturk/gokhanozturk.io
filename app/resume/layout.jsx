@@ -1,25 +1,25 @@
 export const metadata = {
   title: {
-    default: 'Resume | Gökhan Öztürk – Developer, crafter.',
-    template: '%s | Gökhan Öztürk – Developer, crafter.',
+    default: "Resume | Gökhan Öztürk – Developer, crafter.",
+    template: "%s | Gökhan Öztürk – Developer, crafter.",
   },
-  description: 'Professional journey and resume highlights',
+  description: "Professional journey and resume highlights",
   openGraph: {
-    title: 'Resume | Gökhan Öztürk – Developer, crafter.',
-    description: 'Professional journey and resume highlights',
-    url: '/resume',
+    title: "Resume | Gökhan Öztürk – Developer, crafter.",
+    description: "Professional journey and resume highlights",
+    url: "/resume",
     images: [
       {
-        url: 'https://gokhanozturk.io/api/og',
+        url: "https://gokhanozturk.io/api/og",
         width: 1200,
         height: 630,
-        alt: 'Gökhan Öztürk – Developer, crafter.',
-        type: 'image/png',
+        alt: "Gökhan Öztürk – Developer, crafter.",
+        type: "image/png",
       },
     ],
   },
   alternates: {
-    canonical: '/resume',
+    canonical: "/resume",
   },
   robots: {
     index: true,
@@ -28,25 +28,29 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   twitter: {
-    title: 'Resume | Gökhan Öztürk – Developer, crafter.',
-    card: 'summary_large_image',
-    site: '@gokhanozturk',
-    creator: '@gokhanozturk',
-    description: 'Professional journey and resume highlights',
+    title: "Resume | Gökhan Öztürk – Developer, crafter.",
+    card: "summary_large_image",
+    site: "@gokh4nozturk",
+    creator: "@gokh4nozturk",
+    description: "Professional journey and resume highlights",
     images: [
       {
-        url: 'https://gokhanozturk.io/api/og',
+        url: "https://gokhanozturk.io/api/og",
       },
     ],
   },
 };
 
 export default function ResumeLayout({ children }) {
-  return <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">{children}</div>;
+  return (
+    <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">
+      {children}
+    </div>
+  );
 }
