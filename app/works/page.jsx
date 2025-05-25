@@ -95,14 +95,14 @@ function Work({ data: work }) {
 }
 
 export async function generateMetadata() {
-  const siteUrl = "/photos";
+  const siteUrl = "/works";
 
   return {
-    title: "Photos",
-    description: "A collection of photos",
+    title: "Works",
+    description: "A collection of works that I have contributed to.",
     openGraph: {
-      title: "Photos",
-      description: "A collection of photos",
+      title: "Works",
+      description: "A collection of works that I have contributed to.",
       url: siteUrl,
     },
     alternates: {
