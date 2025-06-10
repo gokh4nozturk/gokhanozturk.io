@@ -1,7 +1,6 @@
 export const metadata = {
   title: {
-    default: "Resume | Gökhan Öztürk – Developer, crafter.",
-    template: "%s | Gökhan Öztürk – Developer, crafter.",
+    default: "Resume",
   },
   description: "Professional journey and resume highlights",
   openGraph: {
