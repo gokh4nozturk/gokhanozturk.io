@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Profile from '@components/icons/profile';
-import { NameTransition } from '@components/Name';
-import { DarkModeToggle } from '@components/ThemeProvider';
-import React from 'react';
+import Profile from "@components/icons/profile";
+import { NameTransition } from "@components/Name";
+import { DarkModeToggle } from "@components/ThemeProvider";
+import React from "react";
 
 export function Header() {
   const [mounted, setMounted] = React.useState(false);
@@ -17,12 +17,12 @@ export function Header() {
       <div className="flex items-center gap-4">
         <div className="rounded-full">
           {mounted ? (
-            <div className="relative grid size-16 place-items-center rounded-full border bg-p3-background-light md:size-20 dark:bg-p3-background-light">
+            <div className="relative grid size-16 place-items-center rounded-full border md:size-20">
               <Profile className="-top-1.5 absolute size-full" />
             </div>
           ) : (
-            <div className="size-16 place-items-center rounded-full border bg-p3-background-light md:size-20 dark:bg-p3-background-light">
-              <div className="size-full animate-pulse rounded-full bg-p3-background dark:bg-p3-background-light" />
+            <div className="size-16 place-items-center rounded-full border md:size-20">
+              <div className="size-full animate-pulse rounded-full bg-p3-background-dark dark:bg-p3-background-light" />
             </div>
           )}
         </div>
@@ -33,7 +33,7 @@ export function Header() {
           {mounted ? (
             <DarkModeToggle />
           ) : (
-            <div className="h-8 w-[88px] animate-pulse rounded-md bg-p3-background dark:bg-p3-background-light" />
+            <div className="h-8 w-[88px] animate-pulse rounded-md bg-p3-background-dark dark:bg-p3-background-light" />
           )}
         </div>
       </div>
