@@ -11,6 +11,15 @@ const nextConfig = {
       '*',
     ],
   },
+  webpack: (config, { isServer }) => {
+    // Exclude chrome-aws-lambda source map files from webpack processing
+    config.module.rules.push({
+      test: /\.map$/,
+      use: 'ignore-loader',
+    });
+
+    return config;
+  },
 };
 
 module.exports = nextConfig;

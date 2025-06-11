@@ -39,7 +39,7 @@ export default function Navigation() {
   return (
     <div
       className={cn(
-        '-translate-x-1/2 fixed bottom-6 left-1/2 z-50 flex h-[52px] w-full items-center gap-1 border border-p3-border sm:bottom-12',
+        '-translate-x-1/2 fixed bottom-6 left-1/2 z-50 flex h-[52px] w-full items-center gap-1 border border-p3-border sm:bottom-12 print:hidden',
         'max-w-fit rounded-full px-4 py-2 backdrop-blur-sm dark:border-p3-border-dark'
       )}
     >
