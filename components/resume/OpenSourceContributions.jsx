@@ -1,29 +1,26 @@
 import { openSourceContributions } from '@lib/resume-data';
-import { jobTitleVariants, linkVariants, listVariants } from '@lib/resume-styles';
-import { cn } from '@lib/utils';
 import { GitBranch } from 'lucide-react';
 
 function ContributionItem({ contribution, isFirst, isLast }) {
+  const titleClass = isLast
+    ? 'my-1 mb-1 font-medium text-base text-gray-900 dark:text-white'
+    : 'my-1 font-medium text-base text-gray-900 dark:text-white';
+
   return (
     <div>
-      <h4
-        className={jobTitleVariants({
-          size: 'base',
-          spacing: isLast ? 'smallTop' : 'small',
-        })}
-      >
+      <h4 className={titleClass}>
         {contribution.title} | {contribution.role}
       </h4>
       <a
         href={contribution.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={linkVariants({ variant: 'inline' })}
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         aria-label={`Visit ${contribution.title} project`}
       >
         <i>{contribution.displayUrl}</i>
       </a>
-      <ul className={listVariants()}>
+      <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
         {contribution.achievements.map((achievement, index) => (
           <li key={`${contribution.title}-achievement-${index}`}>{achievement}</li>
         ))}

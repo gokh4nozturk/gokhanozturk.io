@@ -1,21 +1,19 @@
 import { education } from '@lib/resume-data';
-import { sectionTitleVariants, textVariants } from '@lib/resume-styles';
-import { cn } from '@lib/utils';
 import { GraduationCap } from 'lucide-react';
 
 export function Education() {
   return (
     <section>
-      <h2 className={cn(sectionTitleVariants({ spacing: 'top' }), 'flex items-center gap-2')}>
+      <h2 className="mt-8 mb-4 flex items-center gap-2 border-gray-500 border-b pb-1 font-semibold text-gray-900 text-xl dark:border-gray-800 dark:text-white">
         <GraduationCap size={20} />
         Education
       </h2>
 
       {education.map((item) => (
         <div key={`${item.institution}-${item.degree}`} className="mb-6 last:mb-0">
-          <strong className={textVariants({ color: 'primary' })}>{item.degree}</strong> |{' '}
+          <strong className="text-gray-900 dark:text-white">{item.degree}</strong> |{' '}
           {item.institution} |{' '}
-          <span className={textVariants({ color: 'secondary' })}>{item.period}</span>
+          <span className="text-gray-600 dark:text-gray-400">{item.period}</span>
         </div>
       ))}
     </section>
