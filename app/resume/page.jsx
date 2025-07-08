@@ -5,7 +5,7 @@ export default function ResumePage() {
   return (
     <div className="relative mx-auto max-w-2xl">
       <Article />
-      <FeedbackRating className="-translate-x-1/2 fixed bottom-[5.5rem] left-1/2 backdrop-blur-sm sm:bottom-32" />
+      {/* <FeedbackRating className="-translate-x-1/2 fixed bottom-[5.5rem] left-1/2 backdrop-blur-sm sm:bottom-32" /> */}
     </div>
   );
 }
@@ -111,7 +111,7 @@ function Article() {
         <i>github.com/Teknasyon/rocket-ui</i>
       </a>
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
-        <li>Led development of a modern Vue 3 component library with 38+ stars and 3 forks</li>
+        <li>Led development of a modern Vue 3 component library with 39 stars</li>
         <li>Built 30+ reusable components using TypeScript and Tailwind CSS</li>
         <li>Implemented comprehensive documentation with Storybook and automated testing</li>
         <li>Established CI/CD pipeline with GitHub Actions for automated releases</li>
