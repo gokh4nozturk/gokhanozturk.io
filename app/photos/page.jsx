@@ -27,11 +27,27 @@ export default async function Photos() {
 
 function Photo({ data: photo, index }) {
   const { urls, description, alt_description, width, height, links } = photo;
+
+  // Generate a simple blur data URL for placeholder
+  const blurDataURL = `data:image/svg+xml;base64,${Buffer.from(
+    `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#f3f4f6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#gradient)" />
+    </svg>`
+  ).toString('base64')}`;
+
   return (
     <NextLink href={links.html}>
       <NextImage
         priority={index < 2}
         loading={index < 2 ? 'eager' : 'lazy'}
+        placeholder="blur"
+        blurDataURL={blurDataURL}
         className="mb-2 rounded-sm transition-all hover:scale-[1.01] md:mb-1"
         src={urls.raw}
         width={width}
