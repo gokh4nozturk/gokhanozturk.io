@@ -1,5 +1,6 @@
 import { openSourceContributions } from '@lib/resume-data';
 import { styles } from '@lib/resume-styles';
+import { GitBranch } from 'lucide-react';
 
 function ContributionItem({ contribution, isFirst, isLast }) {
   const titleClass = isLast ? styles.contributionTitleWithMargin : styles.contributionTitle;
@@ -33,7 +34,8 @@ function ContributionItem({ contribution, isFirst, isLast }) {
 export function OpenSourceContributions() {
   return (
     <section>
-      <h3 className="mt-6 mb-0 border-gray-200 border-b font-medium text-gray-900 text-lg dark:text-white">
+      <h3 className="mt-6 mb-0 flex items-center gap-2 border-gray-500 border-b font-medium text-gray-900 text-lg dark:border-gray-800 dark:text-white">
+        <GitBranch size={18} />
         Open Source Contributions
       </h3>
       {openSourceContributions.map((contribution, index) => (

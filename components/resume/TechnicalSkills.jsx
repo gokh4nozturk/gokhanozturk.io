@@ -1,10 +1,14 @@
 import { technicalSkills } from '@lib/resume-data';
 import { styles } from '@lib/resume-styles';
+import { Settings } from 'lucide-react';
 
 export function TechnicalSkills() {
   return (
     <section>
-      <h2 className={styles.sectionTitleWithMargin}>Technical Skills</h2>
+      <h2 className={`${styles.sectionTitleWithMargin} flex items-center gap-2`}>
+        <Settings size={20} />
+        Technical Skills
+      </h2>
 
       <ul className={styles.list}>
         {technicalSkills.map((skill) => (

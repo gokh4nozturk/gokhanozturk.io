@@ -1,6 +1,7 @@
 import AnimatedLink from '@components/AnimatedLink';
 import { projects } from '@lib/resume-data';
 import { styles } from '@lib/resume-styles';
+import { Folder } from 'lucide-react';
 
 function ProjectItem({ project, isFirst }) {
   const titleClass = isFirst ? styles.projectTitle : styles.projectTitleWithMargin;
@@ -47,7 +48,10 @@ function ProjectItem({ project, isFirst }) {
 export function Projects() {
   return (
     <section>
-      <h2 className={styles.sectionTitleWithMargin}>Open Source & Projects</h2>
+      <h2 className={`${styles.sectionTitleWithMargin} flex items-center gap-2`}>
+        <Folder size={20} />
+        Open Source & Projects
+      </h2>
       {projects.map((project) => (
         <ProjectItem key={project.title} project={project} isFirst={project === projects[0]} />
       ))}

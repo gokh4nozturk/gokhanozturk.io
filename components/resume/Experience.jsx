@@ -1,6 +1,7 @@
 import AnimatedLink from '@components/AnimatedLink';
 import { experience } from '@lib/resume-data';
 import { styles } from '@lib/resume-styles';
+import { Briefcase } from 'lucide-react';
 
 function ExperienceItem({ item, isFirst }) {
   const titleClass = isFirst ? styles.jobTitle : styles.jobTitleWithMargin;
@@ -41,7 +42,10 @@ function ExperienceItem({ item, isFirst }) {
 export function Experience() {
   return (
     <section>
-      <h2 className={styles.sectionTitleWithMargin}>Professional Experience</h2>
+      <h2 className={`${styles.sectionTitleWithMargin} flex items-center gap-2`}>
+        <Briefcase size={20} />
+        Professional Experience
+      </h2>
       {experience.map((item, index) => (
         <ExperienceItem key={`${item.company}-${item.period}`} item={item} isFirst={index === 0} />
       ))}
