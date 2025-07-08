@@ -8,11 +8,11 @@ import {
   Summary,
   TechnicalSkills,
 } from '@components/resume';
-import { styles } from '@lib/resume-styles';
+import { articleVariants, containerVariants } from '@lib/resume-styles';
 
 export default function ResumePage() {
   return (
-    <div className={styles.container}>
+    <div className={containerVariants()}>
       <Article />
       {/* <FeedbackRating className="-translate-x-1/2 fixed bottom-[5.5rem] left-1/2 backdrop-blur-sm sm:bottom-32" /> */}
     </div>
@@ -21,7 +21,7 @@ export default function ResumePage() {
 
 function Article() {
   return (
-    <article className={styles.article}>
+    <article className={articleVariants()}>
       <Header />
       <Summary />
       <Experience />

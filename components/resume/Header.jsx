@@ -1,12 +1,13 @@
 import { personalInfo } from '@lib/resume-data';
-import { styles } from '@lib/resume-styles';
+import { linkVariants, textVariants, titleVariants } from '@lib/resume-styles';
+import { cn } from '@lib/utils';
 
 export function Header() {
   return (
     <header>
-      <h1 className={styles.title}>{personalInfo.name}</h1>
+      <h1 className={titleVariants()}>{personalInfo.name}</h1>
 
-      <div className={styles.contactInfo}>
+      <div className={textVariants({ color: 'secondary', spacing: 'lg' })}>
         {personalInfo.title}
         <br />
         {personalInfo.location} ·{' '}
@@ -14,7 +15,7 @@ export function Header() {
           href={personalInfo.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.link}
+          className={linkVariants()}
           aria-label="GitHub profile"
         >
           {personalInfo.githubDisplay}
@@ -24,7 +25,7 @@ export function Header() {
           href={personalInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.link}
+          className={linkVariants()}
           aria-label="LinkedIn profile"
         >
           {personalInfo.linkedinDisplay}

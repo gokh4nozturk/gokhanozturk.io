@@ -1,26 +1,34 @@
 import AnimatedLink from '@components/AnimatedLink';
 import { projects } from '@lib/resume-data';
-import { styles } from '@lib/resume-styles';
+import {
+  jobTitleVariants,
+  linkVariants,
+  listVariants,
+  sectionTitleVariants,
+} from '@lib/resume-styles';
+import { cn } from '@lib/utils';
 import { Folder } from 'lucide-react';
 
 function ProjectItem({ project, isFirst }) {
-  const titleClass = isFirst ? styles.projectTitle : styles.projectTitleWithMargin;
-
   return (
     <div>
-      <h3 className={titleClass}>
+      <h3
+        className={jobTitleVariants({
+          spacing: isFirst ? 'none' : 'top',
+        })}
+      >
         {project.title} | {project.role}
       </h3>
       <a
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.inlineLink}
+        className={linkVariants({ variant: 'inline' })}
         aria-label={`Visit ${project.title} project`}
       >
         <i>{project.displayUrl}</i>
       </a>
-      <ul className={styles.list}>
+      <ul className={listVariants()}>
         {project.achievements.map((achievement, index) => (
           <li key={`${project.title}-achievement-${index}`}>
             {achievement ===
@@ -48,7 +56,7 @@ function ProjectItem({ project, isFirst }) {
 export function Projects() {
   return (
     <section>
-      <h2 className={`${styles.sectionTitleWithMargin} flex items-center gap-2`}>
+      <h2 className={cn(sectionTitleVariants({ spacing: 'top' }), 'flex items-center gap-2')}>
         <Folder size={20} />
         Open Source & Projects
       </h2>

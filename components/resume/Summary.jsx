@@ -1,15 +1,16 @@
 import { summary } from '@lib/resume-data';
-import { styles } from '@lib/resume-styles';
+import { sectionTitleVariants, textVariants } from '@lib/resume-styles';
+import { cn } from '@lib/utils';
 import { User } from 'lucide-react';
 
 export function Summary() {
   return (
     <section>
-      <h2 className={`${styles.sectionTitle} flex items-center gap-2`}>
+      <h2 className={cn(sectionTitleVariants(), 'flex items-center gap-2')}>
         <User size={20} />
         Summary
       </h2>
-      <p className={styles.bodyText}>{summary.text}</p>
+      <p className={textVariants()}>{summary.text}</p>
     </section>
   );
 }
