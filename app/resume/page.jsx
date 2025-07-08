@@ -217,7 +217,7 @@ function Article() {
         <i>github.com/magicuidesign/magicui</i>
       </a>
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
-        <li>Contributed to a popular UI library (16k+ stars) for Design Engineers</li>
+        <li>Contributed to a popular UI library (17k+ stars) for Design Engineers</li>
         <li>Developed reusable animated components and effects</li>
         <li>Collaborated on documentation and accessibility improvements</li>
         <li>
