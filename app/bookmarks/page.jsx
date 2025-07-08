@@ -21,8 +21,8 @@ export default async function Bookmarks({ searchParams }) {
         />
         <YearFilter year={year} />
       </div>
-      <ScrollArea>
-        <div className="grid divide-y pb-10">
+      <ScrollArea className="mb-24 max-h-[calc(100dvh-15rem)]">
+        <div className="grid divide-y">
           {bookmarks?.map((bookmark) => (
             <Bookmark key={bookmark._id} data={bookmark} />
           ))}
