@@ -20,14 +20,14 @@ export default function Home() {
           )}
         >
           <AnimatePresence mode='wait'>
-            {onViewHello === 'english' && (
-              <motion.div
-                key='english'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, ease: 'easeInOut', delay: 0.1 }}
-              >
+            <motion.div
+              key='english'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: 'easeInOut', delay: 0.1 }}
+            >
+              {onViewHello === 'english' && (
                 <AppleHelloEnglishEffect
                   onAnimationComplete={() => {
                     setTimeout(() => {
@@ -35,16 +35,8 @@ export default function Home() {
                     }, 1000);
                   }}
                 />
-              </motion.div>
-            )}
-            {onViewHello === 'turkish' && (
-              <motion.div
-                key='turkish'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, ease: 'easeInOut', delay: 0.1 }}
-              >
+              )}
+              {onViewHello === 'turkish' && (
                 <AppleHelloTurkishEffect
                   onAnimationComplete={() => {
                     setTimeout(() => {
@@ -52,8 +44,8 @@ export default function Home() {
                     }, 1000);
                   }}
                 />
-              </motion.div>
-            )}
+              )}
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>
