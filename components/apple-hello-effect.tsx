@@ -1,16 +1,12 @@
 // https://chanhdai.com/components/writing-effect-inspired-by-apple
+/** biome-ignore-all lint/correctness/noUnusedImports: false positive */
 'use client';
 
 import { cn } from '@lib/utils';
-import { type HTMLMotionProps, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import React from 'react';
 
-interface AnimationProps {
-  pathLength: number;
-  opacity: number;
-}
-
-interface AppleHelloEffectProps extends Omit<HTMLMotionProps<'svg'>, 'onAnimationComplete'> {
+interface AppleHelloEffectProps {
   className?: string;
   speed?: number;
   onAnimationComplete?: () => void;
@@ -284,7 +280,8 @@ export function AppleHelloTurkishEffect({
         transition={{
           duration: calc(0.8),
           ease: 'easeInOut',
-          opacity: { duration: 0.4 },
+          delay: calc(0.6),
+          opacity: { duration: 0.4, delay: calc(0.6) },
         }}
       />
       <motion.path
@@ -298,8 +295,8 @@ export function AppleHelloTurkishEffect({
         transition={{
           duration: calc(1),
           ease: 'easeInOut',
-          delay: calc(0.8),
-          opacity: { duration: 0.4, delay: calc(0.8) },
+          delay: calc(1.2),
+          opacity: { duration: 0.4, delay: calc(1.2) },
         }}
       />
       <motion.path
@@ -405,6 +402,151 @@ export function AppleHelloTurkishEffect({
           ease: 'easeInOut',
           delay: calc(6),
           opacity: { duration: 0.4, delay: calc(6) },
+        }}
+        onAnimationComplete={onAnimationComplete}
+      />
+    </motion.svg>
+  );
+}
+
+export function AppleHelloFrenchEffect({
+  className,
+  speed = 1,
+  onAnimationComplete,
+  ...props
+}: AppleHelloEffectProps) {
+  const calc = (x: number): number => x * speed;
+
+  return (
+    <motion.svg
+      className={cn('h-20', className)}
+      viewBox='0 0 947 279'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='14.8883'
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      {...props}
+    >
+      <motion.path
+        d='M7.44629 174.928C48.1215 160.761 75.7964 132.172 104.497 72.016C111.892 56.5173 114.494 42.2586 115.246 31.327C115.996 17.4144 110.288 7.44417 99.1221 7.44417C87.9559 7.44417 80.5117 15.469 72.3231 32.4913C62.6457 52.9181 56.9385 77.2357 53.9608 101.553C46.2685 169.4 62.3976 194.447 89.4447 194.447C111.777 194.447 125.921 174.347 127.658 147.797C128.651 125.464 119.221 108.094 102.348 99.9057'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(0.8),
+          opacity: { duration: 0.4, delay: calc(0.8) },
+        }}
+      />
+      <motion.path
+        d='M117.128 111.605C142.066 142.551 182.677 120.366 201.527 106.334C209.784 100.187 217.068 97.9205 225.921 97.9205C245.524 97.9205 260.909 112.809 260.909 140.849C260.909 171.866 241.306 195.191 216.492 195.439C194.656 195.687 180.264 177.573 181.752 150.278C183.489 120.005 201.355 97.9205 224.929 97.9205C238.328 97.9205 247.757 102.635 258.676 110.824C289.338 133.756 320.184 122.663 327.658 99.1612'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(0.8),
+          opacity: { duration: 0.4, delay: calc(0.8) },
+        }}
+      />
+      <motion.path
+        d='M327.658 99.1613C322.943 130.675 318.973 161.692 314.01 193.206'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(1.6),
+          opacity: { duration: 0.4, delay: calc(1.6) },
+        }}
+      />
+      <motion.path
+        d='M317.393 170.885C324.223 124.254 345.028 97.1762 369.842 97.1762C387.211 97.1762 396.144 109.087 394.656 125.96C393.415 138.615 389.196 153.256 388.204 165.663C386.963 182.784 394.904 194.447 412.149 194.447C438.048 194.447 463.886 161.805 471.391 121.416C472.722 114.255 474.659 106.457 475.549 98.9132'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(2.4),
+          opacity: { duration: 0.4, delay: calc(2.4) },
+        }}
+      />
+      <motion.path
+        d='M475.549 98.9132C470.917 138.202 466.285 177.491 461.653 216.779C457.059 255.751 445.524 271.37 428.154 271.37C416.492 271.37 408.055 263.943 408.055 252.015C408.055 236.077 420.15 224.636 447.06 216.327C493.472 201.996 527.367 174.612 538.504 142.962C548.502 114.546 560.164 97.9206 584.482 97.9206C604.581 97.9206 620.462 112.809 620.462 140.849C620.462 171.866 600.338 195.191 574.908 195.439C552.53 195.687 537.832 177.573 539.321 150.278C541.058 120.005 559.42 97.9206 583.489 97.9206C597.385 97.9206 607.063 102.635 618.229 110.824C652.243 135.637 680.499 123.875 690.535 99.3404'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(3.2),
+          opacity: { duration: 0.4, delay: calc(3.2) },
+        }}
+      />
+      <motion.path
+        d='M690.535 99.3404C686.248 117.469 683.374 132.164 681.847 143.082C680.578 151.022 679.784 156.481 679.474 163.181C679.064 180.799 688.947 193.454 708.055 193.454C735.847 193.454 749.656 168.726 758.029 128.171C760.031 118.471 762.213 109.215 763.979 99.4696'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(4),
+          opacity: { duration: 0.4, delay: calc(4) },
+        }}
+      />
+      <motion.path
+        d='M763.979 99.4696C757.775 133.713 752.72 154.248 752.72 165.663C752.72 182.784 759.42 194.447 777.689 194.447C807.184 194.447 832.365 152.642 845.028 95.9355'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(4.8),
+          opacity: { duration: 0.4, delay: calc(4.8) },
+        }}
+      />
+      <motion.path
+        d='M843.067 104.362C873.837 105.851 887.459 112.065 887.459 126.705C887.459 136.878 882.497 152.511 881.008 163.926C878.278 183.777 885.601 194.695 901.355 194.695C920.512 194.695 933.769 181.968 938.941 169.037'
+        stroke='white'
+        style={{ stroke: 'white', strokeOpacity: 1 }}
+        strokeWidth='14.8883'
+        strokeLinecap='round'
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: 'easeInOut',
+          delay: calc(5.6),
+          opacity: { duration: 0.4, delay: calc(5.6) },
         }}
         onAnimationComplete={onAnimationComplete}
       />

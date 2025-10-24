@@ -1,7 +1,11 @@
 'use client';
 
 import About from '@components/About';
-import { AppleHelloEnglishEffect, AppleHelloTurkishEffect } from '@components/apple-hello-effect';
+import {
+  AppleHelloEnglishEffect,
+  AppleHelloFrenchEffect,
+  AppleHelloTurkishEffect,
+} from '@components/apple-hello-effect';
 import { cn } from '@lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
@@ -19,7 +23,7 @@ export default function Home() {
             'grid place-items-center',
           )}
         >
-          <AnimatePresence mode='wait'>
+          <AnimatePresence mode='popLayout'>
             <motion.div
               key='english'
               initial={{ opacity: 0 }}
@@ -32,7 +36,7 @@ export default function Home() {
                   onAnimationComplete={() => {
                     setTimeout(() => {
                       setOnViewHello('turkish');
-                    }, 1000);
+                    }, 800);
                   }}
                 />
               )}
@@ -40,8 +44,17 @@ export default function Home() {
                 <AppleHelloTurkishEffect
                   onAnimationComplete={() => {
                     setTimeout(() => {
+                      setOnViewHello('french');
+                    }, 800);
+                  }}
+                />
+              )}
+              {onViewHello === 'french' && (
+                <AppleHelloFrenchEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
                       setOnViewHello('english');
-                    }, 1000);
+                    }, 800);
                   }}
                 />
               )}
