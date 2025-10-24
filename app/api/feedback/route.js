@@ -46,7 +46,7 @@ export async function POST(request) {
       if (!isWithinLimit) {
         return NextResponse.json(
           { error: 'Rate limit exceeded. Please try again later.' },
-          { status: 429 }
+          { status: 429 },
         );
       }
     }
@@ -73,7 +73,7 @@ export async function POST(request) {
           details: error.message,
           code: error.code,
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -85,7 +85,7 @@ export async function POST(request) {
         error: 'Internal server error',
         details: error.message,
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
