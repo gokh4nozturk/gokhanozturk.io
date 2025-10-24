@@ -1,24 +1,62 @@
 'use client';
 
 import About from '@components/About';
-import { AppleHelloEnglishEffect } from '@components/apple-hello-effect';
+import { AppleHelloEnglishEffect, AppleHelloTurkishEffect } from '@components/apple-hello-effect';
 import { cn } from '@lib/utils';
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
 
 export default function Home() {
+  const [onViewHello, setOnViewHello] = useState('english');
   return (
     <div className='flex h-full flex-col justify-between sm:relative'>
       <About />
-      {/* <ASCIIText
-        className={cn(
-          '-z-10',
-          'fixed bottom-0 left-0 h-96 w-full',
-          'sm:top-32 sm:left-16 sm:h-full'
-        )}
-      /> */}
 
-      <AppleHelloEnglishEffect
-        className={cn('-translate-x-1/2 -translate-y-2/3 fixed top-2/3 left-1/2 sm:h-32')}
-      />
+      <div className='flex h-full items-start justify-center'>
+        <div
+          className={cn(
+            '-translate-x-1/2 -translate-y-2/3 fixed top-2/3 left-1/2 w-min overflow-hidden sm:h-32',
+            'grid place-items-center',
+          )}
+        >
+          <AnimatePresence mode='wait'>
+            {onViewHello === 'english' && (
+              <motion.div
+                key='english'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: 'easeInOut', delay: 0.1 }}
+              >
+                <AppleHelloEnglishEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
+                      setOnViewHello('turkish');
+                    }, 1000);
+                  }}
+                />
+              </motion.div>
+            )}
+            {onViewHello === 'turkish' && (
+              <motion.div
+                key='turkish'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: 'easeInOut', delay: 0.1 }}
+              >
+                <AppleHelloTurkishEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
+                      setOnViewHello('english');
+                    }, 1000);
+                  }}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </div>
   );
 }
