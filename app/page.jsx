@@ -2,12 +2,11 @@
 
 import About from '@components/About';
 import { AppleHelloEnglishEffect } from '@components/apple-hello-effect';
-import ASCIIText from '@components/reactbits/ASCIIText';
 import { cn } from '@lib/utils';
 
 export default function Home() {
   return (
-    <div className="flex h-full flex-col justify-between sm:relative">
+    <div className='flex h-full flex-col justify-between sm:relative'>
       <About />
       {/* <ASCIIText
         className={cn(
