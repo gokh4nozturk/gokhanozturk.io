@@ -1,0 +1,127 @@
+Tabii kanka — işte yukarıdaki içeriğin tamamı doğru biçimlendirilmiş tek bir .md dosyası olarak hazır 👇
+(kopyalayıp fix-macos-tempdir.md diye kaydedebilirsin)
+
+⸻
+
+---
+
+title: "macOS'ta Bun / NPM / Yarn AccessDenied Hatasının Kalıcı Çözümü"
+date: 2025-10-29
+author: "Gökhan"
+tags: ["macOS", "bun", "npm", "node", "frontend", "debug"]
+description: "macOS üzerinde Bun, NPM, Yarn gibi package manager'larda 'unable to write to tempdir: AccessDenied' hatasının sistem seviyesinde çözümü."
+
+---
+
+# macOS'ta Bun / NPM / Yarn “AccessDenied: unable to write to tempdir” Hatasının Kalıcı Çözümü
+
+macOS üzerinde `bun install`, `npm install` veya `yarn install` komutlarını çalıştırırken şu hatayı aldıysan:
+
+error: bun is unable to write files to tempdir: AccessDenied
+
+yalnız değilsin.  
+Bu hata, macOS’in sistem geçici dizinlerinde (`/tmp`, `/private/tmp` veya `$TMPDIR`) bozulmuş izinlerden kaynaklanıyor.  
+Sonuç olarak CLI araçları, geçici dosya oluşturmak istediklerinde reddediliyor.
+
+---
+
+## 💡 Belirti
+
+Tüm package manager’lar (`bun`, `npm`, `yarn`, `pnpm`) aynı şekilde patlıyorsa,  
+temel sebep büyük olasılıkla macOS’in `$TMPDIR` environment değişkeninin hatalı bir dizine işaret etmesidir.
+
+---
+
+## 🧩 Çözüm: Temp dizinlerini onarmak ve sabitlemek
+
+Aşağıdaki tek satırlık komut, sistemdeki temp izinlerini düzeltir,  
+kullanıcıya özel bir `~/.tmp` dizini oluşturur ve shell config’ine kalıcı `$TMPDIR` ekler.
+
+```bash
+sudo chown root:wheel /tmp /private/tmp && \
+sudo chmod 1777 /tmp /private/tmp && \
+mkdir -p "$HOME/.tmp" && chmod 700 "$HOME/.tmp" && \
+sed -i '' '/TMPDIR=/d' "$HOME/.zshrc" 2>/dev/null || true; \
+printf '\n# Force user-level tmp to avoid macOS TMPDIR quirks\nexport TMPDIR="$HOME/.tmp"\n' >> "$HOME/.zshrc"; \
+source "$HOME/.zshrc"; \
+echo "TMPDIR -> $TMPDIR"; \
+ls -ld /tmp /private/tmp "$HOME/.tmp"; \
+mktemp || true
+
+
+⸻
+
+🔍 Komutun yaptığı işlemler
+
+Adım	Açıklama
+sudo chown root:wheel /tmp /private/tmp	Sistem temp klasörlerinin sahibi ve grubu root:wheel olarak düzeltilir.
+sudo chmod 1777 /tmp /private/tmp	Herkesin yazabileceği ama başkalarının dosyasını silemeyeceği şekilde izin verilir (sticky bit t).
+mkdir -p "$HOME/.tmp"	Kullanıcıya özel bir temp klasörü oluşturur.
+chmod 700 "$HOME/.tmp"	Sadece senin okuyup yazabileceğin şekilde güvenli hale getirir.
+sed -i '' '/TMPDIR=/d' ~/.zshrc	.zshrc dosyasında eski TMPDIR tanımlarını siler.
+export TMPDIR="$HOME/.tmp"	Her terminal oturumunda temp dizinini ~/.tmp olarak sabitler.
+mktemp	Son kontrol: gerçekten yazılabiliyor mu, test eder.
+
+
+⸻
+
+✅ Doğrulama
+
+Yeni bir terminal aç ve şu komutları çalıştır:
+
+echo $TMPDIR
+ls -ld $TMPDIR
+
+Beklenen çıktı:
+
+/Users/<kullanıcı>/.tmp
+drwx------  ...
+
+Artık bun install, npm install, yarn install hepsi normal çalışacaktır.
+Sorun tamamen ortadan kalkmış olur.
+
+⸻
+
+🧠 Neden Oluyor?
+
+macOS her kullanıcı oturumunda /var/folders/.../T/ gibi rastgele temp path’ler oluşturur.
+Ancak bazen reboot veya güncelleme sonrası bu klasör silinir,
+fakat $TMPDIR environment değişkeni hâlâ eski path’e işaret eder.
+CLI araçları oraya yazmaya çalıştığında “AccessDenied” hatası alır.
+
+~/.tmp çözümüyle artık senin kontrolünde kalıcı bir temp klasörün olur,
+macOS’in rastgele dizin yönetimi seni etkilemez.
+
+⸻
+
+🔒 Güvenlik Notu
+
+chmod 700 ~/.tmp sayesinde sadece sen okuyabilir/yazabilirsin.
+Multi-user sistemlerde bile güvenlidir.
+Ayrıca sistem güncellemeleri /tmp izinlerini bozsa bile senin $TMPDIR etkilenmez.
+
+⸻
+
+🧩 Özet
+
+Ne yapılır	Neden yapılır
+/tmp izinleri onarılır	Sistem genelinde geçici dosyalar düzgün çalışır
+~/.tmp oluşturulur	Kullanıcıya özel güvenli temp klasörü
+$TMPDIR sabitlenir	CLI araçları kararlı şekilde çalışır
+
+
+⸻
+
+🚀 Sonuç
+
+Bu adımlardan sonra bun, npm, yarn, pnpm, vite, eslint gibi tüm araçlar
+sorunsuz bir şekilde çalışır.
+“unable to write files to tempdir: AccessDenied” hatasını bir daha görmezsin.
+
+⸻
+
+© 2025 Gökhan – macOS Developer Tips
+
+---
+
+```
