@@ -18,6 +18,7 @@
     "@midudev/tailwind-animations": "^0.2.0",
     "gray-matter": "^4.0.3",
     "next-mdx-remote": "^5.0.0",
+    "remark-gfm": "^4.0.0",
     "@radix-ui/react-checkbox": "^1.1.4",
     "@radix-ui/react-popover": "^1.1.6",
     "@radix-ui/react-scroll-area": "^1.2.1",

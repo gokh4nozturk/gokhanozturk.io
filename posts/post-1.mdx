@@ -28,7 +28,7 @@ If all package managers (`bun`, `npm`, `yarn`, `pnpm`) are failing in the same w
 
 The following one-liner command fixes system temp permissions, creates a user-specific `~/.tmp` directory, and adds a permanent `$TMPDIR` to your shell config:
 
-````bash
+```bash
 sudo chown root:wheel /tmp /private/tmp && \
 sudo chmod 1777 /tmp /private/tmp && \
 mkdir -p "$HOME/.tmp" && chmod 700 "$HOME/.tmp" && \
@@ -38,21 +38,21 @@ source "$HOME/.zshrc"; \
 echo "TMPDIR -> $TMPDIR"; \
 ls -ld /tmp /private/tmp "$HOME/.tmp"; \
 mktemp || true
-
+```
 
 ---
 
 ## 🔍 What the Command Does
 
-| Step | Description |
-|------|-------------|
-| `sudo chown root:wheel /tmp /private/tmp` | Fixes ownership and group of system temp folders to root:wheel |
-| `sudo chmod 1777 /tmp /private/tmp` | Sets permissions so everyone can write but can't delete others' files (sticky bit) |
-| `mkdir -p "$HOME/.tmp"` | Creates a user-specific temp folder |
-| `chmod 700 "$HOME/.tmp"` | Makes it secure so only you can read/write |
-| `sed -i '' '/TMPDIR=/d' ~/.zshrc` | Removes old TMPDIR definitions from .zshrc |
-| `export TMPDIR="$HOME/.tmp"` | Sets temp directory to ~/.tmp for every terminal session |
-| `mktemp` | Final check: tests if it's actually writable |
+| Step                                      | Description                                                                        |
+| ----------------------------------------- | ---------------------------------------------------------------------------------- |
+| `sudo chown root:wheel /tmp /private/tmp` | Fixes ownership and group of system temp folders to root:wheel                     |
+| `sudo chmod 1777 /tmp /private/tmp`       | Sets permissions so everyone can write but can't delete others' files (sticky bit) |
+| `mkdir -p "$HOME/.tmp"`                   | Creates a user-specific temp folder                                                |
+| `chmod 700 "$HOME/.tmp"`                  | Makes it secure so only you can read/write                                         |
+| `sed -i '' '/TMPDIR=/d' ~/.zshrc`         | Removes old TMPDIR definitions from .zshrc                                         |
+| `export TMPDIR="$HOME/.tmp"`              | Sets temp directory to ~/.tmp for every terminal session                           |
+| `mktemp`                                  | Final check: tests if it's actually writable                                       |
 
 ---
 
@@ -63,7 +63,7 @@ Open a new terminal and run these commands:
 ```bash
 echo $TMPDIR
 ls -ld $TMPDIR
-````
+```
 
 Expected output:
 

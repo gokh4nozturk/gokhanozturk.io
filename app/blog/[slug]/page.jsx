@@ -1,6 +1,7 @@
 import { getAllPosts, getPostData } from 'lib/mdx';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { useMDXComponents } from '../../../mdx-components';
 
 export async function generateStaticParams() {
@@ -83,7 +84,15 @@ export default function BlogPost({ params }) {
 
       {/* Post Content */}
       <div className='prose prose-gray dark:prose-invert max-w-none prose-pre:bg-gray-100 prose-code:text-gray-900 prose-headings:text-gray-900 prose-p:text-gray-700 dark:prose-pre:bg-gray-800 dark:prose-code:text-gray-100 dark:prose-headings:text-gray-100 dark:prose-p:text-gray-300'>
-        <MDXRemote source={post.content} components={components} />
+        <MDXRemote
+          source={post.content}
+          components={components}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+            },
+          }}
+        />
       </div>
 
       {/* Post Footer */}
