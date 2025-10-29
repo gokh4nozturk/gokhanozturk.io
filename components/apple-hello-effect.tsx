@@ -257,7 +257,7 @@ export function AppleHelloTurkishEffect({
       <title>merhaba</title>
       <motion.path
         d='M7.44531 133.653C9.82745 116.283 20.5471 98.6651 38.1748 98.6651C55.8026 98.6651 60.8051 115.042 56.2791 136.879C53.1823 152.511 50.8002 168.64 45.7977 193.206'
-        stroke='white'
+        stroke='currentColor'
         style={{ strokeLinecap: 'round', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
@@ -271,8 +271,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M50.666 167.768C58.4481 124.661 76.5269 97.1763 98.4426 97.1763C116.309 97.1763 123.455 111.32 122.502 130.427C121.549 143.33 117.023 168.64 113.212 193.206'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -286,8 +286,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M117.406 166.999C124.369 123.792 141.083 97.1764 165.143 97.1764C181.579 97.1764 189.917 111.072 188.011 127.946C186.82 139.856 183.962 154 183.009 165.663C182.056 182.536 187.932 194.447 208.376 194.447C236.302 194.447 276.093 176.604 293.991 149.012C300.091 139.608 302.572 131.171 302.82 122.983C303.068 108.095 294.631 96.9283 279.743 96.9283C260.885 96.9283 246.493 118.268 246.493 145.564C246.493 174.844 262.373 195.439 294.82 195.439C336.405 195.439 365.719 155.401 378.999 95.9357'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -301,8 +301,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M377.038 104.362C407.807 105.851 421.43 112.065 421.43 126.705C421.43 136.878 416.467 152.511 414.979 163.926C412.249 183.777 417.956 194.695 438.185 194.695C469.12 194.695 500.135 136.689 527.084 100.205C545.817 74.8435 554.928 52.1693 555.425 34.1008C555.673 20.7018 549.222 10.537 537.063 10.537C523.663 10.537 515.227 20.7018 510.016 44.0345C504.309 69.6774 500.09 99.1018 489.42 193.454'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -316,8 +316,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M490.466 184.233C495.73 137.959 516.715 101.147 543.266 101.147C559.147 101.147 569.24 113.802 566.374 131.916C564.761 142.586 561.846 154.993 560.181 167.151C558.155 182.536 563.942 194.447 581.866 194.447C607.231 194.447 622.428 167.011 630.665 138.13'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -331,8 +331,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M708.924 115.929C704.059 104.734 693.719 97.1764 677.26 97.1764C649.964 97.1764 629.451 124.472 628.104 153.752C626.931 180.551 639.297 195.616 656.91 195.439C681.91 195.189 700.287 170.633 708.49 118.676C709.502 112.266 710.551 105.572 711.563 99.1615'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -346,8 +346,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M711.563 99.1614C710.539 105.664 709.514 112.166 708.49 118.669C704.008 147.109 701.941 158.329 702.163 165.663C702.681 182.784 708.838 194.447 728.448 194.447C762.658 194.447 805.035 128.049 831.97 71.5937C839.163 56.5174 841.765 42.2587 842.517 31.3271C843.267 17.4145 837.559 7.44429 826.393 7.44429C815.227 7.44429 807.783 15.4691 799.594 32.4914C789.917 52.9182 784.21 77.2359 781.232 101.553C773.54 169.4 789.669 194.447 816.716 194.447C839.048 194.447 853.192 174.348 854.929 147.797C855.922 125.464 846.492 108.094 829.619 99.9058'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -361,8 +361,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M844.398 111.605C871.346 145.044 909.109 132.872 925.886 113.541'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -376,8 +376,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M991.059 115.929C986.194 104.734 975.854 97.1764 959.395 97.1764C932.099 97.1764 911.586 124.472 910.239 153.752C909.065 180.551 921.431 195.616 939.045 195.439C964.045 195.189 982.422 170.633 990.625 118.676C991.637 112.266 992.686 105.572 993.698 99.1615'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -391,8 +391,8 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         d='M993.697 99.1614C992.673 105.664 991.648 112.166 990.623 118.669C986.142 147.109 984.074 158.329 984.296 165.663C984.815 182.784 990.972 194.447 1006.36 194.447C1025.71 194.447 1036.57 181.295 1041.78 166.903'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -431,8 +431,8 @@ export function AppleHelloFrenchEffect({
     >
       <motion.path
         d='M7.44629 174.928C48.1215 160.761 75.7964 132.172 104.497 72.016C111.892 56.5173 114.494 42.2586 115.246 31.327C115.996 17.4144 110.288 7.44417 99.1221 7.44417C87.9559 7.44417 80.5117 15.469 72.3231 32.4913C62.6457 52.9181 56.9385 77.2357 53.9608 101.553C46.2685 169.4 62.3976 194.447 89.4447 194.447C111.777 194.447 125.921 174.347 127.658 147.797C128.651 125.464 119.221 108.094 102.348 99.9057'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -446,8 +446,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M117.128 111.605C142.066 142.551 182.677 120.366 201.527 106.334C209.784 100.187 217.068 97.9205 225.921 97.9205C245.524 97.9205 260.909 112.809 260.909 140.849C260.909 171.866 241.306 195.191 216.492 195.439C194.656 195.687 180.264 177.573 181.752 150.278C183.489 120.005 201.355 97.9205 224.929 97.9205C238.328 97.9205 247.757 102.635 258.676 110.824C289.338 133.756 320.184 122.663 327.658 99.1612'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -461,8 +461,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M327.658 99.1613C322.943 130.675 318.973 161.692 314.01 193.206'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -476,8 +476,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M317.393 170.885C324.223 124.254 345.028 97.1762 369.842 97.1762C387.211 97.1762 396.144 109.087 394.656 125.96C393.415 138.615 389.196 153.256 388.204 165.663C386.963 182.784 394.904 194.447 412.149 194.447C438.048 194.447 463.886 161.805 471.391 121.416C472.722 114.255 474.659 106.457 475.549 98.9132'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -491,8 +491,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M475.549 98.9132C470.917 138.202 466.285 177.491 461.653 216.779C457.059 255.751 445.524 271.37 428.154 271.37C416.492 271.37 408.055 263.943 408.055 252.015C408.055 236.077 420.15 224.636 447.06 216.327C493.472 201.996 527.367 174.612 538.504 142.962C548.502 114.546 560.164 97.9206 584.482 97.9206C604.581 97.9206 620.462 112.809 620.462 140.849C620.462 171.866 600.338 195.191 574.908 195.439C552.53 195.687 537.832 177.573 539.321 150.278C541.058 120.005 559.42 97.9206 583.489 97.9206C597.385 97.9206 607.063 102.635 618.229 110.824C652.243 135.637 680.499 123.875 690.535 99.3404'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -506,8 +506,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M690.535 99.3404C686.248 117.469 683.374 132.164 681.847 143.082C680.578 151.022 679.784 156.481 679.474 163.181C679.064 180.799 688.947 193.454 708.055 193.454C735.847 193.454 749.656 168.726 758.029 128.171C760.031 118.471 762.213 109.215 763.979 99.4696'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -521,8 +521,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M763.979 99.4696C757.775 133.713 752.72 154.248 752.72 165.663C752.72 182.784 759.42 194.447 777.689 194.447C807.184 194.447 832.365 152.642 845.028 95.9355'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
@@ -536,8 +536,8 @@ export function AppleHelloFrenchEffect({
       />
       <motion.path
         d='M843.067 104.362C873.837 105.851 887.459 112.065 887.459 126.705C887.459 136.878 882.497 152.511 881.008 163.926C878.278 183.777 885.601 194.695 901.355 194.695C920.512 194.695 933.769 181.968 938.941 169.037'
-        stroke='white'
-        style={{ stroke: 'white', strokeOpacity: 1 }}
+        stroke='currentColor'
+        style={{ stroke: 'currentColor', strokeOpacity: 1 }}
         strokeWidth='14.8883'
         strokeLinecap='round'
         initial={{ pathLength: 0, opacity: 0 }}
