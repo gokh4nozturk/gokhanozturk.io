@@ -18,13 +18,13 @@ You're not alone! This error is caused by corrupted permissions in macOS system 
 
 ---
 
-## 💡 Symptoms
+## Symptoms
 
 If all package managers (`bun`, `npm`, `yarn`, `pnpm`) are failing in the same way, the root cause is most likely macOS's `$TMPDIR` environment variable pointing to an invalid directory.
 
 ---
 
-## 🧩 Solution: Repair and Fix Temp Directories
+## Solution: Repair and Fix Temp Directories
 
 The following one-liner command fixes system temp permissions, creates a user-specific `~/.tmp` directory, and adds a permanent `$TMPDIR` to your shell config:
 
@@ -42,7 +42,7 @@ mktemp || true
 
 ---
 
-## 🔍 What the Command Does
+## What the Command Does
 
 | Step                                      | Description                                                                        |
 | ----------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -56,7 +56,7 @@ mktemp || true
 
 ---
 
-## ✅ Verification
+## Verification
 
 Open a new terminal and run these commands:
 
@@ -76,7 +76,7 @@ Now `bun install`, `npm install`, `yarn install` will all work normally. The pro
 
 ---
 
-## 🧠 Why Does This Happen?
+## Why Does This Happen?
 
 macOS creates random temp paths like `/var/folders/.../T/` for each user session. However, sometimes after a reboot or update, this folder gets deleted, but the `$TMPDIR` environment variable still points to the old path. When CLI tools try to write there, they get an "AccessDenied" error.
 
@@ -84,13 +84,13 @@ With the `~/.tmp` solution, you now have a permanent temp folder under your cont
 
 ---
 
-## 🔒 Security Note
+## Security Note
 
 Thanks to `chmod 700 ~/.tmp`, only you can read/write to it. It's secure even on multi-user systems. Additionally, even if system updates break `/tmp` permissions, your `$TMPDIR` remains unaffected.
 
 ---
 
-## 🧩 Summary
+## Summary
 
 | What's Done                 | Why It's Done                             |
 | --------------------------- | ----------------------------------------- |
@@ -100,7 +100,7 @@ Thanks to `chmod 700 ~/.tmp`, only you can read/write to it. It's secure even on
 
 ---
 
-## 🚀 Result
+## Result
 
 After these steps, all tools like `bun`, `npm`, `yarn`, `pnpm`, `vite`, `eslint` will work seamlessly. You'll never see the "unable to write files to tempdir: AccessDenied" error again.
 

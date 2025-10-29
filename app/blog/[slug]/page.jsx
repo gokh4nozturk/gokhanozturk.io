@@ -63,7 +63,10 @@ export default function BlogPost({ params }) {
           {post.tags && (
             <div className='flex gap-2'>
               {post.tags.map((tag) => (
-                <span key={tag} className='rounded bg-gray-100 px-2 py-1 text-xs dark:bg-gray-800'>
+                <span
+                  key={tag}
+                  className='rounded bg-gray-300 px-2 py-1 text-gray-900 text-xs dark:bg-gray-800 dark:text-gray-100'
+                >
                   {tag}
                 </span>
               ))}
@@ -83,7 +86,7 @@ export default function BlogPost({ params }) {
       </header>
 
       {/* Post Content */}
-      <div className='prose prose-gray dark:prose-invert max-w-none prose-pre:bg-gray-100 prose-code:text-gray-900 prose-headings:text-gray-900 prose-p:text-gray-700 dark:prose-pre:bg-gray-800 dark:prose-code:text-gray-100 dark:prose-headings:text-gray-100 dark:prose-p:text-gray-300'>
+      <div className='prose prose-gray dark:prose-invert max-w-none prose-code:bg-gray-300 prose-pre:bg-gray-100 prose-th:bg-gray-300 prose-code:text-gray-900 prose-headings:text-gray-900 prose-p:text-gray-700 dark:prose-code:bg-gray-800 dark:prose-pre:bg-gray-800 dark:prose-code:text-gray-100 dark:prose-headings:text-gray-100 dark:prose-p:text-gray-300'>
         <MDXRemote
           source={post.content}
           components={components}
@@ -109,7 +112,10 @@ export default function BlogPost({ params }) {
             </p>
           </div>
 
-          <a href='/blog' className='text-blue-600 text-sm hover:underline dark:text-blue-400'>
+          <a
+            href='/blog'
+            className='text-sm underline-offset-2 transition-colors hover:text-blue-600 hover:underline dark:hover:text-blue-400'
+          >
             ← Back to blog
           </a>
         </div>
