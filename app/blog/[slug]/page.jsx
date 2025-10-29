@@ -1,0 +1,110 @@
+import { getAllPosts, getPostData } from 'lib/mdx';
+import { notFound } from 'next/navigation';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { useMDXComponents } from '../../../mdx-components';
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.id,
+  }));
+}
+
+export async function generateMetadata({ params }) {
+  const post = getPostData(params.slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author || 'Gökhan Öztürk'],
+    },
+  };
+}
+
+export default function BlogPost({ params }) {
+  let post;
+
+  try {
+    post = getPostData(params.slug);
+  } catch {
+    notFound();
+  }
+
+  if (!post) {
+    notFound();
+  }
+
+  const components = useMDXComponents({});
+
+  return (
+    <article className='w-[680px] pb-40'>
+      {/* Post Header */}
+      <header className='mb-8'>
+        <div className='mb-4 flex items-center gap-4 text-gray-500 text-sm dark:text-gray-400'>
+          <time dateTime={post.date}>
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          {post.tags && (
+            <div className='flex gap-2'>
+              {post.tags.map((tag) => (
+                <span key={tag} className='rounded bg-gray-100 px-2 py-1 text-xs dark:bg-gray-800'>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <h1 className='mb-4 font-bold text-3xl text-gray-900 dark:text-gray-100'>{post.title}</h1>
+
+        {post.description && (
+          <p className='mb-4 text-gray-600 text-lg dark:text-gray-400'>{post.description}</p>
+        )}
+
+        <div className='flex items-center text-gray-500 text-sm'>
+          <span>By {post.author || 'Gökhan Öztürk'}</span>
+        </div>
+      </header>
+
+      {/* Post Content */}
+      <div className='prose prose-gray dark:prose-invert max-w-none prose-pre:bg-gray-100 prose-code:text-gray-900 prose-headings:text-gray-900 prose-p:text-gray-700 dark:prose-pre:bg-gray-800 dark:prose-code:text-gray-100 dark:prose-headings:text-gray-100 dark:prose-p:text-gray-300'>
+        <MDXRemote source={post.content} components={components} />
+      </div>
+
+      {/* Post Footer */}
+      <footer className='mt-12 border-gray-200 border-t pt-8 dark:border-gray-700'>
+        <div className='flex items-center justify-between'>
+          <div className='text-gray-500 text-sm'>
+            <p>
+              Published on{' '}
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </p>
+          </div>
+
+          <a href='/blog' className='text-blue-600 text-sm hover:underline dark:text-blue-400'>
+            ← Back to blog
+          </a>
+        </div>
+      </footer>
+    </article>
+  );
+}

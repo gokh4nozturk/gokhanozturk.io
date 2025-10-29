@@ -13,7 +13,11 @@
     "rimraf": "rm -rf .next"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
     "@midudev/tailwind-animations": "^0.2.0",
+    "gray-matter": "^4.0.3",
+    "next-mdx-remote": "^5.0.0",
     "@radix-ui/react-checkbox": "^1.1.4",
     "@radix-ui/react-popover": "^1.1.6",
     "@radix-ui/react-scroll-area": "^1.2.1",
@@ -42,6 +46,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
     "@ozturkgokhan/biome-config": "^1.0.2",
+    "@types/mdx": "^2.0.13",
     "@types/node": "22.13.9",
     "@types/react": "19.0.10",
     "autoprefixer": "^10.4.13",
