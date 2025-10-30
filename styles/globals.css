@@ -181,3 +181,54 @@ body {
     clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
   }
 }
+
+/* Blog post specific styles to prevent layout shift */
+.prose {
+  @apply text-base leading-7;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-6 mt-0 leading-tight;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mb-4 mt-8 leading-tight;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mb-3 mt-6 leading-tight;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose pre {
+  @apply mb-4 p-4 rounded-lg overflow-x-auto;
+}
+
+.prose code {
+  @apply px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose table {
+  @apply w-full border-collapse mb-4;
+}
+
+.prose th,
+.prose td {
+  @apply border px-4 py-2 text-left;
+}
+
+.prose blockquote {
+  @apply border-l-4 pl-4 mb-4 italic;
+}
+
+.prose ul,
+.prose ol {
+  @apply mb-4 ml-6;
+}
+
+.prose li {
+  @apply mb-1;
+}

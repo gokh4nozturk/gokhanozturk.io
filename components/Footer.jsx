@@ -20,7 +20,7 @@ export default function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors duration-200 "
+            className="transition-colors duration-200"
           >
             {link.name}
           </AnimatedLink>

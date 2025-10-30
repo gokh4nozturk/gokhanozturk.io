@@ -105,7 +105,7 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           'mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-p3-background-light px-4 pt-4 font-sans text-p3-text',
-          'tracking-tight selection:bg-p3-accent-light selection:text-p3-text sm:max-w-3xl sm:px-10 sm:pt-10',
+          'tracking-tight selection:bg-p3-primary-light selection:text-p3-text sm:max-w-3xl sm:px-10 sm:pt-10',
           'dark:bg-p3-background dark:text-p3-text-dark dark:selection:bg-p3-accent-dark dark:selection:text-p3-text-dark',
         )}
       >
