@@ -1,11 +1,11 @@
 export default function robots() {
   return {
+    host: "https://gokhanozturk.io",
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
+      allow: "/",
+      disallow: "/private/",
+      userAgent: "*",
     },
-    sitemap: 'https://gokhanozturk.io/sitemap.xml',
-    host: 'https://gokhanozturk.io',
+    sitemap: "https://gokhanozturk.io/sitemap.xml",
   };
 }

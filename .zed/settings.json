@@ -1,0 +1,30 @@
+{
+  "language_servers": [
+    "biome",
+    "json-language-server",
+    "vtsls",
+    "tailwindcss-language-server",
+    "package-version-server"
+  ],
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["cva", "cx"],
+        "experimental": {
+          "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"]
+        }
+      }
+    },
+    "biome": {
+      "settings": {
+        "config_path": "./biome.json"
+      }
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true,
+    "source.sortImports.biome": true,
+    "source.removeUnusedImports.biome": true
+  }
+}

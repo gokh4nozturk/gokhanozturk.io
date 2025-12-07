@@ -1,30 +1,31 @@
-import { useAnimate } from 'framer-motion';
-import React, { useRef } from 'react';
-import { FiMousePointer } from 'react-icons/fi';
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: <explanation> */
+import { useAnimate } from "framer-motion";
+import { useRef } from "react";
+import { FiMousePointer } from "react-icons/fi";
 
 export const Example = () => {
   return (
     <MouseImageTrail
+      images={[
+        "/imgs/active/1.jpg",
+        "/imgs/active/2.jpg",
+        "/imgs/active/3.jpg",
+        "/imgs/active/4.jpg",
+        "/imgs/active/5.jpg",
+        "/imgs/active/6.jpg",
+        "/imgs/active/7.jpg",
+        "/imgs/active/8.jpg",
+        "/imgs/active/9.jpg",
+        "/imgs/active/10.jpg",
+        "/imgs/active/11.jpg",
+        "/imgs/active/12.jpg",
+        "/imgs/active/13.jpg",
+        "/imgs/active/14.jpg",
+        "/imgs/active/15.jpg",
+        "/imgs/active/16.jpg",
+      ]}
       renderImageBuffer={50}
       rotationRange={25}
-      images={[
-        '/imgs/active/1.jpg',
-        '/imgs/active/2.jpg',
-        '/imgs/active/3.jpg',
-        '/imgs/active/4.jpg',
-        '/imgs/active/5.jpg',
-        '/imgs/active/6.jpg',
-        '/imgs/active/7.jpg',
-        '/imgs/active/8.jpg',
-        '/imgs/active/9.jpg',
-        '/imgs/active/10.jpg',
-        '/imgs/active/11.jpg',
-        '/imgs/active/12.jpg',
-        '/imgs/active/13.jpg',
-        '/imgs/active/14.jpg',
-        '/imgs/active/15.jpg',
-        '/imgs/active/16.jpg',
-      ]}
     >
       <section className="grid h-screen w-full place-content-center bg-p3-background-light">
         <p className="flex items-center gap-2 font-bold text-3xl text-p3-text uppercase">
@@ -58,7 +59,7 @@ const MouseImageTrail = ({
       clientX,
       clientY,
       lastRenderPosition.current.x,
-      lastRenderPosition.current.y
+      lastRenderPosition.current.y,
     );
 
     if (distance >= renderImageBuffer) {
@@ -104,7 +105,7 @@ const MouseImageTrail = ({
           }`,
         ],
       },
-      { type: 'spring', damping: 15, stiffness: 200 }
+      { damping: 15, stiffness: 200, type: "spring" },
     );
 
     animate(
@@ -112,23 +113,23 @@ const MouseImageTrail = ({
       {
         opacity: [1, 0],
       },
-      { ease: 'linear', duration: 0.5, delay: 5 }
+      { delay: 5, duration: 0.5, ease: "linear" },
     );
 
     imageRenderCount.current = imageRenderCount.current + 1;
   };
 
   return (
-    <div ref={scope} className="relative overflow-hidden" onMouseMove={handleMouseMove}>
+    <div className="relative overflow-hidden" onMouseMove={handleMouseMove} ref={scope}>
       {children}
 
       {images.map((img, index) => (
         <img
-          className="pointer-events-none absolute top-0 left-0 h-48 w-auto rounded-xl border-2 border-p3-border bg-p3-background object-cover opacity-0"
-          src={img}
           alt={`Mouse move ${index}`}
-          key={img}
+          className="pointer-events-none absolute top-0 left-0 h-48 w-auto rounded-xl border-2 border-p3-border bg-p3-background object-cover opacity-0"
           data-mouse-move-index={index}
+          key={img}
+          src={img}
         />
       ))}
     </div>

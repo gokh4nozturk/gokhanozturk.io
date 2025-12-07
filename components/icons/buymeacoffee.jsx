@@ -1,11 +1,11 @@
 export default function Buymeacoffee({ size = 32, ...props }) {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 884 1279"
       fill="none"
-      width={size}
       height={size}
+      viewBox="0 0 884 1279"
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path

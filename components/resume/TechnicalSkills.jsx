@@ -1,5 +1,5 @@
-import { technicalSkills } from '@lib/resume-data';
-import { Settings } from 'lucide-react';
+import { technicalSkills } from "@lib/resume-data";
+import { Settings } from "lucide-react";
 
 export function TechnicalSkills() {
   return (
@@ -12,7 +12,7 @@ export function TechnicalSkills() {
       <ul className="list-disc pl-4 text-gray-600 dark:text-gray-300">
         {technicalSkills.map((skill) => (
           <li key={skill.category}>
-            <strong className="text-gray-900 dark:text-white">{skill.category}:</strong>{' '}
+            <strong className="text-gray-900 dark:text-white">{skill.category}:</strong>{" "}
             {skill.skills}
           </li>
         ))}

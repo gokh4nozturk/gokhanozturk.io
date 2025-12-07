@@ -1,9 +1,9 @@
-'use client'; // @NOTE: Add in case you are using Next.js
+"use client"; // @NOTE: Add in case you are using Next.js
 
-import { cn } from '@lib/utils';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { cn } from "@lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 export function AnimatedTabs({ tabs }) {
   const pathname = usePathname();
   const [activeTab, setActiveTab] = useState(pathname);
@@ -34,10 +34,10 @@ export function AnimatedTabs({ tabs }) {
   return (
     <div className="relative mx-auto flex w-fit flex-col items-center rounded-full">
       <div
-        ref={containerRef}
         className={cn(
-          'absolute z-10 w-full overflow-hidden [clip-path:inset(0px_100%_0px_0%_round_17px)] [transition:clip-path_0.4s_ease-in-out]'
+          "absolute z-10 w-full overflow-hidden [clip-path:inset(0px_100%_0px_0%_round_17px)] [transition:clip-path_0.4s_ease-in-out]",
         )}
+        ref={containerRef}
       >
         <div className="relative flex w-full justify-center bg-p3-background dark:bg-p3-background-light">
           {tabs.map(({ name, path, icon }, index) => {
@@ -45,12 +45,12 @@ export function AnimatedTabs({ tabs }) {
 
             return (
               <Link
+                className={cn(
+                  "flex h-8 items-center px-2 font-medium text-p3-text-dark text-sm sm:px-4 dark:text-p3-text",
+                  activeTab !== path && "hover:animate-tilt",
+                )}
                 href={path}
                 key={name}
-                className={cn(
-                  'flex h-8 items-center px-2 font-medium text-p3-text-dark text-sm sm:px-4 dark:text-p3-text',
-                  activeTab !== path && 'hover:animate-tilt'
-                )}
                 tabIndex={-1}
               >
                 {Icon && <Icon />}
@@ -66,13 +66,13 @@ export function AnimatedTabs({ tabs }) {
 
           return (
             <Link
+              className={cn(
+                "flex h-8 items-center px-2 font-medium text-p3-text-light text-sm sm:px-4 dark:text-p3-text-light",
+                activeTab !== path && "hover:animate-tilt",
+              )}
               href={path}
               key={name}
               ref={isActive ? activeTabRef : null}
-              className={cn(
-                'flex h-8 items-center px-2 font-medium text-p3-text-light text-sm sm:px-4 dark:text-p3-text-light',
-                activeTab !== path && 'hover:animate-tilt'
-              )}
             >
               {Icon && <Icon />}
             </Link>

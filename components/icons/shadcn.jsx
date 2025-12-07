@@ -1,13 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
+
 const shadcnui = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em" {...props}>
-    <path fill="none" d="M0 0h256v256H0z" />
+  <svg height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M0 0h256v256H0z" fill="none" />
     <path
+      d="M208 128l-80 80M192 40L40 192"
       fill="none"
       stroke="#fff"
-      strokeWidth={25}
       strokeLinecap="round"
-      d="M208 128l-80 80M192 40L40 192"
+      strokeWidth={25}
     />
   </svg>
 );

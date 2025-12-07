@@ -1,122 +1,122 @@
-import { cn } from '@lib/utils';
-import '@styles/globals.css';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Header } from 'components/Header';
-import Navigation from 'components/Navigation';
-import { ThemeProvider } from 'components/ThemeProvider';
-import { Toaster } from 'sonner';
+import { cn } from "@lib/utils";
+import "@styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Header } from "components/Header";
+import Navigation from "components/Navigation";
+import { ThemeProvider } from "components/ThemeProvider";
+import { Toaster } from "sonner";
 
 export const metadata = {
-  title: {
-    default: 'Gökhan Öztürk – Developer, crafter',
-    template: '%s | Gökhan Öztürk – Developer, crafter',
+  alternates: {
+    canonical: "/",
   },
-  keywords: [
-    'Gökhan Öztürk',
-    'gokhanozturk',
-    'gokh4nozturk',
-    'developer',
-    'crafter',
-    'web developer',
-    'software engineer',
-    'programmer',
-    'frontend developer',
-  ],
   authors: [
     {
-      name: 'Gökhan Öztürk',
-      url: 'https://gokhanozturk.io',
+      name: "Gökhan Öztürk",
+      url: "https://gokhanozturk.io",
     },
   ],
-  creator: 'Gökhan Öztürk',
-  publisher: 'Gökhan Öztürk',
+  creator: "Gökhan Öztürk",
+  description: "Personal website of Gökhan Öztürk, a developer and crafter.",
   icon: [
     {
-      rel: 'icon',
-      url: '/favicon.ico',
-      type: 'image/x-icon',
+      rel: "icon",
+      type: "image/x-icon",
+      url: "/favicon.ico",
     },
     {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
-      sizes: '180x180',
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: "/apple-touch-icon.png",
     },
     {
-      rel: 'icon',
-      url: '/favicon-32x32.png',
-      sizes: '32x32',
-      type: 'image/png',
+      rel: "icon",
+      sizes: "32x32",
+      type: "image/png",
+      url: "/favicon-32x32.png",
     },
     {
-      rel: 'icon',
-      url: '/favicon-16x16.png',
-      sizes: '16x16',
-      type: 'image/png',
+      rel: "icon",
+      sizes: "16x16",
+      type: "image/png",
+      url: "/favicon-16x16.png",
     },
   ],
-  description: 'Personal website of Gökhan Öztürk, a developer and crafter.',
+  keywords: [
+    "Gökhan Öztürk",
+    "gokhanozturk",
+    "gokh4nozturk",
+    "developer",
+    "crafter",
+    "web developer",
+    "software engineer",
+    "programmer",
+    "frontend developer",
+  ],
   openGraph: {
-    title: 'Gökhan Öztürk – Developer, crafter',
-    description: 'Personal website of Gökhan Öztürk, a developer and crafter.',
-    url: '/',
+    description: "Personal website of Gökhan Öztürk, a developer and crafter.",
     images: [
       {
-        url: 'https://gokhanozturk.io/api/og',
-        width: 1200,
+        alt: "Gökhan Öztürk – Developer, crafter",
         height: 630,
-        alt: 'Gökhan Öztürk – Developer, crafter',
-        type: 'image/png',
+        type: "image/png",
+        url: "https://gokhanozturk.io/api/og",
+        width: 1200,
       },
     ],
+    title: "Gökhan Öztürk – Developer, crafter",
+    url: "/",
   },
-  alternates: {
-    canonical: '/',
-  },
+  publisher: "Gökhan Öztürk",
   robots: {
-    index: true,
     follow: true,
-    nocache: true,
     googleBot: {
-      index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      index: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
+    index: true,
+    nocache: true,
+  },
+  title: {
+    default: "Gökhan Öztürk – Developer, crafter",
+    template: "%s | Gökhan Öztürk – Developer, crafter",
   },
   twitter: {
-    title: 'Gökhan Öztürk – Developer, crafter',
-    card: 'summary_large_image',
-    site: '@gokh4nozturk',
-    creator: '@gokh4nozturk',
-    description: 'Personal website of Gökhan Öztürk, a developer and crafter.',
+    card: "summary_large_image",
+    creator: "@gokh4nozturk",
+    description: "Personal website of Gökhan Öztürk, a developer and crafter.",
     images: [
       {
-        url: 'https://gokhanozturk.io/api/og',
+        url: "https://gokhanozturk.io/api/og",
       },
     ],
+    site: "@gokh4nozturk",
+    title: "Gökhan Öztürk – Developer, crafter",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-p3-background-light px-4 pt-4 font-sans text-p3-text',
-          'tracking-tight selection:bg-p3-primary-light selection:text-p3-text sm:max-w-3xl sm:px-10 sm:pt-10',
-          'dark:bg-p3-background dark:text-p3-text-dark dark:selection:bg-p3-accent-dark dark:selection:text-p3-text-dark',
+          "mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-p3-background-light px-4 pt-4 font-sans text-p3-text",
+          "tracking-tight selection:bg-p3-primary-light selection:text-p3-text sm:max-w-3xl sm:px-10 sm:pt-10",
+          "dark:bg-p3-background dark:text-p3-text-dark dark:selection:bg-p3-accent-dark dark:selection:text-p3-text-dark",
         )}
       >
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
+          attribute="class"
+          defaultTheme="system"
           disableTransitionOnChange
+          enableSystem
         >
           <Header />
-          <main className='flex h-full flex-col justify-between'>{children}</main>
+          <main className="flex h-full flex-col justify-between">{children}</main>
           <Navigation />
         </ThemeProvider>
         <Analytics />

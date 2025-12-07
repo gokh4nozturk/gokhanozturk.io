@@ -1,67 +1,67 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from "react";
 
 const charWidth = 10;
 const charHeight = 20;
 
 const lettersAndSymbols = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z',
-  '!',
-  '@',
-  '#',
-  '$',
-  '&',
-  '*',
-  '(',
-  ')',
-  '-',
-  '_',
-  '+',
-  '=',
-  '/',
-  '[',
-  ']',
-  '{',
-  '}',
-  ';',
-  ':',
-  '<',
-  '>',
-  ',',
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "!",
+  "@",
+  "#",
+  "$",
+  "&",
+  "*",
+  "(",
+  ")",
+  "-",
+  "_",
+  "+",
+  "=",
+  "/",
+  "[",
+  "]",
+  "{",
+  "}",
+  ";",
+  ":",
+  "<",
+  ">",
+  ",",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
 ];
 
 const getRandomChar = () => {
@@ -83,15 +83,15 @@ const hexToRgb = (hex) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(normalizedHex);
   return result
     ? {
-        r: Number.parseInt(result[1], 16),
-        g: Number.parseInt(result[2], 16),
         b: Number.parseInt(result[3], 16),
+        g: Number.parseInt(result[2], 16),
+        r: Number.parseInt(result[1], 16),
       }
     : null;
 };
 
 const LetterGlitch = ({
-  glitchColors = ['var(--p3-primary)', 'var(--p3-secondary)', 'var(--p3-accent)'],
+  glitchColors = ["var(--p3-primary)", "var(--p3-secondary)", "var(--p3-accent)"],
   glitchSpeed = 50,
   centerVignette = false,
   outerVignette = true,
@@ -112,9 +112,9 @@ const LetterGlitch = ({
 
   const interpolateColor = (start, end, factor) => {
     const result = {
-      r: Math.round(start.r + (end.r - start.r) * factor),
-      g: Math.round(start.g + (end.g - start.g) * factor),
       b: Math.round(start.b + (end.b - start.b) * factor),
+      g: Math.round(start.g + (end.g - start.g) * factor),
+      r: Math.round(start.r + (end.r - start.r) * factor),
     };
     return `rgb(${result.r}, ${result.g}, ${result.b})`;
   };
@@ -126,11 +126,11 @@ const LetterGlitch = ({
       letters.current = Array.from({ length: totalLetters }, () => ({
         char: getRandomChar(),
         color: getRandomColor(),
-        targetColor: getRandomColor(),
         colorProgress: 1,
+        targetColor: getRandomColor(),
       }));
     },
-    [getRandomColor]
+    [getRandomColor],
   );
 
   const resizeCanvas = useCallback(() => {
@@ -164,7 +164,7 @@ const LetterGlitch = ({
     const { width, height } = canvasRef.current.getBoundingClientRect();
     ctx.clearRect(0, 0, width, height);
     ctx.font = `${fontSize}px monospace`;
-    ctx.textBaseline = 'top';
+    ctx.textBaseline = "top";
 
     letters.current.forEach((letter, index) => {
       const x = (index % grid.current.columns) * charWidth;
@@ -236,7 +236,7 @@ const LetterGlitch = ({
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    context.current = canvas.getContext('2d');
+    context.current = canvas.getContext("2d");
     resizeCanvas();
     animate();
 
@@ -251,46 +251,46 @@ const LetterGlitch = ({
       }, 100);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(animationRef.current);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [glitchSpeed, smooth, updateLetters, drawLetters, handleSmoothTransitions, resizeCanvas]);
 
   const containerStyle = {
-    position: 'relative',
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#000000',
-    overflow: 'hidden',
+    backgroundColor: "#000000",
+    height: "100%",
+    overflow: "hidden",
+    position: "relative",
+    width: "100%",
   };
 
   const canvasStyle = {
-    display: 'block',
-    width: '100%',
-    height: '100%',
+    display: "block",
+    height: "100%",
+    width: "100%",
   };
 
   const outerVignetteStyle = {
-    position: 'absolute',
-    top: 0,
+    background: "radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%)",
+    height: "100%",
     left: 0,
-    width: '100%',
-    height: '100%',
-    pointerEvents: 'none',
-    background: 'radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%)',
+    pointerEvents: "none",
+    position: "absolute",
+    top: 0,
+    width: "100%",
   };
 
   const centerVignetteStyle = {
-    position: 'absolute',
-    top: 0,
+    background: "radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%)",
+    height: "100%",
     left: 0,
-    width: '100%',
-    height: '100%',
-    pointerEvents: 'none',
-    background: 'radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%)',
+    pointerEvents: "none",
+    position: "absolute",
+    top: 0,
+    width: "100%",
   };
 
   return (

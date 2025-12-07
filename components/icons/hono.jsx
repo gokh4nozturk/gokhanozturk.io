@@ -1,9 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Hono = (props) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 330"
+    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path

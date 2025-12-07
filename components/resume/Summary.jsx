@@ -1,5 +1,5 @@
-import { summary } from '@lib/resume-data';
-import { User } from 'lucide-react';
+import { summary } from "@lib/resume-data";
+import { User } from "lucide-react";
 
 export function Summary() {
   return (

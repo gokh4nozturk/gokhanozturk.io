@@ -1,12 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
+
 const RadixUI = (props) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     fill="#ffff"
     style={{
       marginRight: 3,
     }}
     viewBox="4 0 17 25"
+    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path

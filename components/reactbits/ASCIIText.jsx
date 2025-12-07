@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import './ASCIIText.css';
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
+import "./ASCIIText.css";
 
 const vertexShader = `
 varying vec2 vUv;
@@ -48,24 +48,24 @@ void main() {
 Math.map = (n, start, stop, start2, stop2) =>
   ((n - start) / (stop - start)) * (stop2 - start2) + start2;
 
-const PX_RATIO = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
+const PX_RATIO = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 
 class AsciiFilter {
   constructor(renderer, { fontSize, fontFamily, charset, invert } = {}) {
     this.renderer = renderer;
     // container for ASCII overlay
-    this.domElement = document.createElement('div');
-    this.domElement.style.position = 'absolute';
-    this.domElement.style.top = '0';
-    this.domElement.style.left = '0';
-    this.domElement.style.width = '100%';
-    this.domElement.style.height = '100%';
+    this.domElement = document.createElement("div");
+    this.domElement.style.position = "absolute";
+    this.domElement.style.top = "0";
+    this.domElement.style.left = "0";
+    this.domElement.style.width = "100%";
+    this.domElement.style.height = "100%";
 
-    this.pre = document.createElement('pre');
+    this.pre = document.createElement("pre");
     this.domElement.appendChild(this.pre);
 
-    this.canvas = document.createElement('canvas');
-    this.context = this.canvas.getContext('2d');
+    this.canvas = document.createElement("canvas");
+    this.context = this.canvas.getContext("2d");
     this.domElement.appendChild(this.canvas);
 
     this.deg = 0;
@@ -73,7 +73,7 @@ class AsciiFilter {
     this.fontSize = fontSize ?? 12;
     this.fontFamily = fontFamily ?? "'Courier New', monospace";
     this.charset =
-      charset ?? ' .\'`^",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$';
+      charset ?? " .'`^\",:;Il!i~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
 
     this.context.webkitImageSmoothingEnabled = false;
     this.context.mozImageSmoothingEnabled = false;
@@ -81,7 +81,7 @@ class AsciiFilter {
     this.context.imageSmoothingEnabled = false;
 
     this.onMouseMove = this.onMouseMove.bind(this);
-    document.addEventListener('mousemove', this.onMouseMove);
+    document.addEventListener("mousemove", this.onMouseMove);
   }
 
   setSize(width, height) {
@@ -96,7 +96,7 @@ class AsciiFilter {
 
   reset() {
     this.context.font = `${this.fontSize}px ${this.fontFamily}`;
-    const charWidth = this.context.measureText('A').width;
+    const charWidth = this.context.measureText("A").width;
 
     this.cols = Math.floor(this.width / (this.fontSize * (charWidth / this.fontSize)));
     this.rows = Math.floor(this.height / this.fontSize);
@@ -105,16 +105,16 @@ class AsciiFilter {
     this.canvas.height = this.rows;
     this.pre.style.fontFamily = this.fontFamily;
     this.pre.style.fontSize = `${this.fontSize}px`;
-    this.pre.style.margin = '0';
-    this.pre.style.padding = '0';
-    this.pre.style.lineHeight = '1em';
-    this.pre.style.position = 'absolute';
-    this.pre.style.left = '50%';
-    this.pre.style.top = '50%';
-    this.pre.style.transform = 'translate(-50%, -50%)';
-    this.pre.style.zIndex = '9';
-    this.pre.style.backgroundAttachment = 'fixed';
-    this.pre.style.mixBlendMode = 'difference';
+    this.pre.style.margin = "0";
+    this.pre.style.padding = "0";
+    this.pre.style.lineHeight = "1em";
+    this.pre.style.position = "absolute";
+    this.pre.style.left = "50%";
+    this.pre.style.top = "50%";
+    this.pre.style.transform = "translate(-50%, -50%)";
+    this.pre.style.zIndex = "9";
+    this.pre.style.backgroundAttachment = "fixed";
+    this.pre.style.mixBlendMode = "difference";
   }
 
   render(scene, camera) {
@@ -152,14 +152,14 @@ class AsciiFilter {
   asciify(ctx, w, h) {
     if (w && h) {
       const imgData = ctx.getImageData(0, 0, w, h).data;
-      let str = '';
+      let str = "";
       for (let y = 0; y < h; y++) {
         for (let x = 0; x < w; x++) {
           const i = x * 4 + y * 4 * w;
           const [r, g, b, a] = [imgData[i], imgData[i + 1], imgData[i + 2], imgData[i + 3]];
 
           if (a === 0) {
-            str += ' ';
+            str += " ";
             continue;
           }
 
@@ -168,21 +168,21 @@ class AsciiFilter {
           if (this.invert) idx = this.charset.length - idx - 1;
           str += this.charset[idx];
         }
-        str += '\n';
+        str += "\n";
       }
       this.pre.innerHTML = str;
     }
   }
 
   dispose() {
-    document.removeEventListener('mousemove', this.onMouseMove);
+    document.removeEventListener("mousemove", this.onMouseMove);
   }
 }
 
 class CanvasTxt {
-  constructor(txt, { fontSize = 200, fontFamily = 'Arial', color = '#fdf9f3' } = {}) {
-    this.canvas = document.createElement('canvas');
-    this.context = this.canvas.getContext('2d');
+  constructor(txt, { fontSize = 200, fontFamily = "Arial", color = "#fdf9f3" } = {}) {
+    this.canvas = document.createElement("canvas");
+    this.context = this.canvas.getContext("2d");
     this.txt = txt;
     this.fontSize = fontSize;
     this.fontFamily = fontFamily;
@@ -232,7 +232,7 @@ class CanvAscii {
     { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves },
     containerElem,
     width,
-    height
+    height,
   ) {
     this.textString = text;
     this.asciiFontSize = asciiFontSize;
@@ -258,9 +258,9 @@ class CanvAscii {
 
   setMesh() {
     this.textCanvas = new CanvasTxt(this.textString, {
-      fontSize: this.textFontSize,
-      fontFamily: 'IBM Plex Mono',
       color: this.textColor,
+      fontFamily: "IBM Plex Mono",
+      fontSize: this.textFontSize,
     });
     this.textCanvas.resize();
     this.textCanvas.render();
@@ -275,15 +275,15 @@ class CanvAscii {
 
     this.geometry = new THREE.PlaneGeometry(planeW, planeH, 36, 36);
     this.material = new THREE.ShaderMaterial({
-      vertexShader,
       fragmentShader,
       transparent: true,
       uniforms: {
-        uTime: { value: 0 },
         mouse: { value: 1.0 },
-        uTexture: { value: this.texture },
         uEnableWaves: { value: this.enableWaves ? 1.0 : 0.0 },
+        uTexture: { value: this.texture },
+        uTime: { value: 0 },
       },
+      vertexShader,
     });
 
     this.mesh = new THREE.Mesh(this.geometry, this.material);
@@ -291,12 +291,12 @@ class CanvAscii {
   }
 
   setRenderer() {
-    this.renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+    this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     this.renderer.setPixelRatio(1);
     this.renderer.setClearColor(0x000000, 0);
 
     this.filter = new AsciiFilter(this.renderer, {
-      fontFamily: 'IBM Plex Mono',
+      fontFamily: "IBM Plex Mono",
       fontSize: this.asciiFontSize,
       invert: true,
     });
@@ -304,8 +304,8 @@ class CanvAscii {
     this.container.appendChild(this.filter.domElement);
     this.setSize(this.width, this.height);
 
-    this.container.addEventListener('mousemove', this.onMouseMove);
-    this.container.addEventListener('touchmove', this.onMouseMove);
+    this.container.addEventListener("mousemove", this.onMouseMove);
+    this.container.addEventListener("touchmove", this.onMouseMove);
   }
 
   setSize(w, h) {
@@ -363,13 +363,13 @@ class CanvAscii {
 
   clear() {
     this.scene.traverse((obj) => {
-      if (obj.isMesh && typeof obj.material === 'object' && obj.material !== null) {
+      if (obj.isMesh && typeof obj.material === "object" && obj.material !== null) {
         for (const key of Object.keys(obj.material)) {
           const matProp = obj.material[key];
           if (
             matProp !== null &&
-            typeof matProp === 'object' &&
-            typeof matProp.dispose === 'function'
+            typeof matProp === "object" &&
+            typeof matProp.dispose === "function"
           ) {
             matProp.dispose();
           }
@@ -385,8 +385,8 @@ class CanvAscii {
     cancelAnimationFrame(this.animationFrameId);
     this.filter.dispose();
     this.container.removeChild(this.filter.domElement);
-    this.container.removeEventListener('mousemove', this.onMouseMove);
-    this.container.removeEventListener('touchmove', this.onMouseMove);
+    this.container.removeEventListener("mousemove", this.onMouseMove);
+    this.container.removeEventListener("touchmove", this.onMouseMove);
     this.clear();
     this.renderer.dispose();
   }
@@ -394,10 +394,10 @@ class CanvAscii {
 
 // =========== React component ===========
 export default function ASCIIText({
-  text = 'hey! ',
+  text = "hey! ",
   asciiFontSize = 8,
   textFontSize = 50,
-  textColor = '#fdf9f3',
+  textColor = "#fdf9f3",
   planeBaseHeight = 8,
   enableWaves = true,
   className,
@@ -413,10 +413,10 @@ export default function ASCIIText({
 
     // create the ASCII scene
     asciiRef.current = new CanvAscii(
-      { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves },
+      { asciiFontSize, enableWaves, planeBaseHeight, text, textColor, textFontSize },
       containerRef.current,
       width,
-      height
+      height,
     );
     asciiRef.current.load();
 
@@ -435,5 +435,5 @@ export default function ASCIIText({
     };
   }, [text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves]);
 
-  return <div ref={containerRef} className={className} />;
+  return <div className={className} ref={containerRef} />;
 }

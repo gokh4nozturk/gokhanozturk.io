@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Arc,
@@ -35,177 +35,177 @@ import {
   Yarn,
   Zed,
   Zod,
-} from '@components/icons';
-import { cn } from '@lib/utils';
+} from "@components/icons";
+import { cn } from "@lib/utils";
 
 const TECHS = [
   {
-    name: 'Arc',
     icon: Arc,
+    name: "Arc",
   },
   {
-    name: 'AWS',
     icon: AWS,
+    name: "AWS",
   },
   {
-    name: 'Biomejs',
     icon: Biomejs,
+    name: "Biomejs",
   },
   {
-    name: 'ClaudeAI',
     icon: ClaudeAI,
+    name: "ClaudeAI",
   },
   {
-    name: 'Cloudflare',
     icon: Cloudflare,
+    name: "Cloudflare",
   },
   {
-    name: 'CFWorkers',
     icon: CloudflareWorkers,
+    name: "CFWorkers",
   },
   {
-    name: 'Cursor',
     icon: Cursor,
+    name: "Cursor",
   },
   {
-    name: 'DrizzleORM',
     icon: DrizzleORM,
+    name: "DrizzleORM",
   },
   {
-    name: 'Github',
     icon: Github,
+    name: "Github",
   },
   {
-    name: 'Homebrew',
     icon: Homebrew,
+    name: "Homebrew",
   },
   {
-    name: 'Hono',
     icon: Hono,
+    name: "Hono",
   },
   {
-    name: 'JWT',
     icon: JWT,
+    name: "JWT",
   },
   {
-    name: 'Motion',
     icon: Motion,
+    name: "Motion",
   },
   {
-    name: 'Nextjs',
     icon: Nextjs,
+    name: "Nextjs",
   },
   {
-    name: 'Nuxt',
     icon: Nuxt,
+    name: "Nuxt",
   },
   {
-    name: 'Pnpm',
     icon: Pnpm,
+    name: "Pnpm",
   },
   {
-    name: 'PostCSS',
     icon: PostCSS,
+    name: "PostCSS",
   },
   {
-    name: 'RadixUI',
     icon: RadixUI,
+    name: "RadixUI",
   },
   {
-    name: 'ReactJS',
     icon: ReactJS,
+    name: "ReactJS",
   },
   {
-    name: 'ShadcnUI',
     icon: ShadcnUI,
+    name: "ShadcnUI",
   },
   {
-    name: 'Storybook',
     icon: Storybook,
+    name: "Storybook",
   },
   {
-    name: 'Supabase',
     icon: Supabase,
+    name: "Supabase",
   },
   {
-    name: 'SVG',
     icon: SVG,
+    name: "SVG",
   },
   {
-    name: 'Swagger',
     icon: Swagger,
+    name: "Swagger",
   },
   {
-    name: 'Tailwind',
     icon: Tailwind,
+    name: "Tailwind",
   },
   {
-    name: 'Threejs',
     icon: Threejs,
+    name: "Threejs",
   },
   {
-    name: 'Vercel',
     icon: Vercel,
+    name: "Vercel",
   },
   {
-    name: 'Vitest',
     icon: Vitest,
+    name: "Vitest",
   },
   {
-    name: 'Vue',
     icon: Vue,
+    name: "Vue",
   },
   {
-    name: 'Vuetify',
     icon: Vuetify,
+    name: "Vuetify",
   },
   {
-    name: 'VueUse',
     icon: VueUse,
+    name: "VueUse",
   },
   {
-    name: 'Yarn',
     icon: Yarn,
+    name: "Yarn",
   },
   {
-    name: 'Zed',
     icon: Zed,
+    name: "Zed",
   },
   {
-    name: 'Zod',
     icon: Zod,
+    name: "Zod",
   },
 ];
 
-const MARQUEE_DURATION = '110s'; // 110 seconds - 1.83 minutes - update this if you add more techs
+const MARQUEE_DURATION = "110s"; // 110 seconds - 1.83 minutes - update this if you add more techs
 
 export const BrandScroller = ({ className, pauseOnHover = true }) => {
   return (
     <div
       className={cn(
-        'group relative h-12 overflow-hidden border-y border-dashed bg-p3-background/10 backdrop-blur-sm dark:bg-p3-background-light/5',
-        className
+        "group relative h-12 overflow-hidden border-y border-dashed bg-p3-background/10 backdrop-blur-sm dark:bg-p3-background-light/5",
+        className,
       )}
     >
       <div
         className={cn(
-          'flex max-w-screen-sm flex-row py-2 [--gap:2rem] [gap:var(--gap)]',
-          '[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]'
+          "flex max-w-screen-sm flex-row py-2 [--gap:2rem] [gap:var(--gap)]",
+          "[mask-image:linear-gradient(to_right,_rgba(0,_0,_0,_0),rgba(0,_0,_0,_1)_10%,rgba(0,_0,_0,_1)_90%,rgba(0,_0,_0,_0))]",
         )}
       >
         <div
           className={cn(
-            'flex shrink-0 animate-marquee flex-row space-x-4',
-            pauseOnHover && 'group-hover:[animation-play-state:paused]'
+            "flex shrink-0 animate-marquee flex-row space-x-4",
+            pauseOnHover && "group-hover:[animation-play-state:paused]",
           )}
-          style={{ '--duration': MARQUEE_DURATION }}
+          style={{ "--duration": MARQUEE_DURATION }}
         >
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
               <div
                 className={cn(
-                  'flex w-32 flex-shrink-0 items-center justify-center space-x-2 object-contain'
+                  "flex w-32 flex-shrink-0 items-center justify-center space-x-2 object-contain",
                 )}
                 key={name}
               >
@@ -217,17 +217,17 @@ export const BrandScroller = ({ className, pauseOnHover = true }) => {
         </div>
         <div
           className={cn(
-            'flex shrink-0 animate-marquee flex-row space-x-4',
-            pauseOnHover && 'group-hover:[animation-play-state:paused]'
+            "flex shrink-0 animate-marquee flex-row space-x-4",
+            pauseOnHover && "group-hover:[animation-play-state:paused]",
           )}
-          style={{ '--duration': MARQUEE_DURATION }}
+          style={{ "--duration": MARQUEE_DURATION }}
         >
           {TECHS.map(({ name, icon }) => {
             const Icon = icon;
             return (
               <div
                 className={cn(
-                  'flex w-32 flex-shrink-0 items-center justify-center space-x-2 object-contain'
+                  "flex w-32 flex-shrink-0 items-center justify-center space-x-2 object-contain",
                 )}
                 key={`${name}-duplicate`}
               >

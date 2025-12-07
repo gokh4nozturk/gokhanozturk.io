@@ -1,41 +1,39 @@
 export const metadata = {
-  title: {
-    default: "Resume",
-  },
-  description: "Professional journey and resume highlights",
-  openGraph: {
-    title: "Resume | Gökhan Öztürk – Developer, crafter.",
-    description: "Professional journey and resume highlights",
-    url: "/resume",
-    images: [
-      {
-        url: "https://gokhanozturk.io/api/og",
-        width: 1200,
-        height: 630,
-        alt: "Gökhan Öztürk – Developer, crafter.",
-        type: "image/png",
-      },
-    ],
-  },
   alternates: {
     canonical: "/resume",
   },
+  description: "Professional journey and resume highlights",
+  openGraph: {
+    description: "Professional journey and resume highlights",
+    images: [
+      {
+        alt: "Gökhan Öztürk – Developer, crafter.",
+        height: 630,
+        type: "image/png",
+        url: "https://gokhanozturk.io/api/og",
+        width: 1200,
+      },
+    ],
+    title: "Resume | Gökhan Öztürk – Developer, crafter.",
+    url: "/resume",
+  },
   robots: {
-    index: true,
     follow: true,
-    nocache: true,
     googleBot: {
-      index: true,
       follow: true,
-      "max-video-preview": -1,
+      index: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
+    index: true,
+    nocache: true,
+  },
+  title: {
+    default: "Resume",
   },
   twitter: {
-    title: "Resume | Gökhan Öztürk – Developer, crafter.",
     card: "summary_large_image",
-    site: "@gokh4nozturk",
     creator: "@gokh4nozturk",
     description: "Professional journey and resume highlights",
     images: [
@@ -43,13 +41,11 @@ export const metadata = {
         url: "https://gokhanozturk.io/api/og",
       },
     ],
+    site: "@gokh4nozturk",
+    title: "Resume | Gökhan Öztürk – Developer, crafter.",
   },
 };
 
 export default function ResumeLayout({ children }) {
-  return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">
-      {children}
-    </div>
-  );
+  return <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">{children}</div>;
 }

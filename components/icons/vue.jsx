@@ -1,9 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Vue = (props) => (
   <svg
+    preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 221"
     xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid"
     {...props}
   >
     <path d="M204.8 0H256L128 220.8 0 0h97.92L128 51.2 157.44 0h47.36Z" fill="#41B883" />

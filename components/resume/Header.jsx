@@ -1,4 +1,4 @@
-import { personalInfo } from '@lib/resume-data';
+import { personalInfo } from "@lib/resume-data";
 
 export function Header() {
   return (
@@ -10,23 +10,23 @@ export function Header() {
       <div className="mb-8 text-gray-600 dark:text-gray-400">
         {personalInfo.title}
         <br />
-        {personalInfo.location} ·{' '}
+        {personalInfo.location} ·{" "}
         <a
-          href={personalInfo.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           aria-label="GitHub profile"
+          className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          href={personalInfo.github}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           {personalInfo.githubDisplay}
-        </a>{' '}
-        ·{' '}
+        </a>{" "}
+        ·{" "}
         <a
-          href={personalInfo.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
           aria-label="LinkedIn profile"
+          className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          href={personalInfo.linkedin}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           {personalInfo.linkedinDisplay}
         </a>

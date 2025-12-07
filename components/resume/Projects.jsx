@@ -1,11 +1,11 @@
-import AnimatedLink from '@components/AnimatedLink';
-import { projects } from '@lib/resume-data';
-import { Folder } from 'lucide-react';
+import AnimatedLink from "@components/AnimatedLink";
+import { projects } from "@lib/resume-data";
+import { Folder } from "lucide-react";
 
 function ProjectItem({ project, isFirst }) {
   const titleClass = isFirst
-    ? 'mb-0 font-medium text-gray-900 text-lg dark:text-white'
-    : 'mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white';
+    ? "mb-0 font-medium text-gray-900 text-lg dark:text-white"
+    : "mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white";
 
   return (
     <div>
@@ -13,11 +13,11 @@ function ProjectItem({ project, isFirst }) {
         {project.title} | {project.role}
       </h3>
       <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
         aria-label={`Visit ${project.title} project`}
+        className="mb-1 inline-block text-blue-600 text-sm hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+        href={project.url}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <i>{project.displayUrl}</i>
       </a>
@@ -25,12 +25,12 @@ function ProjectItem({ project, isFirst }) {
         {project.achievements.map((achievement, index) => (
           <li key={`${project.title}-achievement-${index}`}>
             {achievement ===
-            'Rocket UI is actively used across all Rockads projects to ensure consistent UI and improve development efficiency' ? (
+            "Rocket UI is actively used across all Rockads projects to ensure consistent UI and improve development efficiency" ? (
               <strong>
-                Rocket UI is actively used across all{' '}
-                <AnimatedLink href={project.rockadsLink} color="rockads" name="Rockads">
+                Rocket UI is actively used across all{" "}
+                <AnimatedLink color="rockads" href={project.rockadsLink} name="Rockads">
                   Rockads
-                </AnimatedLink>{' '}
+                </AnimatedLink>{" "}
                 projects to ensure consistent UI and improve development efficiency
               </strong>
             ) : (
@@ -54,7 +54,7 @@ export function Projects() {
         Open Source & Projects
       </h2>
       {projects.map((project) => (
-        <ProjectItem key={project.title} project={project} isFirst={project === projects[0]} />
+        <ProjectItem isFirst={project === projects[0]} key={project.title} project={project} />
       ))}
     </section>
   );

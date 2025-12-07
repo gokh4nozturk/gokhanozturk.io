@@ -1,26 +1,26 @@
-import AnimatedLink from '@components/AnimatedLink';
-import { Calcom } from '@components/icons';
+import AnimatedLink from "@components/AnimatedLink";
+import { Calcom } from "@components/icons";
 
 export default function About() {
   return (
     <div className="text-sm sm:text-base">
       <p>
-        Hi 👋 my name is Gökhan, a software engineer at{' '}
+        Hi 👋 my name is Gökhan, a software engineer at{" "}
         <AnimatedLink
-          href="https://teknasyon.com/en/?ref=gokhanozturk.io"
           color="teknasyon"
+          href="https://teknasyon.com/en/?ref=gokhanozturk.io"
           name="Teknasyon"
         >
           Teknasyon
         </AnimatedLink>
-        . I am working on{' '}
+        . I am working on{" "}
         <AnimatedLink
-          href="https://rockads.com/?ref=gokhanozturk.io"
           color="rockads"
+          href="https://rockads.com/?ref=gokhanozturk.io"
           name="rockads.com"
         >
           rockads.com
-        </AnimatedLink>{' '}
+        </AnimatedLink>{" "}
         and in-house solutions.
       </p>
       <p>
@@ -31,7 +31,7 @@ export default function About() {
       <br />
       <AnimatedLink href="https://cal.com/gokhanozturk/15min" name="Cal.com">
         <span className="inline-flex items-center gap-2">
-          {' '}
+          {" "}
           meet me at:
           <Calcom className="w-20 pb-1" />
         </span>

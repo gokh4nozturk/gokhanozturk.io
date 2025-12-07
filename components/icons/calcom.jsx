@@ -1,4 +1,3 @@
-import * as React from 'react';
 const Calcom = (props) => (
   <svg viewBox="0 0 101 22" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path

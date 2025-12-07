@@ -1,17 +1,17 @@
 export async function generateMetadata() {
-  const siteUrl = '/photos';
+  const siteUrl = "/photos";
 
   return {
-    title: 'Photos',
-    description: 'A collection of photos',
-    openGraph: {
-      title: 'Photos',
-      description: 'A collection of photos',
-      url: siteUrl,
-    },
     alternates: {
       canonical: siteUrl,
     },
+    description: "A collection of photos",
+    openGraph: {
+      description: "A collection of photos",
+      title: "Photos",
+      url: siteUrl,
+    },
+    title: "Photos",
   };
 }
 

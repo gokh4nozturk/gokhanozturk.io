@@ -1,9 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Cursor = (props) => (
   <svg
     height="1em"
     style={{
-      flex: 'none',
+      flex: "none",
       lineHeight: 1,
     }}
     viewBox="0 0 24 24"
@@ -11,7 +12,7 @@ const Cursor = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <title>{'Cursor'}</title>
+    <title>{"Cursor"}</title>
     <path
       d="M11.925 24l10.425-6-10.425-6L1.5 18l10.425 6z"
       fill="url(#lobe-icons-cursorundefined-fill-0)"

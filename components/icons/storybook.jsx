@@ -1,12 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Storybook = (props) => (
   <svg
+    height="1em"
+    preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 319"
     width="1em"
-    height="1em"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    preserveAspectRatio="xMidYMid"
     {...props}
   >
     <defs>
@@ -15,7 +16,7 @@ const Storybook = (props) => (
         id="a"
       />
     </defs>
-    <mask id="b" fill="#fff">
+    <mask fill="#fff" id="b">
       <use xlinkHref="#a" />
     </mask>
     <use fill="#FF4785" xlinkHref="#a" />

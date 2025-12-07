@@ -1,9 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Vitest = (props) => (
   <svg
+    preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 234"
     xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid"
     {...props}
   >
     <path
@@ -16,8 +17,8 @@ const Vitest = (props) => (
     />
     <path
       d="M127.975 233.537a12.356 12.356 0 0 0 8.763-3.63l57.828-57.823a12.385 12.385 0 0 0 3.605-8.754 12.395 12.395 0 0 0-12.375-12.376 12.4 12.4 0 0 0-8.755 3.606l-49.066 49.061L21.082 96.733a12.392 12.392 0 0 0-17.524 17.524l115.656 115.65a12.347 12.347 0 0 0 8.76 3.63Z"
-      fillOpacity={0.5}
       fill="#729B1B"
+      fillOpacity={0.5}
     />
   </svg>
 );

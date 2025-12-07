@@ -1,10 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Pnpm = (props) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid meet"
     viewBox="76.58987244897958 44 164.00775510204068 164"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}
   >
     <defs>
@@ -19,28 +20,28 @@ const Pnpm = (props) => (
     </defs>
     <g>
       <g>
-        <use xlinkHref="#b45vdTD8hs" opacity={1} fill="#f9ad00" fillOpacity={1} />
+        <use fill="#f9ad00" fillOpacity={1} opacity={1} xlinkHref="#b45vdTD8hs" />
       </g>
       <g>
-        <use xlinkHref="#a40WtxIl8d" opacity={1} fill="#f9ad00" fillOpacity={1} />
+        <use fill="#f9ad00" fillOpacity={1} opacity={1} xlinkHref="#a40WtxIl8d" />
       </g>
       <g>
-        <use xlinkHref="#h2CN9AEEpe" opacity={1} fill="#f9ad00" fillOpacity={1} />
+        <use fill="#f9ad00" fillOpacity={1} opacity={1} xlinkHref="#h2CN9AEEpe" />
       </g>
       <g>
-        <use xlinkHref="#dqv5133G8" opacity={1} fill="#f9ad00" fillOpacity={1} />
+        <use fill="#f9ad00" fillOpacity={1} opacity={1} xlinkHref="#dqv5133G8" />
       </g>
       <g>
-        <use xlinkHref="#b1Lv79ypvm" opacity={1} fill="#ffffff" fillOpacity={1} />
+        <use fill="#ffffff" fillOpacity={1} opacity={1} xlinkHref="#b1Lv79ypvm" />
       </g>
       <g>
-        <use xlinkHref="#hy1IZWwLX" opacity={1} fill="#ffffff" fillOpacity={1} />
+        <use fill="#ffffff" fillOpacity={1} opacity={1} xlinkHref="#hy1IZWwLX" />
       </g>
       <g>
-        <use xlinkHref="#akQfjxQes" opacity={1} fill="#ffffff" fillOpacity={1} />
+        <use fill="#ffffff" fillOpacity={1} opacity={1} xlinkHref="#akQfjxQes" />
       </g>
       <g>
-        <use xlinkHref="#bdSrwE5pk" opacity={1} fill="#ffffff" fillOpacity={1} />
+        <use fill="#ffffff" fillOpacity={1} opacity={1} xlinkHref="#bdSrwE5pk" />
       </g>
     </g>
   </svg>

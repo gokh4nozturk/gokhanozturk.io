@@ -1,11 +1,11 @@
-import AnimatedLink from '@components/AnimatedLink';
-import { experience } from '@lib/resume-data';
-import { Briefcase } from 'lucide-react';
+import AnimatedLink from "@components/AnimatedLink";
+import { experience } from "@lib/resume-data";
+import { Briefcase } from "lucide-react";
 
 function ExperienceItem({ item, isFirst }) {
   const titleClass = isFirst
-    ? 'mb-0 font-medium text-gray-900 text-lg dark:text-white'
-    : 'mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white';
+    ? "mb-0 font-medium text-gray-900 text-lg dark:text-white"
+    : "mt-6 mb-0 font-medium text-gray-900 text-lg dark:text-white";
 
   return (
     <div>
@@ -19,10 +19,10 @@ function ExperienceItem({ item, isFirst }) {
         {item.achievements.map((achievement, index) => (
           <li key={`${item.company}-achievement-${index}`}>
             {achievement ===
-            'Developed and maintained Rocket UI, a modern UI component library.' ? (
+            "Developed and maintained Rocket UI, a modern UI component library." ? (
               <>
-                Developed and maintained{' '}
-                <AnimatedLink href={item.rocketUiLink} className="no-underline">
+                Developed and maintained{" "}
+                <AnimatedLink className="no-underline" href={item.rocketUiLink}>
                   Rocket UI
                 </AnimatedLink>
                 , a modern UI component library.
@@ -48,7 +48,7 @@ export function Experience() {
         Professional Experience
       </h2>
       {experience.map((item, index) => (
-        <ExperienceItem key={`${item.company}-${item.period}`} item={item} isFirst={index === 0} />
+        <ExperienceItem isFirst={index === 0} item={item} key={`${item.company}-${item.period}`} />
       ))}
     </section>
   );

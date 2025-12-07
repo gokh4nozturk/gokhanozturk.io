@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from "react";
 
 const ClickSpark = ({
-  sparkColor = 'red',
+  sparkColor = "red",
   sparkSize = 10,
   sparkRadius = 15,
   sparkCount = 8,
   duration = 400,
-  easing = 'ease-out',
+  easing = "ease-out",
   extraScale = 1.0,
   children,
 }) => {
@@ -52,23 +52,23 @@ const ClickSpark = ({
   const easeFunc = useCallback(
     (t) => {
       switch (easing) {
-        case 'linear':
+        case "linear":
           return t;
-        case 'ease-in':
+        case "ease-in":
           return t * t;
-        case 'ease-in-out':
+        case "ease-in-out":
           return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         default:
           return t * (2 - t);
       }
     },
-    [easing]
+    [easing],
   );
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
 
     let animationId;
 
@@ -124,10 +124,10 @@ const ClickSpark = ({
 
     const now = performance.now();
     const newSparks = Array.from({ length: sparkCount }, (_, i) => ({
-      x,
-      y,
       angle: (2 * Math.PI * i) / sparkCount,
       startTime: now,
+      x,
+      y,
     }));
 
     sparksRef.current.push(...newSparks);
@@ -138,12 +138,12 @@ const ClickSpark = ({
       className="relative h-full w-full"
       onClick={handleClick}
       onKeyDown={handleClick}
-      onKeyUp={handleClick}
       onKeyPress={handleClick}
+      onKeyUp={handleClick}
     >
       <canvas
-        ref={canvasRef}
         className="pointer-events-none absolute top-0 left-0 block h-full w-full select-none"
+        ref={canvasRef}
       />
       {children}
     </div>

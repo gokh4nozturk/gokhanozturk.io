@@ -1,4 +1,4 @@
-import { lastUpdated } from '@lib/resume-data';
+import { lastUpdated } from "@lib/resume-data";
 
 export function ResumeFooter() {
   return (

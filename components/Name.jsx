@@ -18,15 +18,10 @@ export function NameTransition() {
           {/* these '123' suffix for second word, because they are not same length */}
           {"Gökhan Öztürk123".split("").map((letter) => (
             <span
+              className={cn("inline-block", `group-hover:delay-[${letter.charCodeAt(0) * 25}ms]`)}
               key={`name-${Math.random().toString(36).substr(2, 9)}`}
-              className={cn(
-                "inline-block",
-                `group-hover:delay-[${letter.charCodeAt(0) * 25}ms]`,
-              )}
             >
-              {letter === " " || ["1", "2", "3"].includes(letter)
-                ? "\u00A0"
-                : letter}
+              {letter === " " || ["1", "2", "3"].includes(letter) ? "\u00A0" : letter}
             </span>
           ))}
         </span>
@@ -38,8 +33,8 @@ export function NameTransition() {
         >
           {Array.from("👻 Witchcraft 🕸️").map((letter) => (
             <span
-              key={`witch-${Math.random().toString(36).substr(2, 9)}`}
               className="inline-block"
+              key={`witch-${Math.random().toString(36).substr(2, 9)}`}
               style={{ transitionDelay: `${letter.charCodeAt(0) * 25}ms` }}
             >
               {letter === " " ? "\u00A0" : letter}

@@ -1,11 +1,12 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Google = (props) => (
   <svg
-    width="1em"
     height="1em"
-    viewBox="0 0 256 262"
-    xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
+    viewBox="0 0 256 262"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path

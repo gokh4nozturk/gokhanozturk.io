@@ -1,6 +1,4 @@
-'use client';
-
-import cn from 'classnames';
+"use client";
 
 import {
   Corner,
@@ -8,14 +6,15 @@ import {
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   Viewport,
-} from '@radix-ui/react-scroll-area';
+} from "@radix-ui/react-scroll-area";
+import cn from "classnames";
 
 export function ScrollArea({ children, className }) {
   return (
     <Root
       className={cn(
-        'relative h-full max-h-[calc(100dvh-19.5rem)] min-h-[430px] overflow-hidden',
-        className
+        "relative h-full max-h-[calc(100dvh-19.5rem)] min-h-[430px] overflow-hidden",
+        className,
       )}
     >
       <Viewport className="size-full rounded-[inherit]">{children}</Viewport>
@@ -25,15 +24,15 @@ export function ScrollArea({ children, className }) {
   );
 }
 
-export function Scrollbar({ orientation = 'vertical' }) {
+export function Scrollbar({ orientation = "vertical" }) {
   return (
     <ScrollAreaScrollbar
-      orientation={orientation}
       className={cn(
-        'flex touch-none select-none transition-colors',
-        orientation === 'vertical' && 'h-full w-2.5 border-l border-l-transparent p-[1px]',
-        orientation === 'horizontal' && 'h-2.5 flex-col border-t border-t-transparent p-[1px]'
+        "flex touch-none select-none transition-colors",
+        orientation === "vertical" && "h-full w-2.5 border-l border-l-transparent p-[1px]",
+        orientation === "horizontal" && "h-2.5 flex-col border-t border-t-transparent p-[1px]",
       )}
+      orientation={orientation}
     >
       <ScrollAreaThumb className="relative flex-1 rounded-full" />
     </ScrollAreaScrollbar>

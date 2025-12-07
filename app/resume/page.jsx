@@ -7,7 +7,7 @@ import {
   ResumeFooter,
   Summary,
   TechnicalSkills,
-} from '@components/resume';
+} from "@components/resume";
 
 export default function ResumePage() {
   return (

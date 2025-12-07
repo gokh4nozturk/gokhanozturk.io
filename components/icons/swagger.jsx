@@ -1,9 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Swagger = (props) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 256"
+    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path d="M128 250a122 122 0 1 1 0-244 122 122 0 0 1 0 244Z" fill="#85EA2D" />

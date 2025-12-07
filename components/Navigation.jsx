@@ -1,42 +1,41 @@
-'use client';
+"use client";
 
-import { CircularMenu } from '@components/ground/menu';
-import { AnimatedTabs } from '@components/luxe/animated-tabs';
-import ThankYou from '@components/ThankYou';
-import { cn } from '@lib/utils';
-import { Book, Bookmark, Briefcase, FileUser, Home, Image } from 'lucide-react';
-import React from 'react';
+import { CircularMenu } from "@components/ground/menu";
+import { AnimatedTabs } from "@components/luxe/animated-tabs";
+import ThankYou from "@components/ThankYou";
+import { cn } from "@lib/utils";
+import { Book, Bookmark, Briefcase, FileUser, Home, Image } from "lucide-react";
 
 const navItems = [
   {
-    path: '/',
-    name: 'Home',
     icon: Home,
+    name: "Home",
+    path: "/",
   },
   {
-    path: '/blog',
-    name: 'Blog',
     icon: Book,
+    name: "Blog",
+    path: "/blog",
   },
   {
-    path: '/photos',
-    name: 'Photos',
     icon: Image,
+    name: "Photos",
+    path: "/photos",
   },
   {
-    path: '/works',
-    name: 'Works',
     icon: Briefcase,
+    name: "Works",
+    path: "/works",
   },
   {
-    path: '/bookmarks',
-    name: 'Bookmarks',
     icon: Bookmark,
+    name: "Bookmarks",
+    path: "/bookmarks",
   },
   {
-    path: '/resume',
-    name: 'Resume',
     icon: FileUser,
+    name: "Resume",
+    path: "/resume",
   },
 ];
 
@@ -44,12 +43,12 @@ export default function Navigation() {
   return (
     <div
       className={cn(
-        '-translate-x-1/2 fixed bottom-6 left-1/2 z-50 flex h-[52px] w-full items-center gap-1 border border-p3-border sm:bottom-12',
-        'max-w-fit rounded-full px-4 py-2 backdrop-blur-sm dark:border-p3-border-dark',
+        "-translate-x-1/2 fixed bottom-6 left-1/2 z-50 flex h-[52px] w-full items-center gap-1 border border-p3-border sm:bottom-12",
+        "max-w-fit rounded-full px-4 py-2 backdrop-blur-sm dark:border-p3-border-dark",
       )}
     >
       <AnimatedTabs tabs={navItems} />|
-      <div className='mr-3 flex items-center gap-10'>
+      <div className="mr-3 flex items-center gap-10">
         <ThankYou />
         <CircularMenu />
       </div>

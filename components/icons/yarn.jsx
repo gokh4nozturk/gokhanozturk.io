@@ -1,14 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
+
 const Yarn = (props) => (
   <svg
+    height="1em"
     id="Layer_1"
-    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 518 518"
     width="1em"
-    height="1em"
+    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <style>{'.st0{fill:#2c8ebb}.st1{fill:#fff}'}</style>
+    <style>{".st0{fill:#2c8ebb}.st1{fill:#fff}"}</style>
     <path
       className="st0"
       d="M259 0c143 0 259 116 259 259S402 518 259 518 0 402 0 259 116 0 259 0z"

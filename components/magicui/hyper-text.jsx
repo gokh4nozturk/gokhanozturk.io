@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { cn } from '@lib/utils';
-import { AnimatePresence, motion } from 'motion/react';
-import { useEffect, useId, useRef, useState } from 'react';
+import { cn } from "@lib/utils";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useId, useRef, useState } from "react";
 
-const DEFAULT_CHARACTER_SET = Object.freeze('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
+const DEFAULT_CHARACTER_SET = Object.freeze("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
 
 const getRandomInt = (max) => Math.floor(Math.random() * max);
 
@@ -13,7 +13,7 @@ export function HyperText({
   className,
   duration = 800,
   delay = 0,
-  as: Component = 'div',
+  as: Component = "div",
   startOnView = false,
   animateOnHover = true,
   characterSet = DEFAULT_CHARACTER_SET,
@@ -23,7 +23,7 @@ export function HyperText({
     forwardMotionProps: true,
   });
 
-  const [displayText, setDisplayText] = useState(() => children.split(''));
+  const [displayText, setDisplayText] = useState(() => children.split(""));
   const [isAnimating, setIsAnimating] = useState(false);
   const iterationCount = useRef(0);
   const elementRef = useRef(null);
@@ -53,7 +53,7 @@ export function HyperText({
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '-30% 0px -30% 0px' }
+      { rootMargin: "-30% 0px -30% 0px", threshold: 0.1 },
     );
 
     if (elementRef.current) {
@@ -74,12 +74,12 @@ export function HyperText({
       if (iterationCount.current < maxIterations) {
         setDisplayText((currentText) =>
           currentText.map((letter, index) =>
-            letter === ' '
+            letter === " "
               ? letter
               : index <= iterationCount.current
                 ? children[index]
-                : characterSet[getRandomInt(characterSet.length)]
-          )
+                : characterSet[getRandomInt(characterSet.length)],
+          ),
         );
         iterationCount.current = iterationCount.current + 0.1;
       } else {
@@ -93,14 +93,14 @@ export function HyperText({
 
   return (
     <MotionComponent
-      ref={elementRef}
-      className={cn('overflow-hidden py-2 font-bold text-4xl', className)}
+      className={cn("overflow-hidden py-2 font-bold text-4xl", className)}
       onMouseEnter={handleAnimationTrigger}
+      ref={elementRef}
       {...props}
     >
       <AnimatePresence>
         {displayText.map((letter) => (
-          <motion.span key={useId()} className={cn('font-mono', letter === ' ' ? 'w-3' : '')}>
+          <motion.span className={cn("font-mono", letter === " " ? "w-3" : "")} key={useId()}>
             {letter.toUpperCase()}
           </motion.span>
         ))}

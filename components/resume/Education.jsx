@@ -1,5 +1,5 @@
-import { education } from '@lib/resume-data';
-import { GraduationCap } from 'lucide-react';
+import { education } from "@lib/resume-data";
+import { GraduationCap } from "lucide-react";
 
 export function Education() {
   return (
@@ -10,9 +10,9 @@ export function Education() {
       </h2>
 
       {education.map((item) => (
-        <div key={`${item.institution}-${item.degree}`} className="mb-6 last:mb-0">
-          <strong className="text-gray-900 dark:text-white">{item.degree}</strong> |{' '}
-          {item.institution} |{' '}
+        <div className="mb-6 last:mb-0" key={`${item.institution}-${item.degree}`}>
+          <strong className="text-gray-900 dark:text-white">{item.degree}</strong> |{" "}
+          {item.institution} |{" "}
           <span className="text-gray-600 dark:text-gray-400">{item.period}</span>
         </div>
       ))}
