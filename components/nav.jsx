@@ -89,7 +89,7 @@ export default function TOC({ headings, ...props }) {
       {/* Overlay list - full opacity, clipped to active item */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 transition-[clip-path] duration-300 ease-out"
+        className="pointer-events-none absolute inset-0 animate-duration-400 transition-[clip-path] ease-out"
         ref={containerRef}
         style={{ clipPath: "inset(0 0 100% 0 round 4px)" }}
       >
