@@ -1,3 +1,4 @@
+import TOC from "@components/nav";
 import { cn } from "@lib/utils";
 import "@styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -101,7 +102,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="relative" lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-p3-background-light px-4 pt-4 font-sans text-p3-text",
@@ -116,8 +117,22 @@ export default function RootLayout({ children }) {
           enableSystem
         >
           <Header />
-          <main className="flex h-full flex-col justify-between">{children}</main>
+          <main className="flex h-full flex-col justify-between">
+            {children}
+          </main>
           <Navigation />
+          <aside className="-translate-y-1/2 absolute top-1/2 right-10 z-[99999999999]">
+            <TOC
+              headings={[
+                { id: "home", level: 1, title: "Home" },
+                { id: "blog", level: 2, title: "Blog" },
+                { id: "photos", level: 3, title: "Photos" },
+                { id: "works", level: 4, title: "Works" },
+                { id: "bookmarks", level: 5, title: "Bookmarks" },
+                { id: "resume", level: 6, title: "Resume" },
+              ]}
+            />
+          </aside>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
