@@ -1,6 +1,7 @@
 import TOC from "@components/nav";
 import { cn } from "@lib/utils";
 import "@styles/globals.css";
+import path from "node:path/win32";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "components/Header";
@@ -124,12 +125,17 @@ export default function RootLayout({ children }) {
           <aside className="-translate-y-1/2 fixed top-1/2 right-10 z-[99999999999]">
             <TOC
               headings={[
-                { id: "", level: 1, title: "Home" },
-                { id: "blog", level: 2, title: "Blog" },
-                { id: "photos", level: 3, title: "Photos" },
-                { id: "works", level: 4, title: "Works" },
-                { id: "bookmarks", level: 5, title: "Bookmarks" },
-                { id: "resume", level: 6, title: "Resume" },
+                { id: "home", level: 1, path: "/", title: "Home" },
+                { id: "blog", level: 2, path: "/blog", title: "Blog" },
+                { id: "photos", level: 3, path: "/photos", title: "Photos" },
+                { id: "works", level: 4, path: "/works", title: "Works" },
+                {
+                  id: "bookmarks",
+                  level: 5,
+                  path: "/bookmarks",
+                  title: "Bookmarks",
+                },
+                { id: "resume", level: 6, path: "/resume", title: "Resume" },
               ]}
             />
           </aside>

@@ -10,7 +10,7 @@ export default function TOC({ headings, ...props }) {
   const activeTabElementRef = useRef(null);
 
   const active = useMemo(() => {
-    return headings.find((h) => `/${h.id}` === pathname)?.id;
+    return headings.find((h) => h.path === pathname)?.id;
   }, [headings, pathname]);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function TOC({ headings, ...props }) {
             key={h.id}
             ref={active === h.id ? activeTabElementRef : null}
           >
-            <Link href={`/${h.id}`}>{h.title}</Link>
+            <Link href={h.path}>{h.title}</Link>
           </li>
         ))}
       </ol>
