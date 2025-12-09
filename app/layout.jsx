@@ -2,6 +2,7 @@ import TOC from "@components/nav";
 import { cn } from "@lib/utils";
 import "@styles/globals.css";
 import path from "node:path/win32";
+import Footer from "@components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "components/Header";
@@ -139,6 +140,9 @@ export default function RootLayout({ children }) {
               ]}
             />
           </aside>
+          <div className="-bottom-10 absolute right-6">
+            <Footer />
+          </div>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
