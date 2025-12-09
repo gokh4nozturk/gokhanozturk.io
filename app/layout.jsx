@@ -120,11 +120,11 @@ export default function RootLayout({ children }) {
           <main className="flex h-full flex-col justify-between">
             {children}
           </main>
-          <Navigation />
-          <aside className="-translate-y-1/2 absolute top-1/2 right-10 z-[99999999999]">
+          {/* <Navigation />*/}
+          <aside className="-translate-y-1/2 fixed top-1/2 right-10 z-[99999999999]">
             <TOC
               headings={[
-                { id: "home", level: 1, title: "Home" },
+                { id: "", level: 1, title: "Home" },
                 { id: "blog", level: 2, title: "Blog" },
                 { id: "photos", level: 3, title: "Photos" },
                 { id: "works", level: 4, title: "Works" },
