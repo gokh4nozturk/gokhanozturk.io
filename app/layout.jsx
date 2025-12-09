@@ -140,7 +140,7 @@ export default function RootLayout({ children }) {
               ]}
             />
           </aside>
-          <div className="-bottom-10 absolute right-6">
+          <div className="-bottom-6 absolute right-10">
             <Footer />
           </div>
         </ThemeProvider>

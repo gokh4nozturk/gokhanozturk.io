@@ -22,7 +22,6 @@ export default function Footer() {
         {links.map((link) => (
           <AnimatedLink
             className="text-sm transition-colors duration-200"
-            color="p3-primary"
             href={link.url}
             key={link.name}
             name={link.name}
