@@ -13,6 +13,29 @@ export default function TOC({ headings, ...props }) {
     return headings.find((h) => h.path === pathname)?.id;
   }, [headings, pathname]);
 
+  const activeIndex = useMemo(() => {
+    return headings.findIndex((h) => h.id === active);
+  }, [headings, active]);
+
+  const getDistanceFromActive = (index) => {
+    if (activeIndex === -1) return Infinity;
+    return Math.abs(index - activeIndex);
+  };
+
+  const getOpacityByDistance = (distance) => {
+    if (distance === 0) return 1;
+    if (distance === 1) return 0.6;
+    if (distance === 2) return 0.4;
+    return 0.3;
+  };
+
+  const _getPaddingByDistance = (distance) => {
+    if (distance === 0) return 8;
+    if (distance === 1) return 16;
+    if (distance === 2) return 24;
+    return 40;
+  };
+
   useEffect(() => {
     const container = containerRef.current;
 
@@ -46,15 +69,21 @@ export default function TOC({ headings, ...props }) {
     >
       {/* Base list - normal opacity */}
       <ol className="space-y-4 font-[425] text-sm">
-        {headings.map((h) => (
-          <li
-            className="opacity-40 transition-opacity hover:opacity-70 dark:opacity-50"
-            key={h.id}
-            ref={active === h.id ? activeTabElementRef : null}
-          >
-            <Link href={h.path}>{h.title}</Link>
-          </li>
-        ))}
+        {headings.map((h, index) => {
+          const distance = getDistanceFromActive(index);
+          const opacity = getOpacityByDistance(distance);
+
+          return (
+            <li
+              className="transition-all duration-300 hover:opacity-70"
+              key={h.id}
+              ref={active === h.id ? activeTabElementRef : null}
+              style={{ opacity }}
+            >
+              <Link href={h.path}>{h.title}</Link>
+            </li>
+          );
+        })}
       </ol>
 
       {/* Overlay list - full opacity, clipped to active item */}
@@ -65,13 +94,15 @@ export default function TOC({ headings, ...props }) {
         style={{ clipPath: "inset(0 0 100% 0 round 4px)" }}
       >
         <ol className="space-y-4 font-[425] text-sm">
-          {headings.map((h) => (
-            <li className="opacity-100" key={h.id}>
-              <Link href={`/${h.id}`} tabIndex={-1}>
-                {h.title}
-              </Link>
-            </li>
-          ))}
+          {headings.map((h, _index) => {
+            return (
+              <li className="opacity-100" key={h.id}>
+                <Link href={`/${h.id}`} tabIndex={-1}>
+                  {h.title}
+                </Link>
+              </li>
+            );
+          })}
         </ol>
       </div>
     </nav>

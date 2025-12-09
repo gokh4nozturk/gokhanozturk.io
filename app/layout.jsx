@@ -122,7 +122,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           {/* <Navigation />*/}
-          <aside className="-translate-y-1/2 fixed top-1/2 right-10 z-[99999999999]">
+          <aside className="-translate-y-1/2 absolute top-1/2 right-10 z-[99999999999]">
             <TOC
               headings={[
                 { id: "home", level: 1, path: "/", title: "Home" },
