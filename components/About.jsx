@@ -24,16 +24,16 @@ export default function About() {
         and in-house solutions.
       </p>
       <p>
-        I am an enthusiast for well-designed products, free & open source software contributor &
-        maintainer, and automator of anything that I can.
+        I am an enthusiast for well-designed products, free & open source
+        software contributor & maintainer, and automator of anything that I can.
       </p>
       <br />
       <br />
       <AnimatedLink href="https://cal.com/gokhanozturk/15min" name="Cal.com">
-        <span className="inline-flex items-center gap-2">
+        <span className="inline-flex items-center gap-2 text-sm">
           {" "}
           meet me at:
-          <Calcom className="w-20 pb-1" />
+          <Calcom className="w-16 pb-0.5" />
         </span>
       </AnimatedLink>
     </div>

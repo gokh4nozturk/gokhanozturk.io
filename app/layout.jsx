@@ -1,5 +1,8 @@
+import TOC from "@components/nav";
 import { cn } from "@lib/utils";
 import "@styles/globals.css";
+import path from "node:path/win32";
+import Footer from "@components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "components/Header";
@@ -101,7 +104,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="relative" lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "mx-auto grid h-dvh grid-rows-[auto_1fr] items-center bg-p3-background-light px-4 pt-4 font-sans text-p3-text",
@@ -116,8 +119,30 @@ export default function RootLayout({ children }) {
           enableSystem
         >
           <Header />
-          <main className="flex h-full flex-col justify-between">{children}</main>
-          <Navigation />
+          <main className="flex h-full flex-col justify-between">
+            {children}
+          </main>
+          {/* <Navigation />*/}
+          <aside className="-translate-y-1/2 absolute top-1/2 right-10 z-[99999999999]">
+            <TOC
+              headings={[
+                { id: "home", level: 1, path: "/", title: "Home" },
+                { id: "blog", level: 2, path: "/blog", title: "Blog" },
+                { id: "photos", level: 3, path: "/photos", title: "Photos" },
+                { id: "works", level: 4, path: "/works", title: "Works" },
+                {
+                  id: "bookmarks",
+                  level: 5,
+                  path: "/bookmarks",
+                  title: "Bookmarks",
+                },
+                { id: "resume", level: 6, path: "/resume", title: "Resume" },
+              ]}
+            />
+          </aside>
+          <div className="-bottom-6 absolute right-10">
+            <Footer />
+          </div>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
