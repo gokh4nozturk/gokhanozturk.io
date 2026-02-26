@@ -4,6 +4,8 @@ import About from "@components/About";
 import {
   AppleHelloEnglishEffect,
   AppleHelloFrenchEffect,
+  AppleHelloJapaneseEffect,
+  AppleHelloRussianEffect,
   AppleHelloSpanishEffect,
   AppleHelloTurkishEffect,
   AppleHelloVietnameseEffect,
@@ -71,6 +73,24 @@ export default function Home() {
               )}
               {onViewHello === "vietnamese" && (
                 <AppleHelloVietnameseEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
+                      setOnViewHello("russian");
+                    }, 800);
+                  }}
+                />
+              )}
+              {onViewHello === "russian" && (
+                <AppleHelloRussianEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
+                      setOnViewHello("japanese");
+                    }, 800);
+                  }}
+                />
+              )}
+              {onViewHello === "japanese" && (
+                <AppleHelloJapaneseEffect
                   onAnimationComplete={() => {
                     setTimeout(() => {
                       setOnViewHello("english");

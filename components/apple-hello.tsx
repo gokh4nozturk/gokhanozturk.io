@@ -262,7 +262,7 @@ export function AppleHelloTurkishEffect({
         stroke="currentColor"
         strokeLinecap="round"
         strokeWidth="14.8883"
-        style={{ strokeLinecap: "round", strokeOpacity: 1 }}
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
           duration: calc(0.8),
           ease: "easeInOut",
@@ -323,10 +323,10 @@ export function AppleHelloTurkishEffect({
         strokeWidth="14.8883"
         style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
-          delay: calc(2.6),
+          delay: calc(2.4),
           duration: calc(0.8),
           ease: "easeInOut",
-          opacity: { delay: calc(2.6), duration: 0.4 },
+          opacity: { delay: calc(2.4), duration: 0.4 },
         }}
       />
       <motion.path
@@ -338,15 +338,30 @@ export function AppleHelloTurkishEffect({
         strokeWidth="14.8883"
         style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
-          delay: calc(3.4),
+          delay: calc(3),
           duration: calc(0.8),
           ease: "easeInOut",
-          opacity: { delay: calc(3.4), duration: 0.4 },
+          opacity: { delay: calc(3), duration: 0.4 },
         }}
       />
       <motion.path
         animate={{ opacity: 1, pathLength: 1 }}
         d="M711.563 99.1614C710.539 105.664 709.514 112.166 708.49 118.669C704.008 147.109 701.941 158.329 702.163 165.663C702.681 182.784 708.838 194.447 728.448 194.447C762.658 194.447 805.035 128.049 831.97 71.5937C839.163 56.5174 841.765 42.2587 842.517 31.3271C843.267 17.4145 837.559 7.44429 826.393 7.44429C815.227 7.44429 807.783 15.4691 799.594 32.4914C789.917 52.9182 784.21 77.2359 781.232 101.553C773.54 169.4 789.669 194.447 816.716 194.447C839.048 194.447 853.192 174.348 854.929 147.797C855.922 125.464 846.492 108.094 829.619 99.9058"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(3.6),
+          duration: calc(1),
+          ease: "easeInOut",
+          opacity: { delay: calc(3.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M844.398 111.605C871.346 145.044 909.109 132.872 925.886 113.541"
         initial={{ opacity: 0, pathLength: 0 }}
         stroke="currentColor"
         strokeLinecap="round"
@@ -361,21 +376,6 @@ export function AppleHelloTurkishEffect({
       />
       <motion.path
         animate={{ opacity: 1, pathLength: 1 }}
-        d="M844.398 111.605C871.346 145.044 909.109 132.872 925.886 113.541"
-        initial={{ opacity: 0, pathLength: 0 }}
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="14.8883"
-        style={{ stroke: "currentColor", strokeOpacity: 1 }}
-        transition={{
-          delay: calc(5),
-          duration: calc(0.8),
-          ease: "easeInOut",
-          opacity: { delay: calc(5), duration: 0.4 },
-        }}
-      />
-      <motion.path
-        animate={{ opacity: 1, pathLength: 1 }}
         d="M991.059 115.929C986.194 104.734 975.854 97.1764 959.395 97.1764C932.099 97.1764 911.586 124.472 910.239 153.752C909.065 180.551 921.431 195.616 939.045 195.439C964.045 195.189 982.422 170.633 990.625 118.676C991.637 112.266 992.686 105.572 993.698 99.1615"
         initial={{ opacity: 0, pathLength: 0 }}
         stroke="currentColor"
@@ -383,10 +383,10 @@ export function AppleHelloTurkishEffect({
         strokeWidth="14.8883"
         style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
-          delay: calc(5.8),
+          delay: calc(4.8),
           duration: calc(0.8),
           ease: "easeInOut",
-          opacity: { delay: calc(5.8), duration: 0.4 },
+          opacity: { delay: calc(4.8), duration: 0.4 },
         }}
       />
       <motion.path
@@ -399,10 +399,10 @@ export function AppleHelloTurkishEffect({
         strokeWidth="14.8883"
         style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
-          delay: calc(6),
+          delay: calc(5.4),
           duration: calc(0.8),
           ease: "easeInOut",
-          opacity: { delay: calc(6), duration: 0.4 },
+          opacity: { delay: calc(5.4), duration: 0.4 },
         }}
       />
     </motion.svg>
@@ -438,10 +438,9 @@ export function AppleHelloFrenchEffect({
         strokeWidth="14.8883"
         style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
-          delay: calc(0.8),
           duration: calc(0.8),
           ease: "easeInOut",
-          opacity: { delay: calc(0.8), duration: 0.4 },
+          opacity: { duration: 0.4 },
         }}
       />
       <motion.path
@@ -499,7 +498,7 @@ export function AppleHelloFrenchEffect({
         style={{ stroke: "currentColor", strokeOpacity: 1 }}
         transition={{
           delay: calc(3.2),
-          duration: calc(0.8),
+          duration: calc(1),
           ease: "easeInOut",
           opacity: { delay: calc(3.2), duration: 0.4 },
         }}
@@ -647,6 +646,399 @@ export function AppleHelloSpanishEffect({
           duration: calc(0.8),
           ease: "easeInOut",
           opacity: { delay: calc(3.4), duration: 0.4 },
+        }}
+      />
+    </motion.svg>
+  );
+}
+
+export function AppleHelloRussianEffect({
+  className,
+  speed = 1,
+  onAnimationComplete,
+  ...props
+}: AppleHelloEffectProps) {
+  const calc = (x: number): number => x * speed;
+
+  return (
+    <motion.svg
+      className={cn("h-20", className)}
+      exit={{ opacity: 0 }}
+      fill="none"
+      initial={{ opacity: 1 }}
+      stroke="currentColor"
+      strokeWidth="14.8883"
+      transition={{ duration: 0.5 }}
+      viewBox="0 0 924 264"
+      {...props}
+    >
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M7.69223 133.653C11.1662 117.276 21.3399 98.6651 39.7022 98.6651C58.0644 98.6651 63.2754 115.042 58.5607 136.879C55.3349 152.511 52.8535 168.64 47.6426 193.206"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M52.7141 167.768C60.8382 124.567 80.3796 97.1763 104.218 97.1763C120.347 97.1763 128.784 109.087 127.295 125.96C126.054 138.616 121.836 153.256 120.844 165.663C119.603 182.536 125.062 194.447 142.496 194.447C171.19 194.447 194.514 161.949 202.044 121.426C203.376 114.255 205.05 106.683 206.239 99.1614"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(0.6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(0.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M206.239 99.1616C198.002 151.271 191.507 203.628 185.999 255.737"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(1.2),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(1.2), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M195.575 173.718C201.909 124.703 223.921 97.1764 248.635 97.1764C268.166 97.4246 279.106 113.259 277.135 139.856C274.995 168.754 253.386 195.439 227.259 195.439C210.386 195.191 200.248 186.506 195.533 174.844"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(1.8),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(1.8), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M221.245 194.962C276.118 203.158 336.038 172.18 345.331 122.162C346.801 114.255 348.718 106.752 350.47 99.3407"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(2.4),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(2.4), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M350.47 99.3409C346.183 117.47 343.309 132.164 341.782 143.082C340.513 151.023 339.719 156.482 339.409 163.182C338.999 180.8 348.882 193.455 367.99 193.455C395.782 193.455 409.591 168.726 417.963 128.171C419.966 118.472 422.148 109.215 423.914 99.4701"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(3),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(3), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M423.914 99.4697C417.71 133.713 412.655 154.248 412.655 165.663C412.655 182.784 419.355 194.447 438.857 194.447C472.691 194.447 516.31 130.239 542.788 75.6213C550.862 58.966 553.808 43.7867 554.337 32.3197C555.005 17.8231 549.151 7.44429 537.469 7.44429C526.303 7.44429 518.858 15.4691 510.67 32.4914C500.992 52.9182 495.285 77.2359 492.308 101.553C484.615 169.4 500.744 194.447 527.792 194.447C550.124 194.447 564.268 174.348 566.005 147.797C566.997 125.464 557.568 108.094 540.695 99.9058"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(3.6),
+          duration: calc(1),
+          ease: "easeInOut",
+          opacity: { delay: calc(3.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M555.475 111.605C578.917 140.695 599.474 163.786 630.11 160.251C656.327 157.226 672.208 140.849 672.953 124.472C673.697 108.591 665.012 96.9282 647.643 96.9282C627.047 96.9282 611.911 118.516 611.911 144.075C611.911 176.389 629.528 195.528 659.394 195.528C699.332 195.528 728.468 164.841 736.496 121.634C737.868 114.255 739.554 106.692 740.691 99.1615"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(4.6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(4.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M740.691 99.1614C735.932 130.675 731.885 161.692 727.127 193.206"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(5.2),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(5.2), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M731.115 165.94C737.263 122.835 755.95 97.1763 777.866 97.1763C795.732 97.1763 802.878 111.32 801.926 130.427C800.973 143.33 796.447 168.64 792.635 193.206"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(5.8),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(5.8), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M796.829 166.999C803.792 123.793 820.506 97.1763 844.804 97.1763C861.479 97.1763 869.816 111.072 867.911 127.946C866.72 139.856 862.67 154 861.955 165.663C860.764 182.784 869.234 194.447 883.156 194.447C900.672 194.447 911.432 182.05 916.344 168.483"
+        initial={{ opacity: 0, pathLength: 0 }}
+        onAnimationComplete={onAnimationComplete}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(6.4),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(6.4), duration: 0.4 },
+        }}
+      />
+    </motion.svg>
+  );
+}
+
+export function AppleHelloJapaneseEffect({
+  className,
+  speed = 1,
+  onAnimationComplete,
+  ...props
+}: AppleHelloEffectProps) {
+  const calc = (x: number): number => x * speed;
+
+  return (
+    <motion.svg
+      className={cn("h-20", className)}
+      exit={{ opacity: 0 }}
+      fill="none"
+      initial={{ opacity: 1 }}
+      stroke="currentColor"
+      strokeWidth="14.8883"
+      transition={{ duration: 0.5 }}
+      viewBox="0 0 878 200"
+      {...props}
+    >
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M20.77 26.3153C50.6822 26.8169 81.7522 34.646 94.1177 42.1426C102.683 47.3352 105.39 52.7026 105.363 58.3136C105.318 67.7398 96.5278 74.2747 85.8699 77.623"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M27.7721 114.781C14.2436 124.928 8.12192 135.832 7.54157 147.724C6.69983 164.973 20.9603 176.208 48.6115 176.972C73.6387 177.663 98.2063 173.119 112.672 165.139"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(0.6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(0.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M216.122 18.0386C194.264 60.1085 167.029 128.042 152.842 180.77"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(1.2),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(1.2), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M152.863 180.737C168.486 140.082 187.141 117.421 207.059 117.373C219.529 117.343 227.466 125.123 230.265 141.85C230.857 145.386 231.449 148.923 232.041 152.459C235.115 170.823 243.133 178.466 256.399 178.466C273.763 178.466 292.588 163.308 302.26 138.148"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(1.8),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(1.8), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M364.55 19.0474C354.121 68.3442 347.392 130.229 345.912 184.092"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(2.4),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(2.4), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M404.96 46.4579C430.058 43.5478 455.947 46.3004 466.541 51.5215C473.535 54.9687 475.787 59.5891 475.781 64.5347C475.77 73.098 468.439 80.0158 459.536 84.2495"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(3),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(3), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M410.33 120.125C398.93 129.54 393.789 139.533 393.333 150.343C392.643 166.685 404.748 176.908 428.111 177.187C449.256 177.441 469.998 173.002 482.196 165.628"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(3.6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(3.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M524.883 45.1566C537.331 54.29 560.824 63.9289 597.238 62.4704C629.756 61.1681 644.77 48.8428 644.77 35.2193C644.77 25.3479 637.718 19.2543 624.317 19.2543C592.907 19.2543 563.089 52.7082 538.849 124.069"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(4.2),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(4.2), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M538.849 124.069C561.189 110.058 586.605 101.355 611.062 101.355C641.746 101.355 655.04 115.539 654.972 136.58C654.876 166.756 621.481 182.664 587.217 182.664C565.547 182.664 548.494 178.271 540.265 173.045"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(4.8),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(4.8), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M729.81 19.8643C719.382 68.673 712.653 129.945 711.173 183.274"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(5.4),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(5.4), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M767.068 59.1714C789.142 61.4061 842.299 58.4217 870.454 54.8559"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M821.742 15.7711C824.666 41.779 825.669 73.7762 824.709 109.577C823.413 157.862 805.904 179.993 780.67 180.47C764.063 180.784 755.316 171.11 755.48 159.378C755.663 146.303 766.998 136.203 787.725 136.157C811.678 136.104 832.846 148.877 862.631 176.867"
+        initial={{ opacity: 0, pathLength: 0 }}
+        onAnimationComplete={onAnimationComplete}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(6.6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(6.6), duration: 0.4 },
         }}
       />
     </motion.svg>
