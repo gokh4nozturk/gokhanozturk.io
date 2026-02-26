@@ -4,8 +4,10 @@ import About from "@components/About";
 import {
   AppleHelloEnglishEffect,
   AppleHelloFrenchEffect,
+  AppleHelloSpanishEffect,
   AppleHelloTurkishEffect,
-} from "@components/apple-hello-effect";
+  AppleHelloVietnameseEffect,
+} from "@components/apple-hello";
 import { cn } from "@lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
@@ -51,6 +53,24 @@ export default function Home() {
               )}
               {onViewHello === "french" && (
                 <AppleHelloFrenchEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
+                      setOnViewHello("spanish");
+                    }, 800);
+                  }}
+                />
+              )}
+              {onViewHello === "spanish" && (
+                <AppleHelloSpanishEffect
+                  onAnimationComplete={() => {
+                    setTimeout(() => {
+                      setOnViewHello("vietnamese");
+                    }, 800);
+                  }}
+                />
+              )}
+              {onViewHello === "vietnamese" && (
+                <AppleHelloVietnameseEffect
                   onAnimationComplete={() => {
                     setTimeout(() => {
                       setOnViewHello("english");

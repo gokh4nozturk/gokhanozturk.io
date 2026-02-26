@@ -553,3 +553,102 @@ export function AppleHelloFrenchEffect({
     </motion.svg>
   );
 }
+
+export function AppleHelloSpanishEffect({
+  className,
+  speed = 1,
+  onAnimationComplete,
+  ...props
+}: AppleHelloEffectProps) {
+  const calc = (x: number): number => x * speed;
+
+  return (
+    <motion.svg
+      className={cn("h-20", className)}
+      exit={{ opacity: 0 }}
+      fill="none"
+      initial={{ opacity: 1 }}
+      stroke="currentColor"
+      strokeWidth="14.8883"
+      transition={{ duration: 0.5 }}
+      viewBox="0 0 562 200"
+      {...props}
+    >
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M8.69238 169.422C36.1868 153.237 59.9736 132.929 86.5141 96.9976C105.141 71.779 114.252 49.1048 114.75 31.0363C114.998 17.6373 108.546 7.47252 96.3876 7.47252C82.9881 7.47252 74.5513 17.6373 69.3404 40.97C63.6332 66.613 59.4149 96.0373 48.7449 190.39"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M49.7905 181.168C55.0546 134.894 76.04 98.0816 102.591 98.0816C118.472 98.0816 128.565 110.737 125.699 128.851C124.086 139.521 121.171 151.928 119.506 164.087C117.48 179.471 123.267 191.382 141.161 191.382C166.418 191.382 182.318 166.859 189.198 137.82"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(0.8),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(0.8), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M234.601 94.3596C209.779 96.3662 191.211 117.404 187.703 146.221C184.477 172.523 199.117 192.375 222.442 192.375C250.73 192.375 269.092 168.057 270.333 137.784C271.325 108.752 257.43 94.1115 238.571 94.1115C223.683 94.1115 215.742 105.278 216.239 118.925C216.723 137.586 230.717 158.537 260.078 161.214C300.803 164.928 356.502 134.818 378.992 75.6213C385.479 58.5468 387.951 42.4403 387.951 31.1849C387.951 17.8394 383.732 7.59198 371.822 7.59198C360.159 7.59198 352.467 16.6479 345.519 30.9466C337.379 47.5304 331.357 71.4499 328.894 98.4887C322.69 166.335 336.586 191.382 366.314 191.382C396.441 191.382 416.363 165.269 424.978 135.065"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(1.6),
+          duration: calc(1),
+          ease: "easeInOut",
+          opacity: { delay: calc(1.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M503.236 112.864C498.372 101.669 488.032 94.1114 471.572 94.1114C444.277 94.1114 423.764 121.407 422.417 150.687C421.243 177.486 433.609 192.551 451.222 192.374C476.223 192.124 494.6 167.569 502.803 115.611C503.815 109.201 504.864 102.507 505.876 96.0965"
+        initial={{ opacity: 0, pathLength: 0 }}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(2.6),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(2.6), duration: 0.4 },
+        }}
+      />
+      <motion.path
+        animate={{ opacity: 1, pathLength: 1 }}
+        d="M505.875 96.0965C504.851 102.599 503.826 109.101 502.802 115.604C498.32 144.044 496.253 155.264 496.475 162.598C496.993 179.719 503.15 191.382 518.535 191.382C537.89 191.382 548.745 178.23 553.956 163.838"
+        initial={{ opacity: 0, pathLength: 0 }}
+        onAnimationComplete={onAnimationComplete}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="14.8883"
+        style={{ stroke: "currentColor", strokeOpacity: 1 }}
+        transition={{
+          delay: calc(3.4),
+          duration: calc(0.8),
+          ease: "easeInOut",
+          opacity: { delay: calc(3.4), duration: 0.4 },
+        }}
+      />
+    </motion.svg>
+  );
+}
