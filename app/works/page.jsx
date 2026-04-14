@@ -15,7 +15,7 @@ const REPOS = [
   "Teknasyon/rocket-ui",
   "gokh4nozturk/gokhanozturk.io",
   "RustDili/Rust-Ogrenmek",
-  "gokh4nozturk/linguolink",
+  "gokh4nozturk/app.linguolink",
 ];
 
 const LANG_COLORS = {
