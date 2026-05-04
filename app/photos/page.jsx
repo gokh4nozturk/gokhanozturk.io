@@ -26,14 +26,18 @@ export default function Photos() {
 
   return (
     <div className="w-full">
-      <SplashCursor />
       <ScrollArea className="max-h-[calc(100dvh-11rem)]">
-        <TitleDescription description="A collection of photos that I have taken." title="Photos" />
+        <TitleDescription
+          description="A collection of photos that I have taken."
+          title="Photos"
+        />
         <div className="gap-1 pt-2 pb-32 sm:columns-3">
           {loading ? (
             <SkeletonGrid />
           ) : (
-            photos.map((photo, index) => <Photo data={photo} index={index} key={photo.id} />)
+            photos.map((photo, index) => (
+              <Photo data={photo} index={index} key={photo.id} />
+            ))
           )}
         </div>
       </ScrollArea>
