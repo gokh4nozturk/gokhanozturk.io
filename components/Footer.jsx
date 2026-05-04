@@ -4,10 +4,13 @@ export default function Footer() {
   const links = [
     {
       name: "@gokh4nozturk",
-      url: "https://x.com/intent/follow?screen_name=gokh4nozturk?ref=gokhanozturk.io",
+      url: "https://x.com/intent/follow?screen_name=gokh4nozturk?ref=gozturk.dev",
     },
-    { name: "linkedin", url: "https://www.linkedin.com/in/gokhannozturk?ref=gokhanozturk.io" },
-    { name: "github", url: "https://github.com/gokh4nozturk?ref=gokhanozturk.io" },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/gokhannozturk?ref=gozturk.dev",
+    },
+    { name: "github", url: "https://github.com/gokh4nozturk?ref=gozturk.dev" },
   ];
 
   return (

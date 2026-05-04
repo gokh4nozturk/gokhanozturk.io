@@ -74,31 +74,31 @@ export function CircularMenu({ className }) {
       icon: <Github size={20} />,
       name: "Github",
       rotation: 0,
-      url: "https://github.com/gokh4nozturk?ref=gokhanozturk.io",
+      url: "https://github.com/gokh4nozturk?ref=gozturk.dev",
     },
     {
       icon: <Linkedin size={20} />,
       name: "Linkedin",
       rotation: 60,
-      url: "https://www.linkedin.com/in/gokhannozturk?ref=gokhanozturk.io",
+      url: "https://www.linkedin.com/in/gokhannozturk?ref=gozturk.dev",
     },
     {
       icon: <Twitter size={20} />,
       name: "X",
       rotation: 120,
-      url: "https://x.com/intent/follow?screen_name=gokh4nozturk?ref=gokhanozturk.io",
+      url: "https://x.com/intent/follow?screen_name=gokh4nozturk?ref=gozturk.dev",
     },
     {
       icon: <Instagram size={20} />,
       name: "Instagram",
       rotation: 180,
-      url: "https://www.instagram.com/gokh4nozturk?ref=gokhanozturk.io",
+      url: "https://www.instagram.com/gokh4nozturk?ref=gozturk.dev",
     },
     {
       icon: <Bluesky className="size-5" />,
       name: "Bluesky",
       rotation: 240,
-      url: "https://bsky.app/profile/gokhanozturk.io?ref=gokhanozturk.io",
+      url: "https://bsky.app/profile/gozturk.dev?ref=gozturk.dev",
     },
   ];
 

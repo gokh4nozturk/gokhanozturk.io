@@ -14,7 +14,7 @@ export const metadata = {
   authors: [
     {
       name: "Gökhan Öztürk",
-      url: "https://gokhanozturk.io",
+      url: "https://gozturk.dev",
     },
   ],
   creator: "Gökhan Öztürk",
@@ -61,7 +61,7 @@ export const metadata = {
         alt: "Gökhan Öztürk – Developer, crafter",
         height: 630,
         type: "image/png",
-        url: "https://gokhanozturk.io/api/og",
+        url: "https://gozturk.dev/api/og",
         width: 1200,
       },
     ],
@@ -91,7 +91,7 @@ export const metadata = {
     description: "Personal website of Gökhan Öztürk, a developer and crafter.",
     images: [
       {
-        url: "https://gokhanozturk.io/api/og",
+        url: "https://gozturk.dev/api/og",
       },
     ],
     site: "@gokh4nozturk",
@@ -116,7 +116,9 @@ export default function RootLayout({ children }) {
           enableSystem
         >
           <Header />
-          <main className="flex h-full flex-col justify-between">{children}</main>
+          <main className="flex h-full flex-col justify-between">
+            {children}
+          </main>
           <Navigation />
         </ThemeProvider>
         <Analytics />

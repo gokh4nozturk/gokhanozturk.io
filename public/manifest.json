@@ -4,9 +4,9 @@
   "display": "fullscreen",
   "scope": "/",
   "start_url": "/",
-  "name": "gokhanozturk.io",
+  "name": "gozturk.dev",
   "short_name": "go.io",
-  "description": "gokhanozturk.io",
+  "description": "gozturk.dev",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",

@@ -8,7 +8,7 @@ export default function About() {
         Hi 👋 my name is Gökhan, a software engineer at{" "}
         <AnimatedLink
           color="teknasyon"
-          href="https://teknasyon.com/en/?ref=gokhanozturk.io"
+          href="https://teknasyon.com/en/?ref=gozturk.dev"
           name="Teknasyon"
         >
           Teknasyon
@@ -16,7 +16,7 @@ export default function About() {
         . I am working on{" "}
         <AnimatedLink
           color="rockads"
-          href="https://rockads.com/?ref=gokhanozturk.io"
+          href="https://rockads.com/?ref=gozturk.dev"
           name="rockads.com"
         >
           rockads.com
@@ -24,8 +24,8 @@ export default function About() {
         and in-house solutions.
       </p>
       <p>
-        I am an enthusiast for well-designed products, free & open source software contributor &
-        maintainer, and automator of anything that I can.
+        I am an enthusiast for well-designed products, free & open source
+        software contributor & maintainer, and automator of anything that I can.
       </p>
       <br />
       <br />

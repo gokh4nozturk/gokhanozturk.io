@@ -1,8 +1,8 @@
-# gokhanozturk.io
+# gozturk.dev
   
   [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
   ![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=gokhanozturk-io)
-  ![GitHub last commit](https://img.shields.io/github/last-commit/gokh4nozturk/gokhanozturk.io)
+  ![GitHub last commit](https://img.shields.io/github/last-commit/gokh4nozturk/gozturk.dev)
   
 ## Table of Contents
 

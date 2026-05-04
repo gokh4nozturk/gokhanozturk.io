@@ -4,31 +4,31 @@ export default function sitemap() {
       changeFrequency: "weekly",
       lastModified: new Date(),
       priority: 1,
-      url: "https://gokhanozturk.io",
+      url: "https://gozturk.dev",
     },
     {
       changeFrequency: "weekly",
       lastModified: new Date(),
       priority: 0.8,
-      url: "https://gokhanozturk.io/photos",
+      url: "https://gozturk.dev/photos",
     },
     {
       changeFrequency: "weekly",
       lastModified: new Date(),
       priority: 0.9,
-      url: "https://gokhanozturk.io/works",
+      url: "https://gozturk.dev/works",
     },
     {
       changeFrequency: "daily",
       lastModified: new Date(),
       priority: 0.7,
-      url: "https://gokhanozturk.io/bookmarks",
+      url: "https://gozturk.dev/bookmarks",
     },
     {
       changeFrequency: "weekly",
       lastModified: new Date(),
       priority: 0.7,
-      url: "https://gokhanozturk.io/resume",
+      url: "https://gozturk.dev/resume",
     },
   ];
 }

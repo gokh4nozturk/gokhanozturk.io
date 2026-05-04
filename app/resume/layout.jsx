@@ -10,7 +10,7 @@ export const metadata = {
         alt: "Gökhan Öztürk – Developer, crafter.",
         height: 630,
         type: "image/png",
-        url: "https://gokhanozturk.io/api/og",
+        url: "https://gozturk.dev/api/og",
         width: 1200,
       },
     ],
@@ -38,7 +38,7 @@ export const metadata = {
     description: "Professional journey and resume highlights",
     images: [
       {
-        url: "https://gokhanozturk.io/api/og",
+        url: "https://gozturk.dev/api/og",
       },
     ],
     site: "@gokh4nozturk",
@@ -47,5 +47,9 @@ export const metadata = {
 };
 
 export default function ResumeLayout({ children }) {
-  return <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">{children}</div>;
+  return (
+    <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">
+      {children}
+    </div>
+  );
 }

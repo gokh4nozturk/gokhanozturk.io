@@ -13,7 +13,7 @@ const REPOS = [
   "magicuidesign/magicui",
   "pqoqubbw/icons",
   "Teknasyon/rocket-ui",
-  "gokh4nozturk/gokhanozturk.io",
+  "gokh4nozturk/gozturk.dev",
   "RustDili/Rust-Ogrenmek",
   "gokh4nozturk/app.linguolink",
 ];
@@ -74,9 +74,13 @@ function Work({ data: work }) {
       >
         {work.full_name}
       </AnimatedLink>
-      <p className="my-1 truncate text-neutral-400 text-xs">{work.description}</p>
+      <p className="my-1 truncate text-neutral-400 text-xs">
+        {work.description}
+      </p>
       <div className="flex gap-3 font-medium text-neutral-400 text-xs">
-        <span className={cn(LANG_COLORS[work.language])}>{work.language || "Unknown"}</span>
+        <span className={cn(LANG_COLORS[work.language])}>
+          {work.language || "Unknown"}
+        </span>
         <span className="flex items-center gap-1">
           <Star size={12} />
           {work.stargazers_count}
