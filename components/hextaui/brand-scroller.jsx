@@ -22,7 +22,6 @@ import {
   ReactJS,
   ShadcnUI,
   Storybook,
-  Supabase,
   SVG,
   Swagger,
   Tailwind,
@@ -122,10 +121,6 @@ const TECHS = [
   {
     icon: Storybook,
     name: "Storybook",
-  },
-  {
-    icon: Supabase,
-    name: "Supabase",
   },
   {
     icon: SVG,

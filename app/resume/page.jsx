@@ -22,7 +22,6 @@ export default function ResumePage() {
         <TechnicalSkills />
         <ResumeFooter />
       </article>
-      {/* <FeedbackRating className="-translate-x-1/2 fixed bottom-[5.5rem] left-1/2 backdrop-blur-sm sm:bottom-32" /> */}
     </div>
   );
 }

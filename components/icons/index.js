@@ -32,7 +32,6 @@ import ReactJS from "./react";
 import Reddit from "./reddit";
 import ShadcnUI from "./shadcn";
 import Storybook from "./storybook";
-import Supabase from "./supabase";
 import SVG from "./svg";
 import Swagger from "./swagger";
 import Tailwind from "./tailwind";
@@ -81,7 +80,6 @@ export {
   Reddit,
   ShadcnUI,
   Storybook,
-  Supabase,
   SVG,
   Swagger,
   Tailwind,

@@ -47,7 +47,7 @@ Note: imports are inconsistent across the codebase — some files use `@componen
 ### Routing: App Router + a legacy Pages stub
 
 - Primary routing lives under `app/` (App Router): `page.jsx`, `layout.jsx`, route segments like `app/blog/[slug]/page.jsx`, `app/works/`, `app/bookmarks/`, `app/photos/`, `app/resume/`.
-- API routes live in `app/api/*/route.js[x]` (e.g. `app/api/feedback/route.js`, `app/api/og/route.jsx` for OG image generation via `@vercel/og`).
+- API routes live in `app/api/*/route.js[x]` (e.g. `app/api/og/route.jsx` for OG image generation via `@vercel/og`).
 - `pages/api/hello.js` is a leftover Pages-Router stub; all real API work should go in `app/api/`.
 - `next.config.js` sets `pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx']` and enables `experimental.mdxRs`, plus a custom webpack rule loading `.mdx` via `@mdx-js/loader` with `@mdx-js/react` provider.
 
@@ -62,10 +62,9 @@ Note: imports are inconsistent across the codebase — some files use `@componen
   - `lib/github.js` — `Github` class, uses `NEXT_PUBLIC_GITHUB_ACCESS_TOKEN`.
   - `lib/unsplash.js` — `Unsplash` class, uses `NEXT_PUBLIC_UNSPLASH_ACCESS_KEY`.
   - `lib/raindrop.js` — `Raindrop` class (bookmarks), uses `NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN`, recursive paginated fetch with `next: { revalidate: 3600 }`.
-- **Feedback**: `app/api/feedback/route.js` POSTs to a Supabase `feedback` table with IP-less per-email rate limiting (10/hour). Requires `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` — the module throws at import time if they're missing.
 - **Resume data**: `lib/resume-data.js` feeds `components/resume/*` used by `app/resume/`.
 
-Env vars consumed (see `.env.example` for the subset that is documented): `NEXT_PUBLIC_UNSPLASH_ACCESS_KEY`, `NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN`, `NEXT_PUBLIC_GITHUB_ACCESS_TOKEN`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+Env vars consumed (see `.env.example` for the subset that is documented): `NEXT_PUBLIC_UNSPLASH_ACCESS_KEY`, `NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN`, `NEXT_PUBLIC_GITHUB_ACCESS_TOKEN`.
 
 ### Styling
 
