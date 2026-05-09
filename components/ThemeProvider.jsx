@@ -4,127 +4,90 @@ import { cn } from "@lib/utils";
 import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
 import * as React from "react";
-import { animated, useSpring } from "react-spring";
+
+const THEME_META = {
+  dark: { Icon: MoonIcon, label: "Dark theme" },
+  light: { Icon: SunIcon, label: "Light theme" },
+  system: { Icon: MonitorIcon, label: "Match system theme" },
+};
+
+const BUTTON_PX = 24;
+const GAP_PX = 4;
+const STEP_PX = BUTTON_PX + GAP_PX;
 
 export function DarkModeToggle() {
   const { setTheme, theme, themes } = useTheme();
+  const groupId = React.useId();
+  const [hoveredIndex, setHoveredIndex] = React.useState(null);
 
-  const [styles, api] = useSpring(
-    () => ({
-      left: theme === "light" ? "4px" : "unset",
-      right: theme === "system" ? "4px" : theme === "dark" ? "32px" : "unset",
-      transition: "left 300ms ease-out, right 300ms ease-out",
-      width: 0,
-    }),
-    [],
-  );
+  const orderedThemes = React.useMemo(() => themes.filter((t) => t in THEME_META), [themes]);
+  const activeIndex = Math.max(0, orderedThemes.indexOf(theme));
 
-  React.useEffect(() => {
-    api.start({
-      immediate: true,
-      left: theme === "light" ? "4px" : "unset",
-      right: theme === "system" ? "4px" : theme === "dark" ? "32px" : "unset",
-      width: 24,
-    });
+  const targetIndex = hoveredIndex ?? activeIndex;
+  const minIndex = Math.min(activeIndex, targetIndex);
+  const maxIndex = Math.max(activeIndex, targetIndex);
+  const indicatorX = minIndex * STEP_PX;
+  const indicatorWidth = (maxIndex - minIndex) * STEP_PX + BUTTON_PX;
 
-    setTheme(theme);
-  }, [api, setTheme, theme]);
-
-  const handleThemeChange = (t) => {
-    if (t && t !== theme) {
-      if (document.startViewTransition) {
-        document.startViewTransition(() => {
-          setTheme(t);
-
-          api.start({
-            to: async (animate) => {
-              await animate({ width: theme === "dark" ? 24 : t === "dark" ? 32 : 64 });
-
-              api.set({
-                left: t === "light" ? "4px" : t === "dark" && theme === "system" ? "32px" : "unset",
-                right:
-                  t === "system" ? "4px" : t === "dark" && theme === "light" ? "32px" : "unset",
-              });
-
-              await animate({ width: 24 });
-            },
-          });
-        });
-      } else {
-        setTheme(t);
-
-        api.start({
-          to: async (animate) => {
-            await animate({ width: theme === "dark" ? 24 : t === "dark" ? 32 : 64 });
-
-            api.set({
-              left: t === "light" ? "4px" : t === "dark" && theme === "system" ? "32px" : "unset",
-              right: t === "system" ? "4px" : t === "dark" && theme === "light" ? "32px" : "unset",
-            });
-
-            await animate({ width: 24 });
-          },
-        });
-      }
+  const applyTheme = (next) => {
+    if (!next || next === theme) return;
+    const run = () => setTheme(next);
+    if (typeof document !== "undefined" && document.startViewTransition) {
+      document.startViewTransition(run);
+    } else {
+      run();
     }
   };
 
-  const handlePointerEnter = (t) => {
-    if (theme === t) return;
-
-    api.start({
-      width: theme === "dark" ? 24 : t === "dark" ? 32 : 64,
-    });
-  };
-  const handlePointerOut = (t) => {
-    if (theme === t) return;
-
-    api.start({
-      width: 24,
-    });
-  };
-
-  const themeIcon = {
-    dark: (
-      <MoonIcon className="pointer-events-none size-4 stroke-2 text-p3-text-light dark:text-p3-text-dark" />
-    ),
-    light: (
-      <SunIcon className="pointer-events-none size-4 stroke-2 text-p3-text-light dark:text-p3-text-dark" />
-    ),
-    system: (
-      <MonitorIcon className="pointer-events-none size-4 stroke-2 text-p3-text-light dark:text-p3-text-dark" />
-    ),
-  };
-
   return (
-    <animated.div
-      aria-label="Toggle light/dark mode"
-      className="relative z-0 flex gap-1 rounded-md border border-p3-accent-dark p-1 backdrop-blur-sm dark:border-p3-accent"
+    <fieldset
+      aria-label="Theme"
+      className="relative z-0 m-0 flex gap-1 rounded-md border border-p3-border p-1 backdrop-blur-sm dark:border-p3-border-dark"
+      onPointerLeave={() => setHoveredIndex(null)}
     >
-      {themes.map((t) => (
-        <animated.button
-          aria-checked={theme === t}
-          aria-label={t}
-          className={cn(
-            "z-[1] rounded-full p-1 transition-all duration-300 ease-in-out focus:outline-none",
-            `${theme === t ? "bg-blue-300" : "bg-gray-200 dark:bg-gray-500"}`,
-          )}
-          key={t}
-          onClick={() => handleThemeChange(t)}
-          onPointerEnter={() => handlePointerEnter(t)}
-          onPointerOut={() => handlePointerOut(t)}
-          title={t}
-          type="button"
-        >
-          <span className="sr-only">{t}</span>
-          {themeIcon[t]}
-        </animated.button>
-      ))}
-      <animated.span
-        className={cn("absolute top-1 bottom-0 z-0 h-6 rounded-full bg-blue-200")}
-        style={styles}
+      {orderedThemes.map((t, index) => {
+        const { Icon, label } = THEME_META[t];
+        const id = `${groupId}-${t}`;
+        return (
+          <React.Fragment key={t}>
+            <input
+              checked={theme === t}
+              className="peer sr-only"
+              id={id}
+              name={groupId}
+              onChange={() => applyTheme(t)}
+              type="radio"
+              value={t}
+            />
+            <label
+              aria-label={label}
+              className={cn(
+                "z-[1] grid size-6 cursor-pointer place-items-center rounded-sm text-p3-text-light transition-colors",
+                "hover:text-p3-text peer-checked:text-p3-text dark:peer-checked:text-p3-text-dark dark:hover:text-p3-text-dark",
+                "peer-focus-visible:ring-2 peer-focus-visible:ring-p3-primary peer-focus-visible:ring-offset-1",
+                "peer-focus-visible:ring-offset-p3-light dark:peer-focus-visible:ring-offset-p3-dark",
+              )}
+              htmlFor={id}
+              onPointerEnter={() => setHoveredIndex(index)}
+              title={label}
+            >
+              <Icon className="pointer-events-none size-4 stroke-2" />
+            </label>
+          </React.Fragment>
+        );
+      })}
+      <span
+        aria-hidden="true"
+        className={cn(
+          "absolute top-1 left-1 z-0 h-6 rounded-sm bg-p3-text/10 dark:bg-p3-text-dark/15",
+          "motion-safe:transition-[transform,width] motion-safe:duration-300 motion-safe:ease-out",
+        )}
+        style={{
+          transform: `translateX(${indicatorX}px)`,
+          width: `${indicatorWidth}px`,
+        }}
       />
-    </animated.div>
+    </fieldset>
   );
 }
 
