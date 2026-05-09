@@ -79,8 +79,8 @@ export function DarkModeToggle() {
       <span
         aria-hidden="true"
         className={cn(
-          "absolute top-1 left-1 z-0 h-6 rounded-sm bg-p3-text/10 dark:bg-p3-text-dark/15",
-          "motion-safe:transition-[transform,width] motion-safe:duration-300 motion-safe:ease-out",
+          "absolute top-1 left-1 z-0 h-6 rounded-sm bg-p3-primary/20 ring-1 ring-p3-primary/40 dark:bg-p3-primary/30 dark:ring-p3-primary/50",
+          "motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out",
         )}
         style={{
           transform: `translateX(${indicatorX}px)`,
