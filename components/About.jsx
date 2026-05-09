@@ -24,8 +24,8 @@ export default function About() {
         and in-house solutions.
       </p>
       <p>
-        I am an enthusiast for well-designed products, free & open source
-        software contributor & maintainer, and automator of anything that I can.
+        I am an enthusiast for well-designed products, free & open source software contributor &
+        maintainer, and automator of anything that I can.
       </p>
       <br />
       <br />
