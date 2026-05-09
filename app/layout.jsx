@@ -116,9 +116,7 @@ export default function RootLayout({ children }) {
           enableSystem
         >
           <Header />
-          <main className="flex h-full flex-col justify-between">
-            {children}
-          </main>
+          <main className="flex h-full flex-col justify-between">{children}</main>
           <Navigation />
         </ThemeProvider>
         <Analytics />
