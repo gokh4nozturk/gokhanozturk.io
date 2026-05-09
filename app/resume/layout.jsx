@@ -47,9 +47,5 @@ export const metadata = {
 };
 
 export default function ResumeLayout({ children }) {
-  return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">
-      {children}
-    </div>
-  );
+  return <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 pb-56">{children}</div>;
 }
